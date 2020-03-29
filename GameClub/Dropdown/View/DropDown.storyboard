@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drop DownVC-->
+        <scene sceneID="wmN-6c-S2x">
+            <objects>
+                <viewController storyboardIdentifier="DropDownVC" modalPresentationStyle="overFullScreen" id="flu-p7-SDK" customClass="DropDownVC" customModule="GameClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ege-tE-mTr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iv6-PW-kUk" customClass="CardView" customModule="GameClub" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="133.5" width="250" height="400"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wck-ua-VvC">
+                                        <rect key="frame" x="8" y="8" width="234" height="384"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dropDownCell" id="GcD-bR-XgB">
+                                                <rect key="frame" x="0.0" y="28" width="234" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GcD-bR-XgB" id="Dnk-EO-KFl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="234" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wck-ua-VvC" firstAttribute="leading" secondItem="Iv6-PW-kUk" secondAttribute="leading" constant="8" id="2jR-Ms-weT"/>
+                                    <constraint firstAttribute="bottom" secondItem="wck-ua-VvC" secondAttribute="bottom" constant="8" id="Equ-yB-t3a"/>
+                                    <constraint firstAttribute="trailing" secondItem="wck-ua-VvC" secondAttribute="trailing" constant="8" id="NE1-58-Loy"/>
+                                    <constraint firstAttribute="height" constant="400" id="h2P-O6-WGg"/>
+                                    <constraint firstItem="wck-ua-VvC" firstAttribute="top" secondItem="Iv6-PW-kUk" secondAttribute="top" constant="8" id="oId-ta-xyi"/>
+                                    <constraint firstAttribute="width" constant="250" id="sFc-0w-9pq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Iv6-PW-kUk" firstAttribute="centerX" secondItem="ege-tE-mTr" secondAttribute="centerX" id="ZIb-TT-vut"/>
+                            <constraint firstItem="Iv6-PW-kUk" firstAttribute="centerY" secondItem="ege-tE-mTr" secondAttribute="centerY" id="xES-oj-6Mk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x2b-mr-aFc"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="Iv6-PW-kUk" id="G15-og-kgh"/>
+                        <outlet property="dropDownTV" destination="wck-ua-VvC" id="zcN-NH-0du"/>
+                        <outlet property="tableView" destination="wck-ua-VvC" id="qtd-jp-jHY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AHW-nP-pW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="142.57871064467767"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_GameClub {
+  umbrella header "Pods-GameClub-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,17 @@
+use_frameworks!
+target 'GameClub' do
+    pod 'FBSDKLoginKit'
+    pod 'FBSDKCoreKit'
+    pod 'Google/SignIn'
+    pod 'TwitterKit'
+    pod 'SkyFloatingLabelTextField', '~> 3.0'
+    pod 'SideMenu'
+    pod 'Alamofire', '~> 4.7'
+    pod 'SwiftyJSON', '~> 4.0'
+    pod 'ReachabilitySwift'
+    pod 'NVActivityIndicatorView'
+    pod 'SDWebImage/WebP'
+    pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
+    pod 'SwiftSVG', '~> 2.0'
+
+end
