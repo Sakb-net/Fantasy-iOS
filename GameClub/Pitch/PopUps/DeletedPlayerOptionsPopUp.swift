@@ -56,7 +56,7 @@ class DeletedPlayerOptionsPopUp: ParentViewController {
     func viewConfig(){
         roundViewCornersNoShadow(view: self.getPlayerBT)
         roundViewCornersNoShadow(view: self.changePlayerBT)
-        roundViewCornersNoShadow(view: self.deletePlayerBT)
+//        roundViewCornersNoShadow(view: self.deletePlayerBT)
         roundViewCornersNoShadow(view: self.playerDetailsBT)
         roundViewCorners(view: self.containerView)
     }

@@ -217,8 +217,6 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
         roundViewCornersNoShadow(view: self.sortByView)
         roundViewCornersNoShadow(view: self.teamsView)
         roundViewCornersNoShadow(view: self.playersView)
-        roundViewCornersNoShadow(view: self.fromTF)
-        roundViewCornersNoShadow(view: self.toTF)
         roundViewCorners(view: self.priceView)
     }
     

@@ -28,6 +28,10 @@
 		044B6E342402A5D30086EB9F /* FixtureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B6E332402A5D30086EB9F /* FixtureCell.swift */; };
 		04503D412317B05D00DD3EA9 /* HomeMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04503D402317B05D00DD3EA9 /* HomeMenuTVC.swift */; };
 		04503D432317B18E00DD3EA9 /* UserNameCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04503D422317B18E00DD3EA9 /* UserNameCV.swift */; };
+		04549AC024326F0D002CEC1B /* DefenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04549ABF24326F0D002CEC1B /* DefenderCell.swift */; };
+		04549AC224327210002CEC1B /* MyTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04549AC124327210002CEC1B /* MyTeamVC.swift */; };
+		04549AC4243284C7002CEC1B /* MidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04549AC3243284C7002CEC1B /* MidCell.swift */; };
+		04549AC6243284DF002CEC1B /* AttackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04549AC5243284DF002CEC1B /* AttackCell.swift */; };
 		0457C70E242521EA00B615A8 /* PichHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457C70D242521EA00B615A8 /* PichHeaderCell.swift */; };
 		0457C7102425220500B615A8 /* PichCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457C70F2425220500B615A8 /* PichCell.swift */; };
 		045F47DB23FE037100D14378 /* FavTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F47DA23FE037100D14378 /* FavTeamVC.swift */; };
@@ -121,6 +125,10 @@
 		044B6E332402A5D30086EB9F /* FixtureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureCell.swift; sourceTree = "<group>"; };
 		04503D402317B05D00DD3EA9 /* HomeMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuTVC.swift; sourceTree = "<group>"; };
 		04503D422317B18E00DD3EA9 /* UserNameCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameCV.swift; sourceTree = "<group>"; };
+		04549ABF24326F0D002CEC1B /* DefenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefenderCell.swift; sourceTree = "<group>"; };
+		04549AC124327210002CEC1B /* MyTeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamVC.swift; sourceTree = "<group>"; };
+		04549AC3243284C7002CEC1B /* MidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidCell.swift; sourceTree = "<group>"; };
+		04549AC5243284DF002CEC1B /* AttackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackCell.swift; sourceTree = "<group>"; };
 		0457C70D242521EA00B615A8 /* PichHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PichHeaderCell.swift; sourceTree = "<group>"; };
 		0457C70F2425220500B615A8 /* PichCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PichCell.swift; sourceTree = "<group>"; };
 		045F47DA23FE037100D14378 /* FavTeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTeamVC.swift; sourceTree = "<group>"; };
@@ -301,6 +309,7 @@
 		0424082622F2B12F001C1573 /* GameClub */ = {
 			isa = PBXGroup;
 			children = (
+				04549AB924326D92002CEC1B /* MyTeam */,
 				0475B96E241588E0005DD6FF /* Players */,
 				042BAACA2415806B00ABAD7E /* wehdah.svg */,
 				04C19B012411A46D00AEF9B8 /* Pitch */,
@@ -338,6 +347,49 @@
 				04503D422317B18E00DD3EA9 /* UserNameCV.swift */,
 			);
 			path = HomeMenu;
+			sourceTree = "<group>";
+		};
+		04549AB924326D92002CEC1B /* MyTeam */ = {
+			isa = PBXGroup;
+			children = (
+				04549ABD24326E88002CEC1B /* Model */,
+				04549ABC24326E7E002CEC1B /* Presenter */,
+				04549ABB24326E78002CEC1B /* View */,
+			);
+			path = MyTeam;
+			sourceTree = "<group>";
+		};
+		04549ABB24326E78002CEC1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04549ABE24326E8E002CEC1B /* Cells */,
+				04549AC124327210002CEC1B /* MyTeamVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04549ABC24326E7E002CEC1B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		04549ABD24326E88002CEC1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04549ABE24326E8E002CEC1B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				04549ABF24326F0D002CEC1B /* DefenderCell.swift */,
+				04549AC3243284C7002CEC1B /* MidCell.swift */,
+				04549AC5243284DF002CEC1B /* AttackCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		0457C70A2425219400B615A8 /* Cells */ = {
@@ -826,6 +878,7 @@
 				04D11D1D23177DFA0000B1E6 /* HomeVC.swift in Sources */,
 				04AC6D7E234F50C900CEDD5C /* MenuLoginCell.swift in Sources */,
 				04AC6D80234F50C900CEDD5C /* MenuCell.swift in Sources */,
+				04549AC6243284DF002CEC1B /* AttackCell.swift in Sources */,
 				04A14B5524070F3200F5461F /* VideosPresenter.swift in Sources */,
 				04C33FA6230C8ABD007A16F0 /* ResetPassVC.swift in Sources */,
 				048842D6230B317400AEA806 /* LoginPresenter.swift in Sources */,
@@ -834,9 +887,11 @@
 				04BFE758242637D80086D072 /* DetailsOrDeletePopUp.swift in Sources */,
 				04A14B5624070F3200F5461F /* Videos.swift in Sources */,
 				0475B970241588F9005DD6FF /* Player.swift in Sources */,
+				04549AC4243284C7002CEC1B /* MidCell.swift in Sources */,
 				04977F102353835B00B2517E /* NewsCell.swift in Sources */,
 				048842D9230B442B00AEA806 /* SignUpVC.swift in Sources */,
 				0457C7102425220500B615A8 /* PichCell.swift in Sources */,
+				04549AC024326F0D002CEC1B /* DefenderCell.swift in Sources */,
 				040EBBA4234DD5090032D383 /* ProfilePresenter.swift in Sources */,
 				045F47E123FE046000D14378 /* FavTeamCell.swift in Sources */,
 				04B3B5D2241814EE0059C2A1 /* Teams.swift in Sources */,
@@ -865,6 +920,7 @@
 				044B6E342402A5D30086EB9F /* FixtureCell.swift in Sources */,
 				046F307E2357461A00C639C7 /* ContactUsVC.swift in Sources */,
 				04F6217C23464F4100A18D45 /* AppFont.swift in Sources */,
+				04549AC224327210002CEC1B /* MyTeamVC.swift in Sources */,
 				04F6217423464F4100A18D45 /* TextFieldsUtil.swift in Sources */,
 				04503D412317B05D00DD3EA9 /* HomeMenuTVC.swift in Sources */,
 				04AB0FD4241B071700496DC8 /* MyTeam.swift in Sources */,
