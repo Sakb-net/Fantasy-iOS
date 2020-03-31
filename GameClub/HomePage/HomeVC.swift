@@ -56,6 +56,15 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
 
     }
     @IBAction func ChooseYourTeamAction(_ sender: Any) {
+        let added_team = UserDefaults.standard.integer(forKey: "add_team")
+        if added_team == 1 {
+            let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
+            self.navigationController?.pushViewController(myTeamVC, animated: true)
+        }else {
+            let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PitchVC") as! PitchVC
+            self.navigationController?.pushViewController(myTeamVC, animated: true)
+        }
+        
     }
     @IBAction func moreNewsAction(_ sender: Any) {
         

@@ -1620,7 +1620,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="ChooseYourTeamAction:" destination="uOy-jS-BUg" eventType="touchUpInside" id="jvg-uv-n2L"/>
-                                                            <segue destination="nkD-9K-RYf" kind="show" id="FGy-Mn-3tQ"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sua-Xi-6cR">
@@ -3317,10 +3316,10 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lFa-x5-xDj">
-                                                <rect key="frame" x="40" y="204" width="334" height="455"/>
+                                                <rect key="frame" x="40" y="204" width="334" height="299"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="الإسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ink-lc-k2D" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="39.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3343,7 +3342,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="البريد الإليكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-ja-vfz" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="69.5" width="334" height="39"/>
+                                                        <rect key="frame" x="0.0" y="47" width="334" height="17"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -3366,7 +3365,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9h2-qU-GfB" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="138.5" width="334" height="39.5"/>
+                                                        <rect key="frame" x="0.0" y="94" width="334" height="17"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -3389,7 +3388,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="تأكيد كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWq-fP-ye2" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="208" width="334" height="39"/>
+                                                        <rect key="frame" x="0.0" y="141" width="334" height="17"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -3412,7 +3411,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3M-PJ-SG7" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="277" width="334" height="39.5"/>
+                                                        <rect key="frame" x="0.0" y="188" width="334" height="17"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3435,7 +3434,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="المدينة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJM-vj-Xxo" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="346.5" width="334" height="39"/>
+                                                        <rect key="frame" x="0.0" y="235" width="334" height="17"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3458,7 +3457,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="الحي الذي تسكنه" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQE-NX-Ekt" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="415.5" width="334" height="39.5"/>
+                                                        <rect key="frame" x="0.0" y="282" width="334" height="17"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3489,7 +3488,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heS-Ey-deO">
-                                                <rect key="frame" x="48" y="682" width="318" height="49"/>
+                                                <rect key="frame" x="48" y="526" width="318" height="49"/>
                                                 <color key="backgroundColor" red="0.92941176469999998" green="0.23137254900000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="z8w-lo-9cz"/>
@@ -3514,7 +3513,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="sqd-0j-fAY">
-                                                <rect key="frame" x="77.5" y="798" width="259.5" height="48"/>
+                                                <rect key="frame" x="77.5" y="642" width="259.5" height="48"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efq-GJ-7hh">
                                                         <rect key="frame" x="0.0" y="0.0" width="47.5" height="48"/>
@@ -3548,13 +3547,13 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or" translatesAutoresizingMaskIntoConstraints="NO" id="nAR-bj-AiF">
-                                                <rect key="frame" x="70" y="755" width="274" height="35"/>
+                                                <rect key="frame" x="70" y="599" width="274" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="V1e-EH-0jn"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnu-fM-dVQ">
-                                                <rect key="frame" x="97.5" y="854" width="219" height="33"/>
+                                                <rect key="frame" x="97.5" y="698" width="219" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="219" id="xHm-b6-cZj"/>
                                                 </constraints>
@@ -3838,7 +3837,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbw-rl-hHA">
-                                <rect key="frame" x="0.0" y="-41" width="414" height="1141"/>
+                                <rect key="frame" x="0.0" y="-85" width="414" height="1185"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEp-GZ-7Mm">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1185"/>
@@ -5050,23 +5049,31 @@
                                                                                             <action selector="pickGoalKeeperAction1:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="M4Q-Zl-1jb"/>
                                                                                         </connections>
                                                                                     </button>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حارس مرمي" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbZ-sM-RNg">
-                                                                                        <rect key="frame" x="151" y="64" width="80" height="40"/>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NL3-X0-B5I">
+                                                                                        <rect key="frame" x="151" y="72" width="80" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJH-2C-EwZ">
+                                                                                                <rect key="frame" x="0.0" y="3" width="81" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecY-cJ-7y9">
+                                                                                                <rect key="frame" x="0.0" y="24" width="81" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
                                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="80" id="vEe-tz-C3b"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="PuM-oQ-pAX" firstAttribute="centerX" secondItem="xby-FY-2iA" secondAttribute="centerX" id="2b8-W1-yIG"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="VbZ-sM-RNg" secondAttribute="bottom" constant="22.5" id="G8m-iJ-057"/>
-                                                                                    <constraint firstItem="VbZ-sM-RNg" firstAttribute="top" secondItem="PuM-oQ-pAX" secondAttribute="bottom" constant="-4" id="Mee-a4-jPk"/>
-                                                                                    <constraint firstItem="VbZ-sM-RNg" firstAttribute="centerX" secondItem="xby-FY-2iA" secondAttribute="centerX" id="YSF-wk-TBk"/>
                                                                                     <constraint firstItem="PuM-oQ-pAX" firstAttribute="top" secondItem="xby-FY-2iA" secondAttribute="top" constant="8" id="yYL-JD-cTq"/>
                                                                                 </constraints>
                                                                             </view>
@@ -5075,18 +5082,53 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XTQ-Cs-Xa1">
                                                                         <rect key="frame" x="0.0" y="126.5" width="382" height="126.5"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-dT-DRN">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="95.5" height="126.5"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfa-e5-1sc">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مدافع" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwX-nh-VpT">
-                                                                                        <rect key="frame" x="8" y="64" width="81" height="40"/>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3M-5k-5Di">
+                                                                                        <rect key="frame" x="10" y="4" width="60" height="60"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="60" id="F0l-XG-xIx"/>
+                                                                                        </constraints>
+                                                                                        <state key="normal" image="add_player"/>
+                                                                                        <connections>
+                                                                                            <action selector="pickDefenderAction4:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="yEX-24-x01"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fni-3o-lUc">
+                                                                                        <rect key="frame" x="7" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3A-vk-Ray">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvf-5a-g2U">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
                                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="T3M-5k-5Di" firstAttribute="leading" secondItem="Rfa-e5-1sc" secondAttribute="leading" constant="10" id="Sda-MN-x1y"/>
+                                                                                    <constraint firstItem="T3M-5k-5Di" firstAttribute="top" secondItem="Rfa-e5-1sc" secondAttribute="top" constant="4" id="oDy-qc-Y7S"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="T3M-5k-5Di" secondAttribute="trailing" constant="6.5" id="p64-dH-olg"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aT-dT-DRN">
+                                                                                <rect key="frame" x="76.5" y="0.0" width="76.5" height="126.5"/>
+                                                                                <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGB-6Q-n55">
-                                                                                        <rect key="frame" x="10" y="4" width="79" height="60"/>
+                                                                                        <rect key="frame" x="10" y="4" width="60" height="60"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="60" id="gzi-Wu-rsX"/>
                                                                                         </constraints>
@@ -5095,30 +5137,40 @@
                                                                                             <action selector="pickDefenderAction1:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="e9i-t5-5od"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S4N-Oq-TkB">
+                                                                                        <rect key="frame" x="7" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqv-QT-d3I">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bif-eV-fCV">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="TGB-6Q-n55" firstAttribute="top" secondItem="6aT-dT-DRN" secondAttribute="top" constant="4" id="GIs-cF-4NJ"/>
-                                                                                    <constraint firstItem="GwX-nh-VpT" firstAttribute="top" secondItem="TGB-6Q-n55" secondAttribute="bottom" id="TQI-Mh-zWV"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="GwX-nh-VpT" secondAttribute="bottom" constant="22.5" id="kdZ-eW-FGr"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="TGB-6Q-n55" secondAttribute="trailing" constant="6.5" id="kxR-YT-wL4"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="GwX-nh-VpT" secondAttribute="trailing" constant="6.5" id="ofg-O6-i2W"/>
-                                                                                    <constraint firstItem="GwX-nh-VpT" firstAttribute="leading" secondItem="6aT-dT-DRN" secondAttribute="leading" constant="8" id="ufl-XN-K4j"/>
                                                                                     <constraint firstItem="TGB-6Q-n55" firstAttribute="leading" secondItem="6aT-dT-DRN" secondAttribute="leading" constant="10" id="y7n-bg-ld1"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjK-HN-bwi">
-                                                                                <rect key="frame" x="95.5" y="0.0" width="95.5" height="126.5"/>
+                                                                                <rect key="frame" x="153" y="0.0" width="76" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مدافع" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4a-DI-yVW">
-                                                                                        <rect key="frame" x="8" y="64" width="81" height="40"/>
-                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5Q-Tp-4PR">
-                                                                                        <rect key="frame" x="10" y="4" width="79" height="60"/>
+                                                                                        <rect key="frame" x="10" y="4" width="59.5" height="60"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="60" id="aur-mZ-luk"/>
                                                                                         </constraints>
@@ -5127,30 +5179,40 @@
                                                                                             <action selector="pickDefenderAction2:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="fGb-jd-pVv"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1p-yH-Hoa">
+                                                                                        <rect key="frame" x="7" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inr-eF-YML">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-uz-VEA">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="I5Q-Tp-4PR" secondAttribute="trailing" constant="6.5" id="BcM-kA-AIC"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="S4a-DI-yVW" secondAttribute="trailing" constant="6.5" id="DUe-xZ-nIt"/>
                                                                                     <constraint firstItem="I5Q-Tp-4PR" firstAttribute="leading" secondItem="CjK-HN-bwi" secondAttribute="leading" constant="10" id="GP4-NS-Xo4"/>
-                                                                                    <constraint firstItem="S4a-DI-yVW" firstAttribute="leading" secondItem="CjK-HN-bwi" secondAttribute="leading" constant="8" id="LKy-gy-UD5"/>
-                                                                                    <constraint firstItem="S4a-DI-yVW" firstAttribute="top" secondItem="I5Q-Tp-4PR" secondAttribute="bottom" id="YVk-GP-jIO"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="S4a-DI-yVW" secondAttribute="bottom" constant="22.5" id="ch5-mM-ASu"/>
                                                                                     <constraint firstItem="I5Q-Tp-4PR" firstAttribute="top" secondItem="CjK-HN-bwi" secondAttribute="top" constant="4" id="tUP-Qj-lxM"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFG-b0-mDv">
-                                                                                <rect key="frame" x="191" y="0.0" width="95.5" height="126.5"/>
+                                                                                <rect key="frame" x="229" y="0.0" width="76.5" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مدافع" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBt-m8-ZiE">
-                                                                                        <rect key="frame" x="8" y="64" width="81.5" height="40"/>
-                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zf-Em-xnY">
-                                                                                        <rect key="frame" x="10" y="4" width="79.5" height="60"/>
+                                                                                        <rect key="frame" x="10" y="4" width="60.5" height="60"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="60" id="gzY-WI-HEK"/>
                                                                                         </constraints>
@@ -5159,23 +5221,40 @@
                                                                                             <action selector="pickDefenderAction3:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="sKv-Jd-rbG"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QK6-ob-YQ4">
+                                                                                        <rect key="frame" x="9" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T84-IF-MB3">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-ki-QSH">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="trailing" secondItem="PBt-m8-ZiE" secondAttribute="trailing" constant="6" id="Iyu-Ze-5Ap"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="PBt-m8-ZiE" secondAttribute="bottom" constant="22.5" id="bPU-mG-Xrl"/>
                                                                                     <constraint firstItem="2zf-Em-xnY" firstAttribute="leading" secondItem="eFG-b0-mDv" secondAttribute="leading" constant="10" id="l3n-eK-7Km"/>
-                                                                                    <constraint firstItem="PBt-m8-ZiE" firstAttribute="top" secondItem="2zf-Em-xnY" secondAttribute="bottom" id="mgO-NR-TbN"/>
                                                                                     <constraint firstItem="2zf-Em-xnY" firstAttribute="top" secondItem="eFG-b0-mDv" secondAttribute="top" constant="4" id="pLo-fy-i5n"/>
-                                                                                    <constraint firstItem="PBt-m8-ZiE" firstAttribute="leading" secondItem="eFG-b0-mDv" secondAttribute="leading" constant="8" id="rJ1-7O-h1a"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="2zf-Em-xnY" secondAttribute="trailing" constant="6" id="ui9-rw-OFO"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGg-E1-Etl">
-                                                                                <rect key="frame" x="286.5" y="0.0" width="95.5" height="126.5"/>
+                                                                                <rect key="frame" x="305.5" y="0.0" width="76.5" height="126.5"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzm-EN-uI2">
-                                                                                        <rect key="frame" x="10" y="4" width="79" height="60"/>
+                                                                                        <rect key="frame" x="10" y="4" width="60" height="60"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="60" id="oHd-f8-GXZ"/>
                                                                                         </constraints>
@@ -5184,22 +5263,32 @@
                                                                                             <action selector="pickDefenderAction4:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="5tc-Z5-Nxu"/>
                                                                                         </connections>
                                                                                     </button>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مدافع" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3S-UN-IaB">
-                                                                                        <rect key="frame" x="8" y="64" width="81" height="40"/>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LMX-bd-VcZ">
+                                                                                        <rect key="frame" x="8" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myc-H4-vSE">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yb-zs-F9c">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
                                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="gzm-EN-uI2" secondAttribute="trailing" constant="6.5" id="4CU-9t-AI5"/>
-                                                                                    <constraint firstItem="A3S-UN-IaB" firstAttribute="top" secondItem="gzm-EN-uI2" secondAttribute="bottom" id="B0o-1M-roe"/>
                                                                                     <constraint firstItem="gzm-EN-uI2" firstAttribute="top" secondItem="zGg-E1-Etl" secondAttribute="top" constant="4" id="Dih-I3-l56"/>
-                                                                                    <constraint firstItem="A3S-UN-IaB" firstAttribute="leading" secondItem="zGg-E1-Etl" secondAttribute="leading" constant="8" id="FSW-Iz-lBD"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="A3S-UN-IaB" secondAttribute="trailing" constant="6.5" id="GAH-jf-5TV"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="A3S-UN-IaB" secondAttribute="bottom" constant="22.5" id="MVV-Qs-8zi"/>
                                                                                     <constraint firstItem="gzm-EN-uI2" firstAttribute="leading" secondItem="zGg-E1-Etl" secondAttribute="leading" constant="10" id="Mid-L2-l9d"/>
                                                                                 </constraints>
                                                                             </view>
@@ -5211,13 +5300,6 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgd-XV-jyA">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="95.5" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وسط" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-hO-arg">
-                                                                                        <rect key="frame" x="8" y="64" width="81" height="40"/>
-                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVM-tF-mKL">
                                                                                         <rect key="frame" x="10" y="4" width="79" height="60"/>
                                                                                         <constraints>
@@ -5228,28 +5310,38 @@
                                                                                             <action selector="pickMidAction1:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="ODW-C7-oOU"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FkK-A8-mPj">
+                                                                                        <rect key="frame" x="18" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm6-Gg-vIG">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll2-Ki-60F">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="pVM-tF-mKL" firstAttribute="leading" secondItem="tgd-XV-jyA" secondAttribute="leading" constant="10" id="4bq-Je-r5C"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="pVM-tF-mKL" secondAttribute="trailing" constant="6.5" id="DUu-Nb-hO3"/>
-                                                                                    <constraint firstItem="aBE-hO-arg" firstAttribute="top" secondItem="pVM-tF-mKL" secondAttribute="bottom" id="G8Z-uL-7Mr"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="aBE-hO-arg" secondAttribute="bottom" constant="22.5" id="S4u-52-K9E"/>
-                                                                                    <constraint firstItem="aBE-hO-arg" firstAttribute="leading" secondItem="tgd-XV-jyA" secondAttribute="leading" constant="8" id="XON-8o-8oS"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="aBE-hO-arg" secondAttribute="trailing" constant="6.5" id="fDr-fl-wVB"/>
                                                                                     <constraint firstItem="pVM-tF-mKL" firstAttribute="top" secondItem="tgd-XV-jyA" secondAttribute="top" constant="4" id="uRl-1o-Xvf"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlp-UX-ZCs">
                                                                                 <rect key="frame" x="95.5" y="0.0" width="95.5" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وسط" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQv-yC-5fd">
-                                                                                        <rect key="frame" x="8" y="64" width="81" height="40"/>
-                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lO-Tk-heS">
                                                                                         <rect key="frame" x="10" y="4" width="79" height="60"/>
                                                                                         <constraints>
@@ -5260,28 +5352,38 @@
                                                                                             <action selector="pickMidAction2:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="hF3-7k-IbH"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqh-4b-GTm">
+                                                                                        <rect key="frame" x="19" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-YL-rEv">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpN-h0-bW6">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="0lO-Tk-heS" firstAttribute="top" secondItem="mlp-UX-ZCs" secondAttribute="top" constant="4" id="BkQ-XS-GQA"/>
-                                                                                    <constraint firstItem="KQv-yC-5fd" firstAttribute="leading" secondItem="mlp-UX-ZCs" secondAttribute="leading" constant="8" id="FZG-sr-V8i"/>
                                                                                     <constraint firstItem="0lO-Tk-heS" firstAttribute="leading" secondItem="mlp-UX-ZCs" secondAttribute="leading" constant="10" id="aif-BT-qyA"/>
-                                                                                    <constraint firstItem="KQv-yC-5fd" firstAttribute="top" secondItem="0lO-Tk-heS" secondAttribute="bottom" id="iwy-no-6K9"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="KQv-yC-5fd" secondAttribute="trailing" constant="6.5" id="mip-eo-5tm"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="0lO-Tk-heS" secondAttribute="trailing" constant="6.5" id="wdA-dX-CBA"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="KQv-yC-5fd" secondAttribute="bottom" constant="22.5" id="zRz-Ro-b47"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7Y-Yp-XKh">
                                                                                 <rect key="frame" x="191" y="0.0" width="95.5" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وسط" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voE-9D-XXs">
-                                                                                        <rect key="frame" x="8" y="64" width="79.5" height="40"/>
-                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7x-aq-io2">
                                                                                         <rect key="frame" x="10" y="4" width="79.5" height="60"/>
                                                                                         <constraints>
@@ -5292,28 +5394,38 @@
                                                                                             <action selector="pickMidAction3:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="dAY-9P-G9d"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iF3-Yr-EzH">
+                                                                                        <rect key="frame" x="18" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jw-sB-Tee">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEu-x0-Ba4">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
-                                                                                    <constraint firstItem="voE-9D-XXs" firstAttribute="top" secondItem="V7x-aq-io2" secondAttribute="bottom" id="85u-VY-zUD"/>
                                                                                     <constraint firstItem="V7x-aq-io2" firstAttribute="top" secondItem="g7Y-Yp-XKh" secondAttribute="top" constant="4" id="AkE-57-nAg"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="voE-9D-XXs" secondAttribute="bottom" constant="22.5" id="CD5-uj-Fmb"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="V7x-aq-io2" secondAttribute="trailing" constant="6" id="FKX-RT-NdI"/>
-                                                                                    <constraint firstItem="voE-9D-XXs" firstAttribute="leading" secondItem="g7Y-Yp-XKh" secondAttribute="leading" constant="8" id="InP-C5-0YL"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="voE-9D-XXs" secondAttribute="trailing" constant="8" id="abg-Ta-dFk"/>
                                                                                     <constraint firstItem="V7x-aq-io2" firstAttribute="leading" secondItem="g7Y-Yp-XKh" secondAttribute="leading" constant="10" id="lxi-0Z-R2K"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4Q-TH-HO1">
                                                                                 <rect key="frame" x="286.5" y="0.0" width="95.5" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وسط" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kom-cb-53S">
-                                                                                        <rect key="frame" x="8" y="64" width="81" height="40"/>
-                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bf-Nr-hBc">
                                                                                         <rect key="frame" x="10" y="4" width="79" height="60"/>
                                                                                         <constraints>
@@ -5324,15 +5436,32 @@
                                                                                             <action selector="pickMidAction4:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="D2G-Sx-sI2"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-Sp-4d2">
+                                                                                        <rect key="frame" x="17" y="72" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umE-Ra-qNB">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMy-wC-aGC">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="trailing" secondItem="kom-cb-53S" secondAttribute="trailing" constant="6.5" id="1Ge-7D-Ot1"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="1Bf-Nr-hBc" secondAttribute="trailing" constant="6.5" id="6n0-uc-Oau"/>
                                                                                     <constraint firstItem="1Bf-Nr-hBc" firstAttribute="leading" secondItem="r4Q-TH-HO1" secondAttribute="leading" constant="10" id="J6y-6I-urg"/>
-                                                                                    <constraint firstItem="kom-cb-53S" firstAttribute="top" secondItem="1Bf-Nr-hBc" secondAttribute="bottom" id="KVf-eU-C6U"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="kom-cb-53S" secondAttribute="bottom" constant="22.5" id="KW3-Hm-Ape"/>
-                                                                                    <constraint firstItem="kom-cb-53S" firstAttribute="leading" secondItem="r4Q-TH-HO1" secondAttribute="leading" constant="8" id="NFR-GK-RzM"/>
                                                                                     <constraint firstItem="1Bf-Nr-hBc" firstAttribute="top" secondItem="r4Q-TH-HO1" secondAttribute="top" constant="4" id="Tei-Q5-2gs"/>
                                                                                 </constraints>
                                                                             </view>
@@ -5344,16 +5473,6 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6A-nM-jMV">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="191" height="126.5"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هجوم" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vem-Ne-4Af">
-                                                                                        <rect key="frame" x="75" y="71" width="80" height="40"/>
-                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="80" id="6KD-J3-m8E"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96l-Mt-yf6">
                                                                                         <rect key="frame" x="75" y="15" width="79" height="60"/>
                                                                                         <constraints>
@@ -5365,14 +5484,32 @@
                                                                                             <action selector="pickAttackerAction1:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="cCE-oX-ISo"/>
                                                                                         </connections>
                                                                                     </button>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zb9-Bh-3Z5">
+                                                                                        <rect key="frame" x="83" y="80" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyh-Oe-zkA">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynt-NB-IWM">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="96l-Mt-yf6" secondAttribute="trailing" constant="37" id="TC5-oA-2yi"/>
                                                                                     <constraint firstItem="96l-Mt-yf6" firstAttribute="top" secondItem="K6A-nM-jMV" secondAttribute="top" constant="15" id="WsJ-7A-Guy"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="Vem-Ne-4Af" secondAttribute="trailing" constant="36" id="buL-IH-Z3f"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="Vem-Ne-4Af" secondAttribute="bottom" constant="15.5" id="vhH-8t-Y30"/>
-                                                                                    <constraint firstItem="Vem-Ne-4Af" firstAttribute="top" secondItem="96l-Mt-yf6" secondAttribute="bottom" constant="-4" id="w2R-lJ-ot0"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWh-24-l9N">
@@ -5389,24 +5526,32 @@
                                                                                             <action selector="pickAttackerAction2:" destination="KW1-7Y-1jf" eventType="touchUpInside" id="vKl-Vb-d4O"/>
                                                                                         </connections>
                                                                                     </button>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هجوم" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPI-6r-2e3">
-                                                                                        <rect key="frame" x="31" y="71" width="79" height="40"/>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yk2-Jr-Rfy">
+                                                                                        <rect key="frame" x="39" y="80" width="62" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-Dz-8VC">
+                                                                                                <rect key="frame" x="0.0" y="3" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlQ-mo-53j">
+                                                                                                <rect key="frame" x="0.0" y="24" width="62" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
+                                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
                                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="79" id="TpR-nT-qba"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
+                                                                                    </view>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstItem="DwK-g5-43a" firstAttribute="top" secondItem="uWh-24-l9N" secondAttribute="top" constant="15" id="Axh-Ga-IM9"/>
                                                                                     <constraint firstItem="DwK-g5-43a" firstAttribute="leading" secondItem="uWh-24-l9N" secondAttribute="leading" constant="31" id="Dp5-Ju-okb"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="HPI-6r-2e3" secondAttribute="bottom" constant="15.5" id="VCy-Hu-quR"/>
-                                                                                    <constraint firstItem="HPI-6r-2e3" firstAttribute="leading" secondItem="uWh-24-l9N" secondAttribute="leading" constant="31" id="tZy-rk-vlA"/>
-                                                                                    <constraint firstItem="HPI-6r-2e3" firstAttribute="top" secondItem="DwK-g5-43a" secondAttribute="bottom" constant="-4" id="wua-Un-eq9"/>
                                                                                 </constraints>
                                                                             </view>
                                                                         </subviews>
@@ -5669,27 +5814,16 @@
                     <connections>
                         <outlet property="attackerBT1" destination="96l-Mt-yf6" id="m7N-3S-WJE"/>
                         <outlet property="attackerBT2" destination="DwK-g5-43a" id="GkE-jN-LyA"/>
-                        <outlet property="attackerLbl1" destination="Vem-Ne-4Af" id="UVP-zU-c6h"/>
-                        <outlet property="attackerLbl2" destination="HPI-6r-2e3" id="Fd7-7j-ogD"/>
                         <outlet property="defenderBT1" destination="TGB-6Q-n55" id="eqC-bk-BRS"/>
                         <outlet property="defenderBT2" destination="I5Q-Tp-4PR" id="SOX-ZH-BQI"/>
                         <outlet property="defenderBT3" destination="2zf-Em-xnY" id="ylW-gz-n69"/>
                         <outlet property="defenderBT4" destination="gzm-EN-uI2" id="0FY-P8-kH9"/>
-                        <outlet property="defenderLbl1" destination="GwX-nh-VpT" id="1iy-8z-fHY"/>
-                        <outlet property="defenderLbl2" destination="S4a-DI-yVW" id="glg-XT-2vI"/>
-                        <outlet property="defenderLbl3" destination="PBt-m8-ZiE" id="Mo7-gL-k3I"/>
-                        <outlet property="defenderLbl4" destination="A3S-UN-IaB" id="ltY-6E-Skx"/>
                         <outlet property="endTimeLabel" destination="naa-Jh-TVz" id="94x-y5-CCo"/>
                         <outlet property="goalKeeperBT1" destination="PuM-oQ-pAX" id="3Q8-Tf-zC3"/>
-                        <outlet property="goalKeeperLbl1" destination="VbZ-sM-RNg" id="PgM-wW-s8h"/>
                         <outlet property="midBT1" destination="pVM-tF-mKL" id="3xy-xG-KXg"/>
                         <outlet property="midBT2" destination="0lO-Tk-heS" id="0A1-rA-he9"/>
                         <outlet property="midBT3" destination="V7x-aq-io2" id="11Y-KB-NHf"/>
                         <outlet property="midBT4" destination="1Bf-Nr-hBc" id="hcE-iN-zUF"/>
-                        <outlet property="midLbl1" destination="aBE-hO-arg" id="evi-15-xtV"/>
-                        <outlet property="midLbl2" destination="KQv-yC-5fd" id="bLB-9s-dD1"/>
-                        <outlet property="midLbl3" destination="voE-9D-XXs" id="4nQ-78-OZ0"/>
-                        <outlet property="midLbl4" destination="kom-cb-53S" id="YKz-xT-fOU"/>
                         <outlet property="tableView" destination="iHU-Is-MKe" id="0ft-dS-rcX"/>
                         <outlet property="viewListBT" destination="5iw-G3-sFE" id="h9y-cw-XJW"/>
                         <outlet property="viewPitchBT" destination="qm2-FR-fUZ" id="pk3-VE-Vhw"/>
@@ -5697,7 +5831,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnJ-jR-ztE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-700" y="1045"/>
+            <point key="canvasLocation" x="-700" y="1044.6428571428571"/>
         </scene>
         <!--My TeamVC-->
         <scene sceneID="dLH-iv-SxA">
@@ -5843,36 +5977,26 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIf-gA-X3v">
                                                                                 <rect key="frame" x="140" y="8" width="102" height="119"/>
                                                                                 <subviews>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28V-So-b3e">
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28V-So-b3e">
                                                                                         <rect key="frame" x="11" y="73" width="80" height="46"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                         <subviews>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDk-ej-OIe">
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDk-ej-OIe">
                                                                                                 <rect key="frame" x="0.0" y="3" width="81" height="21"/>
-                                                                                                <constraints>
-                                                                                                    <constraint firstAttribute="height" constant="21" id="wdX-gG-AxK"/>
-                                                                                                </constraints>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09g-KH-eOs">
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09g-KH-eOs">
                                                                                                 <rect key="frame" x="0.0" y="24" width="81" height="21"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                         </subviews>
                                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="trailing" secondItem="09g-KH-eOs" secondAttribute="trailing" constant="-1" id="3K6-Fi-zTK"/>
-                                                                                            <constraint firstItem="09g-KH-eOs" firstAttribute="leading" secondItem="28V-So-b3e" secondAttribute="leading" id="UEC-rm-a1h"/>
-                                                                                            <constraint firstAttribute="bottom" secondItem="09g-KH-eOs" secondAttribute="bottom" constant="1" id="UkG-do-TKR"/>
-                                                                                            <constraint firstItem="09g-KH-eOs" firstAttribute="top" secondItem="zDk-ej-OIe" secondAttribute="bottom" id="bD6-5H-v9L"/>
-                                                                                            <constraint firstAttribute="height" constant="46" id="bH9-dC-MhY"/>
-                                                                                            <constraint firstAttribute="trailing" secondItem="zDk-ej-OIe" secondAttribute="trailing" constant="-1" id="fXq-Cc-fmF"/>
-                                                                                            <constraint firstItem="zDk-ej-OIe" firstAttribute="leading" secondItem="28V-So-b3e" secondAttribute="leading" id="giI-mK-cHw"/>
-                                                                                            <constraint firstItem="zDk-ej-OIe" firstAttribute="top" secondItem="28V-So-b3e" secondAttribute="top" constant="3" id="qVm-vw-IoC"/>
-                                                                                        </constraints>
                                                                                     </view>
                                                                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-DG-fB0">
                                                                                         <rect key="frame" x="25" y="8" width="52" height="60"/>
@@ -5890,11 +6014,8 @@
                                                                                 <constraints>
                                                                                     <constraint firstItem="EQm-DG-fB0" firstAttribute="top" secondItem="OIf-gA-X3v" secondAttribute="top" constant="8" id="AD0-gk-rB2"/>
                                                                                     <constraint firstItem="EQm-DG-fB0" firstAttribute="leading" secondItem="OIf-gA-X3v" secondAttribute="leading" constant="25" id="DpB-L7-P1M"/>
-                                                                                    <constraint firstItem="28V-So-b3e" firstAttribute="top" secondItem="EQm-DG-fB0" secondAttribute="bottom" constant="5" id="GzQ-1Q-vs9"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="EQm-DG-fB0" secondAttribute="trailing" constant="25" id="HPS-IA-Vfh"/>
-                                                                                    <constraint firstItem="28V-So-b3e" firstAttribute="leading" secondItem="OIf-gA-X3v" secondAttribute="leading" constant="11" id="aZY-mq-wV7"/>
                                                                                     <constraint firstAttribute="height" constant="119" id="pfS-OZ-ZoR"/>
-                                                                                    <constraint firstItem="28V-So-b3e" firstAttribute="centerX" secondItem="OIf-gA-X3v" secondAttribute="centerX" id="qAJ-BR-Deo"/>
                                                                                     <constraint firstAttribute="width" constant="102" id="yS7-s0-a4g"/>
                                                                                 </constraints>
                                                                             </view>
@@ -5909,35 +6030,35 @@
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q2U-pM-Fxq">
                                                                         <rect key="frame" x="0.0" y="126.5" width="382" height="126.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rTN-Rr-Axh">
-                                                                            <size key="itemSize" width="114" height="120"/>
+                                                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rTN-Rr-Axh">
+                                                                            <size key="itemSize" width="65" height="115"/>
                                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
                                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DefenderCell" id="LWI-GE-hl3" customClass="DefenderCell" customModule="GameClub" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="115"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Pdm-Uh-xuC">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="115"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYd-Lz-1G4">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="115"/>
                                                                                             <subviews>
                                                                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-wc-oe2">
-                                                                                                    <rect key="frame" x="0.0" y="73" width="81" height="46"/>
+                                                                                                    <rect key="frame" x="0.0" y="66" width="62" height="46"/>
                                                                                                     <subviews>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-d8-mE8">
-                                                                                                            <rect key="frame" x="0.0" y="3" width="81" height="21"/>
+                                                                                                            <rect key="frame" x="0.0" y="3" width="62" height="21"/>
                                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivC-jJ-M2u">
-                                                                                                            <rect key="frame" x="0.0" y="24" width="81" height="21"/>
+                                                                                                            <rect key="frame" x="0.0" y="24" width="62" height="21"/>
                                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5947,7 +6068,7 @@
                                                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 </view>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tm8-rh-bCb">
-                                                                                                    <rect key="frame" x="19.5" y="8" width="42.5" height="60"/>
+                                                                                                    <rect key="frame" x="10" y="8" width="42.5" height="60"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="60" id="vg0-hW-wCW"/>
                                                                                                     </constraints>
@@ -5959,9 +6080,9 @@
                                                                                             </subviews>
                                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <constraints>
-                                                                                                <constraint firstItem="tm8-rh-bCb" firstAttribute="centerX" secondItem="OYd-Lz-1G4" secondAttribute="centerX" id="2xp-bj-BEZ"/>
+                                                                                                <constraint firstItem="tm8-rh-bCb" firstAttribute="centerX" secondItem="OYd-Lz-1G4" secondAttribute="centerX" constant="-1.25" id="2xp-bj-BEZ"/>
                                                                                                 <constraint firstItem="tm8-rh-bCb" firstAttribute="top" secondItem="OYd-Lz-1G4" secondAttribute="top" constant="8" id="i1D-yL-uak"/>
-                                                                                                <constraint firstItem="vXy-wc-oe2" firstAttribute="top" secondItem="tm8-rh-bCb" secondAttribute="bottom" constant="5" id="w2n-41-5PL"/>
+                                                                                                <constraint firstItem="vXy-wc-oe2" firstAttribute="top" secondItem="tm8-rh-bCb" secondAttribute="bottom" constant="-2" id="w2n-41-5PL"/>
                                                                                             </constraints>
                                                                                         </view>
                                                                                     </subviews>
@@ -5972,7 +6093,7 @@
                                                                                         <constraint firstAttribute="bottom" secondItem="OYd-Lz-1G4" secondAttribute="bottom" id="roc-br-6H7"/>
                                                                                     </constraints>
                                                                                 </collectionViewCellContentView>
-                                                                                <size key="customSize" width="81" height="120"/>
+                                                                                <size key="customSize" width="65" height="115"/>
                                                                                 <connections>
                                                                                     <outlet property="playerBT" destination="tm8-rh-bCb" id="s4i-6Q-Itc"/>
                                                                                     <outlet property="playerNameLbel" destination="ziY-d8-mE8" id="Et4-N1-kIz"/>
@@ -5981,7 +6102,7 @@
                                                                             </collectionViewCell>
                                                                         </cells>
                                                                     </collectionView>
-                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-US-yDZ">
+                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-US-yDZ">
                                                                         <rect key="frame" x="0.0" y="253" width="382" height="126.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PYW-AH-iVv">
@@ -5992,27 +6113,27 @@
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
                                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MidCell" id="ljc-xV-Yks" customClass="MidCell" customModule="GameClub" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="62" height="120"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RBQ-Ty-TUZ">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="120"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFD-lJ-nAR">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="81" height="119"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="119"/>
                                                                                             <subviews>
                                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpD-Zs-YXV">
-                                                                                                    <rect key="frame" x="0.0" y="73" width="81" height="46"/>
+                                                                                                    <rect key="frame" x="0.0" y="73" width="62" height="46"/>
                                                                                                     <subviews>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xu-lz-w1D">
-                                                                                                            <rect key="frame" x="0.0" y="3" width="81" height="21"/>
+                                                                                                            <rect key="frame" x="0.0" y="3" width="62" height="21"/>
                                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNV-Fp-nxX">
-                                                                                                            <rect key="frame" x="0.0" y="24" width="81" height="21"/>
+                                                                                                            <rect key="frame" x="0.0" y="24" width="62" height="21"/>
                                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6022,7 +6143,7 @@
                                                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 </view>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtH-AY-KeO">
-                                                                                                    <rect key="frame" x="19.5" y="8" width="42.5" height="60"/>
+                                                                                                    <rect key="frame" x="10" y="8" width="42.5" height="60"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="60" id="Lbw-Bx-5Ol"/>
                                                                                                     </constraints>
@@ -6050,7 +6171,7 @@
                                                                                         <constraint firstAttribute="trailing" secondItem="nFD-lJ-nAR" secondAttribute="trailing" id="l3p-0g-ZXS"/>
                                                                                     </constraints>
                                                                                 </collectionViewCellContentView>
-                                                                                <size key="customSize" width="81" height="120"/>
+                                                                                <size key="customSize" width="62" height="120"/>
                                                                                 <connections>
                                                                                     <outlet property="playerBT" destination="UtH-AY-KeO" id="lKw-Ax-utE"/>
                                                                                     <outlet property="playerNameLbel" destination="0xu-lz-w1D" id="Czr-Nu-7uh"/>
@@ -6059,7 +6180,7 @@
                                                                             </collectionViewCell>
                                                                         </cells>
                                                                     </collectionView>
-                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fFF-yy-XTs">
+                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fFF-yy-XTs">
                                                                         <rect key="frame" x="0.0" y="379.5" width="382" height="126.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DlQ-Bs-CYm">
@@ -6070,27 +6191,27 @@
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
                                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AttackCell" id="agn-2x-9MX" customClass="AttackCell" customModule="GameClub" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="62" height="120"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LFD-Ec-PK3">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="120"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="120"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1C7-rS-ZxA">
-                                                                                            <rect key="frame" x="0.0" y="1" width="81" height="119"/>
+                                                                                            <rect key="frame" x="0.0" y="1" width="62" height="119"/>
                                                                                             <subviews>
                                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adq-Ka-Mds">
-                                                                                                    <rect key="frame" x="0.0" y="73" width="81" height="46"/>
+                                                                                                    <rect key="frame" x="0.0" y="73" width="62" height="46"/>
                                                                                                     <subviews>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQh-FW-Owd">
-                                                                                                            <rect key="frame" x="0.0" y="3" width="81" height="21"/>
+                                                                                                            <rect key="frame" x="0.0" y="3" width="62" height="21"/>
                                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نقاط اللاعب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg2-ff-oAB">
-                                                                                                            <rect key="frame" x="0.0" y="24" width="81" height="21"/>
+                                                                                                            <rect key="frame" x="0.0" y="24" width="62" height="21"/>
                                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6100,7 +6221,7 @@
                                                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 </view>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0v-aP-R5X">
-                                                                                                    <rect key="frame" x="19.5" y="8" width="42.5" height="60"/>
+                                                                                                    <rect key="frame" x="10" y="8" width="42.5" height="60"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="60" id="Gh6-fk-LMg"/>
                                                                                                     </constraints>
@@ -6128,7 +6249,7 @@
                                                                                         <constraint firstItem="1C7-rS-ZxA" firstAttribute="leading" secondItem="LFD-Ec-PK3" secondAttribute="leading" id="dpW-x4-h4r"/>
                                                                                     </constraints>
                                                                                 </collectionViewCellContentView>
-                                                                                <size key="customSize" width="81" height="120"/>
+                                                                                <size key="customSize" width="62" height="120"/>
                                                                                 <connections>
                                                                                     <outlet property="playerBT" destination="L0v-aP-R5X" id="enj-rk-18O"/>
                                                                                     <outlet property="playerNameLbel" destination="oQh-FW-Owd" id="TTm-1U-hAx"/>
@@ -6454,7 +6575,6 @@
                         <outlet property="attackCV" destination="fFF-yy-XTs" id="axz-bg-cfe"/>
                         <outlet property="captinCardBT" destination="1FR-rf-Uxi" id="WKO-3H-OAB"/>
                         <outlet property="defenderCV" destination="q2U-pM-Fxq" id="7o1-Cf-dKf"/>
-                        <outlet property="endTimeLabel" destination="LMY-98-U5A" id="J3V-t2-YWJ"/>
                         <outlet property="goalKeeperBT" destination="EQm-DG-fB0" id="Y3r-4W-PUs"/>
                         <outlet property="goalKeeperNameLbl" destination="zDk-ej-OIe" id="Vf4-DE-8Q6"/>
                         <outlet property="listBT" destination="Wxa-oB-ynW" id="tS7-dH-lFO"/>
@@ -6475,9 +6595,6 @@
                         <outlet property="subPointsLbl3" destination="bi8-4H-LEg" id="bYO-IE-jcc"/>
                         <outlet property="subPointsLbl4" destination="5Qf-eY-USA" id="SDs-gD-XM6"/>
                         <outlet property="substitutionsCardBT" destination="Bot-2f-dGs" id="SrS-Ty-FZF"/>
-                        <outlet property="tableView" destination="iHU-Is-MKe" id="BL8-XT-Bs1"/>
-                        <outlet property="viewListBT" destination="Wxa-oB-ynW" id="81q-r3-4GH"/>
-                        <outlet property="viewPitchBT" destination="Z18-xD-XCv" id="Q9g-Nf-bLm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmT-B4-7ti" userLabel="First Responder" sceneMemberID="firstResponder"/>

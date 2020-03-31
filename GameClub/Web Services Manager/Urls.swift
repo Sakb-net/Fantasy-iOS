@@ -45,6 +45,10 @@ class Urls {
         return "\(getCurrentBaseUrl())add_myteam"
     }
     
+    func getMySavedTeam() -> String {
+        return "\(getCurrentBaseUrl())player_myteam"
+    }
+    
     func getMyTeam() -> String {
         return "\(getCurrentBaseUrl())player_master"
     }

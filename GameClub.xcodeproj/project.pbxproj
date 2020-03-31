@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040D73282433AB9F00A58AC7 /* MyTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D73272433AB9F00A58AC7 /* MyTeamPresenter.swift */; };
 		040EBB95234DD2D60032D383 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EBB94234DD2D60032D383 /* NewsPresenter.swift */; };
 		040EBB97234DD31C0032D383 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EBB96234DD31C0032D383 /* News.swift */; };
 		040EBBA4234DD5090032D383 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EBB9F234DD5090032D383 /* ProfilePresenter.swift */; };
@@ -97,10 +98,12 @@
 		04F6217A23464F4100A18D45 /* AppMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6216C23464F4100A18D45 /* AppMainLabel.swift */; };
 		04F6217B23464F4100A18D45 /* FontSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6216D23464F4100A18D45 /* FontSizes.swift */; };
 		04F6217C23464F4100A18D45 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6216E23464F4100A18D45 /* AppFont.swift */; };
+		04FF02EC2433C959007C209C /* Lineup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF02EB2433C959007C209C /* Lineup.swift */; };
 		38115E3D77534197DF3C558E /* Pods_GameClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8F9D3131E5919CBB0A7798 /* Pods_GameClub.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040D73272433AB9F00A58AC7 /* MyTeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamPresenter.swift; sourceTree = "<group>"; };
 		040EBB94234DD2D60032D383 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
 		040EBB96234DD31C0032D383 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		040EBB9F234DD5090032D383 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 		04F6216C23464F4100A18D45 /* AppMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainLabel.swift; sourceTree = "<group>"; };
 		04F6216D23464F4100A18D45 /* FontSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSizes.swift; sourceTree = "<group>"; };
 		04F6216E23464F4100A18D45 /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		04FF02EB2433C959007C209C /* Lineup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lineup.swift; sourceTree = "<group>"; };
 		17125E08F4692D04B428CE64 /* Pods-GameClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameClub.debug.xcconfig"; path = "Target Support Files/Pods-GameClub/Pods-GameClub.debug.xcconfig"; sourceTree = "<group>"; };
 		4CB1CFC41FD014DD8E4642D5 /* Pods-GameClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameClub.release.xcconfig"; path = "Target Support Files/Pods-GameClub/Pods-GameClub.release.xcconfig"; sourceTree = "<group>"; };
 		4E3B429C6599296240A2EB4A /* Pods-Al-AhlyGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Al-AhlyGame.debug.xcconfig"; path = "Target Support Files/Pods-Al-AhlyGame/Pods-Al-AhlyGame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 		04549ABC24326E7E002CEC1B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				040D73272433AB9F00A58AC7 /* MyTeamPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 		04549ABD24326E88002CEC1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04FF02EB2433C959007C209C /* Lineup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -901,7 +907,9 @@
 				040EBBA6234DD5090032D383 /* EditProfileVC.swift in Sources */,
 				04F6217323464F4100A18D45 /* CardView.swift in Sources */,
 				04F6217823464F4100A18D45 /* ThemeColor.swift in Sources */,
+				040D73282433AB9F00A58AC7 /* MyTeamPresenter.swift in Sources */,
 				0424082A22F2B12F001C1573 /* LoginVC.swift in Sources */,
+				04FF02EC2433C959007C209C /* Lineup.swift in Sources */,
 				04F6215A23464BAD00A18D45 /* ParentViewController.swift in Sources */,
 				04F6215723463E1600A18D45 /* User.swift in Sources */,
 				04F6216F23464F4100A18D45 /* ColorScheme.swift in Sources */,

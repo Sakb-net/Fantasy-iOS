@@ -30,7 +30,7 @@ class NameTeamPopUp: ParentViewController {
         self.nameTeam(name: name, onSuccess: { (message) in
             self.showAlert(title: "", message: message, shouldpop: false)
             self.dismiss(animated: true, completion: nil)
-
+            UserDefaults.standard.set(1, forKey: "add_team")
             self.hideLoader()
         }) { (errorMessage) in
             self.hideLoader()
@@ -59,9 +59,13 @@ class NameTeamPopUp: ParentViewController {
             {
                 let statusCode = response!["StatusCode"].intValue
                 if statusCode == 0 {
-                let message = response!["Message"].stringValue
-                    
-                    onSuccess(message)
+            
+                let add_team = response!["data"]["add_team"].intValue
+                    if add_team == 1 {
+                        let message = response!["data"]["msg_add"].stringValue
+                        
+                        onSuccess(message)
+                    }
                     
                 }else{
                     let message = response!["Message"].stringValue
