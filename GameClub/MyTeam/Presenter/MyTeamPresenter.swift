@@ -76,6 +76,74 @@ class MyTeamPresenter {
             }
         }
     }
+    
+    func check_insideChange(link:String, onSuccess: @escaping (Check_insideChangeModel) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().check_insideChange()
+        
+        let parameters:[String:Any] = [
+            "lang": HelperMethods.getCurrentLanguage(),
+            "player_link": link
+        ]
+        
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                let data = response!["data"].dictionaryValue
+                    var checkInsideChange = Check_insideChangeModel()
+                    checkInsideChange = Check_insideChangeModel(parametersJson: data)
+                    onSuccess(checkInsideChange)
+                    
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
+            }
+            else
+            {
+                onFailure(error!.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func addPlayer(playersIDs:[Int], onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().change_player()
+        
+        let parameters:[String:Any] = [
+            "lang": HelperMethods.getCurrentLanguage(),
+            "ch_game_player_id_one": playersIDs[0],
+            "ch_player_id_one": playersIDs[1],
+            "ch_game_player_id_two": playersIDs[2],
+            "ch_player_id_two": playersIDs[3]
+        ]
+        
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                let data = response!["data"].dictionaryValue
+                    let message = data["msg_add"]?.stringValue
+                    onSuccess(message!)
+                    
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
+            }
+            else
+            {
+                onFailure(error!.localizedDescription)
+            }
+        }
+    }
+
 
 }
  

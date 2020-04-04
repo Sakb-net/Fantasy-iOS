@@ -17,6 +17,8 @@ extension Color {
         var instanceColor = UIColor.clear
         
         switch self {
+        case .selectedPlayer:
+            instanceColor = UIColor(hexString: "#FFF950")
         case .goalKeeper:
             instanceColor = UIColor(hexString: "#6697CA")
         case .defender:
@@ -55,6 +57,8 @@ extension Color {
              instanceColor = UIColor(hexString: "#ffa380")
         case .custom(let hexValue, let opacity):
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
+        
+
         }
         return instanceColor
     }

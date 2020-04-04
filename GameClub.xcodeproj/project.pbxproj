@@ -50,6 +50,7 @@
 		048842D3230B2EA900AEA806 /* HelveticaNeueW23forSKY-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 048842D2230B2E9200AEA806 /* HelveticaNeueW23forSKY-Reg.ttf */; };
 		048842D6230B317400AEA806 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048842D5230B317400AEA806 /* LoginPresenter.swift */; };
 		048842D9230B442B00AEA806 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048842D8230B442B00AEA806 /* SignUpVC.swift */; };
+		048B8D0524381529003960A9 /* Check_insideChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B8D0424381529003960A9 /* Check_insideChangeModel.swift */; };
 		048CBCDF234CD5AE001A6351 /* DropDownPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CBCD8234CD5AE001A6351 /* DropDownPresenter.swift */; };
 		048CBCE0234CD5AE001A6351 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CBCDA234CD5AE001A6351 /* City.swift */; };
 		048CBCE1234CD5AE001A6351 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CBCDB234CD5AE001A6351 /* Country.swift */; };
@@ -68,6 +69,7 @@
 		04AC6D7F234F50C900CEDD5C /* MenuProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC6D7B234F50C900CEDD5C /* MenuProfileCell.swift */; };
 		04AC6D80234F50C900CEDD5C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC6D7C234F50C900CEDD5C /* MenuCell.swift */; };
 		04AC6D81234F50C900CEDD5C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC6D7D234F50C900CEDD5C /* MenuViewController.swift */; };
+		04B133E72437DEC2008BCE19 /* ChooseCaptinPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B133E62437DEC2008BCE19 /* ChooseCaptinPopUp.swift */; };
 		04B3B5D2241814EE0059C2A1 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3B5D1241814EE0059C2A1 /* Teams.swift */; };
 		04BC44E123FC3EFE00906095 /* MatchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC44E023FC3EFE00906095 /* MatchGroup.swift */; };
 		04BC44E323FC40F200906095 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC44E223FC40F200906095 /* Fixtures.swift */; };
@@ -149,6 +151,7 @@
 		048842D2230B2E9200AEA806 /* HelveticaNeueW23forSKY-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueW23forSKY-Reg.ttf"; sourceTree = "<group>"; };
 		048842D5230B317400AEA806 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		048842D8230B442B00AEA806 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		048B8D0424381529003960A9 /* Check_insideChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check_insideChangeModel.swift; sourceTree = "<group>"; };
 		048CBCD8234CD5AE001A6351 /* DropDownPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPresenter.swift; sourceTree = "<group>"; };
 		048CBCDA234CD5AE001A6351 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		048CBCDB234CD5AE001A6351 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		04AC6D7B234F50C900CEDD5C /* MenuProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuProfileCell.swift; sourceTree = "<group>"; };
 		04AC6D7C234F50C900CEDD5C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		04AC6D7D234F50C900CEDD5C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		04B133E62437DEC2008BCE19 /* ChooseCaptinPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCaptinPopUp.swift; sourceTree = "<group>"; };
 		04B3B5D1241814EE0059C2A1 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		04BC44E023FC3EFE00906095 /* MatchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGroup.swift; sourceTree = "<group>"; };
 		04BC44E223FC40F200906095 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
@@ -366,6 +370,7 @@
 		04549ABB24326E78002CEC1B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B133E52437DE81008BCE19 /* PopUps */,
 				04549ABE24326E8E002CEC1B /* Cells */,
 				04549AC124327210002CEC1B /* MyTeamVC.swift */,
 			);
@@ -384,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				04FF02EB2433C959007C209C /* Lineup.swift */,
+				048B8D0424381529003960A9 /* Check_insideChangeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -589,6 +595,14 @@
 				04AC6D7D234F50C900CEDD5C /* MenuViewController.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		04B133E52437DE81008BCE19 /* PopUps */ = {
+			isa = PBXGroup;
+			children = (
+				04B133E62437DEC2008BCE19 /* ChooseCaptinPopUp.swift */,
+			);
+			path = PopUps;
 			sourceTree = "<group>";
 		};
 		04C19B012411A46D00AEF9B8 /* Pitch */ = {
@@ -881,6 +895,7 @@
 				048CBCE3234CD5AE001A6351 /* DropDownVC.swift in Sources */,
 				04977F0E235379A000B2517E /* NewsController.swift in Sources */,
 				04A63AF6242B888500B2D9AE /* PriceRangeTF.swift in Sources */,
+				048B8D0524381529003960A9 /* Check_insideChangeModel.swift in Sources */,
 				04D11D1D23177DFA0000B1E6 /* HomeVC.swift in Sources */,
 				04AC6D7E234F50C900CEDD5C /* MenuLoginCell.swift in Sources */,
 				04AC6D80234F50C900CEDD5C /* MenuCell.swift in Sources */,
@@ -906,6 +921,7 @@
 				04F6217B23464F4100A18D45 /* FontSizes.swift in Sources */,
 				040EBBA6234DD5090032D383 /* EditProfileVC.swift in Sources */,
 				04F6217323464F4100A18D45 /* CardView.swift in Sources */,
+				04B133E72437DEC2008BCE19 /* ChooseCaptinPopUp.swift in Sources */,
 				04F6217823464F4100A18D45 /* ThemeColor.swift in Sources */,
 				040D73282433AB9F00A58AC7 /* MyTeamPresenter.swift in Sources */,
 				0424082A22F2B12F001C1573 /* LoginVC.swift in Sources */,

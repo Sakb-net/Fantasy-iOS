@@ -40,6 +40,13 @@ class Urls {
     func urlEncoding(originalString: String) -> String {
         return originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
+    func change_player() -> String {
+        return "\(getCurrentBaseUrl())add_insideChange"
+    }
+    
+    func check_insideChange() -> String {
+        return "\(getCurrentBaseUrl())check_insideChange"
+    }
     
     func nameMyTeam() -> String {
         return "\(getCurrentBaseUrl())add_myteam"

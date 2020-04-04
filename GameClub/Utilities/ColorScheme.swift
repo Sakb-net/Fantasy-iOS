@@ -16,6 +16,8 @@ enum Color {
     case mid
     case attacker
     
+    case selectedPlayer
+    
     case darkBackground
     case lightBackground
     case intermidiateBackground
