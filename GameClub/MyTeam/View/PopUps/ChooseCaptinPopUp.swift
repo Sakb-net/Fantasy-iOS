@@ -13,21 +13,32 @@ class ChooseCaptinPopUp: ParentViewController {
     var playerBT = UIButton ()
     var playerView = UIView()
     var player : MyTeam?
+    var isSub = false
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var changePlayerBT: UIButton!
     @IBOutlet weak var chooseCaptinBT: UIButton!
     @IBOutlet weak var chooseViceCaptinBT: UIButton!
     @IBOutlet weak var playerDetailsBT: UIButton!
     @IBAction func changePlayerAction(_ sender: Any) {
-        delegate?.changePlayer(view : playerView, button: playerBT, player: player!)
+        if isSub {
+            delegate?.orderSubPlayer(view : playerView, button: playerBT, player: player!)
+        }else{
+            delegate?.changePlayer(view : playerView, button: playerBT, player: player!)
+        }
         self.dismiss(animated: true, completion: nil)
 
     }
     @IBAction func chooseCaptinAction(_ sender: Any) {
+        delegate?.chooseCaptain_assist(player: player!, type: 0)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func chooseViceCaptinAction(_ sender: Any) {
+        delegate?.chooseCaptain_assist(player: player!, type: 1)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func playerDetailsAction(_ sender: Any) {
+        delegate?.openPlayerDetails(player: player!)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -41,11 +52,16 @@ class ChooseCaptinPopUp: ParentViewController {
         roundViewCornersNoShadow(view: chooseCaptinBT)
         roundViewCornersNoShadow(view: chooseViceCaptinBT)
         roundViewCornersNoShadow(view: playerDetailsBT)
+        if isSub {
+            self.chooseCaptinBT.isHidden = true
+            self.chooseViceCaptinBT.isHidden = true
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             if let touchedView = touch.view, touchedView != containerView {
+                delegate?.resetButtons()
                 self.dismiss(animated: true, completion: nil)
             }
         }
@@ -54,4 +70,8 @@ class ChooseCaptinPopUp: ParentViewController {
 }
 protocol MyTeamProtocol {
     func changePlayer (view : UIView, button : UIButton, player : MyTeam)
+    func orderSubPlayer (view : UIView, button : UIButton, player: MyTeam)
+    func chooseCaptain_assist (player: MyTeam, type : Int)
+    func openPlayerDetails (player : MyTeam)
+    func resetButtons()
 }

@@ -27,6 +27,8 @@ extension Color {
             instanceColor = UIColor(hexString: "#ED3B39")
         case .attacker:
             instanceColor = UIColor(hexString: "#6EBC44")
+        case .sub:
+        instanceColor = UIColor(hexString: "#7F29E1")
         case .border:
             instanceColor = UIColor(hexString: "#e6e6e6")
         case .theme:

@@ -24,6 +24,9 @@
 		0424083222F2B132001C1573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0424083022F2B132001C1573 /* LaunchScreen.storyboard */; };
 		042BAACB2415806B00ABAD7E /* wehdah.svg in Resources */ = {isa = PBXBuildFile; fileRef = 042BAACA2415806B00ABAD7E /* wehdah.svg */; };
 		0437726724189C31005D560D /* PlayerDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0437726624189C31005D560D /* PlayerDetailsVC.swift */; };
+		0442B32C2441EEED009DF42C /* SubPlayersPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442B32B2441EEED009DF42C /* SubPlayersPopUp.swift */; };
+		0442B32E2441F1E9009DF42C /* SubPlayerHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442B32D2441F1E9009DF42C /* SubPlayerHeaderCell.swift */; };
+		0442B3302441F20B009DF42C /* SubPlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442B32F2441F20B009DF42C /* SubPlayersCell.swift */; };
 		044B6E302402A5A20086EB9F /* FixtureHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B6E2F2402A5A20086EB9F /* FixtureHeaderCell.swift */; };
 		044B6E322402A5C20086EB9F /* FixtureFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B6E312402A5C20086EB9F /* FixtureFooterCell.swift */; };
 		044B6E342402A5D30086EB9F /* FixtureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B6E332402A5D30086EB9F /* FixtureCell.swift */; };
@@ -125,6 +128,9 @@
 		042BAAC0241573DB00ABAD7E /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		042BAACA2415806B00ABAD7E /* wehdah.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = wehdah.svg; sourceTree = "<group>"; };
 		0437726624189C31005D560D /* PlayerDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsVC.swift; sourceTree = "<group>"; };
+		0442B32B2441EEED009DF42C /* SubPlayersPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubPlayersPopUp.swift; sourceTree = "<group>"; };
+		0442B32D2441F1E9009DF42C /* SubPlayerHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubPlayerHeaderCell.swift; sourceTree = "<group>"; };
+		0442B32F2441F20B009DF42C /* SubPlayersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubPlayersCell.swift; sourceTree = "<group>"; };
 		044B6E2F2402A5A20086EB9F /* FixtureHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureHeaderCell.swift; sourceTree = "<group>"; };
 		044B6E312402A5C20086EB9F /* FixtureFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureFooterCell.swift; sourceTree = "<group>"; };
 		044B6E332402A5D30086EB9F /* FixtureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureCell.swift; sourceTree = "<group>"; };
@@ -400,6 +406,8 @@
 				04549ABF24326F0D002CEC1B /* DefenderCell.swift */,
 				04549AC3243284C7002CEC1B /* MidCell.swift */,
 				04549AC5243284DF002CEC1B /* AttackCell.swift */,
+				0442B32D2441F1E9009DF42C /* SubPlayerHeaderCell.swift */,
+				0442B32F2441F20B009DF42C /* SubPlayersCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -601,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				04B133E62437DEC2008BCE19 /* ChooseCaptinPopUp.swift */,
+				0442B32B2441EEED009DF42C /* SubPlayersPopUp.swift */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -879,6 +888,7 @@
 				04F6217223464F4100A18D45 /* UIColorExtension.swift in Sources */,
 				045F47DB23FE037100D14378 /* FavTeamVC.swift in Sources */,
 				046F939824083CC7004631CE /* NewsDetailsVC.swift in Sources */,
+				0442B3302441F20B009DF42C /* SubPlayersCell.swift in Sources */,
 				04C33FA9230C8AE7007A16F0 /* ForgotPassVC.swift in Sources */,
 				040EBB95234DD2D60032D383 /* NewsPresenter.swift in Sources */,
 				0475B972241589F4005DD6FF /* PlayersByTypeVC.swift in Sources */,
@@ -959,8 +969,10 @@
 				04F6217623464F4100A18D45 /* NetworkStatusListener.swift in Sources */,
 				04A14B4E24070F3200F5461F /* VedioCell.swift in Sources */,
 				045F47DD23FE041900D14378 /* FavTeamPresenter.swift in Sources */,
+				0442B32E2441F1E9009DF42C /* SubPlayerHeaderCell.swift in Sources */,
 				048CBCE1234CD5AE001A6351 /* Country.swift in Sources */,
 				04F6217923464F4100A18D45 /* Helper.swift in Sources */,
+				0442B32C2441EEED009DF42C /* SubPlayersPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

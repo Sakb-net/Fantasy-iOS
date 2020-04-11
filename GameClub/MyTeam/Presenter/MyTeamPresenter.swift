@@ -144,6 +144,65 @@ class MyTeamPresenter {
         }
     }
 
+    func addPlayerWithLink(playerLink1: String, playerLink2 : String, onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().change_playerByLink()
+        
+        
+        let parameters:[String:Any] = [
+            "lang": HelperMethods.getCurrentLanguage(),
+            "player_link_one": playerLink1,
+            "player_link_two": playerLink2
+        ]
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                    let message = response!["msg_add"].stringValue
+                    onSuccess(message)
+                }
+                    
+            }
+            else
+            {
+                onFailure(error!.localizedDescription)
+            }
+        }
+    }
+    
+    func addCaptainOrAssist(playerLink: String, type : String, onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().addCaptinOrAssist()
+        
+        let parameters:[String:Any] = [
+            "lang": HelperMethods.getCurrentLanguage(),
+            "player_link": playerLink,
+            "type": type
+        ]
+        
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                let data = response!["data"].dictionaryValue
+                    let message = data["msg_add"]?.stringValue
+                    onSuccess(message!)
+                    
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
+                }
+            else
+            {
+                onFailure(error!.localizedDescription)
+            }
+        }
+    }
 
 }
  
