@@ -135,7 +135,6 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
     }
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-
     }
     @IBOutlet weak var priceView: UIView!
     @IBOutlet weak var fromTF: UITextField!

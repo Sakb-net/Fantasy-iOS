@@ -13,19 +13,23 @@ class ChooseCaptinPopUp: ParentViewController {
     var playerBT = UIButton ()
     var playerView = UIView()
     var player : MyTeam?
-    var isSub = false
+    var players : [MyTeam]?
+    var isSub = 0
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var changePlayerBT: UIButton!
     @IBOutlet weak var chooseCaptinBT: UIButton!
     @IBOutlet weak var chooseViceCaptinBT: UIButton!
     @IBOutlet weak var playerDetailsBT: UIButton!
     @IBAction func changePlayerAction(_ sender: Any) {
-        if isSub {
+        if isSub == 0 {
             delegate?.orderSubPlayer(view : playerView, button: playerBT, player: player!)
-        }else{
+            self.dismiss(animated: true, completion: nil)
+        }else if isSub == 1{
             delegate?.changePlayer(view : playerView, button: playerBT, player: player!)
+            self.dismiss(animated: true, completion: nil)
+        }else {
+            delegate?.changePlayerFromList(player: player!, players: players!, popup: self)
         }
-        self.dismiss(animated: true, completion: nil)
 
     }
     @IBAction func chooseCaptinAction(_ sender: Any) {
@@ -52,7 +56,7 @@ class ChooseCaptinPopUp: ParentViewController {
         roundViewCornersNoShadow(view: chooseCaptinBT)
         roundViewCornersNoShadow(view: chooseViceCaptinBT)
         roundViewCornersNoShadow(view: playerDetailsBT)
-        if isSub {
+        if isSub == 0 || isSub == 4 {
             self.chooseCaptinBT.isHidden = true
             self.chooseViceCaptinBT.isHidden = true
         }
@@ -73,5 +77,6 @@ protocol MyTeamProtocol {
     func orderSubPlayer (view : UIView, button : UIButton, player: MyTeam)
     func chooseCaptain_assist (player: MyTeam, type : Int)
     func openPlayerDetails (player : MyTeam)
+    func changePlayerFromList(player : MyTeam, players : [MyTeam], popup : ChooseCaptinPopUp)
     func resetButtons()
 }

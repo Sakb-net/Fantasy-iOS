@@ -136,66 +136,66 @@ class MyTeamVC: ParentViewController {
        @IBAction func captinCardAction(_ sender: Any) {
        }
        @IBAction func goalkeeperAction(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.goalKeeperView, button: self.goalKeeperBT, player : self.goalKeepers[0], isSub : false)}else {
+        if !self.fromSubToMain{ OpenPopUp (view : self.goalKeeperView, button: self.goalKeeperBT, player : self.goalKeepers[0], isSub : 1)}else {
             selectPlayer (player : self.goalKeepers[0])
         }
        }
     @IBAction func defendAction1(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.defendView1, button: self.defendBT1, player : self.defenders[0], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.defendView1, button: self.defendBT1, player : self.defenders[0], isSub : 1)} else{
             selectPlayer (player : self.defenders[0])
         }
     }
     @IBAction func defendAction2(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.defendView2, button: self.defendBT2, player : self.defenders[1], isSub : false)}else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.defendView2, button: self.defendBT2, player : self.defenders[1], isSub : 1)}else{
             selectPlayer (player : self.defenders[1])}
     }
     @IBAction func defendAction3(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.defendView3, button: self.defendBT3, player : self.defenders[2], isSub : false)} else {
+        if !self.fromSubToMain{ OpenPopUp (view : self.defendView3, button: self.defendBT3, player : self.defenders[2], isSub : 1)} else {
             selectPlayer (player : self.defenders[2])}
     }
     @IBAction func defendAction4(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.defendView4, button: self.defendBT4, player : self.defenders[3], isSub : false)} else {
+        if !self.fromSubToMain{ OpenPopUp (view : self.defendView4, button: self.defendBT4, player : self.defenders[3], isSub : 1)} else {
             selectPlayer (player : self.defenders[3])}
     }
     @IBAction func defendAction5(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.defendView5, button: self.defendBT5, player : self.defenders[4], isSub : false)} else {
+        if !self.fromSubToMain{ OpenPopUp (view : self.defendView5, button: self.defendBT5, player : self.defenders[4], isSub : 1)} else {
             selectPlayer (player : self.defenders[4])}
     }
     @IBAction func midAction1(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.midView1, button: self.midBT1, player : self.mids[0], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.midView1, button: self.midBT1, player : self.mids[0], isSub : 1)} else{
             selectPlayer (player : self.mids[0])}
     }
     @IBAction func midAction2(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.midView2, button: self.midBT2, player : self.mids[1], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.midView2, button: self.midBT2, player : self.mids[1], isSub : 1)} else{
             selectPlayer (player : self.mids[1])}
     }
     @IBAction func midAction3(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.midView3, button: self.midBT3, player : self.mids[2], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.midView3, button: self.midBT3, player : self.mids[2], isSub : 1)} else{
             selectPlayer (player : self.mids[2])}
     }
     @IBAction func midAction4(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.midView4, button: self.midBT4, player : self.mids[3], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.midView4, button: self.midBT4, player : self.mids[3], isSub : 1)} else{
             selectPlayer (player : self.mids[3])}
     }
     @IBAction func midAction5(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.midView5, button: self.midBT5, player : self.mids[4], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.midView5, button: self.midBT5, player : self.mids[4], isSub : 1)} else{
             selectPlayer (player : self.mids[4])}
     }
     @IBAction func attackAction1(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.attackView1, button: self.attackBT1, player : self.attackers[0], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.attackView1, button: self.attackBT1, player : self.attackers[0], isSub : 1)} else{
             selectPlayer (player : self.attackers[0])}
     }
     @IBAction func attackAction2(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.attackView2, button: self.attackBT2, player : self.attackers[1], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.attackView2, button: self.attackBT2, player : self.attackers[1], isSub : 1)} else{
             selectPlayer (player : self.attackers[1])}
     }
     @IBAction func attackAction3(_ sender: Any) {
-        if !self.fromSubToMain{ OpenPopUp (view : self.attackView3, button: self.attackBT3, player : self.attackers[2], isSub : false)} else{
+        if !self.fromSubToMain{ OpenPopUp (view : self.attackView3, button: self.attackBT3, player : self.attackers[2], isSub : 1)} else{
             selectPlayer (player : self.attackers[2])}
     }
     @IBAction func subAction1(_ sender: Any) {
         if !fromMainToSub {
-                OpenPopUp(view: self.subView1, button: self.subBT1, player: self.subGoalkeeper, isSub : true)
+                OpenPopUp(view: self.subView1, button: self.subBT1, player: self.subGoalkeeper, isSub : 0)
         }else{
         selectPlayer (player : self.subGoalkeeper)
         }
@@ -205,7 +205,7 @@ class MyTeamVC: ParentViewController {
             if !selectedPlayerLink.isEmpty && selectedPlayerLink != self.subsNotGoalkeeper[0].link_player{
                 selectPlayer (player : self.subsNotGoalkeeper[0])
             }else{
-                OpenPopUp(view: self.subView2, button: self.subBT2, player: self.subsNotGoalkeeper[0], isSub : true)
+                OpenPopUp(view: self.subView2, button: self.subBT2, player: self.subsNotGoalkeeper[0], isSub : 0)
                 }
         }else{
         selectPlayer (player : self.subsNotGoalkeeper[0])
@@ -216,7 +216,7 @@ class MyTeamVC: ParentViewController {
             if !selectedPlayerLink.isEmpty && selectedPlayerLink != self.subsNotGoalkeeper[1].link_player{
                 selectPlayer (player : self.subsNotGoalkeeper[1])
             }else{
-                OpenPopUp(view: self.subView3, button: self.subBT2, player: self.subsNotGoalkeeper[1], isSub : true)
+                OpenPopUp(view: self.subView3, button: self.subBT2, player: self.subsNotGoalkeeper[1], isSub : 0)
                 }
         }else{
         selectPlayer (player : self.subsNotGoalkeeper[1])
@@ -227,7 +227,7 @@ class MyTeamVC: ParentViewController {
             if !selectedPlayerLink.isEmpty && selectedPlayerLink != self.subsNotGoalkeeper[2].link_player{
                 selectPlayer (player : self.subsNotGoalkeeper[2])
             }else{
-                OpenPopUp(view: self.subView4, button: self.subBT2, player: self.subsNotGoalkeeper[2], isSub : true)
+                OpenPopUp(view: self.subView4, button: self.subBT2, player: self.subsNotGoalkeeper[2], isSub : 0)
                 }
         }else{
         selectPlayer (player : self.subsNotGoalkeeper[2])
@@ -327,9 +327,9 @@ class MyTeamVC: ParentViewController {
             }
         }
     }
-    func OpenPopUp (view : UIView, button : UIButton, player : MyTeam, isSub : Bool) {
-        if isSub{self.fromMainToSub = false
-            self.fromSubToMain = true}else {self.fromMainToSub = true
+    func OpenPopUp (view : UIView, button : UIButton, player : MyTeam, isSub : Int) {
+        if isSub == 0{self.fromMainToSub = false
+            self.fromSubToMain = true}else if isSub == 1 {self.fromMainToSub = true
             self.fromSubToMain = false}
             
         if view.backgroundColor == Color.selectedPlayer.value {
@@ -348,6 +348,10 @@ class MyTeamVC: ParentViewController {
     }
     
     override func viewDidLoad() {
+        roundViewCornersNoShadow(view: pitchBT)
+        roundViewCornersNoShadow(view: listBT)
+        roundViewCornersNoShadow(view: captinCardBT)
+        roundViewCornersNoShadow(view: substitutionsCardBT)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         appendView ()
@@ -609,6 +613,16 @@ class MyTeamVC: ParentViewController {
     }
 
 extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITableViewDataSource{
+    func changePlayerFromList(player: MyTeam, players: [MyTeam], popup : ChooseCaptinPopUp) {
+        popup.dismiss(animated: true, completion: nil)
+                   let popUpVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "SubPlayersPopUp") as! SubPlayersPopUp
+                       popUpVC.selectedPlayer = player
+                       popUpVC.players = players
+                       popUpVC.delegate = self
+                       present(popUpVC, animated: true
+                           , completion: nil)
+    }
+    
     func reloadVCData() {
         listSelectedPlayers = [MyTeam] ()
         subsNotGoalkeeper = [MyTeam]()
@@ -636,6 +650,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
                 }
             }
             self.subsTypes = [String] ()
+            self.resetView()
             self.getMyTeam()
                 }) { (errorMessage) in
                     self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
@@ -798,16 +813,29 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
         
         return count1 + count2 + count3 + count4 + count5 + 5
        }
-       
+    func checkCaptain (player : MyTeam , cell : PichCell){
+        let player = player.type_key_coatch
+        if player == "captain" {
+            cell.imageV!.isHidden = false
+            cell.imageV!.image = UIImage(named: "c-icon")
+        }else if player == "sub_captain"{
+            cell.imageV!.isHidden = false
+            cell.imageV!.image = UIImage(named: "v-icon")
+        }else {
+            cell.imageV!.isHidden = true
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "PichCell", for: indexPath) as! PichCell
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "PichHeaderCell", for: indexPath) as! PichHeaderCell
+        
         if indexPath.row == 0 {
             cell2.positionLbl.text = "حارس مرمى"
             cell2.contentView.backgroundColor = Color.goalKeeper.value
             return cell2
         }else if indexPath.row > 0 && indexPath.row <= self.goalKeepers.count{
             let index = indexPath.row - 1
+            checkCaptain (player : self.goalKeepers[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.goalKeepers[index])
         } else if indexPath.row == self.goalKeepers.count + 1{
             cell2.positionLbl.text = "دفاع"
@@ -815,6 +843,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             return cell2
         }else if indexPath.row > self.goalKeepers.count + 1 && indexPath.row <= self.goalKeepers.count + self.defenders.count + 1 {
             let index = indexPath.row - self.goalKeepers.count - 2
+            checkCaptain (player : self.defenders[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.defenders[index])
         }else if indexPath.row == self.goalKeepers.count + self.defenders.count + 2{
             cell2.positionLbl.text = "خط وسط"
@@ -822,6 +851,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             return cell2
         }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + 2) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + 2 {
             let index = indexPath.row - self.goalKeepers.count - self.defenders.count - 3
+            checkCaptain (player : self.mids[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.mids[index])
         }else if indexPath.row == (self.goalKeepers.count + self.defenders.count + self.mids.count + 3){
             cell2.positionLbl.text = "هجوم"
@@ -829,6 +859,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             return cell2
         }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + self.mids.count + 3) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 3{
             let index = indexPath.row - self.goalKeepers.count - self.defenders.count - self.mids.count - 4
+            checkCaptain (player : self.attackers[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.attackers[index])
         }else if indexPath.row == (self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 4){
             cell2.positionLbl.text = "البدلاء"
@@ -836,6 +867,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             return cell2
         }else {
             let index = indexPath.row - self.goalKeepers.count - self.defenders.count - self.mids.count - self.attackers.count - 5
+            cell1.imageV.isHidden = true
             return fillCell (cell : cell1 , player : self.subs[index])
         }
        }
@@ -862,8 +894,8 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
         if indexPath.row > 0 && indexPath.row == 1 {
             player = self.goalKeepers[0]
             listSelectedPlayers.append(self.subGoalkeeper)
-            openSubListPopUp (player : player, players : listSelectedPlayers)
-        }else if indexPath.row > 2 && indexPath.row <= self.goalKeepers.count + self.defenders.count + 1{
+            openSubListPopUp (player : player, players : listSelectedPlayers, isSub: 3)
+            }else if indexPath.row > 2 && indexPath.row <= self.goalKeepers.count + self.defenders.count + 1{
             player = self.defenders[indexPath.row - self.goalKeepers.count - 2]
             if self.defenders.count > 3 {
                 for item in self.subsNotGoalkeeper{
@@ -876,14 +908,14 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
                 }
                 }
             }
-            openSubListPopUp (player : player, players : listSelectedPlayers)
+            openSubListPopUp (player : player, players : listSelectedPlayers, isSub: 3)
         }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + 2) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + 2 {
             player = self.mids[indexPath.row - self.goalKeepers.count - self.defenders.count - 3]
             for item in self.subsNotGoalkeeper{
             listSelectedPlayers.append(item)
             }
-            openSubListPopUp (player : player, players : listSelectedPlayers)
-        }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + self.mids.count + 3) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 3{
+            openSubListPopUp (player : player, players : listSelectedPlayers, isSub: 3)
+            }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + self.mids.count + 3) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 3{
             player = self.attackers[indexPath.row - self.goalKeepers.count - self.defenders.count - self.mids.count - 4]
             if self.attackers.count > 1 {
                 for item in self.subsNotGoalkeeper{
@@ -896,8 +928,8 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
                 }
                 }
             }
-           openSubListPopUp (player : player, players : listSelectedPlayers)
-        }else if indexPath.row == self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 4{
+           openSubListPopUp (player : player, players : listSelectedPlayers, isSub: 3)
+            }else if indexPath.row == self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 4{
             
         }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 4){
             player = self.subs[indexPath.row - self.goalKeepers.count - self.defenders.count - self.mids.count - self.attackers.count - 5]
@@ -938,14 +970,16 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
                     listSelectedPlayers.append(item)
                 }
             }
-            openSubListPopUp (player : player, players : listSelectedPlayers)
+            openSubListPopUp (player : player, players : listSelectedPlayers, isSub: 4)
         }
     }
-    func openSubListPopUp (player : MyTeam, players : [MyTeam]){
-           let popUpVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "SubPlayersPopUp") as! SubPlayersPopUp
-               popUpVC.selectedPlayer = player
-               popUpVC.players = players
+    func openSubListPopUp (player : MyTeam, players : [MyTeam], isSub : Int){
+
+        let popUpVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ChooseCaptinPopUp") as! ChooseCaptinPopUp
+               popUpVC.player = player
+        popUpVC.players = players
                popUpVC.delegate = self
+                   popUpVC.isSub = isSub
                present(popUpVC, animated: true
                    , completion: nil)
            }

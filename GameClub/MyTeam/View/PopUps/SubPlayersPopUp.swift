@@ -18,9 +18,12 @@ class SubPlayersPopUp: ParentViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var containerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.reloadData()
+        roundViewCornersNoShadow(view: tableView)
+        roundViewCornersNoShadow(view: containerView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

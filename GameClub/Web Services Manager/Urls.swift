@@ -41,6 +41,10 @@ class Urls {
         return originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
     
+    func getInstructions() -> String {
+        return "\(getCurrentBaseUrl())instraction"
+    }
+    
     func addCaptinOrAssist() -> String {
         return "\(getCurrentBaseUrl())add_captain_assist"
     }

@@ -172,7 +172,7 @@ class PlayersPresenter {
                         onSuccess(message)
                     
                 }else{
-                    let message = response!["Message"].stringValue
+                    let message = response!["message"].stringValue
                     onFailure(message)
                 }
             
