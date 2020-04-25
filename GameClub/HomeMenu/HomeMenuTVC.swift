@@ -60,7 +60,11 @@ class HomeMenuTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        if indexPath.row == 1 {
+        if indexPath.row == 0 {
+            let accountVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "AccountVC") as! AccountVC
+            self.navigationController?.pushViewController(accountVC, animated: true)
+        }
+        else if indexPath.row == 1 {
             let homeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
             self.navigationController?.pushViewController(homeVC, animated: true)
         }else if indexPath.row == 2 {

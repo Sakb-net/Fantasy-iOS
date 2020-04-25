@@ -42,6 +42,7 @@
 		045F47DD23FE041900D14378 /* FavTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F47DC23FE041900D14378 /* FavTeamPresenter.swift */; };
 		045F47DF23FE044400D14378 /* FavTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F47DE23FE044400D14378 /* FavTeam.swift */; };
 		045F47E123FE046000D14378 /* FavTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F47E023FE046000D14378 /* FavTeamCell.swift */; };
+		046199BF2454A4B400D64FE0 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046199BE2454A4B400D64FE0 /* AccountVC.swift */; };
 		046D0891241A1D04000BFB11 /* AddedPlayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D0890241A1D04000BFB11 /* AddedPlayerData.swift */; };
 		046D0893241A1E92000BFB11 /* AddedPlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D0892241A1E92000BFB11 /* AddedPlayerDetails.swift */; };
 		046F307E2357461A00C639C7 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F307D2357461A00C639C7 /* ContactUsVC.swift */; };
@@ -151,6 +152,7 @@
 		045F47DC23FE041900D14378 /* FavTeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTeamPresenter.swift; sourceTree = "<group>"; };
 		045F47DE23FE044400D14378 /* FavTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTeam.swift; sourceTree = "<group>"; };
 		045F47E023FE046000D14378 /* FavTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTeamCell.swift; sourceTree = "<group>"; };
+		046199BE2454A4B400D64FE0 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		046D0890241A1D04000BFB11 /* AddedPlayerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedPlayerData.swift; sourceTree = "<group>"; };
 		046D0892241A1E92000BFB11 /* AddedPlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedPlayerDetails.swift; sourceTree = "<group>"; };
 		046F307D2357461A00C639C7 /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				0424082E22F2B132001C1573 /* Assets.xcassets */,
 				0424083022F2B132001C1573 /* LaunchScreen.storyboard */,
 				0424083322F2B132001C1573 /* Info.plist */,
+				046199BE2454A4B400D64FE0 /* AccountVC.swift */,
 			);
 			path = GameClub;
 			sourceTree = "<group>";
@@ -966,6 +969,7 @@
 				04B133E72437DEC2008BCE19 /* ChooseCaptinPopUp.swift in Sources */,
 				04F6217823464F4100A18D45 /* ThemeColor.swift in Sources */,
 				040D73282433AB9F00A58AC7 /* MyTeamPresenter.swift in Sources */,
+				046199BF2454A4B400D64FE0 /* AccountVC.swift in Sources */,
 				0424082A22F2B12F001C1573 /* LoginVC.swift in Sources */,
 				04FF02EC2433C959007C209C /* Lineup.swift in Sources */,
 				04F6215A23464BAD00A18D45 /* ParentViewController.swift in Sources */,

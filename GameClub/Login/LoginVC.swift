@@ -88,7 +88,7 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
         self.showLoader()
         loginPresenter.userLogin(email: emailAddress, password: pass, onSuccess: { (userInfo) in
             self.hideLoader()
-            
+            UserDefaults.standard.set(pass, forKey: "UserPass")
             if self.isRememberMe {
                 UserDefaults.standard.set(true, forKey: "isRememberMe")
                 UserDefaults.standard.set(emailAddress, forKey: "email")

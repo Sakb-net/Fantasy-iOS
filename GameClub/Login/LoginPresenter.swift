@@ -42,6 +42,40 @@ class LoginPresenter {
         }
     }
     
+    func changePassword(passwordOld:String, passwordNew:String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().changePassword()
+        
+        let parameters:[String:Any] = [
+            "new_password": passwordNew,
+            "old_password": passwordOld
+        ]
+        
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                    let data = response!["data"]
+                    let user = User(parametersJson: data.dictionaryValue)
+                    print(user.access_token)
+                    UserDefaults.standard.set(user.access_token, forKey: "access_token")
+                    user.saveUser()
+                    let message = response!["Message"].stringValue
+                    onSuccess(User.shared())
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
+            }
+            else
+            {
+                onFailure(error!.localizedDescription)
+            }
+        }
+    }
+    
     func userRegister(email:String, password:String, displayName:String, phone:String,  city:String, reg_site:String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let url = Urls().getRegisterURL()

@@ -6,7 +6,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class ResetPassVC: UIViewController {
+class ResetPassVC: ParentViewController {
     
     var loginPresenter = LoginPresenter()
 
@@ -14,6 +14,7 @@ class ResetPassVC: UIViewController {
     @IBOutlet weak var confirmPassTF: SkyFloatingLabelTextField!
     @IBOutlet weak var savePassBT: UIButton!
     @IBAction func savePassAction(_ sender: Any) {
+        changePassword()
     }
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -63,4 +64,35 @@ class ResetPassVC: UIViewController {
             }
         }
     }
+    
+    func changePassword(){
+        guard let pass = self.passTF.text, pass != "" else {
+            self.showAlert(title: "", message: "الرجاء إدخال كلمة المرور", shouldpop: false)
+            return
+        }
+        
+        guard let confirmPass = self.confirmPassTF.text, confirmPass != "" else {
+            self.showAlert(title: "", message: "الرجاء إدخال تأكيد كلمة المرور", shouldpop: false)
+            return
+        }
+        
+        if pass != confirmPass {
+            self.showAlert(title: "", message: "كلمة المرور غير متطابقة", shouldpop: false)
+            return
+        }
+        
+        self.showLoader()
+        loginPresenter.changePassword(passwordOld: UserDefaults.standard.string(forKey: "UserPass")!, passwordNew: pass, onSuccess: { (userInfo) in
+            self.hideLoader()
+            UserDefaults.standard.set(pass, forKey: "UserPass")
+            self.showAlert(title: "", message: "تم التغيير بنجاح", shouldpop: false)
+            self.passTF.text = ""
+            self.confirmPassTF.text = ""
+            
+        }) { (errorMessage) in
+            self.hideLoader()
+            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        }
+    }
 }
+

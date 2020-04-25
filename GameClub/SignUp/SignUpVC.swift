@@ -123,6 +123,7 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
         self.showLoader()
         loginPresenter.userRegister(email: emailAddress, password: pass, displayName: displayName, phone: phone, city: city, reg_site: district, onSuccess: { (userInfo) in
             self.hideLoader()
+            UserDefaults.standard.set(pass, forKey: "UserPass")
             let termsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "TermsVC") as! TermsVC
             self.navigationController?.pushViewController(termsVC, animated: true)
             

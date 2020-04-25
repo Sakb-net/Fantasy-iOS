@@ -41,6 +41,10 @@ class Urls {
         return originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
     
+    func changePassword() -> String {
+        return "\(getCurrentBaseUrl())change_password"
+    }
+    
     func getInstructions() -> String {
         return "\(getCurrentBaseUrl())instraction"
     }
