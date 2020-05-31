@@ -18,6 +18,8 @@ class User: NSObject, NSCoding {
     var address:String?
     var city: String?
     var state:String?
+    var team_name:String?
+    var team_link:String?
     var new_fcm_token:String?
     var old_fcm_token:String?
     
@@ -63,6 +65,8 @@ class User: NSObject, NSCoding {
         aCoder.encode(self.address, forKey: "address")
         aCoder.encode(self.city, forKey: "city")
         aCoder.encode(self.state, forKey: "state")
+        aCoder.encode(self.team_name, forKey: "team_name")
+        aCoder.encode(self.team_link, forKey: "team_link")
         aCoder.encode(self.new_fcm_token, forKey: "new_fcm_token")
     }
     
@@ -76,6 +80,8 @@ class User: NSObject, NSCoding {
         self.address = (aDecoder.decodeObject(forKey: "address") as? String) ?? ""
         self.city = (aDecoder.decodeObject(forKey: "city") as? String) ?? ""
         self.state = (aDecoder.decodeObject(forKey: "state") as? String) ?? ""
+        self.team_name = (aDecoder.decodeObject(forKey: "team_name") as? String) ?? ""
+        self.team_link = (aDecoder.decodeObject(forKey: "team_link") as? String) ?? ""
         self.new_fcm_token = (aDecoder.decodeObject(forKey: "new_fcm_token") as? String) ?? ""
     }
     
@@ -116,6 +122,14 @@ class User: NSObject, NSCoding {
         
         if let state = parametersJson["state"]?.string {
             self.state = state
+        }
+        
+        if let team_name = parametersJson["team_name"]?.string {
+            self.team_name = team_name
+        }
+        
+        if let team_link = parametersJson["team_link"]?.string {
+            self.team_link = team_link
         }
         
         if let new_fcm_token = parametersJson["new_fcm_token"]?.string {

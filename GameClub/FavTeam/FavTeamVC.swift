@@ -14,7 +14,7 @@ class FavTeamVC: ParentViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        getNews()
+        getTeams()
 
     }
     
@@ -33,7 +33,7 @@ class FavTeamVC: ParentViewController, UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    func getNews(){
+    func getTeams(){
         self.showLoader()
         presenter.getTeams(onSuccess: { (teams) in
             self.teams = teams

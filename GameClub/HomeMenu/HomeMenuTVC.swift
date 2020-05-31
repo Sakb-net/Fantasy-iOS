@@ -7,7 +7,7 @@ import UIKit
 
 class HomeMenuTVC: UITableViewController {
     
-    let menuTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","المساعدة","اتصل بنا","تسجيل خروج"]
+    let menuTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","الدوريات","المساعدة","اتصل بنا","تسجيل خروج"]
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
@@ -46,7 +46,7 @@ class HomeMenuTVC: UITableViewController {
         cell2.backgroundColor = UIColor.clear
 
         if indexPath.row == 0 {
-            cell1.userName.text = "بسمة رمضان"
+            cell1.userName.text = User.shared().display_name
             return cell1
         } else {
             cell2.textLabel?.text = self.menuTitles[indexPath.row-1]
@@ -70,8 +70,12 @@ class HomeMenuTVC: UITableViewController {
         }else if indexPath.row == 2 {
             let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
             self.navigationController?.pushViewController(myPointsVC, animated: true)
+        }else if indexPath.row == 3 {
+            let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
+            self.navigationController?.pushViewController(myTeamVC, animated: true)
         }else if indexPath.row == 4 {
             let pitchVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PitchVC") as! PitchVC
+            pitchVC.pageType = 1
             self.navigationController?.pushViewController(pitchVC, animated: true)
         }else if indexPath.row == 5 {
             let instructionsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "InstructionsVC") as! InstructionsVC
@@ -88,9 +92,15 @@ class HomeMenuTVC: UITableViewController {
             let fixturesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FixturesVC") as! FixturesVC
             self.navigationController?.pushViewController(fixturesVC, animated: true)
         }else if indexPath.row == 10 {
+            let leaguesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LeaguesVC") as! LeaguesVC
+            self.navigationController?.pushViewController(leaguesVC, animated: true)
+        }else if indexPath.row == 11 {
             let instructionsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "InstructionsVC") as! InstructionsVC
             instructionsVC.pageNum = 1
             self.navigationController?.pushViewController(instructionsVC, animated: true)
+        }else if indexPath.row == 12 {
+            let contactUsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ContactUsVC") as! ContactUsVC
+            self.navigationController?.pushViewController(contactUsVC, animated: true)
         }
     }
 

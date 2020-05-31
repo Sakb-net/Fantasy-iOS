@@ -47,18 +47,19 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
             if selectedSortType == 0 {
                 if !isReplace{
                 presenter.addPlayer(link: self.player.link!, onSuccess: { (player) in
-                    self.showAlert(title: "", message: "تمت إضافة اللاعب", shouldpop: false)
+                    self.navigationController?.popViewController(animated: true)
+                    self.listener?.showMessage(message: player.msg_add!)
                     self.hideLoader()
                 }) { (errorMessage) in
                     self.hideLoader()
                     self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
                 }
                 }else{
-                    presenter.replacePlayer(deleted_player_link: deleted_player_link, player_link: self.player.link!, eldwry_link: eldawry_link, onSuccess: { (player) in
+                    presenter.replacePlayer(deleted_player_link: deleted_player_link, player_link: self.player.link!, eldwry_link: eldawry_link, onSuccess: { (message) in
                         self.delegate?.getPlayerBack(bt: self.bt!)
                         UserDefaults.standard.set(0, forKey: self.btName)
-
-                        self.showAlert(title: "", message: "تمت إضافة اللاعب", shouldpop: false)
+                        self.navigationController?.popViewController(animated: true)
+                        self.listener?.showMessage(message: message)
                         self.hideLoader()
                     }) { (errorMessage) in
                         self.hideLoader()
@@ -90,6 +91,7 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
     var btName = ""
     var playerActionType = 0
     var delegate : playerDeletedDelegate?
+    var listener : replacementListenner?
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -222,4 +224,5 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
 }
 protocol replacementListenner {
     func showPlayer(bt : UIButton)
+    func showMessage(message : String)
 }

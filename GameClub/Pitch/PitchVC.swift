@@ -13,7 +13,11 @@ import SwiftSVG
 class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
     var presenter = PlayersPresenter()
+    var pageType = 0
     
+    @IBOutlet weak var autoSelectView: UIView!
+    @IBOutlet weak var autoSelectBT: UIButton!
+    @IBOutlet weak var resetBT: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var goalKeeperBT1: UIButton!
@@ -55,6 +59,20 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var viewListBT: UIButton!
     @IBOutlet weak var viewPitchBT: UIButton!
     @IBOutlet weak var saveBT: UIButton!
+    @IBAction func autoSelectAction(_ sender: Any) {
+        getMyTeam(type: 1)
+    }
+    @IBAction func resetAction(_ sender: Any) {
+        presenter.resetAllPlayers(onSuccess: { (message) in
+                   self.hideLoader()
+                self.showAlert(title: "", message: message, shouldpop: false)
+            self.getMyTeam(type: 0)
+            
+               }) { (errorMessage) in
+                   self.hideLoader()
+                   self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+               }
+    }
     
     @IBAction func pickGoalKeeperAction1(_ sender: Any) {
         foundPlayerOptions(player: self.goalKeepers, index: 0, stringValue: "goalkeeper", screenPosition: "bt1", bt : self.goalKeeperBT1)
@@ -155,10 +173,11 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if pageType == 1 {self.autoSelectView.isHidden = true}
         viewConfig()
             }
     override func viewWillAppear(_ animated: Bool) {
-        getMyTeam()
+        getMyTeam(type: 0)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count1 = self.goalKeepers.count
@@ -244,8 +263,8 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
        }
        
     
-    func getMyTeam(){
-        presenter.getMyTeam( onSuccess: { (goalKeepers, defenders, mids, attackers, numPlayers, remainGold, totalGold) in
+    func getMyTeam(type : Int){
+        presenter.getMyTeam( type: type, onSuccess: { (goalKeepers, defenders, mids, attackers, numPlayers, remainGold, totalGold) in
             self.hideLoader()
             self.goalKeepers = goalKeepers
             self.defenders = defenders
@@ -263,7 +282,6 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
         }
     }
-    
     func fillView (){
         let goalKeeper1 = self.goalKeepers[0]
         let goalKeeper2 = self.goalKeepers[1]
@@ -448,6 +466,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     func openPlayerVC (playerType : String){
         let playersByTypeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PlayersByTypeVC") as! PlayersByTypeVC
         playersByTypeVC.type = playerType
+        playersByTypeVC.listener = self
         self.navigationController?.pushViewController(playersByTypeVC, animated: true)
     }
     
@@ -477,6 +496,10 @@ extension PitchVC : checkDeletePlayer, playerDeletedDelegate, replacementListenn
         
     }
     
+    func showMessage(message: String){
+        self.showAlert(title: "", message: message, shouldpop: false)
+    }
+    
     func replacePlayer(player : MyTeam, bt : UIButton, btName : String, delegate : playerDeletedDelegate) {
         let playersByTypeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PlayersByTypeVC") as! PlayersByTypeVC
                playersByTypeVC.type = player.type_loc_player
@@ -496,7 +519,7 @@ extension PitchVC : checkDeletePlayer, playerDeletedDelegate, replacementListenn
     
     func playerDeleted(message: String) {
         self.showAlert(title: "", message: message, shouldpop: false)
-        getMyTeam()
+        getMyTeam(type: 0)
     }
     
     func checkDelete (btName : String) {

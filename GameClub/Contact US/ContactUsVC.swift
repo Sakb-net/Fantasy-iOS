@@ -13,6 +13,11 @@ class ContactUsVC: ParentViewController {
     @IBOutlet weak var contentTV: UITextView!
     @IBOutlet weak var sendBT: UIButton!
     @IBAction func SendAction(_ sender: Any) {
+        sendMessage(content: self.contentTV.text, onSuccess: { (message) in
+            self.showAlert(title: "", message: message, shouldpop: false)
+            self.contentTV.text = ""
+        }) { (errorMessage) in
+        }
     }
     
     @IBAction func menuAction(_ sender: Any) {
@@ -52,6 +57,35 @@ class ContactUsVC: ParentViewController {
                     let email = response!["data"]["email"].string!
                     let phone = response!["data"]["phone"].string!
                     onSuccess(email, phone)
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
+            }
+            else
+            {
+                onFailure(error!.localizedDescription)
+            }
+        }
+    }
+    
+    func sendMessage(content : String, onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().sendMessage()
+        
+        let parameters:[String:Any] = [
+            "content" : content,
+            "lang": HelperMethods.getCurrentLanguage()
+        ]
+        
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                    let message = response!["Message"].stringValue
+                    onSuccess(message)
                 }else{
                     let message = response!["Message"].stringValue
                     onFailure(message)

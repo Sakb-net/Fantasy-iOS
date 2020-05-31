@@ -85,6 +85,7 @@ class ResetPassVC: ParentViewController {
         loginPresenter.changePassword(passwordOld: UserDefaults.standard.string(forKey: "UserPass")!, passwordNew: pass, onSuccess: { (userInfo) in
             self.hideLoader()
             UserDefaults.standard.set(pass, forKey: "UserPass")
+            UserDefaults.standard.set(pass, forKey: "password")
             self.showAlert(title: "", message: "تم التغيير بنجاح", shouldpop: false)
             self.passTF.text = ""
             self.confirmPassTF.text = ""

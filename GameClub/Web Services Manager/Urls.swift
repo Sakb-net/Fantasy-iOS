@@ -15,18 +15,18 @@ class Urls {
     static let apiTypeDev = "type-dev"
     static let apiValDev = "val-dev"
     static let apiAccessKeyValue = User.shared().access_token ?? ""
-    static let baseUrl = "https://fantasy.sakb-co.com.sa/"
+    static let baseUrl = "https://fantgame.sakb-co.com.sa/"
     
     private let currentWorkingEnvironment = AppEnvironments.development
     
     private var developmentServerBaseURL:String
     {
-        return "https://fantasy.sakb-co.com.sa/api/v1/"
+        return "https://fantgame.sakb-co.com.sa/api/v1/"
     }
     
     private var ProducationServerBaseURL:String
     {
-        return "https://fantasy.sakb-co.com.sa/api/v1/"
+        return "https://fantgame.sakb-co.com.sa/api/v1/"
     }
     
     private func getCurrentBaseUrl() -> String{
@@ -75,6 +75,14 @@ class Urls {
     
     func getMyTeam() -> String {
         return "\(getCurrentBaseUrl())player_master"
+    }
+    
+    func auto_selection_player() -> String {
+        return "\(getCurrentBaseUrl())auto_selection_player"
+    }
+    
+    func reset_all_player()-> String {
+        return "\(getCurrentBaseUrl())reset_all_player"
     }
     
     func addPlayer() -> String {
@@ -227,5 +235,9 @@ class Urls {
 
     func getContacts() -> String {
         return "\(getCurrentBaseUrl())contact_us"
+    }
+    
+    func uploadImage() -> String {
+        return "\(getCurrentBaseUrl())uploadImage"
     }
 }

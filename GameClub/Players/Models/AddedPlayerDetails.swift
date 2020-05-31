@@ -24,6 +24,7 @@ class AddedPlayerDetails : NSObject{
     var is_active:Int?
     var created_at:String?
     var updated_at:String?
+    var msg_add:String?
     
     override init() {
         }
@@ -93,6 +94,10 @@ class AddedPlayerDetails : NSObject{
             if let updated_at = parametersJson["updated_at"]?.stringValue
             {
                 self.updated_at = updated_at
+            }
+            if let msg_add = parametersJson["msg_add"]?.stringValue
+            {
+                self.msg_add = msg_add
             }
         }
     }

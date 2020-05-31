@@ -178,10 +178,15 @@ class PlayersPresenter {
             
         }
     }
-    
-    func getMyTeam(onSuccess: @escaping ([MyTeam], [MyTeam], [MyTeam], [MyTeam], Int, Double, Int) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+  
+    func getMyTeam(type : Int, onSuccess: @escaping ([MyTeam], [MyTeam], [MyTeam], [MyTeam], Int, Double, Int) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
-        let url = Urls().getMyTeam()
+        var url = ""
+        if type == 0 {
+         url = Urls().getMyTeam()
+    }else {
+         url = Urls().auto_selection_player()
+    }
         
         let parameters:[String:Any] = [
             "lang": HelperMethods.getCurrentLanguage()        ]
@@ -235,6 +240,26 @@ class PlayersPresenter {
             {
                 onFailure(error!.localizedDescription)
             }
+        }
+    }
+    
+    func resetAllPlayers(onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().reset_all_player()
+       
+        ServiceManager.callAPI(url: url, method: .post, parameters: nil, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let message = response!["Message"].stringValue
+                
+                        onSuccess(message)
+                    
+                }else{
+                    let message = response!["message"].stringValue
+                    onFailure(message)
+                }
+            
         }
     }
 

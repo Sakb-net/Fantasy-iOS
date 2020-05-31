@@ -132,8 +132,17 @@ class MyTeamVC: ParentViewController {
         self.tableView.isHidden = false
        }
        @IBAction func substitutionsCardAction(_ sender: Any) {
+        let cardPopUp = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "CardPopUp") as! CardPopUp
+        cardPopUp.popUpType = "sub_card"
+        present(cardPopUp, animated: true
+            , completion: nil)
+        
        }
        @IBAction func captinCardAction(_ sender: Any) {
+        let cardPopUp = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "CardPopUp") as! CardPopUp
+        cardPopUp.popUpType = "three_card"
+        present(cardPopUp, animated: true
+            , completion: nil)
        }
        @IBAction func goalkeeperAction(_ sender: Any) {
         if !self.fromSubToMain{ OpenPopUp (view : self.goalKeeperView, button: self.goalKeeperBT, player : self.goalKeepers[0], isSub : 1)}else {
@@ -362,6 +371,10 @@ class MyTeamVC: ParentViewController {
 //        self.showLoader()
         presenter.getMyTeam( onSuccess: { (goalKeepers, defenders, mids, attackers, subs, lineup) in
 //            self.hideLoader()
+            if goalKeepers[0].found_player == 0 {
+                let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NoTeamVC") as! NoTeamVC
+                self.navigationController?.pushViewController(noTeamVC, animated: true)
+            }else {
             self.goalKeepers = goalKeepers
             self.defenders = defenders
             self.mids = mids
@@ -374,6 +387,7 @@ class MyTeamVC: ParentViewController {
 
             self.tableView.reloadData()
             self.fillView ()
+            }
         }) { (errorMessage) in
 //            self.hideLoader()
             self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)

@@ -5,10 +5,35 @@
 import UIKit
 import SideMenu
 
-class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
+class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.fixtures.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.titles[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentRound = row
+        // when rounds is recieved from the api i can reload table data with diffrent rounds
+        pickerContainerView.isHidden = true
+    }
     
     var fixtures = [Fixtures]()
+    var titles = [String]()
+    var currentRound = 0
 
+    @IBOutlet weak var pickerContainerView: UIView!
+    @IBOutlet weak var roundsBT: UIButton!
+    @IBOutlet weak var picker: UIPickerView!
+    @IBAction func roundsAction(_ sender: Any) {
+        pickerContainerView.isHidden = false
+    }
     @IBOutlet weak var tableView: UITableView!
     @IBAction func menuAction(_ sender: Any) {
         let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
@@ -19,12 +44,23 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundViewCorners(view: pickerContainerView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.picker.delegate = self
+        self.picker.dataSource = self
+        picker.setValue(UIColor.white, forKey: "textColor")
+
         self.showLoader()
             getFixtures(onSuccess: { (fixtures) in
-                        self.fixtures = fixtures
+                var roundCount = 0
+                for item in fixtures{
+                    roundCount += 1
+                    self.titles.append("الجولة " + String(roundCount))
+                }
+                self.fixtures = fixtures
                 self.tableView.reloadData()
+                self.picker.reloadAllComponents()
                         self.hideLoader()
                     }) { (errorMessage) in
                         self.hideLoader()
