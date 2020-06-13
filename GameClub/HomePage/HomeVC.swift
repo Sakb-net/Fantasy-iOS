@@ -14,36 +14,34 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     var fixtures = [Fixtures]()
     var isLoggedin = false
     
+    @IBOutlet weak var myPointsView: UIView!
+    @IBOutlet weak var myTeamView: UIView!
+    @IBOutlet weak var transferesView: UIView!
+    @IBOutlet weak var myPointsIV: UIImageView!
+    @IBOutlet weak var myTeamIV: UIImageView!
+    @IBOutlet weak var transferesIV: UIImageView!
+
+    @IBOutlet weak var linksView: UIStackView!
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var chooseTeamView: UIView!
+    @IBOutlet weak var pointsView: UIView!
     @IBOutlet weak var signinBT: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var mainIV: UIImageView!
     @IBOutlet weak var weeklyScedualTV: UITableView!
-    @IBOutlet weak var latestNewsStackView: UIStackView!
-    @IBOutlet weak var latestVideosStackView: UIStackView!
-    @IBOutlet weak var latestNewsFirstView: UIView!
-    @IBOutlet weak var latestNewsSecondView: UIView!
-    @IBOutlet weak var latestVideosFirstView: UIView!
-    @IBOutlet weak var latestVideosSecondView: UIView!
+   
     @IBOutlet weak var chooseYourTeamBT: UIButton!
-    @IBOutlet weak var NewsImage1: UIImageView!
-    @IBOutlet weak var NewsTitle1: UILabel!
-    @IBOutlet weak var NewsDate1: UILabel!
-    @IBOutlet weak var NewsImage2: UIImageView!
-    @IBOutlet weak var NewsTitle2: UILabel!
-    @IBOutlet weak var NewsDate2: UILabel!
-    @IBOutlet weak var VideosImage1: UIImageView!
-    @IBOutlet weak var VideosTitle1: UILabel!
-    @IBOutlet weak var VideosDate1: UILabel!
-    @IBOutlet weak var VideosImage2: UIImageView!
-    @IBOutlet weak var VideosTitle2: UILabel!
-    @IBOutlet weak var VideosDate2: UILabel!
+   
     @IBAction func signinAction(_ sender: Any) {
         if User.shared().access_token == nil {
         let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.navigationController?.pushViewController(loginVC, animated: true)
         }else {
+            UserDefaults.standard.set(0, forKey: "add_team")
             User.shared().logoutUser()
             self.usernameLabel.text = "هل لديك حساب"
             self.signinBT.setTitle("تسجيل دخول", for: .normal)
@@ -79,7 +77,20 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        
+//        myPointsIV.image = UIImage(named: "sponsor_header")
+//        myTeamIV.image = UIImage(named: "sponsor_header")
+//        transferesIV.image = UIImage(named: "sponsor_header")
+//        UserDefaults.standard.set(0, forKey: "add_team")
+        let addTeam = UserDefaults.standard.integer(forKey: "add_team")
+        if addTeam == 1 {
+            self.pointsView.isHidden = false
+            self.chooseTeamView.isHidden = true
+            self.linksView.isHidden = false
+        }else{
+            self.pointsView.isHidden = true
+            self.chooseTeamView.isHidden = false
+            self.linksView.isHidden = true
+        }
         roundCornerForViews ()
         getMainScreenInfo()
         if User.shared().access_token == nil {
@@ -88,10 +99,28 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         }else {
             self.usernameLabel.text = "لست " + User.shared().display_name!
         }
-    let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.openNewsDetails))
-    self.latestNewsFirstView.addGestureRecognizer(gesture)
+    let gesture1 = UITapGestureRecognizer(target: self, action:  #selector(self.myPointsAction))
+    self.myPointsView.addGestureRecognizer(gesture1)
+        let gesture2 = UITapGestureRecognizer(target: self, action:  #selector(self.myTeamAction))
+        self.myTeamView.addGestureRecognizer(gesture2)
+        let gesture3 = UITapGestureRecognizer(target: self, action:  #selector(self.transferesAction))
+        self.transferesView.addGestureRecognizer(gesture3)
+    }
+    @objc func myPointsAction(sender : UITapGestureRecognizer) {
+        let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
+        self.navigationController?.pushViewController(myPointsVC, animated: true)
     }
     
+    @objc func myTeamAction(sender : UITapGestureRecognizer) {
+        let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
+        self.navigationController?.pushViewController(myTeamVC, animated: true)
+    }
+    
+    @objc func transferesAction(sender : UITapGestureRecognizer) {
+        let pitchVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PitchVC") as! PitchVC
+        pitchVC.pageType = 1
+        self.navigationController?.pushViewController(pitchVC, animated: true)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.fixtures.count < 3{
             return self.fixtures.count + 2
@@ -166,18 +195,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
 //            self.mainIV.sd_setImage(with: URL(string: Urls.baseUrl+news[1].image! ), placeholderImage: UIImage(named: "placeholder"))
 //            self.mainLabel.text = news[0].name
 //            self.mainDateLabel.text = news[0].date
-            self.NewsImage1.sd_setImage(with: URL(string: Urls.baseUrl+news[0].image! ), placeholderImage: UIImage(named: "placeholder"))
-            self.NewsTitle1.text = news[0].name
-            self.NewsDate1.text = news[0].date
-            self.NewsImage2.sd_setImage(with: URL(string: Urls.baseUrl+news[1].image! ), placeholderImage: UIImage(named: "placeholder"))
-            self.NewsTitle2.text = news[1].name
-            self.NewsDate2.text = news[1].date
-            self.VideosImage1.sd_setImage(with: URL(string: Urls.baseUrl+videos[0].image! ), placeholderImage: UIImage(named: "placeholder"))
-            self.VideosTitle1.text = videos[0].name
-            self.VideosDate1.text = videos[0].date
-            self.VideosImage2.sd_setImage(with: URL(string: Urls.baseUrl+videos[1].image! ), placeholderImage: UIImage(named: "placeholder"))
-            self.VideosTitle2.text = videos[1].name
-            self.VideosDate2.text = videos[1].date
+            
             self.hideLoader()
         }) { (errorMessage) in
             self.hideLoader()
@@ -186,13 +204,12 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func roundCornerForViews (){
-        
+        roundViewCornersNoShadow(view: view1)
+        roundViewCornersNoShadow(view: view2)
+        roundViewCornersNoShadow(view: view3)
+
         roundViewCorners(view: self.firstView)
-        roundViewCorners(view: self.weeklyScedualTV)
-        roundViewCorners(view: self.latestNewsFirstView)
-        roundViewCorners(view: self.latestNewsSecondView)
-        roundViewCorners(view: self.latestVideosFirstView)
-        roundViewCorners(view: self.latestVideosSecondView)
+//        roundViewCorners(view: self.weeklyScedualTV)
         roundViewCorners(view: self.chooseYourTeamBT)
         self.mainIV.layer.cornerRadius = 10
         self.mainIV.clipsToBounds = true

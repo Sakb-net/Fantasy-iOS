@@ -119,6 +119,11 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             return cell
        }
        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let matchDetailsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MatchDetailsVC") as! MatchDetailsVC
+        matchDetailsVC.matchGroup = self.fixtures[indexPath.section].match_group![indexPath.row]
+        self.navigationController?.pushViewController(matchDetailsVC, animated: true)
+    }
     
    func getFixtures(onSuccess: @escaping ([Fixtures]) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
         {

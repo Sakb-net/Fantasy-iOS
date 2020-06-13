@@ -7,7 +7,7 @@ import UIKit
 
 class HomeMenuTVC: UITableViewController {
     
-    let menuTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","الدوريات","المساعدة","اتصل بنا","تسجيل خروج"]
+    let menuTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","الجوائز","الدوريات","المساعدة","اتصل بنا","تسجيل خروج"]
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
@@ -88,19 +88,31 @@ class HomeMenuTVC: UITableViewController {
             let newsController = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
             newsController.isNews = false
             self.navigationController?.pushViewController(newsController, animated: true)
+        }else if indexPath.row == 8 {
+            let statisticsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "StatisticsVC") as! StatisticsVC
+            self.navigationController?.pushViewController(statisticsVC, animated: true)
         }else if indexPath.row == 9 {
             let fixturesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FixturesVC") as! FixturesVC
             self.navigationController?.pushViewController(fixturesVC, animated: true)
         }else if indexPath.row == 10 {
+            let prizesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PrizesVC") as! PrizesVC
+            self.navigationController?.pushViewController(prizesVC, animated: true)
+        }else if indexPath.row == 11 {
             let leaguesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LeaguesVC") as! LeaguesVC
             self.navigationController?.pushViewController(leaguesVC, animated: true)
-        }else if indexPath.row == 11 {
+        }else if indexPath.row == 12 {
             let instructionsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "InstructionsVC") as! InstructionsVC
             instructionsVC.pageNum = 1
             self.navigationController?.pushViewController(instructionsVC, animated: true)
-        }else if indexPath.row == 12 {
+        }else if indexPath.row == 13 {
             let contactUsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ContactUsVC") as! ContactUsVC
             self.navigationController?.pushViewController(contactUsVC, animated: true)
+        }else if indexPath.row == 14 {
+            UserDefaults.standard.set(0, forKey: "add_team")
+            User.shared().logoutUser()
+            let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(loginVC, animated: true)
+            
         }
     }
 
