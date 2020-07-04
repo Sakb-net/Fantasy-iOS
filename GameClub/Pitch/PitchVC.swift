@@ -15,6 +15,9 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     var presenter = PlayersPresenter()
     var pageType = 0
     
+    @IBOutlet weak var freeTransView: UIView!
+    @IBOutlet weak var freeTransNumLbl: UILabel!
+    
     @IBOutlet weak var autoSelectView: UIView!
     @IBOutlet weak var autoSelectBT: UIButton!
     @IBOutlet weak var resetBT: UIButton!
@@ -173,7 +176,9 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if pageType == 1 {self.autoSelectView.isHidden = true}
+        if pageType == 1 {self.autoSelectView.isHidden = true
+            self.freeTransView.isHidden = false}
+        resetBTs()
         viewConfig()
             }
     override func viewWillAppear(_ animated: Bool) {
@@ -277,9 +282,15 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             self.tableView.dataSource = self
             self.tableView.reloadData()
             self.fillView ()
-        }) { (errorMessage) in
+        }) { (errorMessage, code) in
             self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            if code == 11 ||  code == 41{
+                let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NoTeamVC") as! NoTeamVC
+                noTeamVC.isLogin = true
+                self.navigationController?.pushViewController(noTeamVC, animated: true)
+            }else {
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
         }
     }
     func fillView (){
@@ -570,5 +581,22 @@ extension PitchVC : checkDeletePlayer, playerDeletedDelegate, replacementListenn
             UserDefaults.standard.set(1, forKey: btName)
         }
 }
+    func resetBTs () {
+                UserDefaults.standard.set(0, forKey: "bt1")
+                UserDefaults.standard.set(0, forKey: "bt2")
+                UserDefaults.standard.set(0, forKey: "bt3")
+                UserDefaults.standard.set(0, forKey: "bt4")
+                UserDefaults.standard.set(0, forKey: "bt5")
+                UserDefaults.standard.set(0, forKey: "bt6")
+                UserDefaults.standard.set(0, forKey: "bt7")
+                UserDefaults.standard.set(0, forKey: "bt8")
+                UserDefaults.standard.set(0, forKey: "bt9")
+                UserDefaults.standard.set(0, forKey: "bt10")
+                UserDefaults.standard.set(0, forKey: "bt11")
+                UserDefaults.standard.set(0, forKey: "bt12")
+                UserDefaults.standard.set(0, forKey: "bt13")
+                UserDefaults.standard.set(0, forKey: "bt14")
+                UserDefaults.standard.set(0, forKey: "bt15")
+    }
 }
 

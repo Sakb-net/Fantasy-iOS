@@ -41,6 +41,14 @@ class Urls {
         return originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
     
+    func getPublicPoints() -> String{
+        return "\(getCurrentBaseUrl())public_points_eldwry"
+    }
+    
+    func getPlayerDetails() -> String{
+        return "\(getCurrentBaseUrl())player"
+    }
+    
     func changePassword() -> String {
         return "\(getCurrentBaseUrl())change_password"
     }
@@ -59,6 +67,10 @@ class Urls {
     
     func change_player() -> String {
         return "\(getCurrentBaseUrl())add_insideChange"
+    }
+    
+    func prizes() -> String {
+        return "\(getCurrentBaseUrl())award"
     }
     
     func check_insideChange() -> String {

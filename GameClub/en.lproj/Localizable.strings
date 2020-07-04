@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  GameClub
+
+  Created by Basma on 6/20/20.
+  Copyright © 2020 Basma. All rights reserved.
+*/
+"lang" = "en";
+"Login" = "Login";
+"You should Login first" = "You should Login first" ;
+"Not " = "Not ";

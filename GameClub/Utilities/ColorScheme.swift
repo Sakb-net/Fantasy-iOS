@@ -5,7 +5,7 @@
 import UIKit
 
 enum Color {
-    
+    case selectedCell
     case theme
     case lightTheme
     case border

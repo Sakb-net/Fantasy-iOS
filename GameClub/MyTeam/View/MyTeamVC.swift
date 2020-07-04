@@ -384,13 +384,18 @@ class MyTeamVC: ParentViewController {
             for i in 0..<count {
                 
             }
-
             self.tableView.reloadData()
             self.fillView ()
             }
-        }) { (errorMessage) in
+        }) { (errorMessage, code) in
 //            self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            if code == 11 || code == 41{
+                let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NoTeamVC") as! NoTeamVC
+                noTeamVC.isLogin = true
+                self.navigationController?.pushViewController(noTeamVC, animated: true)
+            }else {
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
         }
     }
     

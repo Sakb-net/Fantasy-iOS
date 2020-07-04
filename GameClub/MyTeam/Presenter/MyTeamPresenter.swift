@@ -9,7 +9,7 @@
 import Foundation
 
 class MyTeamPresenter {
-    func getMyTeam(onSuccess: @escaping ([MyTeam], [MyTeam], [MyTeam], [MyTeam],[MyTeam],[Int]) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    func getMyTeam(onSuccess: @escaping ([MyTeam], [MyTeam], [MyTeam], [MyTeam],[MyTeam],[Int]) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
     {
         let url = Urls().getMySavedTeam()
         
@@ -28,7 +28,7 @@ class MyTeamPresenter {
                         plan.append(lineup[1].intValue)
                         plan.append(lineup[2].intValue)
                     }else{
-                        onFailure("Oops, Error occured")
+                        onFailure("Oops, Error occured",statusCode)
                     }
                     if let data = response!["data"].array {
                         let goalKeepersJson = data[0].array
@@ -62,17 +62,15 @@ class MyTeamPresenter {
                         }
                         onSuccess(goalKeepers, defenders, mids, attackers, subs, plan)
                     }else{
-                        onFailure("Oops, Error occured")
-                    }
-                    
+                        onFailure("Oops, Error occured",statusCode)}
                 }else{
                     let message = response!["Message"].stringValue
-                    onFailure(message)
+                    onFailure(message,statusCode)
                 }
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure(error!.localizedDescription, 1000)
             }
         }
     }

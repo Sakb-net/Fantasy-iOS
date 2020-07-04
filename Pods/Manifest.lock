@@ -60,6 +60,7 @@ PODS:
   - libwebp/utils (1.0.2):
     - libwebp/core
   - libwebp/webp (1.0.2)
+  - MOLH (1.2)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - Google/SignIn
+  - MOLH
   - NVActivityIndicatorView
   - ReachabilitySwift
   - SDWebImage/WebP
@@ -114,6 +116,7 @@ SPEC REPOS:
     - TwitterCore
     - TwitterKit
   trunk:
+    - MOLH
     - SwiftSVG
     - YoutubePlayer-in-WKWebView
 
@@ -129,6 +132,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
+  MOLH: 79cf9bf2df9780030bfe8ba676de5d266a8e423e
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
@@ -140,6 +144,6 @@ SPEC CHECKSUMS:
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
   YoutubePlayer-in-WKWebView: af2f5929fc78882d94bfdfeea999b661b78d9717
 
-PODFILE CHECKSUM: 2e159b1889c83fac08cd321aaf0d936a459329e2
+PODFILE CHECKSUM: 16765d9ff487101c28472727e8c420840ecf2693
 
 COCOAPODS: 1.9.0

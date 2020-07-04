@@ -8,20 +8,23 @@ import SideMenu
 
 class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    var addTeam = 0
     var homePresenter = HomePresenter()
     var news = [News]()
     var fixtures = [Fixtures]()
     var isLoggedin = false
     
-    @IBOutlet weak var myPointsView: UIView!
-    @IBOutlet weak var myTeamView: UIView!
-    @IBOutlet weak var transferesView: UIView!
-    @IBOutlet weak var myPointsIV: UIImageView!
-    @IBOutlet weak var myTeamIV: UIImageView!
-    @IBOutlet weak var transferesIV: UIImageView!
-
-    @IBOutlet weak var linksView: UIStackView!
+//    @IBOutlet weak var myPointsView: UIView!
+//    @IBOutlet weak var myTeamView: UIView!
+//    @IBOutlet weak var transferesView: UIView!
+//    @IBOutlet weak var myPointsIV: UIImageView!
+//    @IBOutlet weak var myTeamIV: UIImageView!
+//    @IBOutlet weak var transferesIV: UIImageView!
+//
+//    @IBOutlet weak var linksView: UIStackView!
+    @IBOutlet weak var averagePointsLbl: UILabel!
+    @IBOutlet weak var userPointsLbl: UILabel!
+    @IBOutlet weak var highestPointsLbl: UILabel!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var view3: UIView!
@@ -43,8 +46,8 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         }else {
             UserDefaults.standard.set(0, forKey: "add_team")
             User.shared().logoutUser()
-            self.usernameLabel.text = "هل لديك حساب"
-            self.signinBT.setTitle("تسجيل دخول", for: .normal)
+            self.usernameLabel.text = ""
+            self.signinBT.setTitle("Login".localized, for: .normal)
         }
     }
     
@@ -54,8 +57,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
 
     }
     @IBAction func ChooseYourTeamAction(_ sender: Any) {
-        let added_team = UserDefaults.standard.integer(forKey: "add_team")
-        if added_team == 1 {
+        if addTeam == 1 {
             let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
             self.navigationController?.pushViewController(myTeamVC, animated: true)
         }else {
@@ -81,30 +83,28 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
 //        myTeamIV.image = UIImage(named: "sponsor_header")
 //        transferesIV.image = UIImage(named: "sponsor_header")
 //        UserDefaults.standard.set(0, forKey: "add_team")
-        let addTeam = UserDefaults.standard.integer(forKey: "add_team")
-        if addTeam == 1 {
-            self.pointsView.isHidden = false
-            self.chooseTeamView.isHidden = true
-            self.linksView.isHidden = false
-        }else{
-            self.pointsView.isHidden = true
-            self.chooseTeamView.isHidden = false
-            self.linksView.isHidden = true
-        }
+        
         roundCornerForViews ()
-        getMainScreenInfo()
         if User.shared().access_token == nil {
-            self.usernameLabel.text = "هل لديك حساب"
-            self.signinBT.setTitle("تسجيل دخول", for: .normal)
+            self.usernameLabel.text = ""
+            self.signinBT.setTitle("Login".localized, for: .normal)
         }else {
-            self.usernameLabel.text = "لست " + User.shared().display_name!
+            self.usernameLabel.text = "Not".localized + User.shared().display_name!
         }
-    let gesture1 = UITapGestureRecognizer(target: self, action:  #selector(self.myPointsAction))
-    self.myPointsView.addGestureRecognizer(gesture1)
-        let gesture2 = UITapGestureRecognizer(target: self, action:  #selector(self.myTeamAction))
-        self.myTeamView.addGestureRecognizer(gesture2)
-        let gesture3 = UITapGestureRecognizer(target: self, action:  #selector(self.transferesAction))
-        self.transferesView.addGestureRecognizer(gesture3)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        addTeam = UserDefaults.standard.integer(forKey: "add_team")
+        if addTeam == 1 {
+                    self.pointsView.isHidden = false
+                    self.chooseTeamView.isHidden = true
+        //            self.linksView.isHidden = false
+                }else{
+                    self.pointsView.isHidden = true
+                    self.chooseTeamView.isHidden = false
+        //            self.linksView.isHidden = true
+                }
+        getMainScreenInfo()
+        getPublicPoints()
     }
     @objc func myPointsAction(sender : UITapGestureRecognizer) {
         let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
@@ -123,33 +123,59 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.fixtures.count < 3{
+            if addTeam == 0{
             return self.fixtures.count + 2
+            }else {
+                return self.fixtures.count + 3
+            }
         } else {
         return 5
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+               
         let cell1 = tableView.dequeueReusableCell(withIdentifier: "FixtureHeaderCell", for: indexPath) as! FixtureHeaderCell
         cell1.backgroundView = UIImageView(image: UIImage(named: "sponsor_header"))
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "FixtureCell", for: indexPath) as! FixtureCell
         let cell3 = tableView.dequeueReusableCell(withIdentifier: "FixtureFooterCell", for: indexPath) as! FixtureFooterCell
+        let cell4 = tableView.dequeueReusableCell(withIdentifier: "LinksCell", for: indexPath) as! LinksCell
+
         cell3.backgroundView = UIImageView(image: UIImage(named: "sponsor_header"))
-
-        if indexPath.row == 0 {
-            return cell1
-        }else if indexPath.row == 1 && self.fixtures.count > 0 {
-            return fillCells(cell: cell2, index: indexPath.row - 1)
-        }else if indexPath.row == 2 && self.fixtures.count > 1 {
-            return fillCells(cell: cell2, index: indexPath.row - 1)
-        }else if indexPath.row == 3 && self.fixtures.count > 2 {
-            return fillCells(cell: cell2, index: indexPath.row - 1)
-        }else {
-            return cell3
-        }
-
+        if addTeam == 1 {
+            if indexPath.row == 0 {
+                let gesture1 = UITapGestureRecognizer(target: self, action:  #selector(self.myPointsAction))
+                cell4.myPointsView.addGestureRecognizer(gesture1)
+                let gesture2 = UITapGestureRecognizer(target: self, action:  #selector(self.myTeamAction))
+                cell4.myTeamView.addGestureRecognizer(gesture2)
+                let gesture3 = UITapGestureRecognizer(target: self, action:  #selector(self.transferesAction))
+                cell4.transferesView.addGestureRecognizer(gesture3)
+                return cell4
+            }else if indexPath.row == 1 {
+                return cell1
+            }else if indexPath.row == 2 && self.fixtures.count > 0 {
+                return fillCells(cell: cell2, index: indexPath.row - 1)
+            }else if indexPath.row == 3 && self.fixtures.count > 1 {
+                return fillCells(cell: cell2, index: indexPath.row - 1)
+            }else if indexPath.row == 4 && self.fixtures.count > 2 {
+                return fillCells(cell: cell2, index: indexPath.row - 1)
+            }else {
+                return cell3
+            }
+            }else{
+            if indexPath.row == 0 {
+                return cell1
+            }else if indexPath.row == 1 && self.fixtures.count > 0 {
+                return fillCells(cell: cell2, index: indexPath.row - 1)
+            }else if indexPath.row == 2 && self.fixtures.count > 1 {
+                return fillCells(cell: cell2, index: indexPath.row - 1)
+            }else if indexPath.row == 3 && self.fixtures.count > 2 {
+                return fillCells(cell: cell2, index: indexPath.row - 1)
+            }else {
+                return cell3
+            }
+                       }
     }
-    
     func fillCells (cell : FixtureCell, index : Int) -> FixtureCell{
         cell.firstClubName.text = self.fixtures[0].match_group![index].name_first
         cell.secondClubName.text = self.fixtures[0].match_group![index].name_second
@@ -196,6 +222,22 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
 //            self.mainLabel.text = news[0].name
 //            self.mainDateLabel.text = news[0].date
             
+            self.hideLoader()
+        }) { (errorMessage) in
+            self.hideLoader()
+            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        }
+    }
+    
+    func getPublicPoints(){
+        self.showLoader()
+        PointsPresenter().getPublicPoints(onSuccess: { (publicPoints) in
+            let totalPoints = publicPoints.sum_total_points
+            if let totalP = totalPoints {
+                self.userPointsLbl.text = String(totalP)
+            }else{
+                self.userPointsLbl.text = String("0")
+            }
             self.hideLoader()
         }) { (errorMessage) in
             self.hideLoader()

@@ -1,0 +1,1386 @@
+"JyZ-hc-exO.normalTitle" = "الذهاب للرئيسية";
+"obe-zj-YsM.text" = "سيتم تفعيل الجولة بعد";
+"Yi7-sW-o7Q.text" = "الجولة متوقفة الآن";
+"kM3-dm-eYu.text" = "الجولة متوقفة";
+"zCr-l9-eRJ.text" = "نتائج المباريات";
+"eKr-6V-0VQ.text" = "النقاط";
+"m3S-ba-d9H.text" = "النتيجة";
+"C1o-3m-zZb.text" = "الجولة";
+"tER-is-ete.text" = "التهديدات";
+"L2G-MB-IHJ.text" = "الإبداع";
+"bYo-z3-8yB.text" = "التأثير";
+"tjq-IR-S7j.text" = "نسبة اختياره";
+"STJ-EY-WdZ.text" = "السعر";
+"uaX-3m-xNc.text" = "الإجمالي";
+"ooJ-PK-Ods.text" = "الجولة";
+"gVv-t5-f9J.text" = "الانتقالات المجانية";
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "00m-GK-A5p"; */
+"00m-GK-A5p.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "إبدأ"; ObjectID = "07g-HG-NBZ"; */
+"07g-HG-NBZ.normalTitle" = "إبدأ";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "09g-KH-eOs"; */
+"09g-KH-eOs.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0AL-dq-dub"; */
+"0AL-dq-dub.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "تأكيد كلمة المرور"; ObjectID = "0kE-6a-I4b"; */
+"0kE-6a-I4b.placeholder" = "تأكيد كلمة المرور";
+
+/* Class = "UILabel"; text = "عمر السومة"; ObjectID = "0qa-hz-m5Z"; */
+"0qa-hz-m5Z.text" = "عمر السومة";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "0uq-Yb-L4x"; */
+"0uq-Yb-L4x.text" = "1";
+
+/* Class = "UILabel"; text = "wol(H)"; ObjectID = "0v2-LT-WIT"; */
+"0v2-LT-WIT.text" = "wol(H)";
+
+/* Class = "UILabel"; text = "الأهلي"; ObjectID = "0vC-d8-cy7"; */
+"0vC-d8-cy7.text" = "الأهلي";
+
+/* Class = "UILabel"; text = "4.4"; ObjectID = "0w6-yr-U3P"; */
+"0w6-yr-U3P.text" = "4.4";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "0xu-lz-w1D"; */
+"0xu-lz-w1D.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "ورقة الكابتن الثلاثية"; ObjectID = "10o-2Q-6wJ"; */
+"10o-2Q-6wJ.normalTitle" = "ورقة الكابتن الثلاثية";
+
+/* Class = "UIButton"; normalTitle = "ورقة الكابتن الثلاثية"; ObjectID = "1FR-rf-Uxi"; */
+"1FR-rf-Uxi.normalTitle" = "ورقة الكابتن الثلاثية";
+
+/* Class = "UILabel"; text = "اسم الدوري"; ObjectID = "1Ob-RK-TTJ"; */
+"1Ob-RK-TTJ.text" = "اسم الدوري";
+
+/* Class = "UILabel"; text = "السعر من:"; ObjectID = "1Oe-DG-bcs"; */
+"1Oe-DG-bcs.text" = "السعر من:";
+
+/* Class = "UIButton"; normalTitle = "الفريق المفضل"; ObjectID = "1eJ-uy-vwA"; */
+"1eJ-uy-vwA.normalTitle" = "الفريق المفضل";
+
+/* Class = "UILabel"; text = "او"; ObjectID = "1r0-SS-bHp"; */
+"1r0-SS-bHp.text" = "او";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "2Ah-Bj-Wv2"; */
+"2Ah-Bj-Wv2.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "إرسال"; ObjectID = "2Hi-Ef-YXB"; */
+"2Hi-Ef-YXB.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "2Jw-sB-Tee"; */
+"2Jw-sB-Tee.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "2R6-Zg-99d"; */
+"2R6-Zg-99d.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "2bn-GK-uLG"; */
+"2bn-GK-uLG.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "2me-Dr-YPL"; */
+"2me-Dr-YPL.text" = "نقاط اللاعب";
+
+/* Class = "UIButton"; normalTitle = "إلغاء"; ObjectID = "2pn-mX-GP6"; */
+"2pn-mX-GP6.normalTitle" = "إلغاء";
+
+/* Class = "UILabel"; text = "اتصل بنا"; ObjectID = "2um-PF-VFt"; */
+"2um-PF-VFt.text" = "اتصل بنا";
+
+/* Class = "UIButton"; normalTitle = "حفظ التغييرات"; ObjectID = "3D3-r7-4De"; */
+"3D3-r7-4De.normalTitle" = "حفظ التغييرات";
+
+/* Class = "UILabel"; text = "مدافع"; ObjectID = "3D6-uQ-tTK"; */
+"3D6-uQ-tTK.text" = "مدافع";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3Wd-PM-ggB"; */
+"3Wd-PM-ggB.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "الجولة الأولي"; ObjectID = "3pB-eB-IcK"; */
+"3pB-eB-IcK.normalTitle" = "الجولة الأولي";
+
+/* Class = "UILabel"; text = "الشروط والأحكام"; ObjectID = "3vK-1m-498"; */
+"3vK-1m-498.text" = "الشروط والأحكام";
+
+/* Class = "UILabel"; text = "ليفربول وسط"; ObjectID = "43I-4L-JXD"; */
+"43I-4L-JXD.text" = "ليفربول وسط";
+
+/* Class = "UILabel"; text = "45"; ObjectID = "4FK-HO-ach"; */
+"4FK-HO-ach.text" = "45";
+
+/* Class = "UITextField"; placeholder = "البريد الإليكتروني"; ObjectID = "4J4-pA-n0t"; */
+"4J4-pA-n0t.placeholder" = "البريد الإليكتروني";
+
+/* Class = "UILabel"; text = "نقاطي"; ObjectID = "4Zs-ho-vHY"; */
+"4Zs-ho-vHY.text" = "نقاطي";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "4hj-0F-UBj"; */
+"4hj-0F-UBj.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "54N-3g-Nr2"; */
+"54N-3g-Nr2.text" = "Label";
+
+/* Class = "UILabel"; text = "بيع"; ObjectID = "5A0-dX-Lgv"; */
+"5A0-dX-Lgv.text" = "بيع";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5Bx-K6-4qB"; */
+"5Bx-K6-4qB.text" = "Label";
+
+/* Class = "UILabel"; text = "الجولة"; ObjectID = "5FV-Iv-bkz"; */
+"5FV-Iv-bkz.text" = "الجولة";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "5H1-3P-gu7"; */
+"5H1-3P-gu7.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "بحث"; ObjectID = "5KJ-eg-u4t"; */
+"5KJ-eg-u4t.normalTitle" = "بحث";
+
+/* Class = "UILabel"; text = "بداية حساب النقاط"; ObjectID = "5P2-wb-GDj"; */
+"5P2-wb-GDj.text" = "بداية حساب النقاط";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "5Qf-eY-USA"; */
+"5Qf-eY-USA.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "Head to head دوري"; ObjectID = "5WT-9b-ClK"; */
+"5WT-9b-ClK.text" = "Head to head دوري";
+
+/* Class = "UILabel"; text = "النتيجة"; ObjectID = "5ar-Ds-6HB"; */
+"5ar-Ds-6HB.text" = "النتيجة";
+
+/* Class = "UILabel"; text = "وسط"; ObjectID = "5b2-Ht-AvX"; */
+"5b2-Ht-AvX.text" = "وسط";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "5gP-fS-i7B"; */
+"5gP-fS-i7B.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "5gv-hi-bTe"; */
+"5gv-hi-bTe.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "عرض القائمة"; ObjectID = "5iw-G3-sFE"; */
+"5iw-G3-sFE.normalTitle" = "عرض القائمة";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "60J-TI-DYb"; */
+"60J-TI-DYb.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "6D5-AA-94M"; */
+"6D5-AA-94M.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "أضف لاعبين"; ObjectID = "6EB-iM-ZNa"; */
+"6EB-iM-ZNa.text" = "أضف لاعبين";
+
+/* Class = "UILabel"; text = "ICT index"; ObjectID = "6GX-2s-Zpb"; */
+"6GX-2s-Zpb.text" = "التأثير";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "6Gc-D1-ilB"; */
+"6Gc-D1-ilB.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6Kv-gp-NLf"; */
+"6Kv-gp-NLf.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "كود الدوري"; ObjectID = "6P0-Jm-HzG"; */
+"6P0-Jm-HzG.text" = "كود الدوري";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Y9-1y-dfT"; */
+"6Y9-1y-dfT.text" = "Label";
+
+/* Class = "UILabel"; text = "قواعد اللعبة"; ObjectID = "6YK-FZ-x8X"; */
+"6YK-FZ-x8X.text" = "قواعد اللعبة";
+
+/* Class = "UILabel"; text = "كروت حمراء"; ObjectID = "6jC-NM-WFS"; */
+"6jC-NM-WFS.text" = "كروت حمراء";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "6jY-Zf-QRQ"; */
+"6jY-Zf-QRQ.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "هذه الورقة تسمح لك أن تلعب بـ15 لاعب، أي أنه يحتسب نقاط لاعبين البدلاء وكأنهم أساسيين ويمكنك استخدامها مرة واحدة فقط خلال الموسم"; ObjectID = "6kh-Nk-GcY"; */
+"6kh-Nk-GcY.text" = "هذه الورقة تسمح لك أن تلعب بـ15 لاعب، أي أنه يحتسب نقاط لاعبين البدلاء وكأنهم أساسيين ويمكنك استخدامها مرة واحدة فقط خلال الموسم";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "6yb-zs-F9c"; */
+"6yb-zs-F9c.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "الانتقالات"; ObjectID = "72G-eE-cpu"; */
+"72G-eE-cpu.text" = "الانتقالات";
+
+/* Class = "UILabel"; text = "حارس مرمى"; ObjectID = "78n-x9-n75"; */
+"78n-x9-n75.text" = "حارس مرمى";
+
+/* Class = "UILabel"; text = "مدافع"; ObjectID = "7DB-ZG-6tL"; */
+"7DB-ZG-6tL.text" = "مدافع";
+
+/* Class = "UILabel"; text = "تم الانضمام بنجاح لدوري \" المحترفين\""; ObjectID = "7Eh-JV-PwZ"; */
+"7Eh-JV-PwZ.text" = "تم الانضمام بنجاح لدوري \" المحترفين\"";
+
+/* Class = "UILabel"; text = "فريقي"; ObjectID = "7qN-Ag-fsi"; */
+"7qN-Ag-fsi.text" = "فريقي";
+
+/* Class = "UILabel"; text = "التصديات"; ObjectID = "7rc-R3-wnu"; */
+"7rc-R3-wnu.text" = "التصديات";
+
+/* Class = "UILabel"; text = "Test Name"; ObjectID = "88h-3N-BgZ"; */
+"88h-3N-BgZ.text" = "Test Name";
+
+/* Class = "UITextField"; placeholder = "ادخل كود الدوري هنا"; ObjectID = "89y-nD-0qF"; */
+"89y-nD-0qF.placeholder" = "ادخل كود الدوري هنا";
+
+/* Class = "UILabel"; text = "دوري خاص"; ObjectID = "8Ei-7F-cEa"; */
+"8Ei-7F-cEa.text" = "دوري خاص";
+
+/* Class = "UILabel"; text = "نظام النقاط الإضافية"; ObjectID = "8RO-ZN-Y0P"; */
+"8RO-ZN-Y0P.text" = "نظام النقاط الإضافية";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8Ut-0d-ybl"; */
+"8Ut-0d-ybl.text" = "Label";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "8ZX-1f-S6a"; */
+"8ZX-1f-S6a.text" = "عمر السومة (2)";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "8fo-Qt-RZ2"; */
+"8fo-Qt-RZ2.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "عمر السومة"; ObjectID = "8gg-a6-Ix5"; */
+"8gg-a6-Ix5.text" = "عمر السومة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8yv-Zc-dfi"; */
+"8yv-Zc-dfi.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "جميع الفرق"; ObjectID = "98q-aS-dtO"; */
+"98q-aS-dtO.placeholder" = "جميع الفرق";
+
+/* Class = "UILabel"; text = "النقاط"; ObjectID = "9Im-Jc-isN"; */
+"9Im-Jc-isN.text" = "النقاط";
+
+/* Class = "UILabel"; text = "السعر"; ObjectID = "9P2-eb-YMM"; */
+"9P2-eb-YMM.text" = "السعر";
+
+/* Class = "UILabel"; text = "عدد اللاعبين"; ObjectID = "9Pi-gC-h3U"; */
+"9Pi-gC-h3U.text" = "عدد اللاعبين";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "9d7-uz-VEA"; */
+"9d7-uz-VEA.text" = "نقاط اللاعب";
+
+/* Class = "UITextField"; placeholder = "كلمة المرور"; ObjectID = "9h2-qU-GfB"; */
+"9h2-qU-GfB.placeholder" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "fix"; ObjectID = "9oU-aj-fRc"; */
+"9oU-aj-fRc.text" = "fix";
+
+/* Class = "UILabel"; text = "من"; ObjectID = "9wf-X8-beJ"; */
+"9wf-X8-beJ.text" = "من";
+
+/* Class = "UITextField"; placeholder = "رقم الجوال"; ObjectID = "A3M-PJ-SG7"; */
+"A3M-PJ-SG7.placeholder" = "رقم الجوال";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "A60-Pr-InA"; */
+"A60-Pr-InA.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "الدوريات الأقوي"; ObjectID = "A8G-6c-K8j"; */
+"A8G-6c-K8j.normalTitle" = "الدوريات الأقوي";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "AEw-Bh-oVi"; */
+"AEw-Bh-oVi.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "AXb-lA-OjV"; */
+"AXb-lA-OjV.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "B4Q-HN-JiS"; */
+"B4Q-HN-JiS.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BFk-cz-Qeh"; */
+"BFk-cz-Qeh.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "ورقة إحتساب نقاط البدلاء"; ObjectID = "Bot-2f-dGs"; */
+"Bot-2f-dGs.normalTitle" = "ورقة إحتساب نقاط البدلاء";
+
+/* Class = "UILabel"; text = "wol(H)"; ObjectID = "Bzg-Kl-xkz"; */
+"Bzg-Kl-xkz.text" = "wol(H)";
+
+/* Class = "UIButton"; normalTitle = "ورقة إحتساب نقاط البدلاء"; ObjectID = "C0x-9u-TFx"; */
+"C0x-9u-TFx.normalTitle" = "ورقة إحتساب نقاط البدلاء";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "CMy-wC-aGC"; */
+"CMy-wC-aGC.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "قم بإنشاء دوري للتنافس بينك وبين أصدقائك و قم بدعوتهم للانضمام لك عن طريق رقم الجوال أو كود"; ObjectID = "ClT-mI-qkD"; */
+"ClT-mI-qkD.text" = "قم بإنشاء دوري للتنافس بينك وبين أصدقائك و قم بدعوتهم للانضمام لك عن طريق رقم الجوال أو كود";
+
+/* Class = "UILabel"; text = "حسابي"; ObjectID = "CnD-pd-7ux"; */
+"CnD-pd-7ux.text" = "حسابي";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "D5X-fx-cWK"; */
+"D5X-fx-cWK.text" = "Name";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "DBG-9o-tDa"; */
+"DBG-9o-tDa.text" = "2";
+
+/* Class = "UILabel"; text = "نتائج المباريات"; ObjectID = "DBy-ek-4C9"; */
+"DBy-ek-4C9.text" = "نتائج المباريات";
+
+/* Class = "UIButton"; normalTitle = "نسيت كلمة المرور؟"; ObjectID = "DUX-Da-YdE"; */
+"DUX-Da-YdE.normalTitle" = "نسيت كلمة المرور؟";
+
+/* Class = "UILabel"; text = "Form"; ObjectID = "DUf-Gb-Mvy"; */
+"DUf-Gb-Mvy.text" = "نسبة الإختيار";
+
+/* Class = "UILabel"; text = "قم بإرسال كود الدوري إلي اصدقائك حتي يتمكنوا من الانضمام"; ObjectID = "DYt-RA-Hfh"; */
+"DYt-RA-Hfh.text" = "قم بإرسال كود الدوري إلي اصدقائك حتي يتمكنوا من الانضمام";
+
+/* Class = "UILabel"; text = "تم إنشاء الدوري بنجاح"; ObjectID = "DfL-yS-Klh"; */
+"DfL-yS-Klh.text" = "تم إنشاء الدوري بنجاح";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "DfR-Ye-UtL"; */
+"DfR-Ye-UtL.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "وسط"; ObjectID = "Dgb-Io-TvD"; */
+"Dgb-Io-TvD.text" = "وسط";
+
+/* Class = "UILabel"; text = "وسط"; ObjectID = "Dho-yo-F4E"; */
+"Dho-yo-F4E.text" = "وسط";
+
+/* Class = "UIButton"; normalTitle = "ليس لديك حساب؟ أنشئ حساب الآن"; ObjectID = "Djn-6n-L6s"; */
+"Djn-6n-L6s.normalTitle" = "ليس لديك حساب؟ أنشئ حساب الآن";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Dwq-GN-Iv7"; */
+"Dwq-GN-Iv7.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "وسط"; ObjectID = "E5f-Zu-7Xs"; */
+"E5f-Zu-7Xs.text" = "وسط";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "EDx-ow-4an"; */
+"EDx-ow-4an.text" = "10.0";
+
+/* Class = "UILabel"; text = "النقاط"; ObjectID = "EEK-ZR-gdv"; */
+"EEK-ZR-gdv.text" = "النقاط";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EMN-7F-VyQ"; */
+"EMN-7F-VyQ.text" = "Label";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "Ec6-IH-9eB"; */
+"Ec6-IH-9eB.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "رازفان: تأهلنا لم يحسم.. غوميز تلقيت دفعة معنوية للاستمرار في التسجيل"; ObjectID = "Efa-Oc-y7d"; */
+"Efa-Oc-y7d.text" = "رازفان: تأهلنا لم يحسم.. غوميز تلقيت دفعة معنوية للاستمرار في التسجيل";
+
+/* Class = "UITextField"; placeholder = "ترتيب حسب"; ObjectID = "Eo3-dK-rLd"; */
+"Eo3-dK-rLd.placeholder" = "ترتيب حسب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "Eqv-QT-d3I"; */
+"Eqv-QT-d3I.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "الدوريات الأقوي"; ObjectID = "Eza-4i-eeD"; */
+"Eza-4i-eeD.text" = "الدوريات الأقوي";
+
+/* Class = "UILabel"; text = "نقاطي"; ObjectID = "FXU-NA-73H"; */
+"FXU-NA-73H.text" = "نقاطي";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FYb-bk-VkW"; */
+"FYb-bk-VkW.text" = "Label";
+
+/* Class = "UILabel"; text = "fatmashaddad"; ObjectID = "FbC-Ac-DKf"; */
+"FbC-Ac-DKf.text" = "fatmashaddad";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "FlQ-mo-53j"; */
+"FlQ-mo-53j.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "بداية حساب النقاط"; ObjectID = "Flb-0u-jzc"; */
+"Flb-0u-jzc.text" = "بداية حساب النقاط";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "G0M-X1-04I"; */
+"G0M-X1-04I.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "الجولة ٢"; ObjectID = "GDl-gH-vwW"; */
+"GDl-gH-vwW.text" = "الجولة ٢";
+
+/* Class = "UIButton"; normalTitle = "إختياره مساعد الكابتن"; ObjectID = "GLH-7q-PN7"; */
+"GLH-7q-PN7.normalTitle" = "إختياره مساعد الكابتن";
+
+/* Class = "UILabel"; text = "عمر السومة"; ObjectID = "Gsn-ld-yiI"; */
+"Gsn-ld-yiI.text" = "عمر السومة";
+
+/* Class = "UILabel"; text = "انضم إلي دوري خاص"; ObjectID = "H6V-9O-26D"; */
+"H6V-9O-26D.text" = "انضم إلي دوري خاص";
+
+/* Class = "UILabel"; text = "الإبداع"; ObjectID = "HLY-N8-q5e"; */
+"HLY-N8-q5e.text" = "التهديدات";
+
+/* Class = "UILabel"; text = "12"; ObjectID = "HXj-t1-VVr"; */
+"HXj-t1-VVr.text" = "12";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "HfS-X7-UOv"; */
+"HfS-X7-UOv.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "كلمة المرور"; ObjectID = "HjP-3W-BQJ"; */
+"HjP-3W-BQJ.text" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "0 / 15"; ObjectID = "Hjp-qQ-cAf"; */
+"Hjp-qQ-cAf.text" = "0 / 15";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "HuU-LO-vl0"; */
+"HuU-LO-vl0.text" = "10.0";
+
+/* Class = "UITextField"; placeholder = "بحث"; ObjectID = "Ial-af-Kob"; */
+"Ial-af-Kob.placeholder" = "بحث";
+
+/* Class = "UITextField"; placeholder = "جميع الفرق"; ObjectID = "Ibf-ZC-bkp"; */
+"Ibf-ZC-bkp.placeholder" = "جميع الفرق";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "Inr-eF-YML"; */
+"Inr-eF-YML.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "إرسال"; ObjectID = "J1h-7G-au6"; */
+"J1h-7G-au6.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "لا يمكنك الانضمام في أكثر من 20 دوري خاص"; ObjectID = "J1u-Bl-Qxg"; */
+"J1u-Bl-Qxg.text" = "لا يمكنك الانضمام في أكثر من 20 دوري خاص";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "JAH-nD-Q81"; */
+"JAH-nD-Q81.text" = "10.0";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "JOU-GZ-B8K"; */
+"JOU-GZ-B8K.text" = "5.7";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "JP4-DU-wbY"; */
+"JP4-DU-wbY.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "JRG-Cv-D0o"; */
+"JRG-Cv-D0o.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "JYm-4g-auK"; */
+"JYm-4g-auK.text" = "Price";
+
+/* Class = "UILabel"; text = "التعاون"; ObjectID = "JcR-xm-bdC"; */
+"JcR-xm-bdC.text" = "التعاون";
+
+/* Class = "UILabel"; text = "ترتيب الجولة"; ObjectID = "K5o-yg-AEs"; */
+"K5o-yg-AEs.text" = "ترتيب الجولة";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "KCS-hd-teZ"; */
+"KCS-hd-teZ.text" = "5.7";
+
+/* Class = "UITextField"; placeholder = "تأكيد كلمة المرور"; ObjectID = "KWq-fP-ye2"; */
+"KWq-fP-ye2.placeholder" = "تأكيد كلمة المرور";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "Kjn-Nb-uZT"; */
+"Kjn-Nb-uZT.text" = "10.0";
+
+/* Class = "UITextField"; placeholder = "اسم المستخدم"; ObjectID = "L1u-DZ-J6U"; */
+"L1u-DZ-J6U.placeholder" = "اسم المستخدم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LA1-tg-zL2"; */
+"LA1-tg-zL2.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = " تعديل الملف الشخصي"; ObjectID = "LBB-qN-ysV"; */
+"LBB-qN-ysV.normalTitle" = " تعديل الملف الشخصي";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "LBd-yv-qnk"; */
+"LBd-yv-qnk.text" = "3";
+
+/* Class = "UILabel"; text = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00"; ObjectID = "LMY-98-U5A"; */
+"LMY-98-U5A.text" = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00";
+
+/* Class = "UILabel"; text = "الحد الأقصى لعدد الفرق"; ObjectID = "LPi-da-evC"; */
+"LPi-da-evC.text" = "الحد الأقصى لعدد الفرق";
+
+/* Class = "UIButton"; normalTitle = "عرض باقي المباريات"; ObjectID = "Lfm-sa-c4J"; */
+"Lfm-sa-c4J.normalTitle" = "عرض باقي المباريات";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "Lgt-qb-VgO"; */
+"Lgt-qb-VgO.text" = "5.7";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Ll2-Ki-60F"; */
+"Ll2-Ki-60F.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Lu7-gR-l8l"; */
+"Lu7-gR-l8l.text" = "نقاط اللاعب";
+
+/* Class = "UITextField"; placeholder = "المدينة"; ObjectID = "MJM-vj-Xxo"; */
+"MJM-vj-Xxo.placeholder" = "المدينة";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "MKz-H6-kFj"; */
+"MKz-H6-kFj.text" = "5.7";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MMS-sj-6Tc"; */
+"MMS-sj-6Tc.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "MXG-u8-ZVe"; */
+"MXG-u8-ZVe.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "MdA-75-H9w"; */
+"MdA-75-H9w.text" = "5.7";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Mh0-Zt-9qg"; */
+"Mh0-Zt-9qg.text" = "نقاط اللاعب";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Mj2-go-wGm"; */
+"Mj2-go-wGm.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "Ms7-Rv-0up"; */
+"Ms7-Rv-0up.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "المعدل"; ObjectID = "N9F-5k-egC"; */
+"N9F-5k-egC.text" = "المعدل";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "NT9-yf-i7K"; */
+"NT9-yf-i7K.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "NaI-gn-l3A"; */
+"NaI-gn-l3A.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "14"; ObjectID = "Ngg-Nc-0qe"; */
+"Ngg-Nc-0qe.text" = "14";
+
+/* Class = "UIButton"; normalTitle = "لديك حساب بالفعل؟ سجل دخول"; ObjectID = "Nnu-fM-dVQ"; */
+"Nnu-fM-dVQ.normalTitle" = "لديك حساب بالفعل؟ سجل دخول";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "NpN-h0-bW6"; */
+"NpN-h0-bW6.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "Nvg-KG-Idf"; */
+"Nvg-KG-Idf.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "O1U-pg-cCE"; */
+"O1U-pg-cCE.text" = "Label";
+
+/* Class = "UILabel"; text = "الأعلى"; ObjectID = "O5b-uN-Ve5"; */
+"O5b-uN-Ve5.text" = "الأعلى";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "O6e-Q7-grl"; */
+"O6e-Q7-grl.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "OGS-Kl-faQ"; */
+"OGS-Kl-faQ.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "66"; ObjectID = "Os7-Vr-wwD"; */
+"Os7-Vr-wwD.text" = "66";
+
+/* Class = "UITextField"; placeholder = "جميع اللاعبين"; ObjectID = "Our-J8-TkM"; */
+"Our-J8-TkM.placeholder" = "جميع اللاعبين";
+
+/* Class = "UILabel"; text = "فريقي"; ObjectID = "PUu-t4-nhT"; */
+"PUu-t4-nhT.text" = "فريقي";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "PVN-FS-ePP"; */
+"PVN-FS-ePP.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PYv-G5-K8s"; */
+"PYv-G5-K8s.text" = "Label";
+
+/* Class = "UILabel"; text = "رازفان: تأهلنا لم يحسم.. غوميز تلقيت دفعة معنوية للاستمرار في التسجيل"; ObjectID = "PiN-94-Kd3"; */
+"PiN-94-Kd3.text" = "رازفان: تأهلنا لم يحسم.. غوميز تلقيت دفعة معنوية للاستمرار في التسجيل";
+
+/* Class = "UILabel"; text = "الأهداف"; ObjectID = "PkI-y8-b5f"; */
+"PkI-y8-b5f.text" = "الأهداف";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Pvf-5a-g2U"; */
+"Pvf-5a-g2U.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Q2I-aQ-ocY"; */
+"Q2I-aQ-ocY.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QBh-r3-7eN"; */
+"QBh-r3-7eN.text" = "Label";
+
+/* Class = "UILabel"; text = "اختيار الفريق"; ObjectID = "QC0-GF-Qkr"; */
+"QC0-GF-Qkr.text" = "اختيار الفريق";
+
+/* Class = "UIButton"; normalTitle = "خروج"; ObjectID = "Qbn-ps-XeK"; */
+"Qbn-ps-XeK.normalTitle" = "خروج";
+
+/* Class = "UILabel"; text = "نقاط إضافية"; ObjectID = "Qgv-JS-Bn8"; */
+"Qgv-JS-Bn8.text" = "نقاط إضافية";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "QvX-7o-CkY"; */
+"QvX-7o-CkY.text" = "نقاط اللاعب";
+
+/* Class = "UIButton"; normalTitle = "دخول"; ObjectID = "RNl-Ty-285"; */
+"RNl-Ty-285.normalTitle" = "دخول";
+
+/* Class = "UITextField"; placeholder = "ادخل كود الدوري هنا"; ObjectID = "Rdk-6n-98n"; */
+"Rdk-6n-98n.placeholder" = "ادخل كود الدوري هنا";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "RyF-sB-grz"; */
+"RyF-sB-grz.text" = "نقاط اللاعب";
+
+/* Class = "UITextField"; placeholder = "كلمة المرور"; ObjectID = "RzJ-1g-2B7"; */
+"RzJ-1g-2B7.placeholder" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "نقاطي"; ObjectID = "S0M-hg-8Qg"; */
+"S0M-hg-8Qg.text" = "نقاطي";
+
+/* Class = "UITextField"; placeholder = "ادخل كود الدوري هنا"; ObjectID = "SMt-2c-Kvc"; */
+"SMt-2c-Kvc.placeholder" = "ادخل كود الدوري هنا";
+
+/* Class = "UIButton"; normalTitle = "انضم الآن"; ObjectID = "STF-Sz-vll"; */
+"STF-Sz-vll.normalTitle" = "انضم الآن";
+
+/* Class = "UILabel"; text = "الى:"; ObjectID = "SU9-It-ORA"; */
+"SU9-It-ORA.text" = "الى:";
+
+/* Class = "UILabel"; text = "25"; ObjectID = "SXV-kg-cLb"; */
+"SXV-kg-cLb.text" = "25";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Scc-5o-byr"; */
+"Scc-5o-byr.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "نسيت كلمة المرور"; ObjectID = "SgU-5b-qBu"; */
+"SgU-5b-qBu.text" = "نسيت كلمة المرور";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Sla-Cu-8x8"; */
+"Sla-Cu-8x8.text" = "Label";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "T84-IF-MB3"; */
+"T84-IF-MB3.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "الخميس, 22 مارس"; ObjectID = "TVt-jo-arQ"; */
+"TVt-jo-arQ.text" = "الخميس, 22 مارس";
+
+/* Class = "UILabel"; text = "احتساب نقاط البدلاء"; ObjectID = "Tbs-er-q6r"; */
+"Tbs-er-q6r.text" = "احتساب نقاط البدلاء";
+
+/* Class = "UILabel"; text = "الإحصائيات"; ObjectID = "TjW-us-SPe"; */
+"TjW-us-SPe.text" = "الإحصائيات";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "Tji-z4-Tfm"; */
+"Tji-z4-Tfm.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "إنشاء دوري كلاسيك"; ObjectID = "TkZ-F9-cnC"; */
+"TkZ-F9-cnC.text" = "إنشاء دوري كلاسيك";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "Tm6-Gg-vIG"; */
+"Tm6-Gg-vIG.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "Tsb-3V-JTb"; */
+"Tsb-3V-JTb.text" = "5";
+
+/* Class = "UILabel"; text = "فريقي"; ObjectID = "TuS-WW-d6C"; */
+"TuS-WW-d6C.text" = "فريقي";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "U5N-Ev-ayo"; */
+"U5N-Ev-ayo.text" = "5.7";
+
+/* Class = "UILabel"; text = "في الدوري الكلاسيكي ، يتم ترتيب الفرق بناءً على إجمالي نقاطها في اللعبة. يمكنك الانضمام أو الخروج من الدوري .الكلاسيكي في أي وقت خلال الموسم"; ObjectID = "U8o-0d-ci0"; */
+"U8o-0d-ci0.text" = "في الدوري الكلاسيكي ، يتم ترتيب الفرق بناءً على إجمالي نقاطها في اللعبة. يمكنك الانضمام أو الخروج من الدوري .الكلاسيكي في أي وقت خلال الموسم";
+
+/* Class = "UILabel"; text = "0-0"; ObjectID = "UH0-Mf-oK7"; */
+"UH0-Mf-oK7.text" = "0-0";
+
+/* Class = "UILabel"; text = "بيع"; ObjectID = "UJv-AO-x8Q"; */
+"UJv-AO-x8Q.text" = "بيع";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "UMw-Ro-5TA"; */
+"UMw-Ro-5TA.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "بيع"; ObjectID = "UfP-8p-UFX"; */
+"UfP-8p-UFX.text" = "بيع";
+
+/* Class = "UILabel"; text = "حارس مرمى"; ObjectID = "UqB-lu-euY"; */
+"UqB-lu-euY.text" = "حارس مرمى";
+
+/* Class = "UILabel"; text = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00"; ObjectID = "V3c-Ao-o8o"; */
+"V3c-Ao-o8o.text" = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00";
+
+/* Class = "UILabel"; text = "الأهلي التعاون الفيحاء"; ObjectID = "VOG-6d-hCs"; */
+"VOG-6d-hCs.text" = "الأهلي التعاون الفيحاء";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "VPF-eS-leT"; */
+"VPF-eS-leT.text" = "1";
+
+/* Class = "UIButton"; normalTitle = "إنشاء"; ObjectID = "VUm-ee-vWB"; */
+"VUm-ee-vWB.normalTitle" = "إنشاء";
+
+/* Class = "UILabel"; text = "اختر اسم للفريق"; ObjectID = "W8d-OD-UMQ"; */
+"W8d-OD-UMQ.text" = "اختر اسم للفريق";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "WGa-9O-9Hp"; */
+"WGa-9O-9Hp.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "4.4"; ObjectID = "WPW-gU-xZf"; */
+"WPW-gU-xZf.text" = "4.4";
+
+/* Class = "UILabel"; text = "شراء"; ObjectID = "Wbn-of-ITo"; */
+"Wbn-of-ITo.text" = "شراء";
+
+/* Class = "UILabel"; text = "يمكنك الانضمام لهذا الدوري عن طريق دفع ثمن الاشتراك"; ObjectID = "Wvv-rb-H5x"; */
+"Wvv-rb-H5x.text" = "يمكنك الانضمام لهذا الدوري عن طريق دفع ثمن الاشتراك";
+
+/* Class = "UIButton"; normalTitle = "عرض القائمة"; ObjectID = "Wxa-oB-ynW"; */
+"Wxa-oB-ynW.normalTitle" = "عرض القائمة";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "X3H-eF-bgg"; */
+"X3H-eF-bgg.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "الأهلي مهاجم"; ObjectID = "Xzr-xF-D2G"; */
+"Xzr-xF-D2G.text" = "الأهلي مهاجم";
+
+/* Class = "UILabel"; text = "كود الدوري:"; ObjectID = "Y2S-WM-MsH"; */
+"Y2S-WM-MsH.text" = "كود الدوري:";
+
+/* Class = "UILabel"; text = "20"; ObjectID = "Y9d-Af-YEl"; */
+"Y9d-Af-YEl.text" = "20";
+
+/* Class = "UILabel"; text = "7"; ObjectID = "YRK-lJ-7gl"; */
+"YRK-lJ-7gl.text" = "7";
+
+/* Class = "UILabel"; text = "النقاط النهائية"; ObjectID = "YaI-B8-O1H"; */
+"YaI-B8-O1H.text" = "النقاط النهائية";
+
+/* Class = "UILabel"; text = "وسط"; ObjectID = "Ycu-DJ-Sm1"; */
+"Ycu-DJ-Sm1.text" = "وسط";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "Yg2-ff-oAB"; */
+"Yg2-ff-oAB.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "الرئيسية"; ObjectID = "Ygs-re-1fm"; */
+"Ygs-re-1fm.text" = "الرئيسية";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "Yr7-Fk-0K3"; */
+"Yr7-Fk-0K3.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "YxG-GV-WLl"; */
+"YxG-GV-WLl.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "عرض الملعب"; ObjectID = "Z18-xD-XCv"; */
+"Z18-xD-XCv.normalTitle" = "عرض الملعب";
+
+/* Class = "UILabel"; text = "4.4"; ObjectID = "Z9y-XZ-SjS"; */
+"Z9y-XZ-SjS.text" = "4.4";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "ZEd-DQ-Beb"; */
+"ZEd-DQ-Beb.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "عمر السومة"; ObjectID = "ZLT-HH-oZ3"; */
+"ZLT-HH-oZ3.text" = "عمر السومة";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "ZNV-Fp-nxX"; */
+"ZNV-Fp-nxX.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "ZNv-cI-95T"; */
+"ZNv-cI-95T.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "إجمالي النقاط"; ObjectID = "Zby-sa-Uw5"; */
+"Zby-sa-Uw5.text" = "إجمالي النقاط";
+
+/* Class = "UILabel"; text = "إختر فريقك المفضل"; ObjectID = "a6k-wc-j8d"; */
+"a6k-wc-j8d.text" = "إختر فريقك المفضل";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "a88-kX-pzD"; */
+"a88-kX-pzD.text" = "3";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "aEX-pc-lMx"; */
+"aEX-pc-lMx.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "بيانات اللاعب "; ObjectID = "aJW-nE-NkT"; */
+"aJW-nE-NkT.normalTitle" = "بيانات اللاعب ";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "aOh-ki-QSH"; */
+"aOh-ki-QSH.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aPN-bc-4Fe"; */
+"aPN-bc-4Fe.text" = "Label";
+
+/* Class = "UILabel"; text = "انضم لدوري خاص إذا كان معك الكود الخاص به او اشترك في أحد الدوريات الأقوى"; ObjectID = "aYM-Ir-209"; */
+"aYM-Ir-209.text" = "انضم لدوري خاص إذا كان معك الكود الخاص به او اشترك في أحد الدوريات الأقوى";
+
+/* Class = "UILabel"; text = "30 حرف علي الأكثر"; ObjectID = "abT-EH-ynp"; */
+"abT-EH-ynp.text" = "30 حرف علي الأكثر";
+
+/* Class = "UILabel"; text = "محمد صلاح"; ObjectID = "apy-iw-TB6"; */
+"apy-iw-TB6.text" = "محمد صلاح";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "arV-dk-3d3"; */
+"arV-dk-3d3.text" = "10.0";
+
+/* Class = "UILabel"; text = "الأهلي مهاجم"; ObjectID = "b6k-7p-Zwr"; */
+"b6k-7p-Zwr.text" = "الأهلي مهاجم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bFS-ZS-tjP"; */
+"bFS-ZS-tjP.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "عرض الملعب"; ObjectID = "bLc-eh-aJp"; */
+"bLc-eh-aJp.normalTitle" = "عرض الملعب";
+
+/* Class = "UILabel"; text = "اللاعب"; ObjectID = "bMb-MN-VBY"; */
+"bMb-MN-VBY.text" = "اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "bNi-xa-48U"; */
+"bNi-xa-48U.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "اسم الدوري"; ObjectID = "bQ2-ZJ-c26"; */
+"bQ2-ZJ-c26.text" = "اسم الدوري";
+
+/* Class = "UILabel"; text = "حسابي"; ObjectID = "bae-28-rQZ"; */
+"bae-28-rQZ.text" = "حسابي";
+
+/* Class = "UILabel"; text = "fix"; ObjectID = "bay-Ns-Rui"; */
+"bay-Ns-Rui.text" = "fix";
+
+/* Class = "UILabel"; text = "39"; ObjectID = "bba-9c-Dy6"; */
+"bba-9c-Dy6.text" = "39";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "bdl-3Y-iUQ"; */
+"bdl-3Y-iUQ.text" = "10.0";
+
+/* Class = "UIButton"; normalTitle = "بيانات اللاعب "; ObjectID = "beN-n7-bF9"; */
+"beN-n7-bF9.normalTitle" = "بيانات اللاعب ";
+
+/* Class = "UILabel"; text = "GK"; ObjectID = "bfJ-z3-1v2"; */
+"bfJ-z3-1v2.text" = "GK";
+
+/* Class = "UILabel"; text = "من"; ObjectID = "bi3-22-q2P"; */
+"bi3-22-q2P.text" = "من";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "bi8-4H-LEg"; */
+"bi8-4H-LEg.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "bif-eV-fCV"; */
+"bif-eV-fCV.text" = "نقاط اللاعب";
+
+/* Class = "UITextField"; placeholder = "البريد الإليكتروني"; ObjectID = "bom-JK-RMo"; */
+"bom-JK-RMo.placeholder" = "البريد الإليكتروني";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "c0B-My-pBr"; */
+"c0B-My-pBr.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "متوسط النقاط"; ObjectID = "c3v-Ye-exJ"; */
+"c3v-Ye-exJ.text" = "متوسط النقاط";
+
+/* Class = "UIButton"; normalTitle = "تعديل ملفي الشخص"; ObjectID = "cHO-jP-GYn"; */
+"cHO-jP-GYn.normalTitle" = "تعديل ملفي الشخص";
+
+/* Class = "UILabel"; text = "مدافع"; ObjectID = "cIE-xB-Wbs"; */
+"cIE-xB-Wbs.text" = "مدافع";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "cZ0-Z1-E9b"; */
+"cZ0-Z1-E9b.text" = "";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "cyh-Oe-zkA"; */
+"cyh-Oe-zkA.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "اللاعب"; ObjectID = "d1D-Tz-vYh"; */
+"d1D-Tz-vYh.text" = "اللاعب";
+
+/* Class = "UILabel"; text = "لقد قمت بقراءة الشروط و الأحكام"; ObjectID = "d6h-T6-sO0"; */
+"d6h-T6-sO0.text" = "لقد قمت بقراءة الشروط و الأحكام";
+
+/* Class = "UIButton"; normalTitle = "استبدال اللاعب"; ObjectID = "d87-3g-f4Q"; */
+"d87-3g-f4Q.normalTitle" = "استبدال اللاعب";
+
+/* Class = "UILabel"; text = "مدافع"; ObjectID = "d8o-5q-Yxk"; */
+"d8o-5q-Yxk.text" = "مدافع";
+
+/* Class = "UILabel"; text = "فريقي"; ObjectID = "dGe-tH-5qC"; */
+"dGe-tH-5qC.text" = "فريقي";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "dIK-ka-O2d"; */
+"dIK-ka-O2d.text" = "";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "dMN-XK-a6M"; */
+"dMN-XK-a6M.text" = "1";
+
+/* Class = "UILabel"; text = "الدوريات الأقوي هي أقوي الدوريات الموجودة في الموسم ويمكنك الاشتراك بها مقابل مبلغ محدد."; ObjectID = "dNQ-M3-kbR"; */
+"dNQ-M3-kbR.text" = "الدوريات الأقوي هي أقوي الدوريات الموجودة في الموسم ويمكنك الاشتراك بها مقابل مبلغ محدد.";
+
+/* Class = "UITextField"; placeholder = "الفريق المفضل"; ObjectID = "dnh-vv-hJ2"; */
+"dnh-vv-hJ2.placeholder" = "الفريق المفضل";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "doY-TJ-mgl"; */
+"doY-TJ-mgl.text" = "نقاط اللاعب";
+
+/* Class = "UITextField"; placeholder = "البريد الإليكتروني"; ObjectID = "dwc-ja-vfz"; */
+"dwc-ja-vfz.placeholder" = "البريد الإليكتروني";
+
+/* Class = "UILabel"; text = "يتم إنشاء جدول المواجهات في بداية الجولة الأولى من الدوري. بمجرد إنشاء الجدول الزمني ، يتم قفل الدوري ولن تتمكن الفرق من الانضمام أو المغادرة."; ObjectID = "e0r-LZ-REZ"; */
+"e0r-LZ-REZ.text" = "يتم إنشاء جدول المواجهات في بداية الجولة الأولى من الدوري. بمجرد إنشاء الجدول الزمني ، يتم قفل الدوري ولن تتمكن الفرق من الانضمام أو المغادرة.";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "e1F-wj-pWz"; */
+"e1F-wj-pWz.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "e2M-OD-XiR"; */
+"e2M-OD-XiR.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "المبلغ المتبقي"; ObjectID = "e46-o5-fY5"; */
+"e46-o5-fY5.text" = "المبلغ المتبقي";
+
+/* Class = "UILabel"; text = "ثمن الاشتراك : 50 ريال"; ObjectID = "e9d-Re-iJk"; */
+"e9d-Re-iJk.text" = "ثمن الاشتراك : 50 ريال";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "eA3-C5-Jl9"; */
+"eA3-C5-Jl9.text" = "2";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "eB9-Rv-YBD"; */
+"eB9-Rv-YBD.text" = "10.0";
+
+/* Class = "UILabel"; text = "المباراة القادمة"; ObjectID = "eFo-O5-YXv"; */
+"eFo-O5-YXv.text" = "المباراة القادمة";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "eM4-me-8p7"; */
+"eM4-me-8p7.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "محتوى الرسالة"; ObjectID = "eOa-oY-4pU"; */
+"eOa-oY-4pU.text" = "محتوى الرسالة";
+
+/* Class = "UILabel"; text = "اسم الدوري"; ObjectID = "eU7-fi-X01"; */
+"eU7-fi-X01.text" = "اسم الدوري";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "ecY-cJ-7y9"; */
+"ecY-cJ-7y9.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "edd-lf-vjn"; */
+"edd-lf-vjn.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "98"; ObjectID = "efZ-ga-Jvb"; */
+"efZ-ga-Jvb.text" = "98";
+
+/* Class = "UILabel"; text = "الأهلي مهاجم"; ObjectID = "eie-5v-Sc7"; */
+"eie-5v-Sc7.text" = "الأهلي مهاجم";
+
+/* Class = "UILabel"; text = "من"; ObjectID = "ek4-Nn-KkR"; */
+"ek4-Nn-KkR.text" = "من";
+
+/* Class = "UIButton"; normalTitle = "اختيار الفريق"; ObjectID = "erf-6U-HCr"; */
+"erf-6U-HCr.normalTitle" = "اختيار الفريق";
+
+/* Class = "UILabel"; text = "النقاط"; ObjectID = "ete-K5-cg1"; */
+"ete-K5-cg1.text" = "النقاط";
+
+/* Class = "UITextField"; placeholder = "كلمة المرور"; ObjectID = "f4N-ug-lhw"; */
+"f4N-ug-lhw.placeholder" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "التهديدات"; ObjectID = "f7K-S2-bZu"; */
+"f7K-S2-bZu.text" = "الإبداع";
+
+/* Class = "UILabel"; text = "الإسم"; ObjectID = "f9b-py-1Dj"; */
+"f9b-py-1Dj.text" = "الإسم";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "fRS-YL-rEv"; */
+"fRS-YL-rEv.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "fUT-b3-hwQ"; */
+"fUT-b3-hwQ.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "Fix"; ObjectID = "fUn-pp-nJi"; */
+"fUn-pp-nJi.text" = "Fix";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "fXx-2K-3MS"; */
+"fXx-2K-3MS.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "fam-pu-B2a"; */
+"fam-pu-B2a.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "fsR-Sd-dbE"; */
+"fsR-Sd-dbE.text" = "نقاط اللاعب";
+
+/* Class = "UITextField"; placeholder = "البريد الإليكتروني"; ObjectID = "fwG-hx-5KR"; */
+"fwG-hx-5KR.placeholder" = "البريد الإليكتروني";
+
+/* Class = "UIButton"; normalTitle = "دوري خاص"; ObjectID = "g9v-b3-bJQ"; */
+"g9v-b3-bJQ.normalTitle" = "دوري خاص";
+
+/* Class = "UILabel"; text = "مباريات الدوري"; ObjectID = "gB6-uv-Ib0"; */
+"gB6-uv-Ib0.text" = "مباريات الدوري";
+
+/* Class = "UITextField"; placeholder = "جميع اللاعبين"; ObjectID = "gKN-eV-MOB"; */
+"gKN-eV-MOB.placeholder" = "جميع اللاعبين";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "ghc-qZ-II9"; */
+"ghc-qZ-II9.text" = "5.7";
+
+/* Class = "UILabel"; text = "نسبة اختياره"; ObjectID = "goO-Wv-8TW"; */
+"goO-Wv-8TW.text" = "Form";
+
+/* Class = "UIButton"; normalTitle = "استعادة اللاعب"; ObjectID = "grr-Ao-OGi"; */
+"grr-Ao-OGi.normalTitle" = "استعادة اللاعب";
+
+/* Class = "UILabel"; text = "الجوائز"; ObjectID = "h6H-Cd-IXs"; */
+"h6H-Cd-IXs.text" = "الجوائز";
+
+/* Class = "UILabel"; text = "الجولة 3"; ObjectID = "hFU-bU-whP"; */
+"hFU-bU-whP.text" = "السعر";
+
+/* Class = "UILabel"; text = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00"; ObjectID = "hHW-OJ-58P"; */
+"hHW-OJ-58P.text" = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "hJ5-Vm-t4M"; */
+"hJ5-Vm-t4M.text" = "عمر السومة (2)";
+
+/* Class = "UIButton"; normalTitle = "حفظ الفريق"; ObjectID = "hK4-1g-caA"; */
+"hK4-1g-caA.normalTitle" = "حفظ الفريق";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "hdb-WO-D9P"; */
+"hdb-WO-D9P.text" = "نقاط اللاعب";
+
+/* Class = "UIButton"; normalTitle = "إنشاء حسابي"; ObjectID = "heS-Ey-deO"; */
+"heS-Ey-deO.normalTitle" = "إنشاء حسابي";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "hid-90-5cI"; */
+"hid-90-5cI.text" = "100";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "hmU-7P-tS0"; */
+"hmU-7P-tS0.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "i8R-0S-qNE"; */
+"i8R-0S-qNE.text" = "5.7";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "iNr-sV-XrS"; */
+"iNr-sV-XrS.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "7gkipd"; ObjectID = "iaW-lY-XVg"; */
+"iaW-lY-XVg.text" = "7gkipd";
+
+/* Class = "UITextField"; placeholder = "الإسم"; ObjectID = "ink-lc-k2D"; */
+"ink-lc-k2D.placeholder" = "الإسم";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "ivC-jJ-M2u"; */
+"ivC-jJ-M2u.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "إسم الدوري"; ObjectID = "jJj-pm-lg8"; */
+"jJj-pm-lg8.text" = "إسم الدوري";
+
+/* Class = "UILabel"; text = "الأخبار"; ObjectID = "jQn-ON-Yg5"; */
+"jQn-ON-Yg5.text" = "الأخبار";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "jUJ-nD-BSO"; */
+"jUJ-nD-BSO.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "jYY-35-0ek"; */
+"jYY-35-0ek.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "إعادة تعيين كلمة المرور"; ObjectID = "jlr-YK-WCR"; */
+"jlr-YK-WCR.text" = "إعادة تعيين كلمة المرور";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "k7q-qq-xSG"; */
+"k7q-qq-xSG.text" = "Label";
+
+/* Class = "UILabel"; text = "هجوم"; ObjectID = "kIe-Yq-sgD"; */
+"kIe-Yq-sgD.text" = "هجوم";
+
+/* Class = "UILabel"; text = "الإجمالي"; ObjectID = "kVe-R9-6uA"; */
+"kVe-R9-6uA.text" = "الإجمالي";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ki2-7a-5bW"; */
+"ki2-7a-5bW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "إنشاء حساب"; ObjectID = "kjO-Xk-ahp"; */
+"kjO-Xk-ahp.text" = "إنشاء حساب";
+
+/* Class = "UILabel"; text = "إنشاء دوري"; ObjectID = "kqU-MC-GTn"; */
+"kqU-MC-GTn.text" = "إنشاء دوري";
+
+/* Class = "UILabel"; text = "ليفربول وسط"; ObjectID = "l4p-cR-rlr"; */
+"l4p-cR-rlr.text" = "ليفربول وسط";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "lAw-c3-IYq"; */
+"lAw-c3-IYq.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "lCx-XO-GmA"; */
+"lCx-XO-GmA.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "أعلي النقاط"; ObjectID = "lFo-ix-V7o"; */
+"lFo-ix-V7o.text" = "أعلي النقاط";
+
+/* Class = "UILabel"; text = "ادخل بريدك الإليكتروني لنساعدك على تغيير كلمة المرور الخاصة بك"; ObjectID = "lHp-Z6-z0c"; */
+"lHp-Z6-z0c.text" = "ادخل بريدك الإليكتروني لنساعدك على تغيير كلمة المرور الخاصة بك";
+
+/* Class = "UILabel"; text = "تسجيل دخول"; ObjectID = "lRJ-XC-1xk"; */
+"lRJ-XC-1xk.text" = "تسجيل دخول";
+
+/* Class = "UILabel"; text = "عمر السومة"; ObjectID = "lpq-Gg-2fu"; */
+"lpq-Gg-2fu.text" = "عمر السومة";
+
+/* Class = "UILabel"; text = "السعر"; ObjectID = "lvc-FB-GfG"; */
+"lvc-FB-GfG.text" = "السعر";
+
+/* Class = "UILabel"; text = "جدول الأسبوع 2"; ObjectID = "m7x-sL-KoQ"; */
+"m7x-sL-KoQ.text" = "جدول الأسبوع 2";
+
+/* Class = "UIButton"; normalTitle = "حذف اللاعب"; ObjectID = "m9i-Ec-JOY"; */
+"m9i-Ec-JOY.normalTitle" = "حذف اللاعب";
+
+/* Class = "UIButton"; normalTitle = "موافق"; ObjectID = "mu7-32-5Ut"; */
+"mu7-32-5Ut.normalTitle" = "موافق";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "myc-H4-vSE"; */
+"myc-H4-vSE.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة"; ObjectID = "nCS-Qw-dS0"; */
+"nCS-Qw-dS0.text" = "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة";
+
+/* Class = "UILabel"; text = "الترتيب"; ObjectID = "nCT-rT-mGC"; */
+"nCT-rT-mGC.text" = "الترتيب";
+
+/* Class = "UIButton"; normalTitle = "اختر فريقك"; ObjectID = "nOd-lV-68K"; */
+"nOd-lV-68K.normalTitle" = "اختر فريقك";
+
+/* Class = "UITextField"; placeholder = "الحي الذي تسكنه"; ObjectID = "nQE-NX-Ekt"; */
+"nQE-NX-Ekt.placeholder" = "الحي الذي تسكنه";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "nWv-95-JPl"; */
+"nWv-95-JPl.text" = "عمر السومة (2)";
+
+/* Class = "UILabel"; text = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00"; ObjectID = "naa-Jh-TVz"; */
+"naa-Jh-TVz.text" = "الموعد النهائي لانتهاء الجولة 5: الجمعة 23 أغسطس - 22:00";
+
+/* Class = "UIButton"; normalTitle = "إلغاء"; ObjectID = "nbd-j8-2zJ"; */
+"nbd-j8-2zJ.normalTitle" = "إلغاء";
+
+/* Class = "UILabel"; text = "GK"; ObjectID = "nfu-G6-mwm"; */
+"nfu-G6-mwm.text" = "GK";
+
+/* Class = "UILabel"; text = "نقاط الجولة الأخيرة"; ObjectID = "nrw-Tb-co8"; */
+"nrw-Tb-co8.text" = "نقاط الجولة الأخيرة";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "o3A-vk-Ray"; */
+"o3A-vk-Ray.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oCb-4z-Qid"; */
+"oCb-4z-Qid.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "oJH-2C-EwZ"; */
+"oJH-2C-EwZ.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "oM1-1d-AJY"; */
+"oM1-1d-AJY.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "oQh-FW-Owd"; */
+"oQh-FW-Owd.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "الأهلي"; ObjectID = "olu-Ld-yAk"; */
+"olu-Ld-yAk.text" = "الأهلي";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "pDB-Dz-8VC"; */
+"pDB-Dz-8VC.text" = "اسم اللاعب";
+
+/* Class = "UIButton"; normalTitle = "عرض القائمة"; ObjectID = "pG2-j3-U4S"; */
+"pG2-j3-U4S.normalTitle" = "عرض القائمة";
+
+/* Class = "UIButton"; normalTitle = "الجولة الأولي"; ObjectID = "pbG-9v-wcS"; */
+"pbG-9v-wcS.normalTitle" = "الجولة الأولي";
+
+/* Class = "UIButton"; normalTitle = "إختياره كابتن"; ObjectID = "pex-hr-r39"; */
+"pex-hr-r39.normalTitle" = "إختياره كابتن";
+
+/* Class = "UIButton"; normalTitle = "كلاسيك"; ObjectID = "pfs-MF-hbz"; */
+"pfs-MF-hbz.normalTitle" = "كلاسيك";
+
+/* Class = "UILabel"; text = "المساهمات"; ObjectID = "prg-yg-uGi"; */
+"prg-yg-uGi.text" = "المساهمات";
+
+/* Class = "UILabel"; text = "الدوريات"; ObjectID = "qAX-Z2-4mt"; */
+"qAX-Z2-4mt.text" = "الدوريات";
+
+/* Class = "UILabel"; text = "النقاط"; ObjectID = "qYc-mw-l6h"; */
+"qYc-mw-l6h.text" = "النقاط";
+
+/* Class = "UILabel"; text = "حارس مرمي"; ObjectID = "qbm-YP-Zhv"; */
+"qbm-YP-Zhv.text" = "حارس مرمي";
+
+/* Class = "UILabel"; text = "، يلعب كل فريق مباراة ضد Head to head في الدوري فريق آخر في الدوري في كل جولة. تعتمد نتيجة المباراة على نتيجة الجولة لكل فريق مطروحًا منها أي نقاط تحويل .تم إنفاقها للتحضير للجولة"; ObjectID = "qed-YB-gfh"; */
+"qed-YB-gfh.text" = "، يلعب كل فريق مباراة ضد Head to head في الدوري فريق آخر في الدوري في كل جولة. تعتمد نتيجة المباراة على نتيجة الجولة لكل فريق مطروحًا منها أي نقاط تحويل .تم إنفاقها للتحضير للجولة";
+
+/* Class = "UILabel"; text = "السعر"; ObjectID = "qkj-w0-KJr"; */
+"qkj-w0-KJr.text" = "السعر";
+
+/* Class = "UIButton"; normalTitle = "عرض الملعب"; ObjectID = "qm2-FR-fUZ"; */
+"qm2-FR-fUZ.normalTitle" = "عرض الملعب";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "qny-6f-vGl"; */
+"qny-6f-vGl.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qwD-bB-wad"; */
+"qwD-bB-wad.text" = "Label";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "r10-8C-Kc1"; */
+"r10-8C-Kc1.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "r1r-QY-KCP"; */
+"r1r-QY-KCP.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "شراء"; ObjectID = "r8p-Wd-xQV"; */
+"r8p-Wd-xQV.text" = "شراء";
+
+/* Class = "UIButton"; normalTitle = "عرض الملعب"; ObjectID = "rMe-ir-zRH"; */
+"rMe-ir-zRH.normalTitle" = "عرض الملعب";
+
+/* Class = "UILabel"; text = "محمد صلاح"; ObjectID = "rNx-ck-bxv"; */
+"rNx-ck-bxv.text" = "محمد صلاح";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "rcQ-Jq-pIf"; */
+"rcQ-Jq-pIf.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "Points"; ObjectID = "rd1-xj-0TO"; */
+"rd1-xj-0TO.text" = "Points";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rf6-bN-f7u"; */
+"rf6-bN-f7u.text" = "Label";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "rqn-Kb-325"; */
+"rqn-Kb-325.text" = "5.7";
+
+/* Class = "UILabel"; text = "كروت صفراء"; ObjectID = "ryq-iG-TRv"; */
+"ryq-iG-TRv.text" = "كروت صفراء";
+
+/* Class = "UITextField"; placeholder = "ترتيب حسب"; ObjectID = "sDN-6t-O4E"; */
+"sDN-6t-O4E.placeholder" = "ترتيب حسب";
+
+/* Class = "UILabel"; text = "هجوم"; ObjectID = "sM0-fb-Xkl"; */
+"sM0-fb-Xkl.text" = "هجوم";
+
+/* Class = "UILabel"; text = "مرحبا بك في لعبة كرة القدم الخيالية للدوري السعودي"; ObjectID = "sba-ix-DW5"; */
+"sba-ix-DW5.text" = "مرحبا بك في لعبة كرة القدم الخيالية للدوري السعودي";
+
+/* Class = "UILabel"; text = "السعر"; ObjectID = "sdZ-dP-3oG"; */
+"sdZ-dP-3oG.text" = "الجولة";
+
+/* Class = "UIButton"; normalTitle = "إنشاء"; ObjectID = "snf-OL-PUm"; */
+"snf-OL-PUm.normalTitle" = "إنشاء";
+
+/* Class = "UILabel"; text = "هجوم"; ObjectID = "stE-NZ-lOe"; */
+"stE-NZ-lOe.text" = "هجوم";
+
+/* Class = "UILabel"; text = "شراء"; ObjectID = "t4q-7K-KJk"; */
+"t4q-7K-KJk.text" = "شراء";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "t9V-VF-7d8"; */
+"t9V-VF-7d8.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "عرض القائمة"; ObjectID = "tCx-AA-0mZ"; */
+"tCx-AA-0mZ.normalTitle" = "عرض القائمة";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "tGq-g4-hWb"; */
+"tGq-g4-hWb.text" = "عمر السومة (2)";
+
+/* Class = "UIButton"; normalTitle = "Head to head"; ObjectID = "tKh-gS-gsN"; */
+"tKh-gS-gsN.normalTitle" = "Head to head";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "taI-dj-NB9"; */
+"taI-dj-NB9.text" = "Label";
+
+/* Class = "UILabel"; text = "30 حرف علي الأكثر"; ObjectID = "tjF-2j-h2g"; */
+"tjF-2j-h2g.text" = "30 حرف علي الأكثر";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "tks-Af-TyW"; */
+"tks-Af-TyW.text" = "نقاط اللاعب";
+
+/* Class = "UIButton"; normalTitle = "إلغاء"; ObjectID = "tn8-kA-BLb"; */
+"tn8-kA-BLb.normalTitle" = "إلغاء";
+
+/* Class = "UIButton"; normalTitle = "تغيير"; ObjectID = "u4W-pI-5Ih"; */
+"u4W-pI-5Ih.normalTitle" = "تغيير";
+
+/* Class = "UIButton"; normalTitle = "حفظ "; ObjectID = "u6d-FB-kTJ"; */
+"u6d-FB-kTJ.normalTitle" = "حفظ ";
+
+/* Class = "UILabel"; text = "قم باختيار الفريق أولا!"; ObjectID = "uK2-6o-K3t"; */
+"uK2-6o-K3t.text" = "قم باختيار الفريق أولا!";
+
+/* Class = "UIButton"; normalTitle = "تغيير"; ObjectID = "uQg-vz-JzI"; */
+"uQg-vz-JzI.normalTitle" = "تغيير";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "uSd-6a-huy"; */
+"uSd-6a-huy.text" = "10.0";
+
+/* Class = "UILabel"; text = "إنشاء حساب"; ObjectID = "uWz-DV-Tw1"; */
+"uWz-DV-Tw1.text" = "إنشاء حساب";
+
+/* Class = "UILabel"; text = "5.7"; ObjectID = "uY9-zj-6Ae"; */
+"uY9-zj-6Ae.text" = "5.7";
+
+/* Class = "UILabel"; text = "انضم إلي دوري"; ObjectID = "ui2-eM-iAw"; */
+"ui2-eM-iAw.text" = "انضم إلي دوري";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "umE-Ra-qNB"; */
+"umE-Ra-qNB.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "السعر"; ObjectID = "uxD-eV-iTd"; */
+"uxD-eV-iTd.text" = "السعر";
+
+/* Class = "UIButton"; normalTitle = "غير محدود"; ObjectID = "vfG-dz-GZU"; */
+"vfG-dz-GZU.normalTitle" = "غير محدود";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "vkK-fp-dZG"; */
+"vkK-fp-dZG.text" = "10.0";
+
+/* Class = "UITextField"; placeholder = "البريد الإليكتروني"; ObjectID = "vqM-ws-yl2"; */
+"vqM-ws-yl2.placeholder" = "البريد الإليكتروني";
+
+/* Class = "UIButton"; normalTitle = "بيانات اللاعب "; ObjectID = "wBJ-gz-E0W"; */
+"wBJ-gz-E0W.normalTitle" = "بيانات اللاعب ";
+
+/* Class = "UILabel"; text = "432640"; ObjectID = "wEu-HN-qNP"; */
+"wEu-HN-qNP.text" = "432640";
+
+/* Class = "UILabel"; text = "مهاجم"; ObjectID = "wQJ-5c-taY"; */
+"wQJ-5c-taY.text" = "مهاجم";
+
+/* Class = "UILabel"; text = "التأثير"; ObjectID = "wwg-0F-cLX"; */
+"wwg-0F-cLX.text" = "ICT Index";
+
+/* Class = "UILabel"; text = "مدافع"; ObjectID = "xYG-f2-Wtt"; */
+"xYG-f2-Wtt.text" = "مدافع";
+
+/* Class = "UILabel"; text = "4.4"; ObjectID = "xgk-9q-3uu"; */
+"xgk-9q-3uu.text" = "4.4";
+
+/* Class = "UILabel"; text = "انضم إلي الدوريات الأقوي"; ObjectID = "xhM-Bd-MfD"; */
+"xhM-Bd-MfD.text" = "انضم إلي الدوريات الأقوي";
+
+/* Class = "UIButton"; normalTitle = "حفظ"; ObjectID = "xjf-0T-Im8"; */
+"xjf-0T-Im8.normalTitle" = "حفظ";
+
+/* Class = "UILabel"; text = "الدوري الكلاسيك"; ObjectID = "xpZ-4h-vyR"; */
+"xpZ-4h-vyR.text" = "الدوري الكلاسيك";
+
+/* Class = "UILabel"; text = "اجراء تنقلات"; ObjectID = "y3h-jR-q1f"; */
+"y3h-jR-q1f.text" = "اجراء الإنتقالات";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "yEu-x0-Ba4"; */
+"yEu-x0-Ba4.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "لا يمكنك الانضمام في أكثر من 20 دوري خاص"; ObjectID = "yR2-7t-79g"; */
+"yR2-7t-79g.text" = "لا يمكنك الانضمام في أكثر من 20 دوري خاص";
+
+/* Class = "UIButton"; normalTitle = "الجولة ١"; ObjectID = "yTq-5S-xI5"; */
+"yTq-5S-xI5.normalTitle" = "الجولة ١";
+
+/* Class = "UILabel"; text = "20"; ObjectID = "yVO-04-ZXa"; */
+"yVO-04-ZXa.text" = "20";
+
+/* Class = "UILabel"; text = "حارس مرمي"; ObjectID = "yft-Gr-Dqn"; */
+"yft-Gr-Dqn.text" = "حارس مرمي";
+
+/* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "ynt-NB-IWM"; */
+"ynt-NB-IWM.text" = "نقاط اللاعب";
+
+/* Class = "UILabel"; text = "14"; ObjectID = "yrh-RO-8fl"; */
+"yrh-RO-8fl.text" = "14";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "yts-zu-2wh"; */
+"yts-zu-2wh.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "لا يمكنك الانضمام في أكثر من 20 دوري خاص"; ObjectID = "z46-ig-tNt"; */
+"z46-ig-tNt.text" = "لا يمكنك الانضمام في أكثر من 20 دوري خاص";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "zDk-ej-OIe"; */
+"zDk-ej-OIe.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "انضم إلى الدوري الخاص إذا أعطاك شخص ما رمز الدوري للدخول"; ObjectID = "zIa-j5-GIB"; */
+"zIa-j5-GIB.text" = "انضم إلى الدوري الخاص إذا أعطاك شخص ما رمز الدوري للدخول";
+
+/* Class = "UILabel"; text = "44.77"; ObjectID = "zPn-4d-Dnz"; */
+"zPn-4d-Dnz.text" = "44.77";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "zRW-YX-v8m"; */
+"zRW-YX-v8m.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "Head to head إنشاء دوري"; ObjectID = "zVb-0j-1Rr"; */
+"zVb-0j-1Rr.text" = "Head to head إنشاء دوري";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "ziR-78-mjX"; */
+"ziR-78-mjX.text" = "";
+
+/* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "ziY-d8-mE8"; */
+"ziY-d8-mE8.text" = "اسم اللاعب";
+
+/* Class = "UILabel"; text = "عمر السومة (2)"; ObjectID = "ztt-zq-GHm"; */
+"ztt-zq-GHm.text" = "عمر السومة (2)";

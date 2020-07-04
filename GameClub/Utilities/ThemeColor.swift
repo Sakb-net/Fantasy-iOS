@@ -17,6 +17,8 @@ extension Color {
         var instanceColor = UIColor.clear
         
         switch self {
+        case .selectedCell :
+            instanceColor = UIColor(hexString: "#ABBBEA")
         case .selectedPlayer:
             instanceColor = UIColor(hexString: "#FFF950")
         case .goalKeeper:

@@ -10,11 +10,18 @@ import UIKit
 import SideMenu
 
 class NoTeamVC: ParentViewController {
+    var isLogin = false
     @IBOutlet weak var mainLbl: UILabel!
+    @IBOutlet weak var messageLbl: UILabel!
     @IBOutlet weak var chooseTeamBT: UIButton!
     @IBAction func chooseTeamAction(_ sender: Any) {
-        let pitchVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PitchVC") as! PitchVC
-        self.navigationController?.pushViewController(pitchVC, animated: true)
+        if isLogin {
+            let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }else {
+            let pitchVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PitchVC") as! PitchVC
+            self.navigationController?.pushViewController(pitchVC, animated: true)
+        }
     }
     @IBAction func menuAction(_ sender: Any) {
     let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
@@ -23,10 +30,12 @@ class NoTeamVC: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.removeViewController(MyTeamVC.self)
-
         roundViewCornersNoShadow(view: chooseTeamBT)
+        if isLogin {
+            messageLbl.text = "You should Login first".localized
+            chooseTeamBT.setTitle("Login".localized, for: .normal)
+        }
     }
-
 }
 extension UINavigationController {
 

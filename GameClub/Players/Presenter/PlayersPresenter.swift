@@ -179,7 +179,7 @@ class PlayersPresenter {
         }
     }
   
-    func getMyTeam(type : Int, onSuccess: @escaping ([MyTeam], [MyTeam], [MyTeam], [MyTeam], Int, Double, Int) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    func getMyTeam(type : Int, onSuccess: @escaping ([MyTeam], [MyTeam], [MyTeam], [MyTeam], Int, Double, Int) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
     {
         var url = ""
         if type == 0 {
@@ -229,16 +229,16 @@ class PlayersPresenter {
                         }
                         onSuccess(goalKeepers, defenders, mids, attackers, numPlayer, remainGold, totalGold)
                     }else{
-                        onFailure("Oops, Error occured")
+                        onFailure("Oops, Error occured", statusCode)
                     }
                 }else{
                     let message = response!["Message"].stringValue
-                    onFailure(message)
+                    onFailure(message, statusCode)
                 }
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure(error!.localizedDescription, 1000)
             }
         }
     }
@@ -257,6 +257,35 @@ class PlayersPresenter {
                     
                 }else{
                     let message = response!["message"].stringValue
+                    onFailure(message)
+                }
+            
+        }
+    }
+    
+    func getPlayerDetails(playerLink: String, onSuccess: @escaping ([PlayerStatistics]) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let parameters:[String:Any] = [
+            "player_link" : playerLink,
+            "lang": HelperMethods.getCurrentLanguage()
+        ]
+        let url = Urls().getPlayerDetails()
+       
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                if let data = response!["data"]["statistics_data"].array {
+                    var playersStatistics = [PlayerStatistics]()
+                    for player in data {
+                        playersStatistics.append(PlayerStatistics(parametersJson: player.dictionaryValue))
+                    }
+                    onSuccess(playersStatistics)
+                }else{
+                    onFailure("Oops, Error occured")
+                }
+                }else{
+                    let message = response!["Message"].stringValue
                     onFailure(message)
                 }
             

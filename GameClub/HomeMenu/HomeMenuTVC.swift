@@ -4,10 +4,13 @@
 
 
 import UIKit
+import MOLH
 
 class HomeMenuTVC: UITableViewController {
     
-    let menuTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","الجوائز","الدوريات","المساعدة","اتصل بنا","تسجيل خروج"]
+    let menuArabicTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","الجوائز","الدوريات","المساعدة","اتصل بنا","English","تسجيل خروج"]
+    let menuEngTitles = ["Home","My Points","My Team","Transferes","Rules","News","Videos","Statistics","Fixtures","Awards","Leagues","Help","Contact Us","العربية","Logout"]
+    var menuTitles = [String]()
     
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
@@ -18,6 +21,12 @@ class HomeMenuTVC: UITableViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.tableView.separatorStyle = .none
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "menu_bg"))
+        
+        if  "lang".localized == "en"{
+            menuTitles = menuEngTitles
+        }else {
+            menuTitles = menuArabicTitles
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,7 +44,8 @@ class HomeMenuTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.menuTitles.count + 1
+            return self.menuTitles.count + 1
+        
     }
 
     
@@ -46,11 +56,11 @@ class HomeMenuTVC: UITableViewController {
         cell2.backgroundColor = UIColor.clear
 
         if indexPath.row == 0 {
-            cell1.userName.text = User.shared().display_name
+            cell1.userName.text = User.shared().display_name ?? "Login".localized
             return cell1
         } else {
             cell2.textLabel?.text = self.menuTitles[indexPath.row-1]
-            cell2.textLabel?.textAlignment = .right
+//            cell2.textLabel?.textAlignment = .right
             cell2.textLabel?.font = UIFont(name: "HelveticaNeueW23forSKY-Reg", size: 20)
             cell2.textLabel?.textColor = UIColor.white
 
@@ -61,6 +71,7 @@ class HomeMenuTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         if indexPath.row == 0 {
+            
             let accountVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "AccountVC") as! AccountVC
             self.navigationController?.pushViewController(accountVC, animated: true)
         }
@@ -108,6 +119,9 @@ class HomeMenuTVC: UITableViewController {
             let contactUsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ContactUsVC") as! ContactUsVC
             self.navigationController?.pushViewController(contactUsVC, animated: true)
         }else if indexPath.row == 14 {
+            MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+            MOLH.reset()
+        }else if indexPath.row == 15 {
             UserDefaults.standard.set(0, forKey: "add_team")
             User.shared().logoutUser()
             let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC

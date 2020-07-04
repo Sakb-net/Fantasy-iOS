@@ -10,10 +10,18 @@ import GoogleSignIn
 import TwitterKit
 import CoreData
 import Alamofire
+import MOLH
+
 var isNetworkReachable = NetworkReachabilityManager()?.isReachable ?? false
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
+    func reset() {
+        let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+                    let stry = UIStoryboard(name: "Main", bundle: nil)
+                    rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "rootnav")
+    }
+    
     var window: UIWindow?
 
 
@@ -62,7 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         net?.startListening()
-
+        MOLHLanguage.setDefaultLanguage("ar")
+        MOLH.shared.specialKeyWords = ["Cancel","Done"]
+        MOLH.shared.activate(true)
         return true
     }
 
@@ -118,3 +128,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
 }
 
+extension String {
+    var localized : String {
+        return NSLocalizedString(self, comment: "")
+    }
+}

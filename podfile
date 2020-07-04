@@ -13,5 +13,6 @@ target 'GameClub' do
     pod 'SDWebImage/WebP'
     pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
     pod 'SwiftSVG', '~> 2.0'
+    pod 'MOLH'
 
 end
