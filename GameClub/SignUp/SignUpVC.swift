@@ -56,22 +56,41 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
         super.viewDidLoad()
         loginPresenter.loginBTCongig(loginBT: self.signUpBT)
         addLeftViewToPassTF()
-        self.nameTF.textAlignment = .right
-        self.emailTF.textAlignment = .right
-        self.passTF.textAlignment = .right
-        self.confirmPassTF.textAlignment = .right
-        self.phoneTF.textAlignment = .right
-        self.cityTF.textAlignment = .right
-        self.stateTF.textAlignment = .right
+        if "lang".localized == "ar" {
+            self.nameTF.textAlignment = .right
+            self.emailTF.textAlignment = .right
+            self.passTF.textAlignment = .right
+            self.confirmPassTF.textAlignment = .right
+            self.phoneTF.textAlignment = .right
+            self.cityTF.textAlignment = .right
+            self.stateTF.textAlignment = .right
         
-        self.nameTF.titleLabel.textAlignment = .right
-        self.emailTF.titleLabel.textAlignment = .right
-        self.passTF.titleLabel.textAlignment = .right
-        self.confirmPassTF.titleLabel.textAlignment = .right
+            self.nameTF.titleLabel.textAlignment = .right
+            self.emailTF.titleLabel.textAlignment = .right
+            self.passTF.titleLabel.textAlignment = .right
+            self.confirmPassTF.titleLabel.textAlignment = .right
         
-        self.phoneTF.titleLabel.textAlignment = .right
-        self.cityTF.titleLabel.textAlignment = .right
-        self.stateTF.titleLabel.textAlignment = .right
+            self.phoneTF.titleLabel.textAlignment = .right
+            self.cityTF.titleLabel.textAlignment = .right
+            self.stateTF.titleLabel.textAlignment = .right
+        }else {
+            self.nameTF.textAlignment = .left
+                self.emailTF.textAlignment = .left
+                self.passTF.textAlignment = .left
+                self.confirmPassTF.textAlignment = .left
+                self.phoneTF.textAlignment = .left
+                self.cityTF.textAlignment = .left
+                self.stateTF.textAlignment = .left
+            
+                self.nameTF.titleLabel.textAlignment = .left
+                self.emailTF.titleLabel.textAlignment = .left
+                self.passTF.titleLabel.textAlignment = .left
+                self.confirmPassTF.titleLabel.textAlignment = .left
+            
+                self.phoneTF.titleLabel.textAlignment = .left
+                self.cityTF.titleLabel.textAlignment = .left
+                self.stateTF.titleLabel.textAlignment = .left
+        }
         self.cityTF.addTarget(self, action: #selector(openDropDown), for: .touchDown)
 
         facebookButtonConfig()
@@ -136,6 +155,7 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if user != nil {
             print(user.profile.email)
+            
         }
     }
     func facebookButtonConfig(){
@@ -160,11 +180,17 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
         button2.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
         button2.frame = CGRect(x: CGFloat(self.passTF.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         button2.addTarget(self, action: #selector(self.showConfirmPass), for: .touchUpInside)
-        self.passTF.leftView = button
-        self.passTF.leftViewMode = .always
-        self.confirmPassTF.leftView = button2
-        self.confirmPassTF.leftViewMode = .always
-        
+        if "lang".localized == "ar"{
+//            self.passTF.leftView = button
+//            self.passTF.leftViewMode = .always
+//            self.confirmPassTF.leftView = button2
+//            self.confirmPassTF.leftViewMode = .always
+        }else {
+            self.passTF.rightView = button
+            self.passTF.rightViewMode = .always
+            self.confirmPassTF.rightView = button2
+            self.confirmPassTF.rightViewMode = .always
+        }
     }
     @objc func showPass(_ sender: Any) {
         if self.passTF.text != "" {

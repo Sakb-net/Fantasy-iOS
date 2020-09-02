@@ -9,3 +9,13 @@
 "Login" = "Login";
 "You should Login first" = "You should Login first" ;
 "Not " = "Not ";
+"Transfers" = "Transfers";
+"Minutes" = "Minutes";
+"Goalkeeper" = "Goalkeeper";
+"Defender" = "Defender";
+"Mid" = "Mid";
+"Attacker" = "Attacker";
+"Highest Price" = "Highest Price";
+"Lowest Price" = "Lowest Price";
+"Highest Points" = "Highest Points";
+"Lowest Points" = "Lowest Points";

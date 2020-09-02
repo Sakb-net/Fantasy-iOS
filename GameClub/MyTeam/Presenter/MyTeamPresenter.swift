@@ -107,7 +107,6 @@ class MyTeamPresenter {
         }
     }
     
-    
     func addPlayer(playersIDs:[Int], onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let url = Urls().change_player()
@@ -201,6 +200,41 @@ class MyTeamPresenter {
             }
         }
     }
+    func activateCard(url: String, onSuccess: @escaping (Bool, String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+           {
+               
+               ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
+                   
+                   if response != nil
+                   {
+//                    let statusCode = response!["StatusCode"].intValue
+                    let message = response!["Message"].stringValue
+                    let data = response!["data"].boolValue
+                    onSuccess(data, message)
+                   }else{
+                    onFailure(error!.localizedDescription)
+                   }
+           }
+    }
+    
+    func check_btns_status(onSuccess: @escaping (Int, Int) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+           {
+               let url = Urls().check_btns_status()
+
+               ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
+                   
+                   if response != nil
+                   {
+//                    let statusCode = response!["StatusCode"].intValue
+//                    let message = response!["Message"].stringValue
+                    let data = response!["data"].dictionaryValue
+                    let benchCard = data["benchCard"]!.intValue
+                    let tripleCard = data["tripleCard"]!.intValue
+                    onSuccess(benchCard, tripleCard)
+                   }else{
+                    onFailure(error!.localizedDescription)
+                   }
+           }
+    }
 
 }
- 

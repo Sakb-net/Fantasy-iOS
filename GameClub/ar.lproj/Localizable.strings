@@ -9,3 +9,21 @@
 "Login" = "تسجيل دخول";
 "You should Login first" = "يجب تسجيل الدخول اولاً";
 "Not " = "لست ";
+"End date for GW " = "الموعد النهائي لإنتهاء الجولة ";
+"GameWeek" = "الجولة";
+"Overall Points" = "إجمالي النقاط";
+"Overall Rank" = "الترتيب";
+"Free Transfers" = "الانتقالات المجانية";
+"GameWeek Transfers Made" = "عدد الانتقالات في الجولة";
+"Transfers" = "الإنتقالات";
+"Minutes" = "دقائق اللعب";
+"Subs" = "البدلاء";
+"GoalKeeper" = "حارس مرمى";
+"Defender" = "مدافع";
+"Mid" = "خط وسط";
+"Attacker" = "مهاجم";
+"Highest Price" = "حسب الأعلى سعر";
+"Lowest Price" = "حسب الأقل سعر";
+"Highest Points" = "حسب اعلى نقاط";
+"Lowest Points" = "حسب اقل نقاط";
+

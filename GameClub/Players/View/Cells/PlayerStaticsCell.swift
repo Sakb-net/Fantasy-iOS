@@ -10,12 +10,21 @@ import UIKit
 
 class PlayerStaticsCell: UITableViewCell {
 
-   
-    @IBOutlet weak var minValueLbl: UILabel!
-    @IBOutlet weak var minPointsLbl: UILabel!
-    @IBOutlet weak var CSValueLbl: UILabel!
-    @IBOutlet weak var CSPointsLbl: UILabel!
+    var delegate : ViewMatchDetails?
+    var index : Int?
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var valueLbl: UILabel!
+    @IBOutlet weak var pointsLbl: UILabel!
+//    @IBOutlet weak var CSValueLbl: UILabel!
+//    @IBOutlet weak var CSPointsLbl: UILabel!
     @IBOutlet weak var GWValueLbl: UILabel!
     @IBOutlet weak var ICTLbl: UILabel!
     @IBOutlet weak var FormLbl: UILabel!
+    @IBOutlet weak var viewMatchBT: UIButton!
+    @IBAction func viewMatchAction(_ sender: Any) {
+        delegate?.viewMatch(index: index!)
+    }
+}
+protocol ViewMatchDetails {
+    func viewMatch (index : Int)
 }

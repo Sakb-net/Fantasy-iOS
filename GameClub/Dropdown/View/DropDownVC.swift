@@ -5,11 +5,14 @@
 import UIKit
 
 enum DropDownTypes: String {
-    case City = "city"
-    case sortBy = "sortBy"
-    case team = "team"
-    case position = "position"
-    case playerAction = "player_action"
+    case City
+    case sortBy
+    case team
+    case position
+    case playerAction
+    case gameWeek
+    case sortByStat
+    case player_loc
 }
 
 protocol SelectedDropDownType {
@@ -24,10 +27,10 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
     
     var selectedType = DropDownTypes.City
     let presenter = DropDownPresenter()
-    
     var countries = Country()
     var cities = [City]()
     var teams = [Teams]()
+    var gameWeeks = [GWsPointsModel]()
     
     var selectDelegate:SelectedDropDownType!
     
@@ -37,14 +40,13 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
         dropDownTV.delegate = self
         dropDownTV.dataSource = self
         self.tableView.separatorStyle = .none
-
+        
         if isNetworkReachable {
             if selectedType == .City {
                 getCities()
             }else if selectedType == .team {
                 getTeams()
             }
-           
         }else{
             self.showAlert(title: "أنت غير متصل الإنترنت", message: "", shouldpop: false)
         }
@@ -71,6 +73,12 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             return 0
         case .playerAction:
             return 2
+        case .gameWeek:
+            return gameWeeks.count
+        case .sortByStat:
+            return 4
+        case .player_loc:
+            return 4
         }
     }
     
@@ -78,7 +86,7 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "dropDownCell", for: indexPath)
         cell.textLabel?.font = UIFont(name: AppFont().appFontNoraml, size: FontSizes().normalFontSize)
         cell.textLabel?.textColor = Color.theme.value
-        cell.textLabel?.textAlignment = .right
+//        cell.textLabel?.textAlignment = .right
         cell.textLabel?.numberOfLines = 0
         
         switch selectedType {
@@ -105,6 +113,28 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             }else {
                 cell.textLabel?.text = "تفاصيل اللاعب"
             }
+        case .gameWeek:
+            cell.textLabel?.text = gameWeeks[indexPath.row].lang_num_week
+        case .sortByStat:
+            if indexPath.row == 0 {
+                cell.textLabel?.text = "Highest Price".localized
+            }else if indexPath.row == 1 {
+                cell.textLabel?.text = "Lowest Price".localized
+            }else if indexPath.row == 2 {
+                cell.textLabel?.text = "Highest Points".localized
+            }else if indexPath.row == 3 {
+                cell.textLabel?.text = "Lowest Points".localized
+            }
+        case .player_loc:
+            if indexPath.row == 0 {
+                cell.textLabel?.text = "GoalKeeper".localized
+            }else if indexPath.row == 1 {
+                cell.textLabel?.text = "Defender".localized
+            }else if indexPath.row == 2 {
+                cell.textLabel?.text = "Mid".localized
+            }else if indexPath.row == 3 {
+                cell.textLabel?.text = "Attacker".localized
+            }
         }
         return cell
     }
@@ -118,6 +148,12 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             self.selectDelegate.selectedType(selectedType: .sortBy, selectedItem: indexPath.row)
         }else if selectedType == .playerAction{
             self.selectDelegate.selectedType(selectedType: .playerAction, selectedItem: indexPath.row)
+        }else if selectedType == .gameWeek{
+            self.selectDelegate.selectedType(selectedType: .gameWeek, selectedItem: gameWeeks[indexPath.row])
+        }else if selectedType == .sortByStat{
+            self.selectDelegate.selectedType(selectedType: .sortByStat, selectedItem: indexPath.row)
+        }else if selectedType == .player_loc{
+            self.selectDelegate.selectedType(selectedType: .player_loc, selectedItem: indexPath.row)
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -157,4 +193,5 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
         }
     }
+   
 }

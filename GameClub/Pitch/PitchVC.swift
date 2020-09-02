@@ -56,6 +56,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var attackerLbl2: UILabel!
     @IBOutlet weak var attackerLbl3: UILabel!
     
+    @IBOutlet weak var pageTitleLbl: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var numPlayerLabel: UILabel!
     @IBOutlet weak var remainCostLabel: UILabel!
@@ -176,8 +177,15 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let endDate = UserDefaults.standard.string(forKey: "END_DATE") ?? ""
+        let gameWeek = UserDefaults.standard.string(forKey: "GAME_WEEK") ?? ""
+        let mainLblString = "End date for GW ".localized + gameWeek + ": " + endDate
+        endTimeLabel.text = mainLblString
         if pageType == 1 {self.autoSelectView.isHidden = true
-            self.freeTransView.isHidden = false}
+            self.freeTransView.isHidden = false
+            self.saveBT.isHidden = true
+            self.pageTitleLbl.text = "Transfers".localized
+        }
         resetBTs()
         viewConfig()
             }
@@ -197,7 +205,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "PichCell", for: indexPath) as! PichCell
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "PichHeaderCell", for: indexPath) as! PichHeaderCell
         if indexPath.row == 0 {
-            cell2.positionLbl.text = "حارس مرمى"
+            cell2.positionLbl.text = "GoalKeeper".localized
             cell2.contentView.backgroundColor = Color.goalKeeper.value
             return cell2
         }else if indexPath.row > 0 && indexPath.row <= self.goalKeepers.count{
@@ -214,7 +222,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             }
             return cell1
         } else if indexPath.row == self.goalKeepers.count + 1{
-            cell2.positionLbl.text = "دفاع"
+            cell2.positionLbl.text = "Defender".localized
             cell2.contentView.backgroundColor = Color.defender.value
             return cell2
         }else if indexPath.row > self.goalKeepers.count + 1 && indexPath.row <= self.goalKeepers.count + self.defenders.count + 1 {
@@ -231,7 +239,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             }
             return cell1
         }else if indexPath.row == self.goalKeepers.count + self.defenders.count + 2{
-            cell2.positionLbl.text = "خط وسط"
+            cell2.positionLbl.text = "Mid".localized
             cell2.contentView.backgroundColor = Color.mid.value
             return cell2
         }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + 2) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + 2 {
@@ -248,7 +256,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             }
             return cell1
         }else if indexPath.row == (self.goalKeepers.count + self.defenders.count + self.mids.count + 3){
-            cell2.positionLbl.text = "هجوم"
+            cell2.positionLbl.text = "Attacker".localized
             cell2.contentView.backgroundColor = Color.attacker.value
             return cell2
         }else {
@@ -285,8 +293,8 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
         }) { (errorMessage, code) in
             self.hideLoader()
             if code == 11 ||  code == 41{
-                let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NoTeamVC") as! NoTeamVC
-                noTeamVC.isLogin = true
+                let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//                noTeamVC.isLogin = true
                 self.navigationController?.pushViewController(noTeamVC, animated: true)
             }else {
                 self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
@@ -305,7 +313,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.goalKeeperBT1.alpha = 0.5
             }
         }else {
-            resetBT(label: self.goalKeeperLbl1, bt: self.goalKeeperBT1, btTitle: "حارس مرمى")
+            resetBT(label: self.goalKeeperLbl1, bt: self.goalKeeperBT1, btTitle: "GoalKeeper".localized)
         }
         if goalKeeper2.found_player == 1 {
             self.goalKeeperLbl2.text = goalKeeper2.name_player
@@ -315,7 +323,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.goalKeeperBT2.alpha = 0.5
             }
         }else {
-            resetBT(label: self.goalKeeperLbl2, bt: self.goalKeeperBT2, btTitle: "حارس مرمى")
+            resetBT(label: self.goalKeeperLbl2, bt: self.goalKeeperBT2, btTitle: "GoalKeeper".localized)
 
         }
         
@@ -333,7 +341,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.defenderBT1.alpha = 0.5
             }
         }else {
-            resetBT(label: self.defenderLbl1, bt: self.defenderBT1, btTitle: "مدافع")
+            resetBT(label: self.defenderLbl1, bt: self.defenderBT1, btTitle: "Defender".localized)
 
         }
         if defender2.found_player == 1 {
@@ -344,7 +352,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.defenderBT2.alpha = 0.5
             }
         }else {
-            resetBT(label: self.defenderLbl2, bt: self.defenderBT2, btTitle: "مدافع")
+            resetBT(label: self.defenderLbl2, bt: self.defenderBT2, btTitle: "Defender".localized)
         }
         if defender3.found_player == 1 {
             self.defenderLbl3.text = defender3.name_player
@@ -354,7 +362,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.defenderBT3.alpha = 0.5
             }
         }else {
-            resetBT(label: self.defenderLbl3, bt: self.defenderBT3, btTitle: "مدافع")
+            resetBT(label: self.defenderLbl3, bt: self.defenderBT3, btTitle: "Defender".localized)
         }
         if defender4.found_player == 1 {
             self.defenderLbl4.text = defender4.name_player
@@ -364,7 +372,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.defenderBT4.alpha = 0.5
             }
         }else {
-            resetBT(label: self.defenderLbl4, bt: self.defenderBT4, btTitle: "مدافع")
+            resetBT(label: self.defenderLbl4, bt: self.defenderBT4, btTitle: "Defender".localized)
         }
         if defender5.found_player == 1 {
             self.defenderLbl5.text = defender5.name_player
@@ -374,7 +382,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.defenderBT5.alpha = 0.5
             }
         }else {
-            resetBT(label: self.defenderLbl5, bt: self.defenderBT5, btTitle: "مدافع")
+            resetBT(label: self.defenderLbl5, bt: self.defenderBT5, btTitle: "Defender".localized)
         }
         
         let mid1 = self.mids[0]
@@ -391,7 +399,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.midBT1.alpha = 0.5
             }
         }else {
-            resetBT(label: self.midLbl1, bt: self.midBT1, btTitle: "خط وسط")
+            resetBT(label: self.midLbl1, bt: self.midBT1, btTitle: "Mid".localized)
         }
         if mid2.found_player == 1 {
             self.midLbl2.text = mid2.name_player
@@ -401,7 +409,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.midBT2.alpha = 0.5
             }
         }else {
-            resetBT(label: self.midLbl2, bt: self.midBT2, btTitle: "خط وسط")
+            resetBT(label: self.midLbl2, bt: self.midBT2, btTitle: "Mid".localized)
         }
         if mid3.found_player == 1 {
             self.midLbl3.text = mid3.name_player
@@ -411,7 +419,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.midBT3.alpha = 0.5
             }
         }else {
-            resetBT(label: self.midLbl3, bt: self.midBT3, btTitle: "خط وسط")
+            resetBT(label: self.midLbl3, bt: self.midBT3, btTitle: "Mid".localized)
         }
         if mid4.found_player == 1 {
             self.midLbl4.text = mid4.name_player
@@ -421,7 +429,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.midBT4.alpha = 0.5
             }
         }else {
-            resetBT(label: self.midLbl4, bt: self.midBT4, btTitle: "خط وسط")
+            resetBT(label: self.midLbl4, bt: self.midBT4, btTitle: "Mid".localized)
         }
         if mid5.found_player == 1 {
             self.midLbl5.text = mid5.name_player
@@ -431,7 +439,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.midBT5.alpha = 0.5
             }
         }else {
-            resetBT(label: self.midLbl5, bt: self.midBT5, btTitle: "خط وسط")
+            resetBT(label: self.midLbl5, bt: self.midBT5, btTitle: "Mid".localized)
         }
         
         let attacker1 = self.attackers[0]
@@ -446,7 +454,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.attackerBT1.alpha = 0.5
             }
         }else {
-            resetBT(label: self.attackerLbl1, bt: self.attackerBT1, btTitle: "مهاجم")
+            resetBT(label: self.attackerLbl1, bt: self.attackerBT1, btTitle: "Attacker".localized)
         }
         if attacker2.found_player == 1 {
             self.attackerLbl2.text = attacker2.name_player
@@ -456,7 +464,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.attackerBT2.alpha = 0.5
             }
         }else {
-            resetBT(label: self.attackerLbl2, bt: self.attackerBT2, btTitle: "مهاجم")
+            resetBT(label: self.attackerLbl2, bt: self.attackerBT2, btTitle: "Attacker".localized)
         }
         if attacker3.found_player == 1 {
             self.attackerLbl3.text = attacker3.name_player
@@ -466,7 +474,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
                 self.attackerBT3.alpha = 0.5
             }
         }else {
-            resetBT(label: self.attackerLbl3, bt: self.attackerBT3, btTitle: "مهاجم")
+            resetBT(label: self.attackerLbl3, bt: self.attackerBT3, btTitle: "Attacker".localized)
         }
     }
     func resetBT (label : UILabel, bt : UIButton, btTitle : String){

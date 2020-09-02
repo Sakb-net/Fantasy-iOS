@@ -10,6 +10,7 @@ import UIKit
 import SideMenu
 
 class InstructionsVC: ParentViewController , UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.instructions.count
     }

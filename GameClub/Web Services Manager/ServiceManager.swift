@@ -23,9 +23,11 @@ class ServiceManager: NSObject {
         else
         {
             print(Urls.apiAccessKeyValue)
+            let langString = "lang".localized
             headers[Urls.apiAccessKey] = User.shared().access_token
             headers[Urls.apiTypeDev] = "ios"
             headers[Urls.apiValDev] = "I$&h6#565iOs5ioS#(*I$&h6#565iOs5ioS#"
+            headers[Urls.apiLang] = langString
 //            if let userAuthToken = User.shared().userAuthToken
 //            {
 //                headers["x-uqu-user-token"] = userAuthToken

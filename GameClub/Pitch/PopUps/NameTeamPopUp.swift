@@ -28,9 +28,10 @@ class NameTeamPopUp: ParentViewController {
         }
         self.showLoader()
         self.nameTeam(name: name, onSuccess: { (message) in
-            self.showAlert(title: "", message: message, shouldpop: false)
+//            self.showAlert(title: "", message: message, shouldpop: false)
             self.dismiss(animated: true, completion: nil)
-            UserDefaults.standard.set(1, forKey: "add_team")
+            let email = User.shared().email
+            UserDefaults.standard.set(1, forKey: (email ?? ""))
             self.hideLoader()
         }) { (errorMessage) in
             self.hideLoader()

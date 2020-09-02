@@ -14,6 +14,8 @@ class Urls {
     static let apiAccessKey = "access-token"
     static let apiTypeDev = "type-dev"
     static let apiValDev = "val-dev"
+    static let apiLang = "lang"
+
     static let apiAccessKeyValue = User.shared().access_token ?? ""
     static let baseUrl = "https://fantgame.sakb-co.com.sa/"
     
@@ -39,6 +41,46 @@ class Urls {
     
     func urlEncoding(originalString: String) -> String {
         return originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+    }
+    
+    func getPlayerMatchDetails(link : String) -> String{
+        return "\(getCurrentBaseUrl())fixtures/\(link)"
+    }
+    
+    func getStatistics() -> String{
+        return "\(getCurrentBaseUrl())statistics"
+    }
+    
+    func get_subeldwry(link : String) -> String{
+        return "\(getCurrentBaseUrl())subeldwry/\(link)/fixtures"
+    }
+    
+    func get_subeldwry() -> String{
+        return "\(getCurrentBaseUrl())subeldwry"
+    }
+    
+    func check_btns_status() -> String{
+        return "\(getCurrentBaseUrl())check_btns_status"
+    }
+    
+    func triple_captain_card() -> String{
+        return "\(getCurrentBaseUrl())triple_captain_card"
+    }
+    
+    func bench_players_card() -> String{
+        return "\(getCurrentBaseUrl())bench_players_card"
+    }
+    
+    func getHomePoints() -> String{
+        return "\(getCurrentBaseUrl())home_points_eldwry"
+    }
+    
+    func getPoints() -> String{
+        return "\(getCurrentBaseUrl())points_subeldwry"
+    }
+    
+    func getPointsGW() -> String{
+        return "\(getCurrentBaseUrl())points_eldwry"
     }
     
     func getPublicPoints() -> String{

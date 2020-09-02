@@ -10,17 +10,17 @@ import UIKit
 import SideMenu
 
 class MyTeamVC: ParentViewController {
-    
-       var goalKeepers = [MyTeam]()
-       var defenders = [MyTeam]()
-       var mids = [MyTeam]()
-       var attackers = [MyTeam]()
-       var subs = [MyTeam]()
+    var benchCard = 0
+    var tripleCard = 0
+    var goalKeepers = [MyTeam]()
+    var defenders = [MyTeam]()
+    var mids = [MyTeam]()
+    var attackers = [MyTeam]()
+    var subs = [MyTeam]()
     var subsTypes = [String]()
     var subsNotGoalkeeper = [MyTeam] ()
     var subGoalkeeper = MyTeam ()
-
-       var presenter = MyTeamPresenter ()
+    var presenter = MyTeamPresenter ()
     var allViews = [UIView] ()
     var allButtons = [UIButton] ()
     var allSubsView = [UIView] ()
@@ -31,7 +31,7 @@ class MyTeamVC: ParentViewController {
     var fromSubToMain = false
     var captin_icon = "c-icon"
     var assist_icon = "v-icon"
-       @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var goalKeeperView: UIView!
     @IBOutlet weak var defendView1: UIView!
     @IBOutlet weak var defendView2: UIView!
@@ -134,6 +134,8 @@ class MyTeamVC: ParentViewController {
        @IBAction func substitutionsCardAction(_ sender: Any) {
         let cardPopUp = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "CardPopUp") as! CardPopUp
         cardPopUp.popUpType = "sub_card"
+        cardPopUp.benchCard = benchCard
+        cardPopUp.tripleCard = tripleCard
         present(cardPopUp, animated: true
             , completion: nil)
         
@@ -141,6 +143,8 @@ class MyTeamVC: ParentViewController {
        @IBAction func captinCardAction(_ sender: Any) {
         let cardPopUp = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "CardPopUp") as! CardPopUp
         cardPopUp.popUpType = "three_card"
+        cardPopUp.benchCard = benchCard
+        cardPopUp.tripleCard = tripleCard
         present(cardPopUp, animated: true
             , completion: nil)
        }
@@ -355,7 +359,9 @@ class MyTeamVC: ParentViewController {
             , completion: nil)
     }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        checkBtStates()
+    }
     override func viewDidLoad() {
         roundViewCornersNoShadow(view: pitchBT)
         roundViewCornersNoShadow(view: listBT)
@@ -365,6 +371,10 @@ class MyTeamVC: ParentViewController {
         self.tableView.dataSource = self
         appendView ()
         getMyTeam()
+        let endDate = UserDefaults.standard.string(forKey: "END_DATE") ?? ""
+        let gameWeek = UserDefaults.standard.string(forKey: "GAME_WEEK") ?? ""
+        let mainLblString = "End date for GW ".localized + gameWeek + ": " + endDate
+        mainLbl.text = mainLblString
     }
     var allPlayers = [MyTeam]()
     func getMyTeam(){
@@ -390,8 +400,8 @@ class MyTeamVC: ParentViewController {
         }) { (errorMessage, code) in
 //            self.hideLoader()
             if code == 11 || code == 41{
-                let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NoTeamVC") as! NoTeamVC
-                noTeamVC.isLogin = true
+                let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//                noTeamVC.isLogin = true
                 self.navigationController?.pushViewController(noTeamVC, animated: true)
             }else {
                 self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
@@ -849,7 +859,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "PichHeaderCell", for: indexPath) as! PichHeaderCell
         
         if indexPath.row == 0 {
-            cell2.positionLbl.text = "حارس مرمى"
+            cell2.positionLbl.text = "GoalKeeper".localized
             cell2.contentView.backgroundColor = Color.goalKeeper.value
             return cell2
         }else if indexPath.row > 0 && indexPath.row <= self.goalKeepers.count{
@@ -857,7 +867,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             checkCaptain (player : self.goalKeepers[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.goalKeepers[index])
         } else if indexPath.row == self.goalKeepers.count + 1{
-            cell2.positionLbl.text = "دفاع"
+            cell2.positionLbl.text = "Defender".localized
             cell2.contentView.backgroundColor = Color.defender.value
             return cell2
         }else if indexPath.row > self.goalKeepers.count + 1 && indexPath.row <= self.goalKeepers.count + self.defenders.count + 1 {
@@ -865,7 +875,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             checkCaptain (player : self.defenders[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.defenders[index])
         }else if indexPath.row == self.goalKeepers.count + self.defenders.count + 2{
-            cell2.positionLbl.text = "خط وسط"
+            cell2.positionLbl.text = "Mid".localized
             cell2.contentView.backgroundColor = Color.mid.value
             return cell2
         }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + 2) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + 2 {
@@ -873,7 +883,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             checkCaptain (player : self.mids[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.mids[index])
         }else if indexPath.row == (self.goalKeepers.count + self.defenders.count + self.mids.count + 3){
-            cell2.positionLbl.text = "هجوم"
+            cell2.positionLbl.text = "Attacker".localized
             cell2.contentView.backgroundColor = Color.attacker.value
             return cell2
         }else if indexPath.row > (self.goalKeepers.count + self.defenders.count + self.mids.count + 3) && indexPath.row <= self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 3{
@@ -881,7 +891,7 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             checkCaptain (player : self.attackers[index] , cell : cell1)
             return fillCell (cell : cell1 , player : self.attackers[index])
         }else if indexPath.row == (self.goalKeepers.count + self.defenders.count + self.mids.count + self.attackers.count + 4){
-            cell2.positionLbl.text = "البدلاء"
+            cell2.positionLbl.text = "Subs".localized
             cell2.contentView.backgroundColor = Color.sub.value
             return cell2
         }else {
@@ -1002,5 +1012,21 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
                present(popUpVC, animated: true
                    , completion: nil)
            }
+    func checkBtStates () {
+    MyTeamPresenter().check_btns_status(onSuccess: { (benchCard, tripleCard) in
+        self.benchCard = benchCard
+        self.tripleCard = tripleCard
+        if benchCard != 0 {
+            self.captinCardBT.isEnabled = false
+            self.captinCardBT.alpha = 0.5
+        }
+        if tripleCard != 0 {
+            self.substitutionsCardBT.isEnabled = false
+            self.substitutionsCardBT.alpha = 0.5
+        }
+                }) { (errorMessage) in
+    //                self.hideLoader()
+                    self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                }
+    }
 }
-    

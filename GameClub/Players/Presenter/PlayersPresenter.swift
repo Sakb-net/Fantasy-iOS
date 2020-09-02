@@ -263,12 +263,10 @@ class PlayersPresenter {
         }
     }
     
-    func getPlayerDetails(playerLink: String, onSuccess: @escaping ([PlayerStatistics]) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    func getPlayerDetails(playerLink: String, onSuccess: @escaping ([PlayerStatistics], PlayerGeneralData) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let parameters:[String:Any] = [
-            "player_link" : playerLink,
-            "lang": HelperMethods.getCurrentLanguage()
-        ]
+            "player_link" : playerLink        ]
         let url = Urls().getPlayerDetails()
        
         ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
@@ -280,7 +278,9 @@ class PlayersPresenter {
                     for player in data {
                         playersStatistics.append(PlayerStatistics(parametersJson: player.dictionaryValue))
                     }
-                    onSuccess(playersStatistics)
+                    let player_data = response!["data"]["player_data"].dictionaryValue
+                    let playerGeneralData = PlayerGeneralData(parametersJson: player_data)
+                    onSuccess(playersStatistics, playerGeneralData)
                 }else{
                     onFailure("Oops, Error occured")
                 }
@@ -289,6 +289,27 @@ class PlayersPresenter {
                     onFailure(message)
                 }
             
+        }
+    }
+    
+    func getPlayerMatchDetails(matchLink: String, onSuccess: @escaping (DetailsModel, GeneralMatchData) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().getPlayerMatchDetails(link: matchLink)
+       
+        ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let data = response!["data"].dictionaryValue
+                let details_match = response!["details_match"].dictionaryValue
+                let generalData = GeneralMatchData(parametersJson: data)
+                    let details = DetailsModel(parametersJson: details_match)
+                    onSuccess(details, generalData)
+                
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
         }
     }
 

@@ -56,15 +56,25 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController!.removeViewController(PitchVC.self)
+        navigationController!.removeViewController(MyTeamVC.self)
+        navigationController!.removeViewController(MyPointsVC.self)
+
+
         self.navigationController?.navigationBar.isHidden = true
         loginBTCongig()
         addLeftViewToPassTF()
-        
-        self.passTF.leftViewMode = .always
-        self.passTF.textAlignment = .right
-        self.emailTF.textAlignment = .right
-        self.emailTF.titleLabel.textAlignment = .right
-        self.passTF.titleLabel.textAlignment = .right
+        if "lang".localized == "ar" {
+            self.passTF.textAlignment = .right
+            self.emailTF.textAlignment = .right
+            self.emailTF.titleLabel.textAlignment = .right
+            self.passTF.titleLabel.textAlignment = .right
+        }else {
+            self.passTF.textAlignment = .left
+            self.emailTF.textAlignment = .left
+            self.emailTF.titleLabel.textAlignment = .left
+            self.passTF.titleLabel.textAlignment = .left
+        }
         facebookButtonConfig()
         googleButtonConfig()
         
@@ -138,9 +148,13 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
         button.frame = CGRect(x: CGFloat(passTF.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         button.addTarget(self, action: #selector(self.showPass), for: .touchUpInside)
-        self.passTF.leftView = button
-        self.passTF.leftViewMode = .always
-        
+        if "lang".localized == "ar"{
+//            self.passTF.leftView = button
+//            self.passTF.leftViewMode = .always
+        }else {
+            self.passTF.rightView = button
+            self.passTF.rightViewMode = .always
+        }
     }
 }
 

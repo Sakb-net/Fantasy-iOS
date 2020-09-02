@@ -17,7 +17,12 @@ class ForgotPassVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginPresenter.loginBTCongig(loginBT: self.confirmEmail)
-        self.emailTF.textAlignment = .right
-        self.emailTF.titleLabel.textAlignment = .right
+        if "lang".localized == "ar"{
+            self.emailTF.textAlignment = .right
+            self.emailTF.titleLabel.textAlignment = .right
+        }else {
+            self.emailTF.textAlignment = .left
+            self.emailTF.titleLabel.textAlignment = .left
+        }
     }
 }
