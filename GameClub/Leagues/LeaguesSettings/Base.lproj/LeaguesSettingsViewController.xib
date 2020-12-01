@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Reg.ttf">
+            <string>HelveticaNeueW23forSKY-Reg</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeaguesSettingsViewController" customModule="GameClub" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="kze-cs-mZK" id="Vr7-Hd-CaW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQt-Ot-8e5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="X5d-xc-APY">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leagues Settings" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iF-6D-r3c">
+                            <rect key="frame" x="262.5" y="52" width="131.5" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="kiR-KD-fXf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-Ct-JMg">
+                            <rect key="frame" x="21" y="49" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="Evr-kp-Q6w"/>
+                                <constraint firstAttribute="width" constant="32" id="bbl-hx-kBF"/>
+                            </constraints>
+                            <state key="normal" image="back_bt"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="8kD-2e-KHv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="X5d-xc-APY" secondAttribute="bottom" id="7QJ-Mk-hvx"/>
+                        <constraint firstItem="0MD-Ct-JMg" firstAttribute="left" secondItem="DQt-Ot-8e5" secondAttribute="left" constant="21" id="7tT-R2-Tw0"/>
+                        <constraint firstItem="5iF-6D-r3c" firstAttribute="top" secondItem="DQt-Ot-8e5" secondAttribute="top" constant="52" id="CJW-88-R7g"/>
+                        <constraint firstItem="X5d-xc-APY" firstAttribute="left" secondItem="DQt-Ot-8e5" secondAttribute="left" id="G0c-ba-ciI"/>
+                        <constraint firstItem="0MD-Ct-JMg" firstAttribute="top" secondItem="DQt-Ot-8e5" secondAttribute="top" constant="49" id="KLQ-2a-x8I"/>
+                        <constraint firstAttribute="right" secondItem="5iF-6D-r3c" secondAttribute="right" constant="20" id="PTT-5g-sxm"/>
+                        <constraint firstItem="X5d-xc-APY" firstAttribute="top" secondItem="DQt-Ot-8e5" secondAttribute="top" id="iN1-wg-QX6"/>
+                        <constraint firstAttribute="height" constant="210" id="xIa-dA-AXp"/>
+                        <constraint firstAttribute="right" secondItem="X5d-xc-APY" secondAttribute="right" id="zlU-YW-BVV"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kze-cs-mZK">
+                    <rect key="frame" x="20" y="123" width="374" height="739"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DQt-Ot-8e5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BQT-Jb-oLy"/>
+                <constraint firstItem="DQt-Ot-8e5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Clr-UE-52t"/>
+                <constraint firstItem="kze-cs-mZK" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Fxz-00-9G8"/>
+                <constraint firstItem="kze-cs-mZK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="79" id="Mjk-2n-Jgc"/>
+                <constraint firstItem="DQt-Ot-8e5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gLJ-rh-uLl"/>
+                <constraint firstItem="kze-cs-mZK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="iMF-KN-Mfg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kze-cs-mZK" secondAttribute="trailing" constant="20" id="vxV-DZ-ZGJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="135.9375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_bt" width="32" height="32"/>
+        <image name="header" width="360" height="221"/>
+    </resources>
+</document>

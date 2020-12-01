@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Do you want to disable cards?"; ObjectID = "92g-SC-Jwr"; */
+"92g-SC-Jwr.text" = "هل تريد إلغاء تفعيل الكروت؟";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "Iel-rj-pLZ"; */
+"Iel-rj-pLZ.normalTitle" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "KTS-xv-hz1"; */
+"KTS-xv-hz1.normalTitle" = "لا";

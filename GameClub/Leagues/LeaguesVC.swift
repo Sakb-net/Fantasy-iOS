@@ -14,12 +14,27 @@ class LeaguesVC: ParentViewController {
     @IBOutlet weak var powerfulLeaguesBT: UIButton!
     @IBOutlet weak var headToHeadBT: UIButton!
     @IBOutlet weak var classicBT: UIButton!
-
-    @IBAction func menuAction(_ sender: Any) {
-        let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
-        present(menu, animated: true, completion: nil)
+    @IBOutlet weak var myLeagueBT: UIButton!
+    
+    @IBAction func joinHeadLeagueAction(_ sender: Any) {
+        let joinLeagueVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "JoinLeagueVC") as! JoinLeagueVC
+        joinLeagueVC.typeLeague = "head"
+        self.navigationController?.pushViewController(joinLeagueVC, animated: true)
     }
-
+    @IBAction func joinClassicLeagueAction(_ sender: Any) {
+        let joinLeagueVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "JoinLeagueVC") as! JoinLeagueVC
+        joinLeagueVC.typeLeague = "classic"
+        self.navigationController?.pushViewController(joinLeagueVC, animated: true)
+    }
+    @IBAction func myLeagueAction(_ sender: Any) {
+        let myLeaguesViewController = MyLeaguesViewController(nibName: "MyLeaguesViewController", bundle: nil)
+        self.navigationController?.pushViewController(myLeaguesViewController, animated: true)
+    }
+    
+    @IBAction func menuAction(_ sender: Any) {
+        self.openMenu()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         designConfig ()
@@ -30,5 +45,6 @@ class LeaguesVC: ParentViewController {
         roundViewCornersNoShadow(view: powerfulLeaguesBT)
         roundViewCornersNoShadow(view: headToHeadBT)
         roundViewCornersNoShadow(view: classicBT)
+        roundViewCornersNoShadow(view: myLeagueBT)
     }
 }

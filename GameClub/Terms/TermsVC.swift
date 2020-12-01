@@ -9,7 +9,9 @@
 import UIKit
 
 class TermsVC: ParentViewController {
+    var delegate : SignUpDelegate?
     var isChecked = false
+    var user : signUpUser!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var cbBT: UIButton!
     @IBOutlet weak var startBT: UIButton!
@@ -25,8 +27,16 @@ class TermsVC: ParentViewController {
         }
     }
     @IBAction func startAction(_ sender: Any) {
-        let favTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FavTeamVC") as! FavTeamVC
-        self.navigationController?.pushViewController(favTeamVC, animated: true)
+        if isChecked
+        {
+            self.dismiss(animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.delegate?.acceptTerms(isAccepted: self.isChecked)
+                
+            }
+        }else{
+            self.showAlert(title: "", message: "You should accept terms!".localized, shouldpop: false)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +78,7 @@ class TermsVC: ParentViewController {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }

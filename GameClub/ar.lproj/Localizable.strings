@@ -26,4 +26,24 @@
 "Lowest Price" = "حسب الأقل سعر";
 "Highest Points" = "حسب اعلى نقاط";
 "Lowest Points" = "حسب اقل نقاط";
-
+"You are about to change " = "أنت علي وشك استبدال ";
+" players" = " لاعبين";
+"Card is Activated" = "تم تفعيل الكارت";
+"You already have this player, Choose another player." = "انت تملك هذا اللاعب بالفعل، اختر لاعب آخر.";
+"You still have this player saved in your team, Choose another player." = "هذا اللاعب لازال محفوظ في فريقك، اختر لاعب آخر.";
+"Your Leagues are not available right now, try again later." = "دورياتك غير متاحة الآن، حاول مرة أخرى.";
+"Can't load league details, try again later!" = "لا يمكن تحميل تفاصيل الدوري، حاول مرة اخرى لاحقاً!";
+"Successfully Added!" = "تمت الإضافة بنجاح!";
+"Successfully Removed!" = "تم الحذف بنجاح!";
+"Choose Player" = "اختر لاعب";
+"Successfully Updated." = "تم التعديل بنجاح.";
+"Successfully Deleted." = "تم الحذف بنجاح.";
+"Change Admin" = "تغيير الأدمن";
+"You should accept terms!" = "يجب قبول الشروط والأحكام!";
+"Something went wrong try again later!" = "حدث خطأ يرجى المحاولة فيما بعد!";
+"Classic" = "كلاسيك";
+"Join Head to head league" = "انضم لدوري Head to head";
+"Join classic league" = "انضم لدوري خاص";
+"Choose teams you want to follow" = "اختر الأندية التي تريد متابعتها";
+"Choose player you want to be admin instead of you." = "قم باختيار اللاعب الذي تريد ان يكون مدير للدوري بدلا منك من قائمة اللاعبين التالية";
+"Videos" = "الفيديوهات";

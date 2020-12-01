@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Reg.ttf">
+            <string>HelveticaNeueW23forSKY-Reg</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyLeaguesViewController" customModule="GameClub" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="dQL-TJ-6hc" id="0Uj-R8-5q5"/>
+                <outlet property="tableView" destination="Eb9-Sp-lJA" id="Uf9-1t-1hW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTP-Fk-kJw">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="nMT-1y-XZz">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYg-5K-tCz">
+                            <rect key="frame" x="372" y="64" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="aY2-rq-SYI"/>
+                                <constraint firstAttribute="height" constant="24" id="xMg-ZJ-VbP"/>
+                            </constraints>
+                            <state key="normal" image="menu"/>
+                            <connections>
+                                <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="UJp-RP-eON"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Leagues" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qE-Pg-hQs">
+                            <rect key="frame" x="272" y="64" width="93" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="6hH-SW-2LU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCF-Nr-OzY">
+                            <rect key="frame" x="17" y="64" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="7bv-xL-d9B"/>
+                                <constraint firstAttribute="height" constant="24" id="t85-yE-rHg"/>
+                            </constraints>
+                            <state key="normal" image="back_bt"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="cWx-ie-gVH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="uYg-5K-tCz" firstAttribute="left" secondItem="5qE-Pg-hQs" secondAttribute="right" constant="7" id="4ow-0g-chM"/>
+                        <constraint firstAttribute="height" constant="217" id="Bza-Ma-zHB"/>
+                        <constraint firstItem="nMT-1y-XZz" firstAttribute="top" secondItem="hTP-Fk-kJw" secondAttribute="top" id="HPf-hG-eFy"/>
+                        <constraint firstItem="PCF-Nr-OzY" firstAttribute="left" secondItem="hTP-Fk-kJw" secondAttribute="left" constant="17" id="MP8-KN-vtA"/>
+                        <constraint firstAttribute="trailing" secondItem="nMT-1y-XZz" secondAttribute="trailing" id="X31-or-AkI"/>
+                        <constraint firstAttribute="right" secondItem="uYg-5K-tCz" secondAttribute="right" constant="18" id="Yy1-2C-uOs"/>
+                        <constraint firstAttribute="bottom" secondItem="nMT-1y-XZz" secondAttribute="bottom" id="bBa-qd-oX9"/>
+                        <constraint firstItem="PCF-Nr-OzY" firstAttribute="top" secondItem="hTP-Fk-kJw" secondAttribute="top" constant="64" id="ehn-YT-REp"/>
+                        <constraint firstItem="nMT-1y-XZz" firstAttribute="leading" secondItem="hTP-Fk-kJw" secondAttribute="leading" id="lhP-tA-WKa"/>
+                        <constraint firstItem="5qE-Pg-hQs" firstAttribute="top" secondItem="hTP-Fk-kJw" secondAttribute="top" constant="64" id="oI4-MI-XJa"/>
+                        <constraint firstItem="uYg-5K-tCz" firstAttribute="top" secondItem="hTP-Fk-kJw" secondAttribute="top" constant="64" id="yL9-mf-MYU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQL-TJ-6hc">
+                    <rect key="frame" x="20" y="115" width="374" height="719"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eb9-Sp-lJA">
+                            <rect key="frame" x="8" y="8" width="358" height="703"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="Eb9-Sp-lJA" firstAttribute="leading" secondItem="dQL-TJ-6hc" secondAttribute="leading" constant="8" id="9ph-ga-qKk"/>
+                        <constraint firstAttribute="bottom" secondItem="Eb9-Sp-lJA" secondAttribute="bottom" constant="8" id="TtB-mP-3En"/>
+                        <constraint firstItem="Eb9-Sp-lJA" firstAttribute="top" secondItem="dQL-TJ-6hc" secondAttribute="top" constant="8" id="dKG-Wx-6Sm"/>
+                        <constraint firstAttribute="trailing" secondItem="Eb9-Sp-lJA" secondAttribute="trailing" constant="8" id="e2a-bi-R5O"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="hTP-Fk-kJw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9Vn-2S-8Tn"/>
+                <constraint firstItem="dQL-TJ-6hc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Nrd-mF-WoA"/>
+                <constraint firstItem="dQL-TJ-6hc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="71" id="O61-c6-EBQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dQL-TJ-6hc" secondAttribute="trailing" constant="20" id="U7n-2E-Bf4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dQL-TJ-6hc" secondAttribute="bottom" constant="28" id="XIn-bJ-I5p"/>
+                <constraint firstItem="hTP-Fk-kJw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ooL-fg-VDY"/>
+                <constraint firstItem="hTP-Fk-kJw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zu7-nU-SYG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-23" y="143"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_bt" width="32" height="32"/>
+        <image name="header" width="360" height="221"/>
+        <image name="menu" width="24" height="24"/>
+    </resources>
+</document>

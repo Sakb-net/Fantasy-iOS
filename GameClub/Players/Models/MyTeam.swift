@@ -31,9 +31,22 @@ class MyTeam : NSObject {
     var type_key_coatch:String?
     var type_loc_player:String?
     var created_at:String?
+    var player_id: Int?
     
     override init() {
-               }
+    }
+    init(found_player: Int, name_player: String, link_player: String, image_player: String, team: String, location_player: String, type_loc_player: String, player_id: Int, cost_player: Int, eldwry_link: String) {
+        self.found_player = found_player
+        self.name_player = name_player
+        self.link_player = link_player
+        self.image_player = image_player
+        self.team = team
+        self.location_player = location_player
+        self.type_loc_player = type_loc_player
+        self.player_id = player_id
+        self.cost_player = cost_player
+        self.eldwry_link = eldwry_link
+    }
         
                init(parametersJson: [String: JSON])
                {
@@ -136,5 +149,11 @@ class MyTeam : NSObject {
                 {
                     self.created_at = created_at
                 }
+                
+                if let player_id = parametersJson["player_id"]?.intValue
+                {
+                    self.player_id = player_id
+                }
         }
     }
+

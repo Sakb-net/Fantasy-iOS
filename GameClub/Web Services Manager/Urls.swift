@@ -15,20 +15,20 @@ class Urls {
     static let apiTypeDev = "type-dev"
     static let apiValDev = "val-dev"
     static let apiLang = "lang"
-
+    
     static let apiAccessKeyValue = User.shared().access_token ?? ""
-    static let baseUrl = "https://fantgame.sakb-co.com.sa/"
+    static let baseUrl = "http://sakbfantasy.sakb-co.com.sa/"
     
     private let currentWorkingEnvironment = AppEnvironments.development
     
     private var developmentServerBaseURL:String
     {
-        return "https://fantgame.sakb-co.com.sa/api/v1/"
+        return "http://sakbfantasy.sakb-co.com.sa/api/v1/"
     }
     
     private var ProducationServerBaseURL:String
     {
-        return "https://fantgame.sakb-co.com.sa/api/v1/"
+        return "http://sakbfantasy.sakb-co.com.sa/api/v1/"
     }
     
     private func getCurrentBaseUrl() -> String{
@@ -41,6 +41,73 @@ class Urls {
     
     func urlEncoding(originalString: String) -> String {
         return originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+    }
+    
+    func addFollowingTeam() -> String{
+        return "\(getCurrentBaseUrl())addFollowingTeam"
+    }
+    
+    func goldCardConfirmPayment() -> String{
+        return "\(getCurrentBaseUrl())confirmPayment/card"
+    }
+    
+    func goldCardPayment() -> String{
+        return "\(getCurrentBaseUrl())payment/card"
+    }
+    
+    func getStandingsGWs(link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/subeldwrys/\(type)/\(link)"
+    }
+    
+    func getLeagueStandings(link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/standings/\(type)/\(link)"
+    }
+    
+    func DeleteLeague (link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/stop/\(type)/\(link)"
+    }
+    
+    func updateLeague (link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/update/\(type)/\(link)"
+    }
+    
+    func deletePlayerFromLeague (link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/delete_player/\(type)/\(link)"
+    }
+    
+    func addAdminToLeague (link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/add_admin/\(type)/\(link)"
+    }
+    
+    func getLeagueDetails (link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/setting_admin/\(type)/\(link)"
+    }
+    
+    func leaveLeague (link : String, type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/leave/\(type)/\(link)"
+    }
+    
+    func joinLeague(type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/join/\(type)"
+    }
+    
+    func createLeague(type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/create/\(type)"
+    }
+    
+    func getMyLeagues(type : String) -> String{
+        return "\(getCurrentBaseUrl())group_eldwry/\(type)"
+    }
+    
+    func cancelCards() -> String{
+        return "\(getCurrentBaseUrl())cancel_players_card"
+    }
+    
+    func getGSCardState(type : String) -> String{
+        return "\(getCurrentBaseUrl())status_card/\(type)"
+    }
+    func addSubList() -> String{
+        return "\(getCurrentBaseUrl())confirm_substitutePlayer"
     }
     
     func getPlayerMatchDetails(link : String) -> String{
@@ -156,8 +223,8 @@ class Urls {
     }
     
     func getPlayersByType() -> String {
-           return "\(getCurrentBaseUrl())players_by_type"
-       }
+        return "\(getCurrentBaseUrl())players_by_type"
+    }
     
     func getFixtures() -> String {
         return "\(getCurrentBaseUrl())fixtures"
@@ -286,7 +353,7 @@ class Urls {
     func sendMessage() -> String {
         return "\(getCurrentBaseUrl())add_contact_us"
     }
-
+    
     func getContacts() -> String {
         return "\(getCurrentBaseUrl())contact_us"
     }

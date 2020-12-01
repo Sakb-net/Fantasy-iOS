@@ -42,7 +42,7 @@ class StatisticsPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }

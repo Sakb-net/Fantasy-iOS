@@ -46,7 +46,7 @@ class InstructionsPresenter {
                    }
                else
                {
-                   onFailure(error!.localizedDescription)
+                   onFailure("Something went wrong try again later!".localized)
                }
            }
        }

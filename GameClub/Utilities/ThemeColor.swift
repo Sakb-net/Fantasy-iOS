@@ -61,8 +61,8 @@ extension Color {
              instanceColor = UIColor(hexString: "#ffa380")
         case .custom(let hexValue, let opacity):
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
-        
-
+        case .notifyBTSelected:
+            instanceColor = UIColor(hexString: "#C2C2C2")
         }
         return instanceColor
     }

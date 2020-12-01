@@ -35,7 +35,7 @@ class NewsPresenter: NSObject {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -66,7 +66,7 @@ class NewsPresenter: NSObject {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }

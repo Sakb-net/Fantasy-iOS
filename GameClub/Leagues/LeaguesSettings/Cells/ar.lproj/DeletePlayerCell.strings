@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Choose player you want to remove. Once you remove a player he won't be able to rejoin again."; ObjectID = "FnN-BF-HPb"; */
+"FnN-BF-HPb.text" = "اختر اللاعب الذي ترغب في حذفه من قائمة اللاعبين التالية بمجرد حذفه لن يتمكن من الانضمام إلى الدوري مرة أخرى.";
+
+/* Class = "UILabel"; text = "Players List"; ObjectID = "MPD-FO-BSu"; */
+"MPD-FO-BSu.text" = "قائمة اللاعبين";
+
+/* Class = "UIButton"; normalTitle = "Remove Player"; ObjectID = "dBX-wJ-gjA"; */
+"dBX-wJ-gjA.normalTitle" = "حذف لاعب";

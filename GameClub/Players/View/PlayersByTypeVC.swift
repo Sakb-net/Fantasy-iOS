@@ -45,27 +45,67 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
         }else if selectedType == .playerAction {
             let selectedSortType = selectedItem as! Int
             if selectedSortType == 0 {
-                if !isReplace{
-                presenter.addPlayer(link: self.player.link!, onSuccess: { (player) in
-                    self.navigationController?.popViewController(animated: true)
-                    self.listener?.showMessage(message: player.msg_add!)
-                    self.hideLoader()
-                }) { (errorMessage) in
-                    self.hideLoader()
-                    self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-                }
-                }else{
-                    presenter.replacePlayer(deleted_player_link: deleted_player_link, player_link: self.player.link!, eldwry_link: eldawry_link, onSuccess: { (message) in
-                        self.delegate?.getPlayerBack(bt: self.bt!)
-                        UserDefaults.standard.set(0, forKey: self.btName)
-                        self.navigationController?.popViewController(animated: true)
-                        self.listener?.showMessage(message: message)
-                        self.hideLoader()
-                    }) { (errorMessage) in
-                        self.hideLoader()
-                        self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                for item in self.localPlayers {
+                    if item.link_player == player.link {
+                        DispatchQueue.main.async {
+                            self.showAlert(title: "", message: "You already have this player, Choose another player.".localized, shouldpop: false)
+                        }
+                        return
                     }
                 }
+                
+                if player.link == oldLink {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "", message: "You still have this player saved in your team, Choose another player.".localized, shouldpop: false)
+                    }
+                    return
+                }
+                
+                let playerTeam = player.team ?? "??"
+                var playerSameTeam = [MyTeam]()
+                
+                for item in localPlayers {
+                    if item.team == playerTeam {
+                        playerSameTeam.append(item)
+                    }
+                }
+                
+                if playerSameTeam.count == 3 {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "", message: "You have 3 players from same team, Choose another player from another team.".localized, shouldpop: false)
+                    }
+                    return
+                }
+                
+                
+                if isTransferes {
+                    self.listener?.returnPlayer(player : player, index: index, playerType: playerType, bt: bt!, btName: btName)
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }else{
+                    if !isReplace{
+                        presenter.addPlayer(link: self.player.link!, onSuccess: { (player) in
+                            self.navigationController?.popViewController(animated: true)
+                            self.listener?.showMessage(message: player.msg_add!)
+                            self.hideLoader()
+                        }) { (errorMessage) in
+                            self.hideLoader()
+                            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                        }
+                    }else{
+                        presenter.replacePlayer(deleted_player_link: deleted_player_link, player_link: self.player.link!, eldwry_link: eldawry_link, onSuccess: { (message) in
+                            self.delegate?.getPlayerBack(bt: self.bt!)
+                            UserDefaults.standard.set(0, forKey: self.btName)
+                            self.navigationController?.popViewController(animated: true)
+                            self.listener?.showMessage(message: message)
+                            self.hideLoader()
+                        }) { (errorMessage) in
+                            self.hideLoader()
+                            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                        }
+                    }
+                }
+                
             }else {
                 let playerDetailsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PlayerDetailsVC") as! PlayerDetailsVC
                 playerDetailsVC.player = self.player
@@ -78,6 +118,8 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
     var type : String?
     var players = [Player]()
     var player = Player ()
+    var localPlayers = [MyTeam]()
+    var oldPlayers = [MyTeam]()
     var teamLink = ""
     var wordSearch = ""
     var orderPlay = ""
@@ -86,12 +128,15 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
     var locPlayer = ""
     var isReplace = false
     var deleted_player_link = ""
+    var oldLink = ""
     var eldawry_link = ""
     var bt : UIButton?
     var btName = ""
-    var playerActionType = 0
     var delegate : playerDeletedDelegate?
     var listener : replacementListenner?
+    var index = 0
+    var playerType = ""
+    var isTransferes = false
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -110,7 +155,6 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func sortByAction(_ sender: Any) {
         let dropDownVC = Storyboard().dropDownStoryboard.instantiateViewController(withIdentifier: "DropDownVC") as! DropDownVC
-        
         dropDownVC.selectDelegate = self
         dropDownVC.selectedType = .sortBy
         
@@ -133,7 +177,7 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func menuAction(_ sender: Any) {
         let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
-                      present(menu, animated: true, completion: nil)
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -149,9 +193,9 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
         self.orderPlay = ""
         self.teamLink = ""
         guard let from = self.fromTF.text, from != "" else {
-                   self.showAlert(title: "", message: "ادخل الرقم الاول", shouldpop: false)
-                   return
-               }
+            self.showAlert(title: "", message: "ادخل الرقم الاول", shouldpop: false)
+            return
+        }
         guard let to = self.toTF.text, to != "" else {
             self.showAlert(title: "", message: "ادخل الرقم الثاني", shouldpop: false)
             return
@@ -166,6 +210,9 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
         viewConfig ()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        sortByTF.delegate = self
+        teamsTF.delegate = self
+        playersTF.delegate = self
         getPlayers()
     }
     
@@ -177,20 +224,20 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PlayersHeaderCell", for: indexPath) as! PlayersHeaderCell
             return cell
-
+            
         }else {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCV", for: indexPath) as! PlayerCV
-        cell.nameLbl.text = self.players[indexPath.row-1].name
-        if let cost = self.players[indexPath.row-1].cost{
-            cell.costLbl.text  = String(cost)
-        }
-        let team = self.players[indexPath.row-1].team
-        let position = self.players[indexPath.row-1].location_player
-        cell.positionLbl.text = team! + " " + position!
-            if let playerPoints = self.players[indexPath.row-1].point {
-            cell.pointsLbl.text = String(playerPoints)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCV", for: indexPath) as! PlayerCV
+            cell.nameLbl.text = self.players[indexPath.row-1].name
+            if let cost = self.players[indexPath.row-1].cost{
+                cell.costLbl.text  = String(cost)
             }
-        return cell
+            let team = self.players[indexPath.row-1].team
+            let position = self.players[indexPath.row-1].location_player
+            cell.positionLbl.text = team! + " " + position!
+            if let playerPoints = self.players[indexPath.row-1].point {
+                cell.pointsLbl.text = String(playerPoints)
+            }
+            return cell
         }
     }
     
@@ -225,4 +272,6 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
 protocol replacementListenner {
     func showPlayer(bt : UIButton)
     func showMessage(message : String)
+    func returnPlayer(player : Player, index: Int, playerType: String, bt : UIButton, btName : String)
+    func subIsSuccess()
 }

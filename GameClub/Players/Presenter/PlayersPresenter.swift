@@ -9,6 +9,36 @@
 import Foundation
 
 class PlayersPresenter {
+    
+    func subList(playersString:String, active_cardgray: Int, active_cardgold: Int, onSuccess: @escaping (Bool) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().addSubList()
+        
+        let parameters:[String:Any] = [
+            "array_players": playersString,
+            "active_cardgray": active_cardgray,
+            "active_cardgold": active_cardgold
+        ]
+       
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                    let data = response!["data"]["substitute"].boolValue
+                        onSuccess(data)
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
+            }
+            else
+            {
+                onFailure("Something went wrong try again later!".localized)
+            }
+        }
+    }
     func getPlayers(type:String, teamLink:String,word_search:String, order_play:String,from_price:String, to_price:String,loc_player:String, onSuccess: @escaping ([Player]) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let url = Urls().getPlayerFilter()
@@ -46,7 +76,7 @@ class PlayersPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -82,7 +112,7 @@ class PlayersPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -114,7 +144,7 @@ class PlayersPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -147,7 +177,7 @@ class PlayersPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -172,8 +202,7 @@ class PlayersPresenter {
                         onSuccess(message)
                     
                 }else{
-                    let message = response!["message"].stringValue
-                    onFailure(message)
+                    onFailure("Something went wrong try again later!".localized)
                 }
             
         }
@@ -238,7 +267,7 @@ class PlayersPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription, 1000)
+                onFailure("Something went wrong try again later!".localized, 1000)
             }
         }
     }
@@ -256,8 +285,7 @@ class PlayersPresenter {
                         onSuccess(message)
                     
                 }else{
-                    let message = response!["message"].stringValue
-                    onFailure(message)
+                    onFailure("Something went wrong try again later!".localized)
                 }
             
         }
@@ -285,14 +313,13 @@ class PlayersPresenter {
                     onFailure("Oops, Error occured")
                 }
                 }else{
-                    let message = response!["Message"].stringValue
-                    onFailure(message)
+                    onFailure("Something went wrong try again later!".localized)
                 }
             
         }
     }
     
-    func getPlayerMatchDetails(matchLink: String, onSuccess: @escaping (DetailsModel, GeneralMatchData) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    func getPlayerMatchDetails(matchLink: String, onSuccess: @escaping (DetailsModel, Fixtures) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let url = Urls().getPlayerMatchDetails(link: matchLink)
        
@@ -301,16 +328,33 @@ class PlayersPresenter {
             if response != nil
             {
                 let data = response!["data"].dictionaryValue
-                let details_match = response!["details_match"].dictionaryValue
-                let generalData = GeneralMatchData(parametersJson: data)
+                let details_match = response!["data"]["details"].dictionaryValue
+                let generalData = Fixtures(parametersJson: data)
                     let details = DetailsModel(parametersJson: details_match)
                     onSuccess(details, generalData)
                 
                 }else{
-                    let message = response!["Message"].stringValue
-                    onFailure(message)
+                    onFailure("Something went wrong!")
                 }
         }
     }
-
+    
+    func getGSCardState(cardType: String, onSuccess: @escaping (GSCardsStateModel) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().getGSCardState(type: cardType)
+       
+        ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let data = response!["data"].dictionaryValue
+                let generalData = GSCardsStateModel(parametersJson: data)
+                    onSuccess(generalData)
+                
+                }else{
+                    onFailure("Something went wrong try again later!".localized)
+                }
+        }
+    }
+    
 }

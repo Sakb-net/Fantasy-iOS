@@ -116,8 +116,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         //            self.linksView.isHidden = true
                 }
         getMainScreenInfo()
-        getPublicPoints()
-        getHomePoints()
+        
     }
     @objc func myPointsAction(sender : UITapGestureRecognizer) {
         let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
@@ -195,7 +194,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
                 return cell3
             }else if indexPath.row == 4 && self.fixtures.count == 2 {
                 return cell3
-            }else if indexPath.row == 5 && self.fixtures.count == 3 {
+            }else if indexPath.row == 5 && self.fixtures.count >= 3 {
                 return cell3
             }else if indexPath.row == cellCount - 1 {
                 return cell6
@@ -222,7 +221,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
                         indexPoint += 1
                     }else if indexPoint == 3 {
                         cell5.pointsLbl.text = publicPointsTitles[indexPoint]
-                        if let freeTrans = publicPoints.total_changes{
+                        if let freeTrans = publicPoints.count_free_weekgamesubstitute{
                         cell5.titleLbl.text = String(freeTrans)
                         }
                         indexPoint += 1
@@ -256,31 +255,31 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
             }
     }
     func fillCells (cell : FixtureCell, index : Int) -> FixtureCell{
-//        cell.firstClubName.text = self.fixtures[0].match_group![index].name_first
-//        cell.secondClubName.text = self.fixtures[0].match_group![index].name_second
-//        cell.timeLabel.text = self.fixtures[0].match_group![index].time
-//        cell.firstClubIV.sd_setImage(with: URL(string: Urls.baseUrl+self.fixtures[0].match_group![index].image_first! ), placeholderImage: UIImage(named: "placeholder"))
-//        cell.secondClubIV.sd_setImage(with: URL(string: Urls.baseUrl+self.fixtures[0].match_group![index].image_second! ), placeholderImage: UIImage(named: "placeholder"))
-//        
-//        cell.delegate = self
-//        let firstScore = self.fixtures[0].match_group![index].first_goon
-//        let secondScore = self.fixtures[0].match_group![index].second_goon
-//        var firstScoreString = ""
-//        var secondScoreString = ""
-//        if let score1 = firstScore{
-//            firstScoreString = String(score1)
-//        }
-//        if let score2 = secondScore{
-//            secondScoreString = String(score2)
-//        }
-//            cell.scoreLabel.text = firstScoreString + " - " + secondScoreString
-//            
-//            let date = stringToDate(dateString: self.fixtures[0].match_group![index].date!)
-//                   if date > Date() {
-//                    cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 0)
-//                   } else {
-//                       cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 1)
-//                   }
+        cell.firstClubName.text = self.fixtures[index].name_first
+        cell.secondClubName.text = self.fixtures[index].name_second
+        cell.timeLabel.text = self.fixtures[index].time
+        cell.firstClubIV.sd_setImage(with: URL(string: Urls.baseUrl+self.fixtures[index].image_first! ), placeholderImage: UIImage(named: "placeholder"))
+        cell.secondClubIV.sd_setImage(with: URL(string: Urls.baseUrl+self.fixtures[index].image_second! ), placeholderImage: UIImage(named: "placeholder"))
+        
+        cell.delegate = self
+        let firstScore = self.fixtures[index].first_goon
+        let secondScore = self.fixtures[index].second_goon
+        var firstScoreString = ""
+        var secondScoreString = ""
+        if let score1 = firstScore{
+            firstScoreString = String(score1)
+        }
+        if let score2 = secondScore{
+            secondScoreString = String(score2)
+        }
+            cell.scoreLabel.text = firstScoreString + " - " + secondScoreString
+            
+            let date = stringToDate(dateString: self.fixtures[index].date!)
+                   if date > Date() {
+                    cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 0)
+                   } else {
+                       cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 1)
+                   }
         return cell
     }
     
@@ -290,8 +289,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
     func getMainScreenInfo(){
         self.showLoader()
-        homePresenter.getHomeDetails(onSuccess: { (news, videos, fixtures) in
-            self.news = news
+        homePresenter.getHomeDetails(onSuccess: { (fixtures) in
             self.fixtures = fixtures
             self.weeklyScedualTV.delegate = self
             self.weeklyScedualTV.dataSource = self
@@ -302,9 +300,17 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
 //            self.mainDateLabel.text = news[0].date
             
             self.hideLoader()
-        }) { (errorMessage) in
+            self.getPublicPoints()
+        }) { (errorMessage, code)  in
             self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            if code == 11 ||  code == 41{
+                self.addTeam = 0
+                self.usernameLabel.text = ""
+                self.signinBT.setTitle("Login".localized, for: .normal)
+                self.weeklyScedualTV.reloadData()
+            }else {
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
         }
     }
     
@@ -312,18 +318,24 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         self.showLoader()
         PointsPresenter().getPublicPoints(onSuccess: { (publicPoints) in
             self.publicPoints = publicPoints
+            UserDefaults.standard.set(publicPoints.count_free_weekgamesubstitute ?? 0, forKey: "count_free_weekgamesubstitute")
             self.weeklyScedualTV.reloadData()
             self.hideLoader()
-        }) { (errorMessage) in
+            self.getHomePoints()
+        }) { (errorMessage, code) in
             self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            if code == 11 ||  code == 41{
+                
+            }else {
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
         }
     }
     
     func getHomePoints(){
         self.showLoader()
         PointsPresenter().getHomePoints(onSuccess: { (homePoints, mainData) in
-            if let totalP = homePoints.user_total_sum {
+            if let totalP = homePoints.user_total_mypoint {
                 self.userPointsLbl.text = String(totalP)
             }
             
@@ -339,10 +351,16 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
             if let gameWeek = gw {
                 UserDefaults.standard.set(gameWeek, forKey: "GAME_WEEK")
             }
+            UserDefaults.standard.set(mainData.change_point ?? 0 , forKey: "change_point")
+
             self.hideLoader()
-        }) { (errorMessage) in
+        }) { (errorMessage, code) in
             self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            if code == 11 ||  code == 41{
+                
+            }else {
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
         }
     }
     

@@ -12,7 +12,7 @@ import TwitterKit
 import SkyFloatingLabelTextField
 
 class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, SelectedDropDownType {
-    
+    var userInfo : signUpUser!
     func selectedType(selectedType: DropDownTypes, selectedItem: Any) {
         if selectedType == .City {
             let selectedCity = selectedItem as! City
@@ -54,6 +54,15 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.nameTF.delegate = self
+        self.emailTF.delegate = self
+        self.passTF.delegate = self
+        self.confirmPassTF.delegate = self
+        self.phoneTF.delegate = self
+        self.cityTF.delegate = self
+        self.stateTF.delegate = self
+        
         loginPresenter.loginBTCongig(loginBT: self.signUpBT)
         addLeftViewToPassTF()
         if "lang".localized == "ar" {
@@ -139,17 +148,12 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
             return
         }
         
-        self.showLoader()
-        loginPresenter.userRegister(email: emailAddress, password: pass, displayName: displayName, phone: phone, city: city, reg_site: district, onSuccess: { (userInfo) in
-            self.hideLoader()
-            UserDefaults.standard.set(pass, forKey: "UserPass")
-            let termsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "TermsVC") as! TermsVC
-            self.navigationController?.pushViewController(termsVC, animated: true)
-            
-        }) { (errorMessage) in
-            self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-        }
+        userInfo = signUpUser(email: emailAddress, password: pass, displayName: displayName, phone: phone, city: city, reg_site: district)
+        let termsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "TermsVC") as! TermsVC
+        termsVC.user = userInfo
+        termsVC.delegate = self
+        self.present(termsVC, animated: true, completion: nil)
+
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -219,4 +223,48 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
         present(dropDownVC, animated: true
             , completion: nil)
     }
+}
+extension SignUpVC : SignUpDelegate {
+    
+    func acceptTerms(isAccepted: Bool) {
+        if isAccepted {
+            let favTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FavTeamVC") as! FavTeamVC
+            favTeamVC.user = userInfo
+            favTeamVC.isFavTeam = true
+            favTeamVC.delegate = self
+            self.present(favTeamVC, animated: true, completion: nil)
+        }
+    }
+    
+    func chooseFavTeam(link: String) {
+        createUser(link: link)
+    }
+    func createUser(link: String){
+        self.showLoader()
+        LoginPresenter().userRegister(email: userInfo.email, password: userInfo.password, displayName: userInfo.displayName, phone: userInfo.phone, city: userInfo.city, reg_site: userInfo.reg_site, favTeam: link, onSuccess: { (userInfo) in
+            self.hideLoader()
+            UserDefaults.standard.set(self.userInfo.password, forKey: "UserPass")
+            let favTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FavTeamVC") as! FavTeamVC
+            favTeamVC.favTeamLink = link
+            favTeamVC.isFavTeam = false
+            favTeamVC.delegate = self
+            self.navigationController?.pushViewController(favTeamVC, animated: true)
+        }) { (errorMessage) in
+            self.hideLoader()
+            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        }
+    }
+}
+struct signUpUser{
+    var email : String
+    var password : String
+    var displayName : String
+    var phone : String
+    var city : String
+    var reg_site : String
+    
+}
+protocol SignUpDelegate {
+    func acceptTerms(isAccepted : Bool)
+    func chooseFavTeam(link : String)
 }

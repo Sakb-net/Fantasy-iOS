@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Bd.ttf">
+            <string>HelveticaNeueW23forSKY-Bd</string>
+        </array>
+        <array key="HelveticaNeueW23forSKY-Reg.ttf">
+            <string>HelveticaNeueW23forSKY-Reg</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeletePlayerCell" rowHeight="216" id="KGk-i7-Jjw" customClass="DeletePlayerCell" customModule="GameClub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="216"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="407" height="216"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose player you want to remove. Once you remove a player he won't be able to rejoin again." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnN-BF-HPb">
+                        <rect key="frame" x="20" y="11" width="367" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="xlr-zP-Hi2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
+                        <color key="textColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players List" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPD-FO-BSu">
+                        <rect key="frame" x="20" y="55" width="367" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="jTe-Jx-ZrX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Bd" family="Helvetica Neue W23 for SKY" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtw-9p-QMj">
+                        <rect key="frame" x="20" y="87" width="330" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="frX-8C-pKf"/>
+                        </constraints>
+                        <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un7-ei-6WO">
+                        <rect key="frame" x="360" y="94" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="T0m-1f-GGy"/>
+                            <constraint firstAttribute="height" constant="20" id="re4-Ra-Vig"/>
+                        </constraints>
+                        <state key="normal" image="down-arrow2"/>
+                        <connections>
+                            <action selector="dropDowanAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qiX-za-25p"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBX-wJ-gjA">
+                        <rect key="frame" x="118.5" y="148" width="170" height="40"/>
+                        <color key="backgroundColor" red="0.0" green="0.72549019609999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="DKB-XE-r3L"/>
+                            <constraint firstAttribute="width" constant="170" id="T7P-K6-bip"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="15"/>
+                        <state key="normal" title="Remove Player">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="removeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z4V-qS-Et3"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Un7-ei-6WO" firstAttribute="top" secondItem="MPD-FO-BSu" secondAttribute="bottom" constant="10" id="2cY-jq-SnL"/>
+                    <constraint firstItem="Un7-ei-6WO" firstAttribute="leading" secondItem="qtw-9p-QMj" secondAttribute="trailing" constant="10" id="ARX-eH-Ebj"/>
+                    <constraint firstItem="MPD-FO-BSu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ah2-P0-XpD"/>
+                    <constraint firstAttribute="trailing" secondItem="FnN-BF-HPb" secondAttribute="trailing" constant="20" id="EYM-8e-ne8"/>
+                    <constraint firstItem="qtw-9p-QMj" firstAttribute="top" secondItem="MPD-FO-BSu" secondAttribute="bottom" constant="3" id="F8V-5k-RVq"/>
+                    <constraint firstItem="MPD-FO-BSu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Gb5-gx-IpM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dBX-wJ-gjA" secondAttribute="bottom" constant="17" id="P8e-0s-eYv"/>
+                    <constraint firstItem="FnN-BF-HPb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="PEn-1z-rNd"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Un7-ei-6WO" secondAttribute="bottom" constant="91" id="Ubh-h5-oQB"/>
+                    <constraint firstItem="qtw-9p-QMj" firstAttribute="top" secondItem="MPD-FO-BSu" secondAttribute="bottom" constant="3" id="Zz5-XJ-Ifn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Un7-ei-6WO" secondAttribute="trailing" constant="7" id="ahv-It-i2h"/>
+                    <constraint firstItem="MPD-FO-BSu" firstAttribute="top" secondItem="FnN-BF-HPb" secondAttribute="bottom" constant="7" id="fFj-yH-SyZ"/>
+                    <constraint firstItem="FnN-BF-HPb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kib-Yt-ob4"/>
+                    <constraint firstItem="qtw-9p-QMj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ksx-zb-tiA"/>
+                    <constraint firstItem="dBX-wJ-gjA" firstAttribute="top" secondItem="qtw-9p-QMj" secondAttribute="bottom" constant="27" id="ucL-hH-UN8"/>
+                    <constraint firstItem="dBX-wJ-gjA" firstAttribute="centerX" secondItem="MPD-FO-BSu" secondAttribute="centerX" id="vOK-pD-eJP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLbl" destination="FnN-BF-HPb" id="bQs-5B-Egu"/>
+                <outlet property="dropDownBT" destination="Un7-ei-6WO" id="bN4-oi-2oC"/>
+                <outlet property="playerTF" destination="qtw-9p-QMj" id="dbO-Ch-sNG"/>
+                <outlet property="removeBT" destination="dBX-wJ-gjA" id="oWM-5x-u4b"/>
+            </connections>
+            <point key="canvasLocation" x="39.855072463768117" y="186.83035714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="down-arrow2" width="10.5" height="10.5"/>
+    </resources>
+</document>

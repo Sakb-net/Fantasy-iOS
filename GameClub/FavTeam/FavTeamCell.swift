@@ -5,17 +5,27 @@
 import UIKit
 
 class FavTeamCell: UITableViewCell {
-    var rowIndex : Int?
-    var delegate : SelectTeamDelegate?
+    var rowIndex = 0
     @IBOutlet weak var teamLabel: UILabel!
-    @IBOutlet weak var selectedTeamBT: UIButton!
+    @IBOutlet weak var selectedTeamIV: UIImageView!
     
-    @IBAction func selectTeamAction(_ sender: Any) {
-        delegate?.changeBTColor(bt: self.selectedTeamBT, index: rowIndex!)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+//        self.accessoryType = selected ? .checkmark : .none
+        if selected {
+            selectedTeamIV.backgroundColor = UIColor.green
+        }else {
+            selectedTeamIV.backgroundColor = UIColor.clear
+        }
     }
 }
 
 
-protocol SelectTeamDelegate {
-    func changeBTColor (bt : UIButton, index : Int)
-}

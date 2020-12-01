@@ -10,11 +10,14 @@ import UIKit
 
 class DeletedPlayerOptionsPopUp: ParentViewController {
     var delegate : playerDeletedDelegate?
+    var listener : replacementListenner?
     var playerLink = ""
     var eldwry_link = ""
     var btName = ""
     var player = MyTeam()
     var bt : UIButton?
+    var playerType = ""
+    var index = 0
     var presenter = PlayersPresenter()
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var getPlayerBT: UIButton!
@@ -29,13 +32,13 @@ class DeletedPlayerOptionsPopUp: ParentViewController {
     }
     @IBAction func changePlayerAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        self.delegate?.replacePlayer(player: player, bt: bt!, btName: btName, delegate: delegate!)
+        self.delegate?.replacePlayer(player: player, index: index, playerType: playerType, listener: listener!, bt: bt!, btName: btName, delegate: delegate!)
     }
     @IBAction func playerDetailsAction(_ sender: Any) {
-        let playerDetailsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PlayerDetailsVC") as! PlayerDetailsVC
-        playerDetailsVC.fromPitch = true
-        playerDetailsVC.team = player
-        present(playerDetailsVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.delegate?.playerDetails(fromPitch: true, player: self.player)
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func deletePlayerAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -73,5 +76,7 @@ class DeletedPlayerOptionsPopUp: ParentViewController {
 protocol playerDeletedDelegate {
     func playerDeleted(message : String)
     func getPlayerBack(bt : UIButton)
-    func replacePlayer(player : MyTeam, bt : UIButton, btName : String, delegate : playerDeletedDelegate)
+    func replacePlayer(player : MyTeam, index: Int, playerType: String,listener: replacementListenner, bt : UIButton, btName : String, delegate : playerDeletedDelegate)
+    func playerDetails(fromPitch: Bool, player: MyTeam)
+
 }

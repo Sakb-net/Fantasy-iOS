@@ -41,7 +41,7 @@ class VideosPresenter: NSObject {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -72,7 +72,7 @@ class VideosPresenter: NSObject {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }

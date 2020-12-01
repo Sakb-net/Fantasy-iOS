@@ -1,3 +1,10 @@
+"qfO-2U-Vs2.normalTitle" = "إرسال";
+"Mdu-v9-GYB.normalTitle" = "الذهاب الى دورياتي";
+"2Hi-Ef-YXB.normalTitle" = "إرسال";
+"SMt-2c-Kvc.placeholder" = "ادخل كود الدوري هنا";
+"6P0-Jm-HzG.text" = "كود الدوري";
+"zIa-j5-GIB.text" = "انضم إلى الدوري إذا أعطاك شخص ما رمز الدوري للدخول";
+"voQ-LP-oqk.normalTitle" = "إلغاء تفعيل الكارت";
 "Kuv-uH-Wd3.text" = "النقاط";
 "UNI-id-BpP.text" = "من";
 "yaQ-Fc-VAu.text" = "الشراء";
@@ -296,7 +303,7 @@
 "A60-Pr-InA.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "الدوريات الأقوي"; ObjectID = "A8G-6c-K8j"; */
-"A8G-6c-K8j.normalTitle" = "الدوريات الأقوي";
+//"A8G-6c-K8j.normalTitle" = "الدوريات الأقوي";
 
 /* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "AEw-Bh-oVi"; */
 "AEw-Bh-oVi.text" = "اسم اللاعب";
@@ -800,7 +807,7 @@
 "aPN-bc-4Fe.text" = "Label";
 
 /* Class = "UILabel"; text = "انضم لدوري خاص إذا كان معك الكود الخاص به او اشترك في أحد الدوريات الأقوى"; ObjectID = "aYM-Ir-209"; */
-"aYM-Ir-209.text" = "انضم لدوري خاص إذا كان معك الكود الخاص به او اشترك في أحد الدوريات الأقوى";
+"aYM-Ir-209.text" = "انضم لدوري إذا كان معك الكود الخاص به او اشترك في أحد الدوريات الأقوى";
 
 /* Class = "UILabel"; text = "30 حرف علي الأكثر"; ObjectID = "abT-EH-ynp"; */
 "abT-EH-ynp.text" = "30 حرف علي الأكثر";
@@ -995,7 +1002,7 @@
 "fwG-hx-5KR.placeholder" = "البريد الإليكتروني";
 
 /* Class = "UIButton"; normalTitle = "دوري خاص"; ObjectID = "g9v-b3-bJQ"; */
-"g9v-b3-bJQ.normalTitle" = "دوري خاص";
+"g9v-b3-bJQ.normalTitle" = "كلاسيك";
 
 /* Class = "UILabel"; text = "مباريات الدوري"; ObjectID = "gB6-uv-Ib0"; */
 "gB6-uv-Ib0.text" = "مباريات الدوري";
@@ -1175,7 +1182,7 @@
 "pG2-j3-U4S.normalTitle" = "عرض القائمة";
 
 /* Class = "UIButton"; normalTitle = "الجولة الأولي"; ObjectID = "pbG-9v-wcS"; */
-"pbG-9v-wcS.normalTitle" = "الجولة الأولي";
+"pbG-9v-wcS.normalTitle" = "اختر الجولة";
 
 /* Class = "UIButton"; normalTitle = "إختياره كابتن"; ObjectID = "pex-hr-r39"; */
 "pex-hr-r39.normalTitle" = "إختياره كابتن";

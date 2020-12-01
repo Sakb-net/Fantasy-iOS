@@ -14,7 +14,7 @@ class HomePointsModel : NSObject{
     var total_sum : Int?
     var total_avg : Int?
     var heigh_point : Int?
-    var user_total_sum : Int?
+    var user_total_mypoint : Int?
     override init() {
                  }
        init(parametersJson: [String: JSON])
@@ -39,9 +39,9 @@ class HomePointsModel : NSObject{
                         self.heigh_point = heigh_point
                     }
                     
-                    if let user_total_sum = parametersJson["user_total_sum"]?.intValue
+                    if let user_total_mypoint = parametersJson["user_total_mypoint"]?.intValue
                     {
-                        self.user_total_sum = user_total_sum
+                        self.user_total_mypoint = user_total_mypoint
                     }
     }
 }

@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Rank"; ObjectID = "ESd-YQ-O1D"; */
+"ESd-YQ-O1D.text" = "الترتيب";
+
+/* Class = "UILabel"; text = "  Name"; ObjectID = "QvL-RO-wk9"; */
+"QvL-RO-wk9.text" = "  الإسم";
+
+/* Class = "UILabel"; text = "GW"; ObjectID = "dG3-Hh-qVP"; */
+"dG3-Hh-qVP.text" = "الجولة";
+
+/* Class = "UILabel"; text = "TOT"; ObjectID = "wF7-sO-9xL"; */
+"wF7-sO-9xL.text" = "TOT";

@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Beginning of calculating points\n"; ObjectID = "9x5-aI-ufl"; */
+"9x5-aI-ufl.text" = "بداية إحتساب النقاط";
+
+/* Class = "UILabel"; text = "League Name"; ObjectID = "dej-o9-ykt"; */
+"dej-o9-ykt.text" = "إسم الدوري";
+
+/* Class = "UILabel"; text = "20 letters at maximum"; ObjectID = "jzp-Tr-Eap"; */
+"jzp-Tr-Eap.text" = "٢٠ حرف على الأكثر";
+
+/* Class = "UIButton"; normalTitle = "Save Changes"; ObjectID = "rrL-8t-cnd"; */
+"rrL-8t-cnd.normalTitle" = "حفظ التغييرات";
+
+/* Class = "UITextField"; text = "Choose GameWeek"; ObjectID = "rzl-MT-vJz"; */
+"rzl-MT-vJz.text" = "اختر الجولة";

@@ -10,7 +10,7 @@ import Foundation
 
 class PointsPresenter {
     
-    func getHomePoints(onSuccess: @escaping (HomePointsModel, MainData) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    func getHomePoints(onSuccess: @escaping (HomePointsModel, MainData) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
     {
         let url = Urls().getHomePoints()
        
@@ -18,6 +18,8 @@ class PointsPresenter {
             
             if response != nil
             {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
                 let home_points = response!["home_points"].dictionaryValue
                 let data = response!["data"].dictionaryValue
 
@@ -26,33 +28,39 @@ class PointsPresenter {
                 homePointsModel = HomePointsModel(parametersJson: home_points)
                 mainData = MainData(parametersJson: data)
                 onSuccess(homePointsModel, mainData)
-                }else{
+                }else {
                     let message = response!["Message"].stringValue
-                    onFailure(message)
+                    onFailure(message, statusCode)
+                }
+                }else{
+                    
+                onFailure("Try again Later!", 1000)
                 }
         }
     }
     
-    func getPublicPoints(onSuccess: @escaping (PublicPoints) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    func getPublicPoints(onSuccess: @escaping (PublicPoints) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
     {
-        let langString = "lang".localized
-        let parameters:[String:Any] = [
-            "lang": langString
-        ]
+        
         let url = Urls().getPublicPoints()
        
         ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
             
             if response != nil
             {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
                 let data = response!["data"].dictionaryValue
                     var publicPoints = PublicPoints()
                     publicPoints = PublicPoints(parametersJson: data)
                     onSuccess(publicPoints)
+                }else {
+                    let message = response!["Message"].stringValue
+                    onFailure(message, statusCode)
+                }
                     
                 }else{
-                    let message = response!["Message"].stringValue
-                    onFailure(message)
+                    onFailure("Public points aren't available right now.", 1000)
                 }
             
         }
@@ -80,7 +88,7 @@ class PointsPresenter {
                     onFailure(message, statusCode)
                 }
                 }else{
-                    onFailure(error!.localizedDescription, 1000)
+                    onFailure("Something went wrong try again later!".localized, 1000)
 
                 }
             
@@ -115,6 +123,7 @@ class PointsPresenter {
                             gwsPointsModels = GWsPointsModel(parametersJson: data)
                             
                             if let data = response!["player_master"].array {
+                                if !data.isEmpty{
                                 let goalKeepersJson = data[0].array
                                 var goalKeepers = [MyTeam]()
                                 for goalKeeper in goalKeepersJson! {
@@ -145,6 +154,9 @@ class PointsPresenter {
                                     subs.append(MyTeam(parametersJson: sub.dictionaryValue))
                                 }
                                 onSuccess(gwsPointsModels, goalKeepers, defenders, mids, attackers, subs, plan)
+                                }else {
+                                    onFailure("Oops, Error occured",statusCode)
+                                }
                             }else{
                                 onFailure("Oops, Error occured",statusCode)}
                         }else{
@@ -154,7 +166,7 @@ class PointsPresenter {
                     }
                     else
                     {
-                        onFailure(error!.localizedDescription, 1000)
+                        onFailure("Something went wrong try again later!".localized, 1000)
                     }
             
         }

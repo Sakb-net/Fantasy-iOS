@@ -9,17 +9,17 @@
 import UIKit
 
 class DetailsOrDeletePopUp: ParentViewController {
-    var delegate : checkDeletePlayer?
+    var delegate : DetailsOrDeletePopUpDelegate?
     var player = MyTeam()
     var btName : String?
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var playerDetailsBT: UIButton!
     @IBOutlet weak var deletePlayerBT: UIButton!
     @IBAction func playerDetailsAction(_ sender: Any) {
-        let playerDetailsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PlayerDetailsVC") as! PlayerDetailsVC
-        playerDetailsVC.fromPitch = true
-        playerDetailsVC.team = player
-        present(playerDetailsVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.delegate?.openPlayerDetails(fromPitch: true, player: self.player)
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func deletePlayerAction(_ sender: Any) {
         delegate?.checkDelete(btName: btName!)
@@ -45,6 +45,8 @@ class DetailsOrDeletePopUp: ParentViewController {
     }
 }
 
-protocol checkDeletePlayer {
+protocol DetailsOrDeletePopUpDelegate {
     func checkDelete(btName : String)
+    func openPlayerDetails(fromPitch: Bool, player: MyTeam)
+
 }

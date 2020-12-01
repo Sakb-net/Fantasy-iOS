@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Players who are in this league are still going to be in the website and can join other leagues."; ObjectID = "IhL-tH-gvB"; */
+"IhL-tH-gvB.text" = "لحذف الدوري ، انقر على الزر أدناه. اللاعبون الذين دخلوا في الدوري سيظلون موجودين في الموقع ويمكنهم دخول الدوريات الأخرى متي أرادوا بذلك.";
+
+/* Class = "UIButton"; normalTitle = "Delete League"; ObjectID = "jAM-Wz-iUG"; */
+"jAM-Wz-iUG.normalTitle" = "حذف الدوري";

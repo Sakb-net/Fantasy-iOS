@@ -21,11 +21,21 @@ class ResetPassVC: ParentViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        passTF.delegate = self
+        confirmPassTF.delegate = self 
         loginPresenter.loginBTCongig(loginBT: self.savePassBT)
-        self.passTF.textAlignment = .right
-        self.passTF.titleLabel.textAlignment = .right
-        self.confirmPassTF.textAlignment = .right
-        self.confirmPassTF.titleLabel.textAlignment = .right
+        if "lang".localized == "ar" {
+            
+            self.passTF.textAlignment = .right
+            self.passTF.titleLabel.textAlignment = .right
+            self.confirmPassTF.textAlignment = .right
+            self.confirmPassTF.titleLabel.textAlignment = .right
+        }else {
+            self.passTF.textAlignment = .left
+            self.passTF.titleLabel.textAlignment = .left
+            self.confirmPassTF.textAlignment = .left
+            self.confirmPassTF.titleLabel.textAlignment = .left
+        }
     }
     
     func addLeftViewToPassTF(){

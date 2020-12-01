@@ -71,9 +71,7 @@ class EditProfileVC: ParentViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         viewConfig()
-        imagePicker.delegate = self
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        
         let apiImgLink = User.shared().image ?? ""
         let imageLink = apiImgLink.replacingOccurrences(of: "https://fantgame.sakb-co.com.sa/", with: "")
         userImage.sd_setImage(with: URL(string: Urls.baseUrl +  imageLink), placeholderImage: UIImage(named: "user"))
@@ -134,15 +132,29 @@ class EditProfileVC: ParentViewController, UITableViewDelegate, UITableViewDataS
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
     }
     func viewConfig(){
+        
         roundViewCorners(view: containerView)
         roundViewCorners(view: tableView)
         roundCameraBT(view: cameraBT)
         roundViewCornersNoShadow(view: changeProfileBT)
         roundViewCornersNoShadow(view: userImage)
-        self.emailTF.textAlignment = .right
-        self.usernameTF.textAlignment = .right
-        self.usernameTF.titleLabel.textAlignment = .right
-        self.emailTF.titleLabel.textAlignment = .right
+        
+        if "lang".localized == "ar" {
+            self.emailTF.textAlignment = .right
+            self.usernameTF.textAlignment = .right
+            self.usernameTF.titleLabel.textAlignment = .right
+            self.emailTF.titleLabel.textAlignment = .right
+        }else {
+            self.emailTF.textAlignment = .left
+            self.usernameTF.textAlignment = .left
+            self.usernameTF.titleLabel.textAlignment = .left
+            self.emailTF.titleLabel.textAlignment = .left
+        }
+        usernameTF.delegate = self
+        emailTF.delegate = self
+        imagePicker.delegate = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     func roundCameraBT(view : UIView){

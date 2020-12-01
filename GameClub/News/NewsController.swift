@@ -6,6 +6,7 @@ import UIKit
 import SideMenu
 
 class NewsController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var headerTiltle: UILabel!
     var isNews = true
     var newsPresenter = NewsPresenter()
     var videosPresenter = VideosPresenter()
@@ -82,6 +83,7 @@ class NewsController: ParentViewController, UITableViewDelegate, UITableViewData
             getNews()
         } else {
             getVideos()
+            self.headerTiltle.text = "Videos".localized
             self.mainPlayBT.isHidden = false
         }
     }

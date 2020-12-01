@@ -9,6 +9,7 @@ import SwiftyJSON
 
 class User: NSObject, NSCoding {
     
+    var id : Int?
     var display_name: String?
     var email: String?
     var access_token: String?
@@ -22,6 +23,7 @@ class User: NSObject, NSCoding {
     var team_link:String?
     var new_fcm_token:String?
     var old_fcm_token:String?
+    var choose_team : Int?
     
     private static var currentUser: User!
     
@@ -55,7 +57,7 @@ class User: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        
+        aCoder.encode(self.id, forKey: "id")
         aCoder.encode(self.display_name, forKey: "display_name")
         aCoder.encode(self.email, forKey: "email")
         aCoder.encode(self.access_token, forKey: "access_token")
@@ -68,9 +70,12 @@ class User: NSObject, NSCoding {
         aCoder.encode(self.team_name, forKey: "team_name")
         aCoder.encode(self.team_link, forKey: "team_link")
         aCoder.encode(self.new_fcm_token, forKey: "new_fcm_token")
+        aCoder.encode(self.choose_team, forKey: "choose_team")
+
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.id = (aDecoder.decodeObject(forKey: "id") as? Int) ?? 0
         self.display_name = (aDecoder.decodeObject(forKey: "display_name") as? String) ?? ""
         self.email = (aDecoder.decodeObject(forKey: "email") as? String) ?? ""
         self.access_token = (aDecoder.decodeObject(forKey: "access_token") as? String) ?? ""
@@ -83,10 +88,15 @@ class User: NSObject, NSCoding {
         self.team_name = (aDecoder.decodeObject(forKey: "team_name") as? String) ?? ""
         self.team_link = (aDecoder.decodeObject(forKey: "team_link") as? String) ?? ""
         self.new_fcm_token = (aDecoder.decodeObject(forKey: "new_fcm_token") as? String) ?? ""
+        self.choose_team = (aDecoder.decodeObject(forKey: "choose_team") as? Int) ?? 0
     }
     
     
     init(parametersJson: [String: JSON]) {
+        
+        if let id = parametersJson["id"]?.int {
+            self.id = id
+        }
         
         if let display_name = parametersJson["display_name"]?.string {
             self.display_name = display_name
@@ -134,6 +144,10 @@ class User: NSObject, NSCoding {
         
         if let new_fcm_token = parametersJson["new_fcm_token"]?.string {
             self.new_fcm_token = new_fcm_token
+        }
+        
+        if let choose_team = parametersJson["choose_team"]?.int {
+            self.choose_team = choose_team
         }
     }
     

@@ -75,7 +75,7 @@ class NameTeamPopUp: ParentViewController {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }

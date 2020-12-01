@@ -37,7 +37,7 @@ class LoginPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -71,12 +71,12 @@ class LoginPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
     
-    func userRegister(email:String, password:String, displayName:String, phone:String,  city:String, reg_site:String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    func userRegister(email:String, password:String, displayName:String, phone:String,  city:String, reg_site:String, favTeam:String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let url = Urls().getRegisterURL()
         
@@ -88,7 +88,8 @@ class LoginPresenter {
             "city": city,
             "state": reg_site,
             "reg_site": reg_site,
-            "password": password
+            "password": password,
+            "best_team": favTeam
         ]
         
         ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
@@ -108,7 +109,7 @@ class LoginPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -160,6 +161,24 @@ class LoginPresenter {
         }
         
     }
+    func createTeamsArrayString (allSubs : [[MyTeam]]) -> String{
+        var subsArray = String()
+        for n in 0...allSubs.count-1{
+            let player_id1 = allSubs[n][0].player_id ?? 0
+            let player_id2 = allSubs[n][1].player_id ?? 0
+            let player_cost = allSubs[n][1].cost_player ?? 0
+            print(player_id1)
+            subsArray += #"{"newplayer_id":"\#(player_id2)","substituteplayer_id":"\#(player_id1)""#
+            subsArray += #","substituteplayer_cost":"\#(player_cost)"}"#
+            if n != allSubs.count-1 {
+                subsArray += ","
+            }else {
+                subsArray = "[\(subsArray)]"
+            }
+        }
+        return subsArray
+    }
+    
     
     func loginBTCongig(loginBT : UIView){
         loginBT.layer.cornerRadius = 10

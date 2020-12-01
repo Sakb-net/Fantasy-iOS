@@ -35,7 +35,7 @@ class FixturesPresenter {
             }
             else
             {
-                onFailure(error?.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -68,7 +68,7 @@ class FixturesPresenter {
             }
             else
             {
-                onFailure(error?.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }

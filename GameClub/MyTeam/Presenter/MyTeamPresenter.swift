@@ -70,7 +70,7 @@ class MyTeamPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription, 1000)
+                onFailure("Something went wrong try again later!".localized, 1000)
             }
         }
     }
@@ -90,7 +90,7 @@ class MyTeamPresenter {
             {
                 let statusCode = response!["StatusCode"].intValue
                 if statusCode == 0 {
-                let data = response!["data"].dictionaryValue
+                    let data = response!["data"].dictionaryValue
                     var checkInsideChange = Check_insideChangeModel()
                     checkInsideChange = Check_insideChangeModel(parametersJson: data)
                     onSuccess(checkInsideChange)
@@ -102,7 +102,7 @@ class MyTeamPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -125,7 +125,7 @@ class MyTeamPresenter {
             {
                 let statusCode = response!["StatusCode"].intValue
                 if statusCode == 0 {
-                let data = response!["data"].dictionaryValue
+                    let data = response!["data"].dictionaryValue
                     let message = data["msg_add"]?.stringValue
                     onSuccess(message!)
                     
@@ -136,11 +136,11 @@ class MyTeamPresenter {
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
-
+    
     func addPlayerWithLink(playerLink1: String, playerLink2 : String, onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let url = Urls().change_playerByLink()
@@ -160,11 +160,11 @@ class MyTeamPresenter {
                     let message = response!["msg_add"].stringValue
                     onSuccess(message)
                 }
-                    
+                
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
@@ -185,7 +185,7 @@ class MyTeamPresenter {
             {
                 let statusCode = response!["StatusCode"].intValue
                 if statusCode == 0 {
-                let data = response!["data"].dictionaryValue
+                    let data = response!["data"].dictionaryValue
                     let message = data["msg_add"]?.stringValue
                     onSuccess(message!)
                     
@@ -193,48 +193,74 @@ class MyTeamPresenter {
                     let message = response!["Message"].stringValue
                     onFailure(message)
                 }
-                }
+            }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }
-    func activateCard(url: String, onSuccess: @escaping (Bool, String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
-           {
-               
-               ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
-                   
-                   if response != nil
-                   {
-//                    let statusCode = response!["StatusCode"].intValue
-                    let message = response!["Message"].stringValue
-                    let data = response!["data"].boolValue
-                    onSuccess(data, message)
-                   }else{
-                    onFailure(error!.localizedDescription)
-                   }
-           }
+    func activateCard(url: String, onSuccess: @escaping (Int, String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        
+        ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                //                    let statusCode = response!["StatusCode"].intValue
+                let message = response!["Message"].stringValue
+                let data = response!["data"].intValue
+                onSuccess(data, message)
+            }else{
+                onFailure("Something went wrong try again later!".localized)
+            }
+        }
     }
     
     func check_btns_status(onSuccess: @escaping (Int, Int) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
-           {
-               let url = Urls().check_btns_status()
-
-               ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
-                   
-                   if response != nil
-                   {
-//                    let statusCode = response!["StatusCode"].intValue
-//                    let message = response!["Message"].stringValue
-                    let data = response!["data"].dictionaryValue
-                    let benchCard = data["benchCard"]!.intValue
-                    let tripleCard = data["tripleCard"]!.intValue
-                    onSuccess(benchCard, tripleCard)
-                   }else{
-                    onFailure(error!.localizedDescription)
-                   }
-           }
+    {
+        let url = Urls().check_btns_status()
+        
+        ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                //                    let statusCode = response!["StatusCode"].intValue
+                //                    let message = response!["Message"].stringValue
+                let data = response!["data"].dictionaryValue
+                let benchCard = data["bench_card"]!.intValue
+                let tripleCard = data["triple_card"]!.intValue
+                onSuccess(benchCard, tripleCard)
+            }else{
+                onFailure("Something went wrong try again later!".localized)
+            }
+        }
     }
-
+    func cancelCards (type: String, onSuccess: @escaping (Bool) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().cancelCards()
+        let parameters = ["type" : type]
+        
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let data = response!["data"].boolValue
+                
+                onSuccess(data)
+            }else{
+                onFailure("Something went wrong try again later!".localized)
+            }
+        }
+    }
+    func openCardPopUp (cardType : String, delegate : cardActivationDelegat, vc : MyTeamVC, benchCard : Int, tripleCard : Int) -> CardPopUp{
+        let cardPopUp = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "CardPopUp") as! CardPopUp
+        cardPopUp.popUpType = cardType
+        cardPopUp.benchCard = benchCard
+        cardPopUp.tripleCard = tripleCard
+        cardPopUp.delegate = delegate
+        vc.present(cardPopUp, animated: true
+            , completion: nil)
+        return cardPopUp
+    }
 }

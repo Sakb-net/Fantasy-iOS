@@ -17,6 +17,7 @@ class PublicPoints : NSObject {
     var sum_total_subeldwry : Int?
     var game_week_changes : Int?
     var total_changes : Int?
+    var count_free_weekgamesubstitute : Int?
 
     override init() {
            }
@@ -52,5 +53,11 @@ class PublicPoints : NSObject {
             {
                 self.total_changes = total_changes
             }
+            
+            if let count_free_weekgamesubstitute = parametersJson["count_free_weekgamesubstitute"]?.intValue
+            {
+                self.count_free_weekgamesubstitute = count_free_weekgamesubstitute
+            }
     }
 }
+

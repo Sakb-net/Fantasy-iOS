@@ -25,6 +25,10 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func forgetPasswordAction(_ sender: Any) {
+        guard let url = URL(string: "http://sakbfantasy.sakb-co.com.sa/password/reset") else { return }
+        UIApplication.shared.open(url)
+    }
     
     @IBAction func LoginAction(_ sender: Any) {
         userLogin()
@@ -59,6 +63,8 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
         navigationController!.removeViewController(PitchVC.self)
         navigationController!.removeViewController(MyTeamVC.self)
         navigationController!.removeViewController(MyPointsVC.self)
+        emailTF.delegate = self
+        passTF.delegate = self
 
 
         self.navigationController?.navigationBar.isHidden = true

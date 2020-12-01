@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "League Name"; ObjectID = "5Wo-kj-uHC"; */
+"5Wo-kj-uHC.text" = "إسم الدوري";
+
+/* Class = "UILabel"; text = "Sort By:"; ObjectID = "fXh-BI-pBM"; */
+"fXh-BI-pBM.text" = "ترتيب حسب:";
+
+/* Class = "UIButton"; normalTitle = "Standings"; ObjectID = "iDa-gr-g3h"; */
+"iDa-gr-g3h.normalTitle" = "Standings";
+
+/* Class = "UILabel"; text = "Standings"; ObjectID = "nuZ-Qz-8gc"; */
+"nuZ-Qz-8gc.text" = "Standings";
+
+/* Class = "UIButton"; normalTitle = "Matches"; ObjectID = "ox5-bf-Yby"; */
+"ox5-bf-Yby.normalTitle" = "المباريات";
+
+/* Class = "UILabel"; text = "No Data"; ObjectID = "zQh-m4-5Fw"; */
+"zQh-m4-5Fw.text" = "لا يوجد بيانات";

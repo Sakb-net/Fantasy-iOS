@@ -24,7 +24,10 @@ class MyPointsVC: ParentViewController {
     var captin_icon = "c-icon"
     var assist_icon = "v-icon"
     var currentGWLink = ""
+    @IBOutlet weak var cardLbl: UILabel!
+    @IBOutlet weak var golsCardView: UIView!
     
+    @IBOutlet weak var transferPointsLbl: UILabel!
     @IBOutlet weak var gwView: UIView!
     @IBOutlet weak var gwLbl: UILabel!
     
@@ -214,7 +217,7 @@ class MyPointsVC: ParentViewController {
         playerDetailsVC.fromPitch = true
         playerDetailsVC.gw = currentGWLink
         playerDetailsVC.team = players[index]
-        present(playerDetailsVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(playerDetailsVC, animated: true)
     }
     func getGameWeeks (){
         self.showLoader()
@@ -254,6 +257,22 @@ class MyPointsVC: ParentViewController {
                 self.mids = mids
                 self.attackers = attackers
                 self.subs = subs
+                    if gwData.triple_card == 1 {
+                        self.cardLbl.isHidden = false
+                        self.cardLbl.text = "Triple Captain Card"
+                    }
+//                    if gwData.bench_card == 1 {
+//                        self.cardLbl.isHidden = false
+//                        self.cardLbl.text = "Bench Card"
+//                    }
+                    
+//                    var goldCard = 0
+//                    if let gold_card = gwData.gold_card {
+//                        goldCard = gold_card
+//                    }
+//                    if goldCard > 0 {
+//                        self.golsCardView.isHidden = false
+//                    }
                     if let  finalPoints = gwData.final_point {
                         self.finalPointsLbl.text = String(finalPoints)
                     }
@@ -268,6 +287,9 @@ class MyPointsVC: ParentViewController {
                     }
                     if let  transfer = gwData.transfer {
                         self.transfereLbl.text = String(transfer)
+                    }
+                    if let  transferPoints = gwData.transfer_points {
+                        self.transferPointsLbl.text = String(transferPoints) + " pts"
                     }
                 let count = goalKeepers.count + defenders.count + mids.count + attackers.count + subs.count
                 for i in 0..<count {

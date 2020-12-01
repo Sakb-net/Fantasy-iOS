@@ -138,7 +138,11 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
         if let score2 = secondScore{
             secondScoreString = String(score2)
         }
-        cell.scoreLabel.text = firstScoreString + " - " + secondScoreString
+        if "lang".localized == "en"{
+            cell.scoreLabel.text = secondScoreString + " - " + firstScoreString
+        }else if "lang".localized == "ar"{
+            cell.scoreLabel.text = firstScoreString + " - " + secondScoreString
+        }
         cell.firstClubIV.sd_setImage(with: URL(string: Urls.baseUrl+self.fixtures[indexPath.row].image_first! ), placeholderImage: UIImage(named: "placeholder"))
         cell.secondClubIV.sd_setImage(with: URL(string: Urls.baseUrl+self.fixtures[indexPath.row].image_second! ), placeholderImage: UIImage(named: "placeholder"))
             return cell

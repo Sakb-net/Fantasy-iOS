@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Bd.ttf">
+            <string>HelveticaNeueW23forSKY-Bd</string>
+        </array>
+        <array key="HelveticaNeueW23forSKY-Reg.ttf">
+            <string>HelveticaNeueW23forSKY-Reg</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueStandingsViewController" customModule="GameClub" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="ZhC-Ak-HtA" id="H9s-5C-08B"/>
+                <outlet property="downBT" destination="jFX-md-TTL" id="rk2-Wr-g24"/>
+                <outlet property="headMatchesBT" destination="ox5-bf-Yby" id="4v0-md-xMm"/>
+                <outlet property="headOptionsStack" destination="Ztg-I9-NL0" id="Hmp-VN-LtQ"/>
+                <outlet property="headStandingsBT" destination="iDa-gr-g3h" id="LOT-VL-ent"/>
+                <outlet property="indicator" destination="Q5r-IP-WX1" id="mhh-he-Ol6"/>
+                <outlet property="leagueNameLbl" destination="5Wo-kj-uHC" id="fs4-IQ-UKG"/>
+                <outlet property="noDataLbl" destination="zQh-m4-5Fw" id="XfL-up-kdj"/>
+                <outlet property="sortByTF" destination="Di1-qB-8u2" id="elW-2e-ceX"/>
+                <outlet property="tableView" destination="p29-AU-VN5" id="hnm-PY-Sj8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APV-z0-aGC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="obL-R1-kmU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Se-Wc-gCb">
+                            <rect key="frame" x="371" y="55" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="KC2-Kh-9WP"/>
+                                <constraint firstAttribute="width" constant="24" id="Sak-5b-n4M"/>
+                            </constraints>
+                            <state key="normal" image="menu"/>
+                            <connections>
+                                <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="ffi-YS-PkK"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standings" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuZ-Qz-8gc">
+                            <rect key="frame" x="181" y="55" width="182" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="182" id="QSX-3h-G4E"/>
+                                <constraint firstAttribute="height" constant="24" id="V0v-NY-hbX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsy-jK-HWT">
+                            <rect key="frame" x="11" y="55" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="oAR-jb-yBf"/>
+                                <constraint firstAttribute="width" constant="24" id="yZq-3O-VQ2"/>
+                            </constraints>
+                            <state key="normal" image="back_bt"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="bp6-i1-0G1"/>
+                            </connections>
+                        </button>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ztg-I9-NL0">
+                            <rect key="frame" x="40" y="94" width="334" height="33"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDa-gr-g3h">
+                                    <rect key="frame" x="0.0" y="0.0" width="162" height="33"/>
+                                    <color key="backgroundColor" red="0.0" green="0.72549019609999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                                    <state key="normal" title="Standings">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="standingsAction:" destination="-1" eventType="touchUpInside" id="SwS-hv-OXy"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ox5-bf-Yby">
+                                    <rect key="frame" x="172" y="0.0" width="162" height="33"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                                    <state key="normal" title="Matches">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="matchesAction:" destination="-1" eventType="touchUpInside" id="bLd-Pv-PKI"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="Rg9-RB-f94"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="217" id="Dy6-9J-kGb"/>
+                        <constraint firstAttribute="trailing" secondItem="Ztg-I9-NL0" secondAttribute="trailing" constant="40" id="Muk-ui-7wc"/>
+                        <constraint firstItem="obL-R1-kmU" firstAttribute="leading" secondItem="APV-z0-aGC" secondAttribute="leading" id="OMk-DF-iCX"/>
+                        <constraint firstItem="obL-R1-kmU" firstAttribute="top" secondItem="APV-z0-aGC" secondAttribute="top" id="Pxz-DE-CVn"/>
+                        <constraint firstItem="Xsy-jK-HWT" firstAttribute="top" secondItem="APV-z0-aGC" secondAttribute="top" constant="55" id="RVN-pq-CP3"/>
+                        <constraint firstAttribute="trailing" secondItem="obL-R1-kmU" secondAttribute="trailing" id="RXK-lc-sAK"/>
+                        <constraint firstAttribute="right" secondItem="4Se-Wc-gCb" secondAttribute="right" constant="19" id="Wuq-WM-SUR"/>
+                        <constraint firstItem="Xsy-jK-HWT" firstAttribute="left" secondItem="APV-z0-aGC" secondAttribute="left" constant="11" id="ZiS-MK-t4z"/>
+                        <constraint firstAttribute="bottom" secondItem="Ztg-I9-NL0" secondAttribute="bottom" constant="90" id="d2M-ha-Pa1"/>
+                        <constraint firstItem="4Se-Wc-gCb" firstAttribute="left" secondItem="nuZ-Qz-8gc" secondAttribute="right" constant="8" id="dEH-QD-zrl"/>
+                        <constraint firstItem="Ztg-I9-NL0" firstAttribute="top" secondItem="nuZ-Qz-8gc" secondAttribute="bottom" constant="15" id="mho-q5-1DE"/>
+                        <constraint firstAttribute="bottom" secondItem="obL-R1-kmU" secondAttribute="bottom" id="plC-uZ-IsQ"/>
+                        <constraint firstItem="nuZ-Qz-8gc" firstAttribute="top" secondItem="APV-z0-aGC" secondAttribute="top" constant="55" id="qzQ-8a-zsk"/>
+                        <constraint firstItem="4Se-Wc-gCb" firstAttribute="top" secondItem="APV-z0-aGC" secondAttribute="top" constant="55" id="rsN-Uo-FvX"/>
+                        <constraint firstItem="Ztg-I9-NL0" firstAttribute="leading" secondItem="APV-z0-aGC" secondAttribute="leading" constant="40" id="vq0-kx-nCo"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhC-Ak-HtA">
+                    <rect key="frame" x="20" y="154" width="374" height="692"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-IP-WX1">
+                            <rect key="frame" x="177" y="336" width="20" height="20"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQh-m4-5Fw">
+                            <rect key="frame" x="156" y="336" width="62.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p29-AU-VN5">
+                            <rect key="frame" x="10" y="125" width="354" height="557"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wo-kj-uHC">
+                            <rect key="frame" x="8" y="14" width="358" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="7yd-Em-8Os"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Bd" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Di1-qB-8u2">
+                            <rect key="frame" x="192" y="54" width="144" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="BPN-Hs-XAP"/>
+                                <constraint firstAttribute="width" constant="144" id="oGq-aE-UxI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFX-md-TTL">
+                            <rect key="frame" x="348" y="64" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="A8U-5e-zYH"/>
+                                <constraint firstAttribute="height" constant="15" id="ekf-fj-uEg"/>
+                            </constraints>
+                            <state key="normal" image="down-arrow2"/>
+                            <connections>
+                                <action selector="downAction:" destination="-1" eventType="touchUpInside" id="XF0-XC-cO4"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXh-BI-pBM">
+                            <rect key="frame" x="111" y="54" width="73" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="73" id="HJf-Bh-IP0"/>
+                                <constraint firstAttribute="height" constant="34" id="tEL-cQ-qHP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="15"/>
+                            <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="jFX-md-TTL" firstAttribute="leading" secondItem="Di1-qB-8u2" secondAttribute="trailing" constant="12" id="0vL-hE-vq2"/>
+                        <constraint firstItem="zQh-m4-5Fw" firstAttribute="centerX" secondItem="ZhC-Ak-HtA" secondAttribute="centerX" id="1yI-WZ-tMO"/>
+                        <constraint firstItem="jFX-md-TTL" firstAttribute="top" secondItem="5Wo-kj-uHC" secondAttribute="bottom" constant="23" id="By7-9H-EiW"/>
+                        <constraint firstItem="zQh-m4-5Fw" firstAttribute="centerY" secondItem="ZhC-Ak-HtA" secondAttribute="centerY" id="IAH-hz-fKF"/>
+                        <constraint firstItem="5Wo-kj-uHC" firstAttribute="top" secondItem="ZhC-Ak-HtA" secondAttribute="top" constant="14" id="Ker-Nf-1JP"/>
+                        <constraint firstAttribute="trailing" secondItem="jFX-md-TTL" secondAttribute="trailing" constant="11" id="KzY-ko-9k9"/>
+                        <constraint firstAttribute="trailing" secondItem="5Wo-kj-uHC" secondAttribute="trailing" constant="8" id="MBJ-w8-iVc"/>
+                        <constraint firstItem="fXh-BI-pBM" firstAttribute="top" secondItem="5Wo-kj-uHC" secondAttribute="bottom" constant="13" id="MYL-HP-liS"/>
+                        <constraint firstItem="Di1-qB-8u2" firstAttribute="top" secondItem="5Wo-kj-uHC" secondAttribute="bottom" constant="13" id="NcY-74-6Jp"/>
+                        <constraint firstItem="5Wo-kj-uHC" firstAttribute="leading" secondItem="ZhC-Ak-HtA" secondAttribute="leading" constant="8" id="PyQ-GC-Wfy"/>
+                        <constraint firstItem="p29-AU-VN5" firstAttribute="leading" secondItem="ZhC-Ak-HtA" secondAttribute="leading" constant="10" id="VNT-4H-X05"/>
+                        <constraint firstItem="p29-AU-VN5" firstAttribute="top" secondItem="fXh-BI-pBM" secondAttribute="bottom" constant="37" id="Y6F-s6-bEo"/>
+                        <constraint firstItem="Q5r-IP-WX1" firstAttribute="centerY" secondItem="ZhC-Ak-HtA" secondAttribute="centerY" id="boc-ms-VL5"/>
+                        <constraint firstAttribute="trailing" secondItem="p29-AU-VN5" secondAttribute="trailing" constant="10" id="iIW-VM-oBg"/>
+                        <constraint firstItem="Di1-qB-8u2" firstAttribute="leading" secondItem="fXh-BI-pBM" secondAttribute="trailing" constant="8" id="pi2-Qa-Krg"/>
+                        <constraint firstAttribute="bottom" secondItem="p29-AU-VN5" secondAttribute="bottom" constant="10" id="rpZ-KY-VDN"/>
+                        <constraint firstItem="Q5r-IP-WX1" firstAttribute="centerX" secondItem="ZhC-Ak-HtA" secondAttribute="centerX" id="xCe-8J-hXE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.1065431335" green="0.27915126039999999" blue="0.38183619009999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="APV-z0-aGC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6UO-4t-6nD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZhC-Ak-HtA" secondAttribute="bottom" constant="16" id="LeD-jl-SYV"/>
+                <constraint firstItem="ZhC-Ak-HtA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Qj6-PJ-lMa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZhC-Ak-HtA" secondAttribute="trailing" constant="20" id="RZp-kV-oAf"/>
+                <constraint firstItem="APV-z0-aGC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yi4-d8-he5"/>
+                <constraint firstItem="APV-z0-aGC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kam-lu-b36"/>
+                <constraint firstItem="ZhC-Ak-HtA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="110" id="wGi-Pv-7F5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-439" y="-98"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_bt" width="32" height="32"/>
+        <image name="down-arrow2" width="10.5" height="10.5"/>
+        <image name="header" width="360" height="221"/>
+        <image name="menu" width="24" height="24"/>
+    </resources>
+</document>

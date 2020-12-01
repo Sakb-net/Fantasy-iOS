@@ -91,7 +91,7 @@ class PrizesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource
             }
             else
             {
-                onFailure(error!.localizedDescription)
+                onFailure("Something went wrong try again later!".localized)
             }
         }
     }

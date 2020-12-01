@@ -48,11 +48,22 @@ class AccountVC: ParentViewController {
     }
     
     func viewConfig(){
+        passTF.delegate = self
+        emailTF.delegate = self
+        favTeamTF.delegate = self
+        
         self.favTeamTF.leftViewMode = .always
-        self.favTeamTF.textAlignment = .right
-        self.emailTF.textAlignment = .right
-        self.emailTF.titleLabel.textAlignment = .right
-        self.favTeamTF.titleLabel.textAlignment = .right
+        if "lang".localized == "ar" {
+            self.favTeamTF.textAlignment = .right
+            self.emailTF.textAlignment = .right
+            self.emailTF.titleLabel.textAlignment = .right
+            self.favTeamTF.titleLabel.textAlignment = .right
+        }else {
+            self.favTeamTF.textAlignment = .left
+            self.emailTF.textAlignment = .left
+            self.emailTF.titleLabel.textAlignment = .left
+            self.favTeamTF.titleLabel.textAlignment = .left
+        }
         roundViewCorners(view: containerView)
         roundViewCornersNoShadow(view: userIV)
         roundViewCornersNoShadow(view: changePassBT)

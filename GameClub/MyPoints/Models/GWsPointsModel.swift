@@ -23,10 +23,37 @@ class GWsPointsModel : NSObject {
     var heigh_point : Int?
     var sort_gwla : Int?
     var transfer : Int?
+    var transfer_points : Int?
+    var bench_card : Int?
+    var triple_card : Int?
+    var gold_card : Int?
+    var gray_card : Int?
+   
     override init() {
               }
     init(parametersJson: [String: JSON])
                {
+                if let transfer_points = parametersJson["transfer_points"]?.intValue
+                {
+                    self.transfer_points = transfer_points
+                }
+                
+                if let bench_card = parametersJson["bench_card"]?.intValue
+                {
+                    self.bench_card = bench_card
+                }
+                if let triple_card = parametersJson["triple_card"]?.intValue
+                {
+                    self.triple_card = triple_card
+                }
+                if let gold_card = parametersJson["gold_card"]?.intValue
+                {
+                    self.gold_card = gold_card
+                }
+                if let gray_card = parametersJson["gray_card"]?.intValue
+                {
+                    self.gray_card = gray_card
+                }
                 if let link = parametersJson["link"]?.stringValue
                 {
                     self.link = link

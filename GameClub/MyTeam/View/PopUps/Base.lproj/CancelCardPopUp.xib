@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Reg.ttf">
+            <string>HelveticaNeueW23forSKY-Reg</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CancelCardPopUp" customModule="GameClub" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="Fhg-jV-B0X" id="Vys-zG-d8D"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="CancelCardPopUp" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhg-jV-B0X">
+                    <rect key="frame" x="20" y="230" width="374" height="182"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to disable cards?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92g-SC-Jwr">
+                            <rect key="frame" x="8" y="23" width="358" height="67"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="67" id="tiP-wV-wdG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xIg-x7-uNa">
+                            <rect key="frame" x="8" y="98" width="358" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iel-rj-pLZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="179" height="60"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                                    <state key="normal" title="Yes">
+                                        <color key="titleColor" red="0.0" green="0.72549019609999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="yesAction:" destination="-1" eventType="touchUpInside" id="wq1-a3-qaD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTS-xv-hz1">
+                                    <rect key="frame" x="179" y="0.0" width="179" height="60"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                                    <state key="normal" title="No">
+                                        <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="noAction:" destination="-1" eventType="touchUpInside" id="2z6-i7-EC1"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="92g-SC-Jwr" firstAttribute="top" secondItem="Fhg-jV-B0X" secondAttribute="top" constant="23" id="001-By-RjJ"/>
+                        <constraint firstItem="xIg-x7-uNa" firstAttribute="top" secondItem="92g-SC-Jwr" secondAttribute="bottom" constant="8" id="8jZ-ZW-T0a"/>
+                        <constraint firstAttribute="trailing" secondItem="xIg-x7-uNa" secondAttribute="trailing" constant="8" id="af6-4z-wL4"/>
+                        <constraint firstItem="92g-SC-Jwr" firstAttribute="leading" secondItem="Fhg-jV-B0X" secondAttribute="leading" constant="8" id="kQX-Vz-Uyy"/>
+                        <constraint firstAttribute="trailing" secondItem="92g-SC-Jwr" secondAttribute="trailing" constant="8" id="lDd-WX-bVF"/>
+                        <constraint firstAttribute="bottom" secondItem="xIg-x7-uNa" secondAttribute="bottom" constant="24" id="nS8-dr-vk6"/>
+                        <constraint firstItem="xIg-x7-uNa" firstAttribute="leading" secondItem="Fhg-jV-B0X" secondAttribute="leading" constant="8" id="nrc-Hp-9Xm"/>
+                        <constraint firstAttribute="height" constant="182" id="rP0-nl-4L9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="0.69841609589041098" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Fhg-jV-B0X" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="186" id="Fsr-8P-1eC"/>
+                <constraint firstItem="Fhg-jV-B0X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eSB-jK-bDw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fhg-jV-B0X" secondAttribute="trailing" constant="20" id="nmU-Q5-6N6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+        </view>
+    </objects>
+</document>

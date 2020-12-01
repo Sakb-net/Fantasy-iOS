@@ -13,10 +13,19 @@ enum DropDownTypes: String {
     case gameWeek
     case sortByStat
     case player_loc
+    case league_players
 }
 
 protocol SelectedDropDownType {
     func selectedType(selectedType:DropDownTypes, selectedItem:Any)
+}
+
+protocol SelectedPlayer {
+    func selectedPlayerType(selectedItem:LeaguePlayer, textField: UITextField)
+}
+
+protocol SelectedGameWeek {
+    func selectedGameWeek(selectedItem:GWsPointsModel, textField: UITextField)
 }
 
 class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
@@ -31,8 +40,13 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
     var cities = [City]()
     var teams = [Teams]()
     var gameWeeks = [GWsPointsModel]()
-    
+    var leagueDetails = MyLeagueDetails()
     var selectDelegate:SelectedDropDownType!
+    var selectPlayerDelegate:SelectedPlayer!
+    var selectGWDelegate:SelectedGameWeek!
+
+    var textField = UITextField()
+    var gameWeekFromMyLeagues = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +93,8 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             return 4
         case .player_loc:
             return 4
+        case .league_players:
+            return leagueDetails.users_group?.count ?? 0
         }
     }
     
@@ -135,6 +151,8 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             }else if indexPath.row == 3 {
                 cell.textLabel?.text = "Attacker".localized
             }
+        case .league_players:
+            cell.textLabel?.text = leagueDetails.users_group![indexPath.row].display_name
         }
         return cell
     }
@@ -149,11 +167,18 @@ class DropDownVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
         }else if selectedType == .playerAction{
             self.selectDelegate.selectedType(selectedType: .playerAction, selectedItem: indexPath.row)
         }else if selectedType == .gameWeek{
-            self.selectDelegate.selectedType(selectedType: .gameWeek, selectedItem: gameWeeks[indexPath.row])
+            if gameWeekFromMyLeagues{
+                self.selectGWDelegate.selectedGameWeek(selectedItem: gameWeeks[indexPath.row], textField: textField)
+            }else {
+                self.selectDelegate.selectedType(selectedType: .gameWeek, selectedItem: gameWeeks[indexPath.row])
+            }
+
         }else if selectedType == .sortByStat{
             self.selectDelegate.selectedType(selectedType: .sortByStat, selectedItem: indexPath.row)
         }else if selectedType == .player_loc{
             self.selectDelegate.selectedType(selectedType: .player_loc, selectedItem: indexPath.row)
+        }else if selectedType == .league_players{
+            self.selectPlayerDelegate.selectedPlayerType(selectedItem: leagueDetails.users_group![indexPath.row], textField: textField)
         }
         self.dismiss(animated: true, completion: nil)
     }

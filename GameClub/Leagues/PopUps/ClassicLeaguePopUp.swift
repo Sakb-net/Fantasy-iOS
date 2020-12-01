@@ -9,37 +9,54 @@
 import UIKit
 
 class ClassicLeaguePopUp: ParentViewController {
+    var code = ""
+    var delegate : navigationForClassicDelegate?
     
-       @IBOutlet weak var containerView: UIView!
-       @IBOutlet weak var imageView: UIImageView!
-       @IBOutlet weak var contentLbl: UILabel!
-       @IBOutlet weak var titleLbl: UILabel!
-       @IBOutlet weak var codeLbl: UILabel!
-       @IBOutlet weak var confirmBT: UIButton!
-       @IBOutlet weak var cancelBT: UIButton!
-       @IBAction func ConfirmAction(_ sender: Any) {
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var codeLbl: UILabel!
+    @IBOutlet weak var settingsBT: UIButton!
+    @IBOutlet weak var myLeagueBT: UIButton!
+    @IBAction func settingsAction(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
         }
-       @IBAction func CancelAction(_ sender: Any) {
-           self.dismiss(animated: true, completion: nil)
+        delegate?.openSettings()
+    }
+    @IBAction func myLeaguesAction(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
         }
-       @IBAction func CopyAction(_ sender: Any) {
+        delegate?.openMyLeagues()
+    }
+    @IBAction func CopyAction(_ sender: Any) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = code
+    }
+    @IBAction func ShareAction(_ sender: Any) {
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        roundViewCornersNoShadow(view: containerView)
+        roundViewCornersNoShadow(view: settingsBT)
+        roundViewCornersNoShadow(view: myLeagueBT)
+        roundViewCornersNoShadow(view: codeLbl)
+        codeLbl.text = code
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            if let touchedView = touch.view, touchedView != containerView {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
-       @IBAction func ShareAction(_ sender: Any) {
-        }
-       override func viewDidLoad() {
-           super.viewDidLoad()
-           roundViewCornersNoShadow(view: containerView)
-           roundViewCornersNoShadow(view: confirmBT)
-           roundViewCornersNoShadow(view: cancelBT)
-           roundViewCornersNoShadow(view: codeLbl)
-
-       }
-       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-           if let touch = touches.first {
-               if let touchedView = touch.view, touchedView != containerView {
-                   self.dismiss(animated: true, completion: nil)
-               }
-           }
-       }
-
+    }
+    
+}
+protocol navigationForClassicDelegate {
+    func openSettings()
+    func openMyLeagues()
 }

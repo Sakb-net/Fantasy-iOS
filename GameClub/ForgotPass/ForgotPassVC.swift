@@ -5,7 +5,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class ForgotPassVC: UIViewController {
+class ForgotPassVC: ParentViewController {
     var loginPresenter = LoginPresenter()
     @IBOutlet weak var emailTF: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmEmail: UIButton!
@@ -16,6 +16,7 @@ class ForgotPassVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTF.delegate = self
         loginPresenter.loginBTCongig(loginBT: self.confirmEmail)
         if "lang".localized == "ar"{
             self.emailTF.textAlignment = .right

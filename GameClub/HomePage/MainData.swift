@@ -19,7 +19,7 @@ class MainData : NSObject {
     var link : String?
     var num_week : Int?
     var name : String?
-    var cost : Int?
+    var change_point : Int?
     var start_date : String?
     var end_date : String?
     var created_at : String?
@@ -43,9 +43,9 @@ class MainData : NSObject {
             self.name = name
         }
         
-        if let cost = parametersJson["cost"]?.intValue
+        if let change_point = parametersJson["change_point"]?.intValue
         {
-            self.cost = cost
+            self.change_point = change_point
         }
         
         if let start_date = parametersJson["start_date"]?.stringValue

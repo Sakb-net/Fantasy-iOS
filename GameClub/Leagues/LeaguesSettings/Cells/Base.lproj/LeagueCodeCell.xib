@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Bd.ttf">
+            <string>HelveticaNeueW23forSKY-Bd</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeagueCodeCell" rowHeight="126" id="KGk-i7-Jjw" customClass="LeagueCodeCell" customModule="GameClub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="126"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="387" height="126"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Code:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbs-Qd-8zD">
+                        <rect key="frame" x="120.5" y="15" width="146" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="146" id="hBM-9B-UWK"/>
+                            <constraint firstAttribute="height" constant="33" id="mjt-8e-SQE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Bd" family="Helvetica Neue W23 for SKY" pointSize="16"/>
+                        <color key="textColor" red="0.1065431335" green="0.27915126039999999" blue="0.38183619009999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="gkipd7" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VHp-Io-zIE">
+                        <rect key="frame" x="106" y="56" width="122" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="122" id="kd9-sZ-Gsb"/>
+                        </constraints>
+                        <color key="textColor" red="0.1065431335" green="0.27915126039999999" blue="0.38183619009999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Bd" family="Helvetica Neue W23 for SKY" pointSize="19"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f9K-PJ-Y5r">
+                        <rect key="frame" x="236" y="56" width="62" height="50"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiX-xc-ztc">
+                                <rect key="frame" x="0.0" y="0.0" width="62" height="50"/>
+                                <state key="normal" image="copy"/>
+                                <connections>
+                                    <action selector="copyAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E4V-28-Ol8"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPc-Me-FnU">
+                                <rect key="frame" x="62" y="0.0" width="0.0" height="50"/>
+                                <state key="normal" image="sharing"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="se4-m9-6OS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="62" id="nz6-IG-bFF"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fbs-Qd-8zD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="4wJ-6v-5tH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="VHp-Io-zIE" secondAttribute="bottom" constant="9" id="8aQ-a4-nXa"/>
+                    <constraint firstItem="f9K-PJ-Y5r" firstAttribute="bottom" secondItem="VHp-Io-zIE" secondAttribute="bottom" id="FH9-S6-ZQI"/>
+                    <constraint firstItem="f9K-PJ-Y5r" firstAttribute="top" secondItem="fbs-Qd-8zD" secondAttribute="bottom" constant="8" id="HVA-Jh-XmQ"/>
+                    <constraint firstItem="f9K-PJ-Y5r" firstAttribute="leading" secondItem="VHp-Io-zIE" secondAttribute="trailing" constant="8" id="ITb-UT-gBr"/>
+                    <constraint firstItem="fbs-Qd-8zD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="QSk-VY-Gtu"/>
+                    <constraint firstItem="VHp-Io-zIE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="86" id="Rza-oa-jS5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="f9K-PJ-Y5r" secondAttribute="trailing" constant="69" id="hd3-RZ-ylQ"/>
+                    <constraint firstItem="f9K-PJ-Y5r" firstAttribute="top" secondItem="VHp-Io-zIE" secondAttribute="top" id="ne3-GV-Tt3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="codeTF" destination="VHp-Io-zIE" id="jhQ-1O-hOw"/>
+                <outlet property="copyBT" destination="XiX-xc-ztc" id="fL4-Re-5kq"/>
+                <outlet property="shareBT" destination="CPc-Me-FnU" id="llG-HH-8aV"/>
+            </connections>
+            <point key="canvasLocation" x="180.43478260869566" y="141.29464285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="copy" width="52" height="58"/>
+        <image name="sharing" width="52" height="58"/>
+    </resources>
+</document>

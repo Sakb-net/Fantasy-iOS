@@ -37,12 +37,9 @@ class PlayerDetailsVC: ParentViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var playerNameLbl: UILabel!
     @IBOutlet weak var playerTeamLbl: UILabel!
     @IBOutlet weak var playerPositionLbl: UILabel!
+    
     @IBAction func backAction(_ sender: Any) {
-        if fromPitch {
-            dismiss(animated: true, completion: nil)
-        }else {
-            navigationController?.popViewController(animated: true)
-        }
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -222,14 +219,13 @@ class PlayerDetailsVC: ParentViewController, UITableViewDelegate, UITableViewDat
 }
 extension PlayerDetailsVC : ViewMatchDetails{
     func viewMatch(index : Int) {
-           let matchDetailsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MatchDetailsVC") as! MatchDetailsVC
-           matchDetailsVC.page = 1
+        let matchDetailsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MatchDetailsVC") as! MatchDetailsVC
+        matchDetailsVC.page = 1
         matchDetailsVC.firstTeam = self.playersStatics[index].ownTeam!
         matchDetailsVC.secondTeam = self.playersStatics[index].againestTeam!
         matchDetailsVC.firstTeamScore = self.playersStatics[index].ownTeamResult!
         matchDetailsVC.secondTeamScore = self.playersStatics[index].againestTeamResult!
-           matchDetailsVC.link = self.playersStatics[index].link_match!
-           present(matchDetailsVC, animated: true, completion: nil)
-       }
-   
+        matchDetailsVC.link = self.playersStatics[index].link_match!
+        navigationController?.pushViewController(matchDetailsVC, animated: false)
+    }
 }
