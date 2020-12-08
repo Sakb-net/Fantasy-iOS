@@ -33,8 +33,12 @@ class LeaguesSettingsViewController: ParentViewController {
         }else if "lang".localized == "ar" {
             headerTitles = ["كود الدوري","تفاصيل الدوري","حذف لاعب من الدوري","تغيير مدير الدوري","حذف الدوري"]
         }
-        getLeagueDetails()
-        getGameWeeks ()
+        if isNetworkReachable {
+            getLeagueDetails()
+            getGameWeeks ()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
         initView ()
     }
     
@@ -149,20 +153,28 @@ class LeaguesSettingsViewController: ParentViewController {
 }
 extension LeaguesSettingsViewController: UITableViewDelegate, UITableViewDataSource, expandCellDelegate, LeagueSettingsDelegate, SelectedPlayer, SelectedGameWeek {
     func DeleteUserLeague() {
-        DeleteLeague()
+        if isNetworkReachable {
+            DeleteLeague()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func saveNewInfo(name: String?) {
-        guard let link = selectedGameWeek.link, link != "" else {
-            self.showAlert(title: "", message: "Choose GameWeek!".localized, shouldpop: false)
-            return
+        if isNetworkReachable {
+            guard let link = selectedGameWeek.link, link != "" else {
+                self.showAlert(title: "", message: "Choose GameWeek!".localized, shouldpop: false)
+                return
+            }
+            guard let leagueName = name, leagueName != "" else {
+                self.showAlert(title: "", message: "Write Name!".localized, shouldpop: false)
+                return
+            }
+            
+            updateLeagueInfo(name : leagueName)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
-        guard let leagueName = name, leagueName != "" else {
-            self.showAlert(title: "", message: "Write Name!".localized, shouldpop: false)
-            return
-        }
-        
-        updateLeagueInfo(name : leagueName)
     }
     
     func selectedGameWeek(selectedItem: GWsPointsModel, textField: UITextField) {
@@ -183,14 +195,18 @@ extension LeaguesSettingsViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func addAdminOrDeletePlayer(isAdmin : Bool) {
-        if player != nil {
-            if isAdmin {
-                addAdminToLeague()
+        if isNetworkReachable {
+            if player != nil {
+                if isAdmin {
+                    addAdminToLeague()
+                }else {
+                    deletePlayerFromLeague()
+                }
             }else {
-                deletePlayerFromLeague()
+                showAlert(title: "", message: "Choose Player".localized, shouldpop: false)
             }
-        }else {
-            showAlert(title: "", message: "Choose Player".localized, shouldpop: false)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
     }
     

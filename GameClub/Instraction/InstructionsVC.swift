@@ -71,7 +71,11 @@ class InstructionsVC: ParentViewController , UITableViewDelegate, UITableViewDat
         roundViewCorners(view: conainerV)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        getInstructions()
+        if isNetworkReachable{
+            getInstructions()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func getInstructions(){

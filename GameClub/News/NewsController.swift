@@ -79,12 +79,16 @@ class NewsController: ParentViewController, UITableViewDelegate, UITableViewData
         self.newsTV.dataSource = self
         self.newsTV.separatorStyle = .none
         addRoundCornersAndShadows()
-        if isNews {
-            getNews()
-        } else {
-            getVideos()
-            self.headerTiltle.text = "Videos".localized
-            self.mainPlayBT.isHidden = false
+        if isNetworkReachable{
+            if isNews {
+                getNews()
+            } else {
+                getVideos()
+                self.headerTiltle.text = "Videos".localized
+                self.mainPlayBT.isHidden = false
+            }
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
     }
     

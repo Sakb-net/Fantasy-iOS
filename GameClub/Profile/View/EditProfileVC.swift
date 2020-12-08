@@ -57,16 +57,19 @@ class EditProfileVC: ParentViewController, UITableViewDelegate, UITableViewDataS
 //        }
       
         let parameters = [username, emailAddress, teamLink, self.imgLink]
-        self.showLoader()
-               presenter.updateProfile(updatedParameters: parameters,onSuccess: { (message) in
-                   self.showAlert(title: "", message: message, shouldpop: false)
-                    UserDefaults.standard.set(emailAddress, forKey: "email")
-                   self.hideLoader()
-               }) { (errorMessage) in
-                   self.hideLoader()
-                   self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-               }
-
+        if isNetworkReachable{
+            self.showLoader()
+            presenter.updateProfile(updatedParameters: parameters,onSuccess: { (message) in
+                self.showAlert(title: "", message: message, shouldpop: false)
+                UserDefaults.standard.set(emailAddress, forKey: "email")
+                self.hideLoader()
+            }) { (errorMessage) in
+                self.hideLoader()
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

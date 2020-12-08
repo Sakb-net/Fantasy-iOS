@@ -54,16 +54,18 @@ class PrizesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource
         roundViewCornersNoShadow(view: containerView)
         roundViewCornersNoShadow(view: tableView)
         
-        
-        getPrizes(onSuccess: { (response) in
-            self.prizes = response
-            self.tableView.delegate = self
-            self.tableView.dataSource = self
-            self.tableView.reloadData()
+        if isNetworkReachable {
+            getPrizes(onSuccess: { (response) in
+                self.prizes = response
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
             }) { (errorMessage) in
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
             }
-        
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     func getPrizes(onSuccess: @escaping ([PrizeCatModel]) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {

@@ -37,7 +37,7 @@ class MyPointsVC: ParentViewController {
     @IBOutlet weak var gwRankLbl: UILabel!
     @IBOutlet weak var transfereLbl: UILabel!
     @IBOutlet weak var finalPointsLbl: UILabel!
-
+    
     @IBOutlet weak var goalKeeperView: UIView!
     @IBOutlet weak var defendView1: UIView!
     @IBOutlet weak var defendView2: UIView!
@@ -61,17 +61,17 @@ class MyPointsVC: ParentViewController {
     @IBOutlet weak var subBT2: UIButton!
     @IBOutlet weak var subBT3: UIButton!
     @IBOutlet weak var subBT4: UIButton!
-       
+    
     @IBOutlet weak var subNameLbl1: UILabel!
     @IBOutlet weak var subNameLbl2: UILabel!
     @IBOutlet weak var subNameLbl3: UILabel!
     @IBOutlet weak var subNameLbl4: UILabel!
-
+    
     @IBOutlet weak var subPointsLbl1: UILabel!
     @IBOutlet weak var subPointsLbl2: UILabel!
     @IBOutlet weak var subPointsLbl3: UILabel!
     @IBOutlet weak var subPointsLbl4: UILabel!
-       
+    
     @IBOutlet weak var goalKeeperBT: UIButton!
     @IBOutlet weak var defendBT1: UIButton!
     @IBOutlet weak var defendBT2: UIButton!
@@ -86,7 +86,7 @@ class MyPointsVC: ParentViewController {
     @IBOutlet weak var attackBT1: UIButton!
     @IBOutlet weak var attackBT2: UIButton!
     @IBOutlet weak var attackBT3: UIButton!
-
+    
     @IBOutlet weak var goalKeeperNameLbl: UILabel!
     @IBOutlet weak var defendLbl1: UILabel!
     @IBOutlet weak var defendLbl2: UILabel!
@@ -101,7 +101,7 @@ class MyPointsVC: ParentViewController {
     @IBOutlet weak var attackLbl1: UILabel!
     @IBOutlet weak var attackLbl2: UILabel!
     @IBOutlet weak var attackLbl3: UILabel!
-
+    
     @IBOutlet weak var playerPointLbl: UILabel!
     @IBOutlet weak var defendPointLbl1: UILabel!
     @IBOutlet weak var defendPointLbl2: UILabel!
@@ -116,18 +116,18 @@ class MyPointsVC: ParentViewController {
     @IBOutlet weak var attackPointLbl1: UILabel!
     @IBOutlet weak var attackPointLbl2: UILabel!
     @IBOutlet weak var attackPointLbl3: UILabel!
-       
+    
     @IBOutlet weak var pitchBT: UIButton!
     @IBOutlet weak var listBT: UIButton!
-       
+    
     @IBAction func goalkeeperAction(_ sender: Any) {
         openPlayerDetails(index: 0, players: goalKeepers)
-       }
+    }
     @IBAction func defendAction1(_ sender: Any) {
         openPlayerDetails(index: 0, players: defenders)
     }
     @IBAction func defendAction2(_ sender: Any) {
-       openPlayerDetails(index: 1, players: defenders)
+        openPlayerDetails(index: 1, players: defenders)
     }
     @IBAction func defendAction3(_ sender: Any) {
         openPlayerDetails(index: 2, players: defenders)
@@ -169,7 +169,7 @@ class MyPointsVC: ParentViewController {
         openPlayerDetails(index: 0, players: subsNotGoalkeeper)
     }
     @IBAction func subAction3(_ sender: Any) {
-       openPlayerDetails(index: 1, players: subsNotGoalkeeper)
+        openPlayerDetails(index: 1, players: subsNotGoalkeeper)
     }
     @IBAction func subAction4(_ sender: Any) {
         openPlayerDetails(index: 2, players: subsNotGoalkeeper)
@@ -185,10 +185,10 @@ class MyPointsVC: ParentViewController {
     }
     
     @IBAction func showPitchAction(_ sender: Any) {
-     self.tableView.isHidden = true
+        self.tableView.isHidden = true
     }
     @IBAction func showListAction(_ sender: Any) {
-     self.tableView.isHidden = false
+        self.tableView.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -199,7 +199,11 @@ class MyPointsVC: ParentViewController {
         self.gwView.addGestureRecognizer(gesture)
         tableView.delegate = self
         tableView.dataSource = self
-        getGameWeeks ()
+        if isNetworkReachable{
+            getGameWeeks ()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     @objc func selectGW(sender : UITapGestureRecognizer) {
@@ -231,7 +235,7 @@ class MyPointsVC: ParentViewController {
             self.hideLoader()
             if code == 11 || code == 41{
                 let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-//                noTeamVC.isLogin = true
+                //                noTeamVC.isLogin = true
                 self.navigationController?.pushViewController(noTeamVC, animated: true)
             }else {
                 self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
@@ -239,40 +243,41 @@ class MyPointsVC: ParentViewController {
         }
     }
     func getMyTeam(){
-        for item in self.captain_icons {
-            item.isHidden = true
-        }
-        for item in self.assist_icons {
-            item.isHidden = true
-        }    
+        if isNetworkReachable{
+            for item in self.captain_icons {
+                item.isHidden = true
+            }
+            for item in self.assist_icons {
+                item.isHidden = true
+            }
             self.showLoader()
-        presenter.getPoints(link: currentGWLink, onSuccess: { (gwData, goalKeepers, defenders, mids, attackers, subs, lineup) in
+            presenter.getPoints(link: currentGWLink, onSuccess: { (gwData, goalKeepers, defenders, mids, attackers, subs, lineup) in
                 self.hideLoader()
                 if goalKeepers[0].found_player == 0 {
                     let noTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NoTeamVC") as! NoTeamVC
                     self.navigationController?.pushViewController(noTeamVC, animated: true)
                 }else {
-                self.goalKeepers = goalKeepers
-                self.defenders = defenders
-                self.mids = mids
-                self.attackers = attackers
-                self.subs = subs
+                    self.goalKeepers = goalKeepers
+                    self.defenders = defenders
+                    self.mids = mids
+                    self.attackers = attackers
+                    self.subs = subs
                     if gwData.triple_card == 1 {
                         self.cardLbl.isHidden = false
                         self.cardLbl.text = "Triple Captain Card"
                     }
-//                    if gwData.bench_card == 1 {
-//                        self.cardLbl.isHidden = false
-//                        self.cardLbl.text = "Bench Card"
-//                    }
+                    if gwData.bench_card == 1 {
+                        self.cardLbl.isHidden = false
+                        self.cardLbl.text = "Bench Card"
+                    }
                     
-//                    var goldCard = 0
-//                    if let gold_card = gwData.gold_card {
-//                        goldCard = gold_card
-//                    }
-//                    if goldCard > 0 {
-//                        self.golsCardView.isHidden = false
-//                    }
+                    var goldCard = 0
+                    if let gold_card = gwData.gold_card {
+                        goldCard = gold_card
+                    }
+                    if goldCard > 0 {
+                        self.golsCardView.isHidden = false
+                    }
                     if let  finalPoints = gwData.final_point {
                         self.finalPointsLbl.text = String(finalPoints)
                     }
@@ -291,12 +296,12 @@ class MyPointsVC: ParentViewController {
                     if let  transferPoints = gwData.transfer_points {
                         self.transferPointsLbl.text = String(transferPoints) + " pts"
                     }
-                let count = goalKeepers.count + defenders.count + mids.count + attackers.count + subs.count
-                for i in 0..<count {
-                    
-                }
+                    let count = goalKeepers.count + defenders.count + mids.count + attackers.count + subs.count
+                    for i in 0..<count {
+                        
+                    }
                     self.tableView.reloadData()
-                self.fillView ()
+                    self.fillView ()
                 }
             }) { (errorMessage, code) in
                 self.hideLoader()
@@ -308,29 +313,32 @@ class MyPointsVC: ParentViewController {
                     self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
                 }
             }
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
+    }
     
     func fillView (){
         let goalKeeper1 = self.goalKeepers[0]
-
+        
         fillItem(players: goalKeeper1, button: self.goalKeeperBT, playerNameLbl: self.goalKeeperNameLbl, playerPointsLbl: self.playerPointLbl, playerView: self.goalKeeperView)
-
+        
         
         let defender1 = self.defenders[0]
         let defender2 = self.defenders[1]
         let defender3 = self.defenders[2]
-            
+        
         fillItem(players: defender1, button: self.defendBT1, playerNameLbl: self.defendLbl1, playerPointsLbl: self.defendPointLbl1, playerView: self.defendView1)
         fillItem(players: defender2, button: self.defendBT2, playerNameLbl: self.defendLbl2, playerPointsLbl: self.defendPointLbl2, playerView: self.defendView2)
         if self.defenders.count >= 3 {
             fillItem(players: defender3, button: self.defendBT3, playerNameLbl: self.defendLbl3, playerPointsLbl: self.defendPointLbl3, playerView: self.defendView3)
         }
         if self.defenders.count >= 4{
-                let defender4 = self.defenders[3]
+            let defender4 = self.defenders[3]
             fillItem(players: defender4, button: self.defendBT4, playerNameLbl: self.defendLbl4, playerPointsLbl: self.defendPointLbl4, playerView: self.defendView4)
         }
         if self.defenders.count >= 5 {
-        let defender5 = self.defenders[4]
+            let defender5 = self.defenders[4]
             fillItem(players: defender5, button: self.defendBT5, playerNameLbl: self.defendLbl5, playerPointsLbl: self.defendPointLbl5, playerView: self.defendView5)
         }
         
@@ -357,11 +365,11 @@ class MyPointsVC: ParentViewController {
             break
         }
         
-
+        
         
         let mid1 = self.mids[0]
         let mid2 = self.mids[1]
-           
+        
         fillItem(players: mid1, button: self.midBT1, playerNameLbl: self.midLbl1, playerPointsLbl: self.midPointLbl1, playerView: self.midView1)
         fillItem(players: mid2, button: self.midBT2, playerNameLbl: self.midLbl2, playerPointsLbl: self.midPointLbl2, playerView: self.midView2)
         if self.mids.count >= 3 {
@@ -401,14 +409,14 @@ class MyPointsVC: ParentViewController {
             self.midView3.isHidden = false
             self.midView4.isHidden = false
             self.midView5.isHidden = false
-                  
+            
         default: break
             
         }
         
         
         let attacker1 = self.attackers[0]
-
+        
         fillItem(players: attacker1, button: self.attackBT1, playerNameLbl: self.attackLbl1, playerPointsLbl: self.attackPointLbl1, playerView: self.attackView1)
         if self.attackers.count >= 2 {
             let attacker2 = self.attackers[1]
@@ -453,48 +461,48 @@ class MyPointsVC: ParentViewController {
         fillItem(players: sub1, button: self.subBT2, playerNameLbl: self.subNameLbl2, playerPointsLbl: self.subPointsLbl2, playerView: self.subView2)
         fillItem(players: sub2, button: self.subBT3, playerNameLbl: self.subNameLbl3, playerPointsLbl: self.subPointsLbl3, playerView: self.subView3)
         fillItem(players: sub3, button: self.subBT4, playerNameLbl: self.subNameLbl4, playerPointsLbl: self.subPointsLbl4, playerView: self.subView4)
-
+        
     }
     
     func fillItem (players : MyTeam, button : UIButton, playerNameLbl : UILabel, playerPointsLbl : UILabel, playerView : UIView){
         playerNameLbl.text = players.name_player
         if let points = players.point_player{
-        playerPointsLbl.text = String(points)
+            playerPointsLbl.text = String(points)
         }
-            button.sd_setImage(with: URL(string:Urls.baseUrl + players.image_player!), for: .normal)
+        button.sd_setImage(with: URL(string:Urls.baseUrl + players.image_player!), for: .normal)
         let captin_assist = players.type_key_coatch
         var isAttack = false
         if players.type_loc_player == "attacker" {
             isAttack = true
         }
-
+        
         if captin_assist == "captain" {
             addCaptin_assistIcon(icon_name: self.captin_icon, view_name: playerView, button: button, isAttack: isAttack)
         }else if captin_assist == "sub_captain"{
             addCaptin_assistIcon(icon_name: self.assist_icon, view_name: playerView, button: button, isAttack: isAttack)
         }
-            
+        
     }
     var captain_icons = [UIImageView] ()
-       var assist_icons = [UIImageView] ()
-       func addCaptin_assistIcon (icon_name : String, view_name : UIView, button : UIButton, isAttack : Bool){
-           let imageName = icon_name
-           let image = UIImage(named: imageName)
-           let imageView = UIImageView(image: image!)
-           var x = 0
-           if isAttack{
-               x = 25
-           }else{
-               x = 10
-           }
-           imageView.frame = CGRect(x: x, y: 45, width: 20, height: 20)
-           view_name.addSubview(imageView)
-           if icon_name == "c-icon"{
-               captain_icons.append(imageView)
-           }else{
-               assist_icons.append(imageView)
-           }
-       }
+    var assist_icons = [UIImageView] ()
+    func addCaptin_assistIcon (icon_name : String, view_name : UIView, button : UIButton, isAttack : Bool){
+        let imageName = icon_name
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        var x = 0
+        if isAttack{
+            x = 25
+        }else{
+            x = 10
+        }
+        imageView.frame = CGRect(x: x, y: 45, width: 20, height: 20)
+        view_name.addSubview(imageView)
+        if icon_name == "c-icon"{
+            captain_icons.append(imageView)
+        }else{
+            assist_icons.append(imageView)
+        }
+    }
 }
 extension MyPointsVC : SelectedDropDownType, UITableViewDelegate, UITableViewDataSource {
     func selectedType(selectedType: DropDownTypes, selectedItem: Any) {
@@ -514,7 +522,7 @@ extension MyPointsVC : SelectedDropDownType, UITableViewDelegate, UITableViewDat
         let count5 = self.subs.count
         
         return count1 + count2 + count3 + count4 + count5 + 5
-       }
+    }
     func checkCaptain (player : MyTeam , cell : PichCell){
         let player = player.type_key_coatch
         if player == "captain" {
@@ -528,7 +536,7 @@ extension MyPointsVC : SelectedDropDownType, UITableViewDelegate, UITableViewDat
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: "PichCell2", for: indexPath) as! PichCell
+        let cell1 = tableView.dequeueReusableCell(withIdentifier: "PichCell2", for: indexPath) as! PichCell
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "PichHeaderCell2", for: indexPath) as! PichHeaderCell
         
         if indexPath.row == 0 {
@@ -572,7 +580,7 @@ extension MyPointsVC : SelectedDropDownType, UITableViewDelegate, UITableViewDat
             cell1.imageV.isHidden = true
             return fillCell (cell : cell1 , player : self.subs[index])
         }
-       }
+    }
     
     func fillCell (cell : PichCell , player : MyTeam) -> PichCell {
         cell.nameLbl.text = player.name_player

@@ -64,7 +64,11 @@ class MyLeaguesViewController: ParentViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.getMyLeagues()
+        if isNetworkReachable {
+            viewModel.getMyLeagues()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func initView (){
@@ -104,7 +108,11 @@ extension MyLeaguesViewController : UITableViewDelegate, UITableViewDataSource, 
     }
     
     func leaveLeague(link: String, leagueType : String) {
-        leaveLeagueByLink (link: link, leagueType: leagueType)
+        if isNetworkReachable {
+            leaveLeagueByLink (link: link, leagueType: leagueType)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func openSettings(link : String, leagueType : String) {

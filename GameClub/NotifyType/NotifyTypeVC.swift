@@ -20,7 +20,11 @@ class NotifyTypeVC: ParentViewController {
     @IBOutlet weak var sendBT: UIButton!
     @IBAction func sendAction(_ sender: Any) {
         let arrayString = createArrayString ()
-        sendTeamSellected(arrayString : arrayString)
+        if isNetworkReachable{
+            sendTeamSellected(arrayString : arrayString)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
 
     }
     @IBAction func backAction(_ sender: Any) {

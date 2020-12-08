@@ -43,13 +43,15 @@ class TermsVC: ParentViewController {
         self.cbBT.layer.borderColor = UIColor.darkGray.cgColor
         self.cbBT.layer.borderWidth = 3.0
         roundViewCornersNoShadow(view: self.startBT)
-        self.showLoader()
-        getTerms(onSuccess: { (terms) in
-            self.textView.text = terms
-            self.hideLoader()
-        }) { (errorMessage) in
-            self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        if isNetworkReachable{
+            self.showLoader()
+            getTerms(onSuccess: { (terms) in
+                self.textView.text = terms
+                self.hideLoader()
+            }) { (errorMessage) in
+                self.hideLoader()
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
         }
     }
     

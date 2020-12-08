@@ -25,7 +25,11 @@ class FavTeamVC: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-        getTeams()
+        if isNetworkReachable{
+            getTeams()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func initView(){

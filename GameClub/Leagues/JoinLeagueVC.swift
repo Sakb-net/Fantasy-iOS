@@ -21,7 +21,11 @@ class JoinLeagueVC: ParentViewController {
             self.showAlert(title: "", message: "Please enter league code.".localized, shouldpop: false)
             return
         }
-        joinLeague (code : code)
+        if isNetworkReachable {
+            joinLeague (code : code)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     @IBAction func menuAction(_ sender: Any) {

@@ -244,72 +244,82 @@ class MyTeamVC: ParentViewController {
     }
     
     func cancelCards (type : String) {
-        presenter.cancelCards(type: type, onSuccess: { (success) in
-            self.captinCardBT.isEnabled = true
-            self.captinCardBT.alpha = 1.0
-            self.substitutionsCardBT.isEnabled = true
-            self.substitutionsCardBT.alpha = 1.0
-            self.cancelCardBT.isHidden = true
-            self.benchCard = 0
-            self.tripleCard = 0
-        }){(errorMessage) in
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-
+        if isNetworkReachable{
+            presenter.cancelCards(type: type, onSuccess: { (success) in
+                self.captinCardBT.isEnabled = true
+                self.captinCardBT.alpha = 1.0
+                self.substitutionsCardBT.isEnabled = true
+                self.substitutionsCardBT.alpha = 1.0
+                self.cancelCardBT.isHidden = true
+                self.benchCard = 0
+                self.tripleCard = 0
+            }){(errorMessage) in
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                
+            }
+            
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
+        
     }
     
     func selectPlayer (player : MyTeam) {
-        if fromSubToMain {
-            self.presenter.addPlayerWithLink(playerLink1: self.selectedPlayerLink, playerLink2: player.link_player!,onSuccess: { (response) in
-                //            self.showAlert(title: "", message: response, shouldpop: false)
-                self.playersIDs = [Int] ()
-                self.subsNotGoalkeeper = [MyTeam]()
-                self.subGoalkeeper = MyTeam ()
-                self.defenders = [MyTeam]()
-                self.mids = [MyTeam]()
-                self.attackers = [MyTeam]()
-                self.goalKeepers = [MyTeam]()
-                self.subsTypes = [String]()
-                self.resetCaptinAssistIVs()
-                self.getMyTeam()
-                self.resetView ()
-                self.fromMainToSub = false
-                self.fromSubToMain = false
-                self.selectedPlayerLink = ""
-            }) { (errorMessage) in
-                //                self.hideLoader()
-                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-            }
-        }else{
-            if !playersIDs.isEmpty{
-                presenter.check_insideChange(link: player.link_player!, onSuccess: { (response) in
-                    self.playersIDs.append(response.ch_game_player_id_two!)
-                    self.playersIDs.append(response.ch_player_id_two!)
-                    self.presenter.addPlayer(playersIDs: self.playersIDs, onSuccess: { (response) in
-                        //            self.showAlert(title: "", message: response, shouldpop: false)
-                        self.playersIDs = [Int] ()
-                        self.subsNotGoalkeeper = [MyTeam]()
-                        self.subGoalkeeper = MyTeam ()
-                        self.defenders = [MyTeam]()
-                        self.mids = [MyTeam]()
-                        self.attackers = [MyTeam]()
-                        self.goalKeepers = [MyTeam]()
-                        self.subsTypes = [String]()
-                        self.resetCaptinAssistIVs()
-                        self.getMyTeam()
-                        self.resetView ()
-                        self.fromMainToSub = false
-                        self.fromSubToMain = false
-                        self.selectedPlayerLink = ""
-                    }) { (errorMessage) in
-                        //                self.hideLoader()
-                        self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-                    }
+        if isNetworkReachable{
+            if fromSubToMain {
+                self.presenter.addPlayerWithLink(playerLink1: self.selectedPlayerLink, playerLink2: player.link_player!,onSuccess: { (response) in
+                    //            self.showAlert(title: "", message: response, shouldpop: false)
+                    self.playersIDs = [Int] ()
+                    self.subsNotGoalkeeper = [MyTeam]()
+                    self.subGoalkeeper = MyTeam ()
+                    self.defenders = [MyTeam]()
+                    self.mids = [MyTeam]()
+                    self.attackers = [MyTeam]()
+                    self.goalKeepers = [MyTeam]()
+                    self.subsTypes = [String]()
+                    self.resetCaptinAssistIVs()
+                    self.getMyTeam()
+                    self.resetView ()
+                    self.fromMainToSub = false
+                    self.fromSubToMain = false
+                    self.selectedPlayerLink = ""
                 }) { (errorMessage) in
                     //                self.hideLoader()
                     self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
                 }
+            }else{
+                if !playersIDs.isEmpty{
+                    presenter.check_insideChange(link: player.link_player!, onSuccess: { (response) in
+                        self.playersIDs.append(response.ch_game_player_id_two!)
+                        self.playersIDs.append(response.ch_player_id_two!)
+                        self.presenter.addPlayer(playersIDs: self.playersIDs, onSuccess: { (response) in
+                            //            self.showAlert(title: "", message: response, shouldpop: false)
+                            self.playersIDs = [Int] ()
+                            self.subsNotGoalkeeper = [MyTeam]()
+                            self.subGoalkeeper = MyTeam ()
+                            self.defenders = [MyTeam]()
+                            self.mids = [MyTeam]()
+                            self.attackers = [MyTeam]()
+                            self.goalKeepers = [MyTeam]()
+                            self.subsTypes = [String]()
+                            self.resetCaptinAssistIVs()
+                            self.getMyTeam()
+                            self.resetView ()
+                            self.fromMainToSub = false
+                            self.fromSubToMain = false
+                            self.selectedPlayerLink = ""
+                        }) { (errorMessage) in
+                            //                self.hideLoader()
+                            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                        }
+                    }) { (errorMessage) in
+                        //                self.hideLoader()
+                        self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                    }
+                }
             }
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
     }
     func resetCaptinAssistIVs(){
@@ -1041,20 +1051,24 @@ extension MyTeamVC : MyTeamProtocol , SubListDelegate, UITableViewDelegate, UITa
             , completion: nil)
     }
     func checkBtStates () {
-        MyTeamPresenter().check_btns_status(onSuccess: { (benchCard, tripleCard) in
-            self.benchCard = benchCard
-            self.tripleCard = tripleCard
-            if benchCard == 1 || tripleCard == 1{
-                self.substitutionsCardBT.isEnabled = false
-                self.substitutionsCardBT.alpha = 0.5
-                self.captinCardBT.isEnabled = false
-                self.captinCardBT.alpha = 0.5
-                self.cancelCardBT.isHidden = false
+        if isNetworkReachable{
+            MyTeamPresenter().check_btns_status(onSuccess: { (benchCard, tripleCard) in
+                self.benchCard = benchCard
+                self.tripleCard = tripleCard
+                if benchCard == 1 || tripleCard == 1{
+                    self.substitutionsCardBT.isEnabled = false
+                    self.substitutionsCardBT.alpha = 0.5
+                    self.captinCardBT.isEnabled = false
+                    self.captinCardBT.alpha = 0.5
+                    self.cancelCardBT.isHidden = false
+                }
+                
+            }) { (errorMessage) in
+                //                self.hideLoader()
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
             }
-            
-        }) { (errorMessage) in
-            //                self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
     }
 }

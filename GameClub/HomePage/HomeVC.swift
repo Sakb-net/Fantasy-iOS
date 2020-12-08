@@ -95,7 +95,11 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         }else {
             self.usernameLabel.text = "Not".localized + User.shared().display_name!
         }
-        getPublicPoints()
+        if isNetworkReachable{
+            getPublicPoints()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         if User.shared().access_token == nil {

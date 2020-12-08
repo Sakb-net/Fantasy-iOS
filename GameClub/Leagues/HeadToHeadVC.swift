@@ -38,7 +38,11 @@ class HeadToHeadVC: ParentViewController {
             self.showAlert(title: "", message: "Please enter league name.".localized, shouldpop: false)
             return
         }
-        createLeague (name : leagueName)
+        if isNetworkReachable {
+            createLeague (name : leagueName)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
           }
           
     @IBAction func backAction(_ sender: Any) {
@@ -52,7 +56,11 @@ class HeadToHeadVC: ParentViewController {
               roundViewCornersNoShadow(view: createBT)
               roundViewCornersNoShadow(view: codeViewContainer)
               roundViewCornersNoShadow(view: mainContainer)
-            getGameWeeks ()
+            if isNetworkReachable {
+                getGameWeeks ()
+            }else{
+                self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+            }
           }
     
     func createLeague (name : String){

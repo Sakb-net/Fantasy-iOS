@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        GIDSignIn.sharedInstance().clientID = "291668164025-gbo6je7gcijnflp3hktm1hlulol0cohb.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "737315402864-qrhjknekijc1rle19b97ji6erm1l5npk.apps.googleusercontent.com"
         TWTRTwitter.sharedInstance().start(withConsumerKey:"sfGZpg4kz8eYuGhsIa043Vwe6", consumerSecret:"Ma7a81ichwAQfRoreeCliipOew56ky7J5GZJ9PQP3HPSYnTDhd")
         
         let net = NetworkReachabilityManager()
@@ -69,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
                 NotificationCenter.default.post(name: Notification.Name("notifyIntetnetStatus"), object: false)
             }
         }
+
         net?.startListening()
         MOLHLanguage.setDefaultLanguage("ar")
         MOLH.shared.specialKeyWords = ["Cancel","Done"]

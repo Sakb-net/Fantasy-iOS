@@ -240,18 +240,22 @@ extension SignUpVC : SignUpDelegate {
         createUser(link: link)
     }
     func createUser(link: String){
-        self.showLoader()
-        LoginPresenter().userRegister(email: userInfo.email, password: userInfo.password, displayName: userInfo.displayName, phone: userInfo.phone, city: userInfo.city, reg_site: userInfo.reg_site, favTeam: link, onSuccess: { (userInfo) in
-            self.hideLoader()
-            UserDefaults.standard.set(self.userInfo.password, forKey: "UserPass")
-            let favTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FavTeamVC") as! FavTeamVC
-            favTeamVC.favTeamLink = link
-            favTeamVC.isFavTeam = false
-            favTeamVC.delegate = self
-            self.navigationController?.pushViewController(favTeamVC, animated: true)
-        }) { (errorMessage) in
-            self.hideLoader()
-            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        if isNetworkReachable{
+            self.showLoader()
+            LoginPresenter().userRegister(email: userInfo.email, password: userInfo.password, displayName: userInfo.displayName, phone: userInfo.phone, city: userInfo.city, reg_site: userInfo.reg_site, favTeam: link, onSuccess: { (userInfo) in
+                self.hideLoader()
+                UserDefaults.standard.set(self.userInfo.password, forKey: "UserPass")
+                let favTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FavTeamVC") as! FavTeamVC
+                favTeamVC.favTeamLink = link
+                favTeamVC.isFavTeam = false
+                favTeamVC.delegate = self
+                self.navigationController?.pushViewController(favTeamVC, animated: true)
+            }) { (errorMessage) in
+                self.hideLoader()
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
     }
 }

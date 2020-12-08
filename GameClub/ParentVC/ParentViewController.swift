@@ -57,7 +57,7 @@ class ParentViewController: UIViewController
             {
                 if let navController = self.navigationController
                 {
-                    navController.popViewController(animated: true)
+//                    navController.popViewController(animated: true)
                 }
                 else
                 {

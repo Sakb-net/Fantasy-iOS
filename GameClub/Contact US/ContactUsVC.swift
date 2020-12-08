@@ -28,11 +28,15 @@ class ContactUsVC: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustingDesign()
-        getConacts(onSuccess: { (email,phone) in
-            self.emailLabel.text = email
-            self.phoneLabel.text = phone
-            
-        }) { (errorMessage) in
+        if isNetworkReachable{
+            getConacts(onSuccess: { (email,phone) in
+                self.emailLabel.text = email
+                self.phoneLabel.text = phone
+                
+            }) { (errorMessage) in
+            }
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
     }
 

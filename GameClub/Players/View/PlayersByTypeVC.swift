@@ -15,7 +15,11 @@ class PlayersByTypeVC: ParentViewController, UITableViewDelegate, UITableViewDat
         self.toPrice = to
         self.teamLink = ""
         self.orderPlay = ""
-        getPlayers()
+        if isNetworkReachable{
+            getPlayers()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func selectedType(selectedType: DropDownTypes, selectedItem: Any) {

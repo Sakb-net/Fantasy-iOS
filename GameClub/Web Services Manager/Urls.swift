@@ -43,6 +43,9 @@ class Urls {
         return originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
     
+    func loginWithSocialMedia() -> String{
+        return "\(getCurrentBaseUrl())/social/login"
+    }
     func addFollowingTeam() -> String{
         return "\(getCurrentBaseUrl())addFollowingTeam"
     }

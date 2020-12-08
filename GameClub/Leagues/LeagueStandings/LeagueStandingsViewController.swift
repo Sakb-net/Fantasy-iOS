@@ -47,7 +47,11 @@ class LeagueStandingsViewController: ParentViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getGameWeeks(link: link, type: StandingsType)
+        if isNetworkReachable {
+            viewModel.getGameWeeks(link: link, type: StandingsType)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
         initView ()
         initViewModel()
     }
@@ -128,7 +132,11 @@ extension LeagueStandingsViewController : UITableViewDelegate, UITableViewDataSo
     
     func selectedGameWeek(selectedItem: GWsPointsModel, textField: UITextField) {
         textField.text = selectedItem.lang_num_week
-        viewModel.getLeagueStandings(link: link, type: StandingsType, gameWeekLink: selectedItem.link ?? "")
+        if isNetworkReachable {
+            viewModel.getLeagueStandings(link: link, type: StandingsType, gameWeekLink: selectedItem.link ?? "")
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -9,6 +9,39 @@ import FBSDKLoginKit
 import TwitterKit
 class LoginPresenter {
     
+    func loginWithSocial(provider:String, oauth_token:String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
+    {
+        let url = Urls().loginWithSocialMedia()
+        
+        let parameters:[String:Any] = [
+            "provider": provider,
+            "oauth_token": oauth_token
+        ]
+        
+        ServiceManager.callAPI(url: url, method: .post, parameters: parameters, custumHeaders: nil) { (error, response) in
+            
+            if response != nil
+            {
+                let statusCode = response!["StatusCode"].intValue
+                if statusCode == 0 {
+                    let data = response!["data"]
+                    let user = User(parametersJson: data.dictionaryValue)
+                    print(user.access_token)
+                    UserDefaults.standard.set(user.access_token, forKey: "access_token")
+                    user.saveUser()
+                    onSuccess(User.shared())
+                }else{
+                    let message = response!["Message"].stringValue
+                    onFailure(message)
+                }
+            }
+            else
+            {
+                onFailure("Something went wrong try again later!".localized)
+            }
+        }
+    }
+    
     func userLogin(email:String, password:String, onSuccess: @escaping (User) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
     {
         let url = Urls().getLoginURL()
@@ -128,6 +161,8 @@ class LoginPresenter {
                     let info = result as! NSDictionary
                     print(info)
                     print(info["email"])
+                    print(AccessToken.current?.tokenString)
+
                 }
             })
             

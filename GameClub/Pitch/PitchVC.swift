@@ -228,14 +228,22 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             self.pageTitleLbl.text = "Transfers".localized
             let freeTrans = UserDefaults.standard.integer(forKey: "count_free_weekgamesubstitute")
             self.freeTransNumLbl.text = String(freeTrans)
-            getMyTeam(type: 0)
+            if isNetworkReachable{
+                getMyTeam(type: 0)
+            }else{
+                self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+            }
         }
         pitchPresenter.resetBTs()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         if pageType == 0 {
-            getMyTeam(type: 0)
+            if isNetworkReachable{
+                getMyTeam(type: 0)
+            }else{
+                self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+            }
         }else {}
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -582,7 +590,11 @@ extension PitchVC : DetailsOrDeletePopUpDelegate, playerDeletedDelegate, replace
         self.showAlert(title: "", message: "تم التبديل بنجاح", shouldpop: false)
         self.saveBT.isEnabled = false
         self.saveBT.alpha = 0.5
-        getMyTeam(type: 0)
+        if isNetworkReachable{
+            getMyTeam(type: 0)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func returnPlayer(player: Player, index: Int, playerType: String, bt: UIButton, btName : String) {

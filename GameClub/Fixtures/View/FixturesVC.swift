@@ -11,17 +11,31 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.gws.count
+        if isTeam {
+            return self.teams.count
+        }else{
+            return self.gws.count
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.gws[row].lang_num_week
+        if isTeam {
+            return self.teams[row].name
+        }else{
+            return self.gws[row].lang_num_week
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentRound = row
-        self.roundsBT.setTitle(self.gws[row].lang_num_week, for: .normal)
-        self.gwLink = self.gws[row].link!
+        if isTeam {
+            self.teamBT.setTitle(self.teams[row].name, for: .normal)
+            self.teamLink = self.teams[row].link!
+        }else {
+            self.roundsBT.setTitle(self.gws[row].lang_num_week, for: .normal)
+            self.gwLink = self.gws[row].link!
+        }
     }
     
     var fixtures = [Fixtures]()
@@ -29,17 +43,31 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
     var titles = [String]()
     var currentRound = 0
     var presenter = FixturesPresenter()
+    var teamLink = ""
     var gwLink = ""
-
+    var teams = [FavTeam]()
+    var isTeam = false
     @IBOutlet weak var pickerContainerView: UIView!
     @IBOutlet weak var roundsBT: UIButton!
+    @IBOutlet weak var teamBT: UIButton!
     @IBOutlet weak var chooseGWBT: UIButton!
     @IBOutlet weak var picker: UIPickerView!
     @IBAction func roundsAction(_ sender: Any) {
+        isTeam = false
+        self.picker.reloadAllComponents()
+        pickerContainerView.isHidden = false
+    }
+    @IBAction func chooseTeamAction(_ sender: Any) {
+        isTeam = true
+        self.picker.reloadAllComponents()
         pickerContainerView.isHidden = false
     }
     @IBAction func chooseGWAction(_ sender: Any) {
-        self.getFixtures (link : self.gwLink)
+        if isNetworkReachable{
+            self.getFixtures (link : self.gwLink)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
         pickerContainerView.isHidden = true
     }
     @IBOutlet weak var tableView: UITableView!
@@ -58,23 +86,13 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
         self.picker.delegate = self
         self.picker.dataSource = self
         picker.setValue(UIColor.white, forKey: "textColor")
-
-        self.showLoader()
-        presenter.getGWs(onSuccess: { (gws) in
-            self.gws = gws.reversed()
-            if self.gws[0].link == nil {
-                self.gws.removeFirst()
-            }
-            self.roundsBT.setTitle(self.gws[0].lang_num_week, for: .normal)
-            self.gwLink = self.gws[0].link!
-            self.picker.reloadAllComponents()
-            self.hideLoader()
-            self.getFixtures (link : self.gwLink)
-                    }) { (errorMessage) in
-                        self.hideLoader()
-                        self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-                    }
-
+        
+        if isNetworkReachable{
+            getTeams()
+            getGameWeeks()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func getFixtures (link : String){
@@ -85,14 +103,42 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             if self.fixtures[count - 1].link_first == nil {
                 self.fixtures.removeLast()
             }
-        self.tableView.reloadData()
-                    self.hideLoader()
-                }) { (errorMessage) in
-                    self.hideLoader()
-                    self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-                }
+            self.tableView.reloadData()
+            self.hideLoader()
+        }) { (errorMessage) in
+            self.hideLoader()
+            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        }
+    }
+    func getGameWeeks(){
+        self.showLoader()
+        presenter.getGWs(onSuccess: { (gws) in
+            self.gws = gws.reversed()
+            if self.gws[0].link == nil {
+                self.gws.removeFirst()
+            }
+            self.roundsBT.setTitle(self.gws[0].lang_num_week, for: .normal)
+            self.gwLink = self.gws[0].link!
+            self.hideLoader()
+            self.getFixtures (link : self.gwLink)
+        }) { (errorMessage) in
+            self.hideLoader()
+            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        }
     }
     
+    func getTeams(){
+        self.showLoader()
+        FavTeamPresenter().getTeams(onSuccess: { (teams) in
+            self.teams = teams
+            self.teamBT.setTitle(self.teams[1].name ?? "", for: .normal)
+            self.teamLink = self.teams[1].link!
+            self.hideLoader()
+        }) { (errorMessage) in
+            self.hideLoader()
+            self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+        }
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

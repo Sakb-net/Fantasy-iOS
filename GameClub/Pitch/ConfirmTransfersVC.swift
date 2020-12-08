@@ -37,11 +37,19 @@ class ConfirmTransfersVC: ParentViewController, UITableViewDelegate, UITableView
     @IBAction func goldenCardAction(_ sender: Any) {
         cardType = "golden_card"
 //        openCardPopUp ()
-        goldCardPay(playerListString: presenter.createSubString (allSubs: allSubs!))
+        if isNetworkReachable{
+            goldCardPay(playerListString: presenter.createSubString (allSubs: allSubs!))
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     @IBAction func confirmAction(_ sender: Any) {
         let playersListString = presenter.createSubString(allSubs: allSubs!)
-        savePlayerList(playerListString : playersListString)
+        if isNetworkReachable{
+            savePlayerList(playerListString : playersListString)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -54,8 +62,12 @@ class ConfirmTransfersVC: ParentViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         configView()
         print(presenter.createSubString (allSubs: allSubs!))
-        getCardsState(cardType : "gray")
-        getCardsState(cardType : "gold")
+        if isNetworkReachable{
+            getCardsState(cardType : "gray")
+            getCardsState(cardType : "gold")
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

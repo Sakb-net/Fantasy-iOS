@@ -32,8 +32,11 @@ class ClassicLeagueVC: ParentViewController {
             self.showAlert(title: "", message: "Please enter league name.".localized, shouldpop: false)
             return
         }
-        createLeague (name : leagueName)
-        
+        if isNetworkReachable {
+            createLeague (name : leagueName)
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     @IBAction func menuAction(_ sender: Any) {

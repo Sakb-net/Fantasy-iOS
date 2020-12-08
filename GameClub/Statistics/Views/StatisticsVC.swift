@@ -36,7 +36,7 @@ class StatisticsVC: ParentViewController, UITableViewDelegate, UITableViewDataSo
                 self.orderPlay = "lowest_point"
                 getStatistics()
             }
-           
+            
         }else if selectedType == .player_loc {
             let selectedSortType = selectedItem as! Int
             if selectedSortType == 0 {
@@ -98,21 +98,21 @@ class StatisticsVC: ParentViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBAction func playersAction(_ sender: Any) {
         let dropDownVC = Storyboard().dropDownStoryboard.instantiateViewController(withIdentifier: "DropDownVC") as! DropDownVC
-               dropDownVC.selectDelegate = self
-               dropDownVC.selectedType = .player_loc
-               present(dropDownVC, animated: true
-                   , completion: nil)
+        dropDownVC.selectDelegate = self
+        dropDownVC.selectedType = .player_loc
+        present(dropDownVC, animated: true
+            , completion: nil)
     }
     
     @IBAction func searchAction(_ sender: Any) {
     }
     
     @IBAction func menuAction(_ sender: Any) {
-           let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
-           present(menu, animated: true, completion: nil)
-       }
+        let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
+        present(menu, animated: true, completion: nil)
+    }
     @IBAction func backAction(_ sender: Any) {
-     navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -138,20 +138,24 @@ class StatisticsVC: ParentViewController, UITableViewDelegate, UITableViewDataSo
             cell2.priceLbl.text = String(self.statisticsList[indexPath.row].cost ?? 0)
             cell2.sellLbl.text = String(self.statisticsList[indexPath.row].sell_cost ?? 0)
             cell2.buyLbl.text = String(self.statisticsList[indexPath.row].buy_cost ?? 0)
-
+            
             return cell2
         }
-
+        
     }
     var statisticsList = [StatisticsModel]()
     func getStatistics (){
-        presenter.getStatistics(teamLink: teamLink, order_play: orderPlay, loc_player: player_loc, onSuccess: { (response) in
-    self.statisticsList = response
-    self.tableView.delegate = self
-    self.tableView.dataSource = self
-    self.tableView.reloadData()
-    }) { (errorMessage) in
-    self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-    }
+        if isNetworkReachable {
+            presenter.getStatistics(teamLink: teamLink, order_play: orderPlay, loc_player: player_loc, onSuccess: { (response) in
+                self.statisticsList = response
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
+            }) { (errorMessage) in
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
 }

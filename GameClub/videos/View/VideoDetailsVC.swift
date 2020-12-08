@@ -17,7 +17,11 @@ class VideoDetailsVC: ParentViewController {
     @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.playerView.load(withVideoId: video.upload_id ?? "")
+        if isNetworkReachable{
+            self.playerView.load(withVideoId: video.upload_id ?? "")
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
         self.titleLabel.text = self.video.name
         self.textView.text = self.video.content
     }

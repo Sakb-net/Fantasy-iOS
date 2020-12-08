@@ -31,7 +31,11 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
     }
     
     @IBAction func LoginAction(_ sender: Any) {
-        userLogin()
+        if isNetworkReachable{
+            userLogin()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
     }
     
     @IBAction func createNewAccount(_ sender: Any) {
