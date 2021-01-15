@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueStandingsViewController" customModule="GameClub" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueStandingsViewController" customModule="SAKB_FANTASY" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="ZhC-Ak-HtA" id="H9s-5C-08B"/>
                 <outlet property="downBT" destination="jFX-md-TTL" id="rk2-Wr-g24"/>
@@ -170,9 +170,9 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXh-BI-pBM">
-                            <rect key="frame" x="111" y="54" width="73" height="34"/>
+                            <rect key="frame" x="104" y="54" width="80" height="34"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="73" id="HJf-Bh-IP0"/>
+                                <constraint firstAttribute="width" constant="80" id="HJf-Bh-IP0"/>
                                 <constraint firstAttribute="height" constant="34" id="tEL-cQ-qHP"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="15"/>
@@ -213,7 +213,7 @@
                 <constraint firstItem="ZhC-Ak-HtA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="110" id="wGi-Pv-7F5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-439" y="-98"/>
+            <point key="canvasLocation" x="-439.13043478260875" y="-98.4375"/>
         </view>
     </objects>
     <resources>

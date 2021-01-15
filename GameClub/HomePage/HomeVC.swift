@@ -17,15 +17,15 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     var publicPointsTitles = ["GameWeek".localized, "Overall Points".localized, "Overall Rank".localized, "Free Transfers".localized, "GameWeek Transfers Made".localized]
     var indexPoint = 0
     var cellCount = 0
-
-//    @IBOutlet weak var myPointsView: UIView!
-//    @IBOutlet weak var myTeamView: UIView!
-//    @IBOutlet weak var transferesView: UIView!
-//    @IBOutlet weak var myPointsIV: UIImageView!
-//    @IBOutlet weak var myTeamIV: UIImageView!
-//    @IBOutlet weak var transferesIV: UIImageView!
-//
-//    @IBOutlet weak var linksView: UIStackView!
+    
+    //    @IBOutlet weak var myPointsView: UIView!
+    //    @IBOutlet weak var myTeamView: UIView!
+    //    @IBOutlet weak var transferesView: UIView!
+    //    @IBOutlet weak var myPointsIV: UIImageView!
+    //    @IBOutlet weak var myTeamIV: UIImageView!
+    //    @IBOutlet weak var transferesIV: UIImageView!
+    //
+    //    @IBOutlet weak var linksView: UIStackView!
     @IBOutlet weak var averagePointsLbl: UILabel!
     @IBOutlet weak var userPointsLbl: UILabel!
     @IBOutlet weak var highestPointsLbl: UILabel!
@@ -40,13 +40,13 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var mainIV: UIImageView!
     @IBOutlet weak var weeklyScedualTV: UITableView!
-   
+    
     @IBOutlet weak var chooseYourTeamBT: UIButton!
-   
+    
     @IBAction func signinAction(_ sender: Any) {
         if User.shared().access_token == nil {
-        let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.navigationController?.pushViewController(loginVC, animated: true)
+            let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(loginVC, animated: true)
         }else {
             User.shared().logoutUser()
             self.usernameLabel.text = ""
@@ -55,38 +55,52 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func ShowSideMenuAction(_ sender: Any) {
-         let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
+        let menu = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
         present(menu, animated: true, completion: nil)
-
+        
     }
     @IBAction func ChooseYourTeamAction(_ sender: Any) {
-        if addTeam == 1 {
-            let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
-            self.navigationController?.pushViewController(myTeamVC, animated: true)
-        }else {
-            let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PitchVC") as! PitchVC
-            self.navigationController?.pushViewController(myTeamVC, animated: true)
+        if User.shared().access_token == nil {
+            let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }else{
+            if addTeam == 1 {
+                let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
+                self.navigationController?.pushViewController(myTeamVC, animated: true)
+            }else {
+                let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PitchVC") as! PitchVC
+                self.navigationController?.pushViewController(myTeamVC, animated: true)
+            }
         }
         
-    }
-    @IBAction func moreNewsAction(_ sender: Any) {
         
-        let newsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
-        self.navigationController?.pushViewController(newsVC, animated: true)
     }
-    @IBAction func moreVideosAction(_ sender: Any) {
-        let newsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
-        newsVC.isNews = false
-        self.navigationController?.pushViewController(newsVC, animated: true)
-    }
+    //    @IBAction func moreNewsAction(_ sender: Any) {
+    //
+    //        let newsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
+    //        self.navigationController?.pushViewController(newsVC, animated: true)
+    //    }
+    //    @IBAction func moreVideosAction(_ sender: Any) {
+    //        let newsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
+    //        newsVC.isNews = false
+    //        self.navigationController?.pushViewController(newsVC, animated: true)
+    //    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController!.removeViewController(LoginVC.self)
+        navigationController!.removeViewController(CheckVC.self)
+        navigationController!.removeViewController(StartPageVC.self)
+        navigationController!.removeViewController(NotifyTypeVC.self)
+        navigationController!.removeViewController(FavTeamVC.self)
+//        navigationController!.removeViewController(HomeVC.self)
+
+
         self.navigationController?.navigationBar.isHidden = true
-//        myPointsIV.image = UIImage(named: "sponsor_header")
-//        myTeamIV.image = UIImage(named: "sponsor_header")
-//        transferesIV.image = UIImage(named: "sponsor_header")
-//        UserDefaults.standard.set(0, forKey: "add_team")
+        
+        //        myPointsIV.image = UIImage(named: "sponsor_header")
+        //        myTeamIV.image = UIImage(named: "sponsor_header")
+        //        transferesIV.image = UIImage(named: "sponsor_header")
+        //        UserDefaults.standard.set(0, forKey: "add_team")
         
         roundCornerForViews ()
         if User.shared().access_token == nil {
@@ -95,11 +109,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         }else {
             self.usernameLabel.text = "Not".localized + User.shared().display_name!
         }
-        if isNetworkReachable{
-            getPublicPoints()
-        }else{
-            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
-        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         if User.shared().access_token == nil {
@@ -111,20 +121,33 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         let email = User.shared().email
         addTeam = UserDefaults.standard.integer(forKey: email ?? "")
         if addTeam == 1 {
-                    self.pointsView.isHidden = false
-                    self.chooseTeamView.isHidden = true
-        //            self.linksView.isHidden = false
-                }else{
-                    self.pointsView.isHidden = true
-                    self.chooseTeamView.isHidden = false
-        //            self.linksView.isHidden = true
-                }
-        getMainScreenInfo()
+            self.pointsView.isHidden = false
+            self.chooseTeamView.isHidden = true
+            //            self.linksView.isHidden = false
+        }else{
+            self.pointsView.isHidden = true
+            self.chooseTeamView.isHidden = false
+            //            self.linksView.isHidden = true
+        }
+        if isNetworkReachable{
+            reloadTableData()
+            getMainScreenInfo()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
+        
         
     }
     @objc func myPointsAction(sender : UITapGestureRecognizer) {
-        let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
-        self.navigationController?.pushViewController(myPointsVC, animated: true)
+        let email_point = (User.shared().email ?? "") + "point"
+        let found_points = UserDefaults.standard.integer(forKey: email_point)
+        if found_points == 0 {
+            let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
+            self.navigationController?.pushViewController(myTeamVC, animated: true)
+        }else {
+            let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
+            self.navigationController?.pushViewController(myPointsVC, animated: true)
+        }
     }
     
     @objc func myTeamAction(sender : UITapGestureRecognizer) {
@@ -141,33 +164,33 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         if self.fixtures.count < 3 && self.fixtures.count > 0{
             if addTeam == 0{
                 cellCount = self.fixtures.count + 3
-            return cellCount
+                return cellCount
             }else {
                 cellCount = self.fixtures.count + 4
                 return cellCount
             }
         } else {
-        if addTeam == 0{
-            if self.fixtures.count == 0 {
-                cellCount = 1
-                return cellCount
+            if addTeam == 0{
+                if self.fixtures.count == 0 {
+                    cellCount = 1
+                    return cellCount
+                }else {
+                    cellCount = 6
+                    return cellCount
+                }
             }else {
-                cellCount = 6
-                return cellCount
+                if self.fixtures.count == 0 {
+                    cellCount = 7
+                    return cellCount
+                }else {
+                    cellCount = 12
+                    return cellCount
+                }
             }
-        }else {
-            if self.fixtures.count == 0 {
-                cellCount = 7
-                return cellCount
-            }else {
-                cellCount = 12
-                return cellCount
-            }
-        }
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-               
+        
         let cell1 = tableView.dequeueReusableCell(withIdentifier: "FixtureHeaderCell", for: indexPath) as! FixtureHeaderCell
         cell1.backgroundView = UIImageView(image: UIImage(named: "sponsor_header"))
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "FixtureCell", for: indexPath) as! FixtureCell
@@ -175,7 +198,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         let cell4 = tableView.dequeueReusableCell(withIdentifier: "LinksCell", for: indexPath) as! LinksCell
         let cell5 = tableView.dequeueReusableCell(withIdentifier: "PublicPointsCell", for: indexPath) as! PublicPointsCell
         let cell6 = tableView.dequeueReusableCell(withIdentifier: "SponsorsTVC", for: indexPath) as! SponsorsTVC
-
+        
         cell3.backgroundView = UIImageView(image: UIImage(named: "sponsor_header"))
         if addTeam == 1 {
             if indexPath.row == 0 {
@@ -204,45 +227,45 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
                 return cell6
             }else {
                 if indexPoint < 5 {
-                   
+                    
                     if indexPoint == 0 {
                         cell5.pointsLbl.text = publicPointsTitles[indexPoint] + " 34"
                         if let gwPoints = publicPoints.sum_total_subeldwry{
-                        cell5.titleLbl.text = String(gwPoints)
+                            cell5.titleLbl.text = String(gwPoints)
                         }
                         indexPoint += 1
                     }else if indexPoint == 1{
                         cell5.pointsLbl.text = publicPointsTitles[indexPoint]
                         if let overallPoints = publicPoints.sum_total_points{
-                        cell5.titleLbl.text = String(overallPoints)
+                            cell5.titleLbl.text = String(overallPoints)
                         }
                         indexPoint += 1
                     }else if indexPoint == 2 {
                         cell5.pointsLbl.text = publicPointsTitles[indexPoint]
                         if let overallRank = publicPoints.sort_final_users{
-                        cell5.titleLbl.text = String(overallRank)
+                            cell5.titleLbl.text = String(overallRank)
                         }
                         indexPoint += 1
                     }else if indexPoint == 3 {
                         cell5.pointsLbl.text = publicPointsTitles[indexPoint]
                         if let freeTrans = publicPoints.count_free_weekgamesubstitute{
-                        cell5.titleLbl.text = String(freeTrans)
+                            cell5.titleLbl.text = String(freeTrans)
                         }
                         indexPoint += 1
                     }else if indexPoint == 4 {
                         cell5.pointsLbl.text = publicPointsTitles[indexPoint]
                         if let gwTrans = publicPoints.game_week_changes{
-                        cell5.titleLbl.text = String(gwTrans)
+                            cell5.titleLbl.text = String(gwTrans)
                         }
                         indexPoint = 0
                     }
                 }
                 cell5.contentView.layer.borderWidth = 1
                 cell5.contentView.layer.borderColor = UIColor.gray.cgColor
-
+                
                 return cell5
             }
-            }else{
+        }else{
             if indexPath.row == 0 && self.fixtures.count > 0{
                 return cell1
             }else if indexPath.row == 1 && self.fixtures.count > 0 {
@@ -256,7 +279,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
             }else {
                 return cell3
             }
-            }
+        }
     }
     func fillCells (cell : FixtureCell, index : Int) -> FixtureCell{
         cell.firstClubName.text = self.fixtures[index].name_first
@@ -276,14 +299,14 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
         if let score2 = secondScore{
             secondScoreString = String(score2)
         }
-            cell.scoreLabel.text = firstScoreString + " - " + secondScoreString
-            
-            let date = stringToDate(dateString: self.fixtures[index].date!)
-                   if date > Date() {
-                    cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 0)
-                   } else {
-                       cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 1)
-                   }
+        cell.scoreLabel.text = firstScoreString + " - " + secondScoreString
+        
+        let date = stringToDate(dateString: self.fixtures[index].date!)
+        if date > Date() {
+            cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 0)
+        } else {
+            cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 1)
+        }
         return cell
     }
     
@@ -293,18 +316,15 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
     func getMainScreenInfo(){
         self.showLoader()
-        homePresenter.getHomeDetails(onSuccess: { (fixtures) in
+        homePresenter.getHomeDetails(team_link: "", onSuccess: { (fixtures) in
             self.fixtures = fixtures
-            self.weeklyScedualTV.delegate = self
-            self.weeklyScedualTV.dataSource = self
             self.weeklyScedualTV.reloadData()
-
-//            self.mainIV.sd_setImage(with: URL(string: Urls.baseUrl+news[1].image! ), placeholderImage: UIImage(named: "placeholder"))
-//            self.mainLabel.text = news[0].name
-//            self.mainDateLabel.text = news[0].date
+            
+            //            self.mainIV.sd_setImage(with: URL(string: Urls.baseUrl+news[1].image! ), placeholderImage: UIImage(named: "placeholder"))
+            //            self.mainLabel.text = news[0].name
+            //            self.mainDateLabel.text = news[0].date
             
             self.hideLoader()
-            self.getPublicPoints()
         }) { (errorMessage, code)  in
             self.hideLoader()
             if code == 11 ||  code == 41{
@@ -313,19 +333,20 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
                 self.signinBT.setTitle("Login".localized, for: .normal)
                 self.weeklyScedualTV.reloadData()
             }else {
-                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                //                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
             }
         }
+        self.getPublicPoints()
     }
     
     func getPublicPoints(){
         self.showLoader()
-        PointsPresenter().getPublicPoints(onSuccess: { (publicPoints) in
+        PointsPresenter().getPublicPoints(onSuccess: { (publicPoints, success) in
             self.publicPoints = publicPoints
             UserDefaults.standard.set(publicPoints.count_free_weekgamesubstitute ?? 0, forKey: "count_free_weekgamesubstitute")
             self.weeklyScedualTV.reloadData()
             self.hideLoader()
-            self.getHomePoints()
+            
         }) { (errorMessage, code) in
             self.hideLoader()
             if code == 11 ||  code == 41{
@@ -334,11 +355,12 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
                 self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
             }
         }
+        self.getHomePoints()
     }
     
     func getHomePoints(){
         self.showLoader()
-        PointsPresenter().getHomePoints(onSuccess: { (homePoints, mainData) in
+        PointsPresenter().getHomePoints(onSuccess: { (homePoints, mainData, success) in
             if let totalP = homePoints.user_total_mypoint {
                 self.userPointsLbl.text = String(totalP)
             }
@@ -356,7 +378,7 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
                 UserDefaults.standard.set(gameWeek, forKey: "GAME_WEEK")
             }
             UserDefaults.standard.set(mainData.change_point ?? 0 , forKey: "change_point")
-
+            
             self.hideLoader()
         }) { (errorMessage, code) in
             self.hideLoader()
@@ -367,14 +389,18 @@ class HomeVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    func reloadTableData(){
+        self.weeklyScedualTV.delegate = self
+        self.weeklyScedualTV.dataSource = self
+    }
     
     func roundCornerForViews (){
         roundViewCornersNoShadow(view: view1)
         roundViewCornersNoShadow(view: view2)
         roundViewCornersNoShadow(view: view3)
-
+        
         roundViewCorners(view: self.firstView)
-//        roundViewCorners(view: self.weeklyScedualTV)
+        //        roundViewCorners(view: self.weeklyScedualTV)
         roundViewCorners(view: self.chooseYourTeamBT)
         self.mainIV.layer.cornerRadius = 10
         self.mainIV.clipsToBounds = true

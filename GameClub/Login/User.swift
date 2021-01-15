@@ -24,6 +24,7 @@ class User: NSObject, NSCoding {
     var new_fcm_token:String?
     var old_fcm_token:String?
     var choose_team : Int?
+    var found_point : Int?
     
     private static var currentUser: User!
     
@@ -71,7 +72,7 @@ class User: NSObject, NSCoding {
         aCoder.encode(self.team_link, forKey: "team_link")
         aCoder.encode(self.new_fcm_token, forKey: "new_fcm_token")
         aCoder.encode(self.choose_team, forKey: "choose_team")
-
+        aCoder.encode(self.choose_team, forKey: "found_point")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -89,6 +90,7 @@ class User: NSObject, NSCoding {
         self.team_link = (aDecoder.decodeObject(forKey: "team_link") as? String) ?? ""
         self.new_fcm_token = (aDecoder.decodeObject(forKey: "new_fcm_token") as? String) ?? ""
         self.choose_team = (aDecoder.decodeObject(forKey: "choose_team") as? Int) ?? 0
+        self.found_point = (aDecoder.decodeObject(forKey: "found_point") as? Int) ?? 0
     }
     
     
@@ -148,6 +150,10 @@ class User: NSObject, NSCoding {
         
         if let choose_team = parametersJson["choose_team"]?.int {
             self.choose_team = choose_team
+        }
+        
+        if let found_point = parametersJson["found_point"]?.int {
+            self.found_point = found_point
         }
     }
     

@@ -11,6 +11,8 @@ import UIKit
 class ClassicLeaguePopUp: ParentViewController {
     var code = ""
     var delegate : navigationForClassicDelegate?
+    var link = ""
+    var leagueType = ""
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -23,7 +25,7 @@ class ClassicLeaguePopUp: ParentViewController {
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
-        delegate?.openSettings()
+        delegate?.openSettings(link: link, leagueType: leagueType)
     }
     @IBAction func myLeaguesAction(_ sender: Any) {
         DispatchQueue.main.async {
@@ -57,6 +59,6 @@ class ClassicLeaguePopUp: ParentViewController {
     
 }
 protocol navigationForClassicDelegate {
-    func openSettings()
+    func openSettings(link: String, leagueType: String)
     func openMyLeagues()
 }

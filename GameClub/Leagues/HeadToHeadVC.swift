@@ -43,25 +43,25 @@ class HeadToHeadVC: ParentViewController {
         }else{
             self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
-          }
-          
+    }
+    
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: false)
     }
     @IBAction func menuAction(_ sender: Any) {
-              openMenu()
-          }
-          override func viewDidLoad() {
-              super.viewDidLoad()
-              roundViewCornersNoShadow(view: createBT)
-              roundViewCornersNoShadow(view: codeViewContainer)
-              roundViewCornersNoShadow(view: mainContainer)
-            if isNetworkReachable {
-                getGameWeeks ()
-            }else{
-                self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
-            }
-          }
+        openMenu()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewConfig()
+        if isNetworkReachable {
+            getGameWeeks ()
+        }else{
+            self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
+        }
+    }
+    
+    
     
     func createLeague (name : String){
         let parameters:[String:Any] = [
@@ -89,26 +89,34 @@ class HeadToHeadVC: ParentViewController {
         }
     }
     
-      func getGameWeeks (){
-          self.showLoader()
-          PointsPresenter().getPointsGWs(onSuccess: { (gameWeeks) in
-              self.gameWeeks = gameWeeks
-              self.currentGWLink = gameWeeks[0].link!
-              self.roundsBT.setTitle(gameWeeks[0].lang_num_week, for: .normal)
-              self.hideLoader()
-          }) { (errorMessage, code) in
-              self.hideLoader()
-              if code == 11 || code == 41{
-                  
-              }else {
-                  self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
-              }
-          }
-      }
+    func getGameWeeks (){
+        self.showLoader()
+        PointsPresenter().getPointsGWs(onSuccess: { (gameWeeks) in
+            self.gameWeeks = gameWeeks
+            self.currentGWLink = gameWeeks[0].link!
+            self.roundsBT.setTitle(gameWeeks[0].lang_num_week, for: .normal)
+            self.hideLoader()
+        }) { (errorMessage, code) in
+            self.hideLoader()
+            if code == 11 || code == 41{
+                
+            }else {
+                self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+            }
+        }
+    }
+    func viewConfig(){
+        roundViewCornersNoShadow(view: createBT)
+        roundViewCornersNoShadow(view: codeViewContainer)
+        roundViewCornersNoShadow(view: mainContainer)
+        leagueNameTF.delegate = self
+    }
 }
 extension HeadToHeadVC : SelectedDropDownType, navigationForClassicDelegate{
-    func openSettings() {
+    func openSettings(link: String, leagueType: String) {
         let leaguesSettingsViewController = LeaguesSettingsViewController(nibName: "LeaguesSettingsViewController", bundle: nil)
+        leaguesSettingsViewController.link = link
+        leaguesSettingsViewController.leagueType = leagueType
         self.navigationController?.pushViewController(leaguesSettingsViewController, animated: false)
     }
     

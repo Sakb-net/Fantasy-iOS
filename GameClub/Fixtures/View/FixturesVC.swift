@@ -63,8 +63,13 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
         pickerContainerView.isHidden = false
     }
     @IBAction func chooseGWAction(_ sender: Any) {
+        
         if isNetworkReachable{
-            self.getFixtures (link : self.gwLink)
+            if isTeam {
+                getFixturesByTeam(team_link: teamLink)
+            }else {
+                self.getFixtures (link : self.gwLink)
+            }
         }else{
             self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
@@ -103,6 +108,7 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             if self.fixtures[count - 1].link_first == nil {
                 self.fixtures.removeLast()
             }
+            self.tableView.isHidden = false
             self.tableView.reloadData()
             self.hideLoader()
         }) { (errorMessage) in
@@ -110,6 +116,27 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
             self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
         }
     }
+    
+    func getFixturesByTeam(team_link: String){
+            self.showLoader()
+            HomePresenter().getHomeDetails(team_link: teamLink, onSuccess: { (fixtures) in
+                self.fixtures = fixtures
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
+                self.hideLoader()
+            }) { (errorMessage, code)  in
+                self.hideLoader()
+                if code == 11 ||  code == 41{
+                    
+                }else {
+                    if code == -2{
+                        self.tableView.isHidden = true
+                    }
+                    self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
+                }
+            }
+        }
+    
     func getGameWeeks(){
         self.showLoader()
         presenter.getGWs(onSuccess: { (gws) in
@@ -131,8 +158,8 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
         self.showLoader()
         FavTeamPresenter().getTeams(onSuccess: { (teams) in
             self.teams = teams
-            self.teamBT.setTitle(self.teams[1].name ?? "", for: .normal)
-            self.teamLink = self.teams[1].link!
+            self.teamBT.setTitle(self.teams[0].name ?? "", for: .normal)
+            self.teamLink = self.teams[0].link!
             self.hideLoader()
         }) { (errorMessage) in
             self.hideLoader()
@@ -171,8 +198,8 @@ class FixturesVC: ParentViewController, UITableViewDelegate, UITableViewDataSour
                } else {
                    cell.hideLabel(scoreLabel: cell.scoreLabel, timeLabel: cell.timeLabel, type: 1)
                }
-        cell.firstClubName.text = self.fixtures[indexPath.row].name_first
-        cell.secondClubName.text = self.fixtures[indexPath.row].name_second
+        cell.firstClubName.text = self.fixtures[indexPath.row].code_first
+        cell.secondClubName.text = self.fixtures[indexPath.row].code_second
         cell.timeLabel.text = self.fixtures[indexPath.row].time
         let firstScore = self.fixtures[indexPath.row].first_goon
         let secondScore = self.fixtures[indexPath.row].second_goon

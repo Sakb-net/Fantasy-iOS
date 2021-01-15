@@ -38,6 +38,8 @@ class FavTeamVC: ParentViewController {
             navigationController?.viewControllers.removeSubrange(2..<navVCsCount - 1)
         }
         if !isFavTeam{
+            self.navigationController!.removeViewController(SignUpVC.self)
+            self.navigationController!.removeViewController(LoginVC.self)
             self.titleLbl.text = "Choose teams you want to follow".localized
         }else{
             sendBT.isHidden = true

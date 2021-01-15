@@ -60,8 +60,8 @@ class NotifyTypeVC: ParentViewController {
         self.showLoader()
         FavTeamPresenter().addFollowingTeam(teamsArrayString: arrayString, onSuccess: { (success) in
             if success {
-                let homeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-                self.navigationController?.pushViewController(homeVC, animated: true)
+                let startPageVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "StartPageVC") as! StartPageVC
+                self.navigationController?.pushViewController(startPageVC, animated: true)
             }
             self.hideLoader()
         }) { (errorMessage) in

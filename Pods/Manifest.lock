@@ -1,112 +1,60 @@
 PODS:
-  - Alamofire (4.8.2)
-  - FBSDKCoreKit (5.3.0):
-    - FBSDKCoreKit/Basics (= 5.3.0)
-    - FBSDKCoreKit/Core (= 5.3.0)
-  - FBSDKCoreKit/Basics (5.3.0)
-  - FBSDKCoreKit/Core (5.3.0):
+  - Alamofire (4.9.1)
+  - FBSDKCoreKit (5.15.1):
+    - FBSDKCoreKit/Basics (= 5.15.1)
+    - FBSDKCoreKit/Core (= 5.15.1)
+  - FBSDKCoreKit/Basics (5.15.1)
+  - FBSDKCoreKit/Core (5.15.1):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (5.3.0):
+  - FBSDKLoginKit (5.15.1):
+    - FBSDKLoginKit/Login (= 5.15.1)
+  - FBSDKLoginKit/Login (5.15.1):
     - FBSDKCoreKit (~> 5.0)
-  - FirebaseAnalytics (3.9.0):
-    - FirebaseCore (~> 3.6)
-    - FirebaseInstanceID (~> 1.0)
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
-  - FirebaseCore (3.6.0):
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
-  - FirebaseInstanceID (1.0.10):
-    - FirebaseCore (~> 3.6)
-  - Google/Core (3.1.0):
-    - FirebaseAnalytics (~> 3.2)
-  - Google/SignIn (3.1.0):
-    - Google/Core
-    - GoogleSignIn (~> 4.0)
-  - GoogleSignIn (4.4.0):
-    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
-    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
-    - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.2.1):
-    - GoogleToolboxForMac/Defines (= 2.2.1)
-  - GoogleToolboxForMac/Defines (2.2.1)
-  - "GoogleToolboxForMac/NSData+zlib (2.2.1)":
-    - GoogleToolboxForMac/Defines (= 2.2.1)
-  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.1)":
-    - GoogleToolboxForMac/DebugUtils (= 2.2.1)
-    - GoogleToolboxForMac/Defines (= 2.2.1)
-    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.1)"
-  - "GoogleToolboxForMac/NSString+URLArguments (2.2.1)"
-  - GTMSessionFetcher/Core (1.2.2)
-  - libwebp (1.0.2):
-    - libwebp/core (= 1.0.2)
-    - libwebp/dec (= 1.0.2)
-    - libwebp/demux (= 1.0.2)
-    - libwebp/dsp (= 1.0.2)
-    - libwebp/enc (= 1.0.2)
-    - libwebp/mux (= 1.0.2)
-    - libwebp/utils (= 1.0.2)
-    - libwebp/webp (= 1.0.2)
-  - libwebp/core (1.0.2):
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
     - libwebp/webp
-  - libwebp/dec (1.0.2):
-    - libwebp/core
-  - libwebp/demux (1.0.2):
-    - libwebp/core
-  - libwebp/dsp (1.0.2):
-    - libwebp/core
-  - libwebp/enc (1.0.2):
-    - libwebp/core
-  - libwebp/mux (1.0.2):
-    - libwebp/core
-  - libwebp/utils (1.0.2):
-    - libwebp/core
-  - libwebp/webp (1.0.2)
-  - MOLH (1.2)
-  - NVActivityIndicatorView (4.7.0):
-    - NVActivityIndicatorView/Presenter (= 4.7.0)
-  - NVActivityIndicatorView/Presenter (4.7.0)
-  - ReachabilitySwift (4.3.1)
-  - SDWebImage/Core (4.4.7)
-  - SDWebImage/WebP (4.4.7):
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
+  - MOLH (1.4.3)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - ReachabilitySwift (5.0.0)
+  - SDWebImage/Core (4.4.8)
+  - SDWebImage/WebP (4.4.8):
     - libwebp (< 2.0, >= 0.5)
     - SDWebImage/Core
-  - SideMenu (6.1.2)
-  - SkyFloatingLabelTextField (3.7.0)
-  - SwiftSVG (2.3.2)
+  - SideMenu (6.5.0)
+  - SkyFloatingLabelTextField (3.8.0)
   - SwiftyJSON (4.3.0)
   - TwitterCore (3.2.0)
-  - TwitterKit (3.4.2):
-    - TwitterCore (>= 3.2.0)
-  - YoutubePlayer-in-WKWebView (0.3.4)
+  - TwitterKit5 (5.2.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
-  - FBSDKCoreKit
-  - FBSDKLoginKit
-  - Google/SignIn
+  - FBSDKCoreKit (~> 5.5)
+  - FBSDKLoginKit (~> 5.5)
   - MOLH
   - NVActivityIndicatorView
   - ReachabilitySwift
   - SDWebImage/WebP
   - SideMenu
   - SkyFloatingLabelTextField (~> 3.0)
-  - SwiftSVG (~> 2.0)
   - SwiftyJSON (~> 4.0)
-  - TwitterKit
-  - YoutubePlayer-in-WKWebView (~> 0.3.0)
+  - TwitterKit5
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - FBSDKCoreKit
     - FBSDKLoginKit
-    - FirebaseAnalytics
-    - FirebaseCore
-    - FirebaseInstanceID
-    - Google
-    - GoogleSignIn
-    - GoogleToolboxForMac
-    - GTMSessionFetcher
     - libwebp
+    - MOLH
     - NVActivityIndicatorView
     - ReachabilitySwift
     - SDWebImage
@@ -114,36 +62,23 @@ SPEC REPOS:
     - SkyFloatingLabelTextField
     - SwiftyJSON
     - TwitterCore
-    - TwitterKit
-  trunk:
-    - MOLH
-    - SwiftSVG
-    - YoutubePlayer-in-WKWebView
+    - TwitterKit5
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  FBSDKCoreKit: 39748deefe37a005f983722e433be2ddcdd83ae7
-  FBSDKLoginKit: bc0329e10045789e8d40b12d4f15ddbd07a898e2
-  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
-  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
-  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
-  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
-  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
-  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
-  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
-  libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
-  MOLH: 79cf9bf2df9780030bfe8ba676de5d266a8e423e
-  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
-  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
-  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
-  SideMenu: 035e8f8c2b3f5b19b1b2a6f87893b88a1bfb5dcd
-  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
-  SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
+  FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+  MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
-  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
-  YoutubePlayer-in-WKWebView: af2f5929fc78882d94bfdfeea999b661b78d9717
+  TwitterKit5: 64095dfefcf39be2355711ef27112d55e340d90e
 
-PODFILE CHECKSUM: 16765d9ff487101c28472727e8c420840ecf2693
+PODFILE CHECKSUM: eff3aa62e7175503e26019965df853a971ef497c
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.10.0

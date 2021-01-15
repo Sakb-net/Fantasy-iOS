@@ -8,7 +8,6 @@
 
 import UIKit
 import SideMenu
-import SwiftSVG
 
 class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -17,7 +16,8 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     var pageType = 0
     var remainingMoney = 0.0
     var totalMoney = 0.0
-    
+    var gotPlayer = false
+
     @IBOutlet weak var freeTransView: UIView!
     @IBOutlet weak var freeTransNumLbl: UILabel!
     
@@ -74,8 +74,8 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var attackerCostLbl1: UILabel!
     @IBOutlet weak var attackerCostLbl2: UILabel!
     @IBOutlet weak var attackerCostLbl3: UILabel!
-
-
+    
+    
     
     @IBOutlet weak var pageTitleLbl: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
@@ -184,6 +184,7 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     @IBAction func saveAction(_ sender: Any) {
         if pageType == 0 {
             let popUpVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NameTeamPopUp") as! NameTeamPopUp
+            popUpVC.delegate = self
             present(popUpVC, animated: true
                 , completion: nil)
         }else {
@@ -221,13 +222,8 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
         let gameWeek = UserDefaults.standard.string(forKey: "GAME_WEEK") ?? ""
         let mainLblString = "End date for GW ".localized + gameWeek + ": " + endDate
         endTimeLabel.text = mainLblString
-        if pageType == 1 {self.autoSelectView.isHidden = true
-            self.freeTransView.isHidden = false
-            self.saveBT.isEnabled = false
-            self.saveBT.alpha = 0.5
-            self.pageTitleLbl.text = "Transfers".localized
-            let freeTrans = UserDefaults.standard.integer(forKey: "count_free_weekgamesubstitute")
-            self.freeTransNumLbl.text = String(freeTrans)
+        if pageType == 1{
+            
             if isNetworkReachable{
                 getMyTeam(type: 0)
             }else{
@@ -244,7 +240,20 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
             }else{
                 self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
             }
-        }else {}
+        }else {
+            self.autoSelectView.isHidden = true
+            self.freeTransView.isHidden = false
+            self.pageTitleLbl.text = "Transfers".localized
+            let freeTrans = UserDefaults.standard.integer(forKey: "count_free_weekgamesubstitute")
+            self.freeTransNumLbl.text = String(freeTrans)
+            if gotPlayer {
+                self.saveBT.isEnabled = true
+                self.saveBT.alpha = 1.0
+            }else {
+                self.saveBT.isEnabled = false
+                self.saveBT.alpha = 0.5
+            }
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count1 = self.goalKeepers.count
@@ -568,7 +577,16 @@ class PitchVC: ParentViewController, UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-extension PitchVC : DetailsOrDeletePopUpDelegate, playerDeletedDelegate, replacementListenner, PayementSuccessDelegate {
+extension PitchVC : DetailsOrDeletePopUpDelegate, playerDeletedDelegate, replacementListenner, PayementSuccessDelegate, TeamSaved {
+    func TeamIsSaved() {
+        let email = User.shared().email
+        UserDefaults.standard.set(1 , forKey: email ?? "")
+        
+        pageType = 1
+        let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
+        self.navigationController?.pushViewController(myTeamVC, animated: true)
+    }
+    
     func PayementSuccess(message : String) {
         showAlert(title: "", message: message, shouldpop: false)
     }
@@ -587,6 +605,7 @@ extension PitchVC : DetailsOrDeletePopUpDelegate, playerDeletedDelegate, replace
     }
     
     func subIsSuccess() {
+        gotPlayer = false
         self.showAlert(title: "", message: "تم التبديل بنجاح", shouldpop: false)
         self.saveBT.isEnabled = false
         self.saveBT.alpha = 0.5
@@ -596,8 +615,8 @@ extension PitchVC : DetailsOrDeletePopUpDelegate, playerDeletedDelegate, replace
             self.showAlert(title: "", message: "Internet is not available", shouldpop: true)
         }
     }
-    
     func returnPlayer(player: Player, index: Int, playerType: String, bt: UIButton, btName : String) {
+        gotPlayer = true
         let playerID = player.id
         self.saveBT.isEnabled = true
         self.saveBT.alpha = 1.0
@@ -809,3 +828,6 @@ extension PitchVC : DetailsOrDeletePopUpDelegate, playerDeletedDelegate, replace
     
 }
 
+protocol TeamSaved {
+    func TeamIsSaved()
+}

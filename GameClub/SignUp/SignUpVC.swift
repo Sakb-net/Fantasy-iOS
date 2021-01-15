@@ -6,12 +6,16 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-import GoogleSignIn
-import Google
+
+//GOOGLE
+
+//import GoogleSignIn
+//import Google
 import TwitterKit
 import SkyFloatingLabelTextField
 
-class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, SelectedDropDownType {
+// extend these if GOOGLE GIDSignInUIDelegate, GIDSignInDelegate
+class SignUpVC: ParentViewController, SelectedDropDownType {
     var userInfo : signUpUser!
     func selectedType(selectedType: DropDownTypes, selectedItem: Any) {
         if selectedType == .City {
@@ -21,7 +25,7 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
     }
     
     var loginPresenter = LoginPresenter()
-
+    
     @IBOutlet weak var nameTF: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTF: SkyFloatingLabelTextField!
     @IBOutlet weak var passTF: SkyFloatingLabelTextField!
@@ -37,9 +41,9 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
     @IBAction func twitterLoginAction(_ sender: Any) {
         loginPresenter.twitterLogin()
     }
-    @IBAction func gmailLoginAction(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
-    }
+    //    @IBAction func gmailLoginAction(_ sender: Any) {
+    //        GIDSignIn.sharedInstance().signIn()
+    //    }
     @IBAction func loginAction(_ sender: Any) {
     }
     @IBAction func createAccountAction(_ sender: Any) {
@@ -73,37 +77,40 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
             self.phoneTF.textAlignment = .right
             self.cityTF.textAlignment = .right
             self.stateTF.textAlignment = .right
-        
+            
             self.nameTF.titleLabel.textAlignment = .right
             self.emailTF.titleLabel.textAlignment = .right
             self.passTF.titleLabel.textAlignment = .right
             self.confirmPassTF.titleLabel.textAlignment = .right
-        
+            
             self.phoneTF.titleLabel.textAlignment = .right
             self.cityTF.titleLabel.textAlignment = .right
             self.stateTF.titleLabel.textAlignment = .right
         }else {
             self.nameTF.textAlignment = .left
-                self.emailTF.textAlignment = .left
-                self.passTF.textAlignment = .left
-                self.confirmPassTF.textAlignment = .left
-                self.phoneTF.textAlignment = .left
-                self.cityTF.textAlignment = .left
-                self.stateTF.textAlignment = .left
+            self.emailTF.textAlignment = .left
+            self.passTF.textAlignment = .left
+            self.confirmPassTF.textAlignment = .left
+            self.phoneTF.textAlignment = .left
+            self.cityTF.textAlignment = .left
+            self.stateTF.textAlignment = .left
             
-                self.nameTF.titleLabel.textAlignment = .left
-                self.emailTF.titleLabel.textAlignment = .left
-                self.passTF.titleLabel.textAlignment = .left
-                self.confirmPassTF.titleLabel.textAlignment = .left
+            self.nameTF.titleLabel.textAlignment = .left
+            self.emailTF.titleLabel.textAlignment = .left
+            self.passTF.titleLabel.textAlignment = .left
+            self.confirmPassTF.titleLabel.textAlignment = .left
             
-                self.phoneTF.titleLabel.textAlignment = .left
-                self.cityTF.titleLabel.textAlignment = .left
-                self.stateTF.titleLabel.textAlignment = .left
+            self.phoneTF.titleLabel.textAlignment = .left
+            self.cityTF.titleLabel.textAlignment = .left
+            self.stateTF.titleLabel.textAlignment = .left
         }
         self.cityTF.addTarget(self, action: #selector(openDropDown), for: .touchDown)
-
+        
         facebookButtonConfig()
-        googleButtonConfig()
+        
+        //GOOGLE
+        
+        //        googleButtonConfig()
     }
     
     func createAccountAction() {
@@ -153,25 +160,29 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
         termsVC.user = userInfo
         termsVC.delegate = self
         self.present(termsVC, animated: true, completion: nil)
-
+        
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if user != nil {
-            print(user.profile.email)
-            
-        }
-    }
+    //GOOGLE
+    
+    //    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    //        if user != nil {
+    //            print(user.profile.email)
+    //
+    //        }
+    //    }
     func facebookButtonConfig(){
         if (AccessToken.current != nil) {
             // User is logged in, do work such as go to next view controller.
         }
     }
     
-    func googleButtonConfig(){
-        GIDSignIn.sharedInstance()?.uiDelegate = self
-        GIDSignIn.sharedInstance()?.delegate = self
-    }
+    //GOOGLE
+    
+    //    func googleButtonConfig(){
+    //        GIDSignIn.sharedInstance()?.uiDelegate = self
+    //        GIDSignIn.sharedInstance()?.delegate = self
+    //    }
     
     func addLeftViewToPassTF(){
         let button = UIButton(type: .custom)
@@ -185,10 +196,10 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
         button2.frame = CGRect(x: CGFloat(self.passTF.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         button2.addTarget(self, action: #selector(self.showConfirmPass), for: .touchUpInside)
         if "lang".localized == "ar"{
-//            self.passTF.leftView = button
-//            self.passTF.leftViewMode = .always
-//            self.confirmPassTF.leftView = button2
-//            self.confirmPassTF.leftViewMode = .always
+            //            self.passTF.leftView = button
+            //            self.passTF.leftViewMode = .always
+            //            self.confirmPassTF.leftView = button2
+            //            self.confirmPassTF.leftViewMode = .always
         }else {
             self.passTF.rightView = button
             self.passTF.rightViewMode = .always
@@ -198,21 +209,21 @@ class SignUpVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate, Se
     }
     @objc func showPass(_ sender: Any) {
         if self.passTF.text != "" {
-        if self.passTF.isSecureTextEntry {
-            self.passTF.isSecureTextEntry = false
-        }else {
-            self.passTF.isSecureTextEntry = true
-        }
+            if self.passTF.isSecureTextEntry {
+                self.passTF.isSecureTextEntry = false
+            }else {
+                self.passTF.isSecureTextEntry = true
+            }
         }
     }
     @objc func showConfirmPass(_ sender: Any) {
         if self.confirmPassTF.text != "" {
-        if self.confirmPassTF.isSecureTextEntry {
-            self.confirmPassTF.isSecureTextEntry = false
-        }else {
-            self.confirmPassTF.isSecureTextEntry = true
+            if self.confirmPassTF.isSecureTextEntry {
+                self.confirmPassTF.isSecureTextEntry = false
+            }else {
+                self.confirmPassTF.isSecureTextEntry = true
+            }
         }
-    }
     }
     @objc func openDropDown(_ sender: Any) {
         let dropDownVC = Storyboard().dropDownStoryboard.instantiateViewController(withIdentifier: "DropDownVC") as! DropDownVC
@@ -249,6 +260,10 @@ extension SignUpVC : SignUpDelegate {
                 favTeamVC.favTeamLink = link
                 favTeamVC.isFavTeam = false
                 favTeamVC.delegate = self
+                let email_point = (User.shared().email ?? "") + "point"
+                UserDefaults.standard.set(0 , forKey: email_point)
+                self.navigationController!.removeViewController(StartPageVC.self)
+                self.navigationController!.removeViewController(HomeVC.self)
                 self.navigationController?.pushViewController(favTeamVC, animated: true)
             }) { (errorMessage) in
                 self.hideLoader()

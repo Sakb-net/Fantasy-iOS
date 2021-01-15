@@ -8,10 +8,10 @@ import MOLH
 
 class HomeMenuTVC: UITableViewController {
     
-    var menuArabicTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","دورياتي","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","الجوائز","المساعدة","اتصل بنا","English"]
-    var menuEngTitles = ["Home","My Points","My Team","Transferes","Leagues","Rules","News","Videos","Statistics","Fixtures","Awards","Help","Contact Us","العربية"]
-    var menuArabicTitlesNoUser = ["الرئيسية","قواعد اللعبة","أخبار","فيديو","إحصائيات","المباريات","الجوائز","المساعدة","اتصل بنا","English"]
-    var menuEngTitlesNoUser = ["Home","Rules","News","Videos","Statistics","Fixtures","Awards","Help","Contact Us","العربية"]
+    var menuArabicTitles = ["الرئيسية","نقاطي","فريقي","اجراء انتقالات","دورياتي","قواعد اللعبة","أخبار","إحصائيات","المباريات","الجوائز","المساعدة","اتصل بنا","English"]
+    var menuEngTitles = ["Home","My Points","My Team","Transferes","Leagues","Rules","News","Statistics","Fixtures","Awards","Help","Contact Us","العربية"]
+    var menuArabicTitlesNoUser = ["الرئيسية","قواعد اللعبة","أخبار","إحصائيات","المباريات","الجوائز","المساعدة","اتصل بنا","English"]
+    var menuEngTitlesNoUser = ["Home","Rules","News","Statistics","Fixtures","Awards","Help","Contact Us","العربية"]
     var menuTitles = [String]()
     var addTeam = 0
     
@@ -92,6 +92,11 @@ class HomeMenuTVC: UITableViewController {
             cell1.userName.text = User.shared().display_name ?? "Login".localized
             return cell1
         } else {
+            if "lang".localized == "ar" {
+                cell2.textLabel?.textAlignment = .right
+            }else {
+                cell2.textLabel?.textAlignment = .left
+            }
             cell2.textLabel?.text = self.menuTitles[indexPath.row-1]
             //            cell2.textLabel?.textAlignment = .right
             cell2.textLabel?.font = UIFont(name: "HelveticaNeueW23forSKY-Reg", size: 20)
@@ -105,13 +110,18 @@ class HomeMenuTVC: UITableViewController {
         print(indexPath.row)
         if addTeam == 0 {
             if indexPath.row == 0 {
-                
-                let accountVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "AccountVC") as! AccountVC
-                self.navigationController?.pushViewController(accountVC, animated: true)
+                if User.shared().access_token != nil {
+                    
+                    let accountVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "AccountVC") as! AccountVC
+                    self.navigationController?.pushViewController(accountVC, animated: true)
+                }else {
+                    let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                    self.navigationController?.pushViewController(loginVC, animated: true)
+                }
             }
             else if indexPath.row == 1 {
-                let homeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-                self.navigationController?.pushViewController(homeVC, animated: true)
+                let startPageVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "StartPageVC") as! StartPageVC
+                self.navigationController?.pushViewController(startPageVC, animated: true)
             }else if indexPath.row == 2 {
                 let instructionsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "InstructionsVC") as! InstructionsVC
                 instructionsVC.pageNum = 0
@@ -119,17 +129,19 @@ class HomeMenuTVC: UITableViewController {
             }else if indexPath.row == 3 {
                 let newsController = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
                 self.navigationController?.pushViewController(newsController, animated: true)
-            }else if indexPath.row == 4 {
-                let newsController = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
-                newsController.isNews = false
-                self.navigationController?.pushViewController(newsController, animated: true)
-            }else if indexPath.row == 5 {
+            }
+                //            else if indexPath.row == 4 {
+                //                let newsController = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
+                //                newsController.isNews = false
+                //                self.navigationController?.pushViewController(newsController, animated: true)
+                //            }
+            else if indexPath.row == 4 {
                 let statisticsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "StatisticsVC") as! StatisticsVC
                 self.navigationController?.pushViewController(statisticsVC, animated: true)
-            }else if indexPath.row == 6 {
+            }else if indexPath.row == 5 {
                 let fixturesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FixturesVC") as! FixturesVC
                 self.navigationController?.pushViewController(fixturesVC, animated: true)
-            }else if indexPath.row == 7 {
+            }else if indexPath.row == 6 {
                 let prizesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PrizesVC") as! PrizesVC
                 self.navigationController?.pushViewController(prizesVC, animated: true)
             }
@@ -137,17 +149,17 @@ class HomeMenuTVC: UITableViewController {
                 //            let leaguesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LeaguesVC") as! LeaguesVC
                 //            self.navigationController?.pushViewController(leaguesVC, animated: true)
                 //        }
-            else if indexPath.row == 8 {
+            else if indexPath.row == 7 {
                 let instructionsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "InstructionsVC") as! InstructionsVC
                 instructionsVC.pageNum = 1
                 self.navigationController?.pushViewController(instructionsVC, animated: true)
-            }else if indexPath.row == 9 {
+            }else if indexPath.row == 8 {
                 let contactUsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ContactUsVC") as! ContactUsVC
                 self.navigationController?.pushViewController(contactUsVC, animated: true)
-            }else if indexPath.row == 10 {
+            }else if indexPath.row == 9 {
                 MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
                 MOLH.reset()
-            }else if indexPath.row == 11 {
+            }else if indexPath.row == 10 {
                 User.shared().logoutUser()
                 let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                 self.navigationController?.pushViewController(loginVC, animated: true)
@@ -156,15 +168,34 @@ class HomeMenuTVC: UITableViewController {
         }else{
             if indexPath.row == 0 {
                 
-                let accountVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "AccountVC") as! AccountVC
-                self.navigationController?.pushViewController(accountVC, animated: true)
+                if User.shared().access_token != nil {
+                    
+                    let accountVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "AccountVC") as! AccountVC
+                    self.navigationController?.pushViewController(accountVC, animated: true)
+                }else {
+                    let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                    self.navigationController?.pushViewController(loginVC, animated: true)
+                }
             }
             else if indexPath.row == 1 {
-                let homeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-                self.navigationController?.pushViewController(homeVC, animated: true)
+                if User.shared().access_token == nil {
+                    let startPageVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "StartPageVC") as! StartPageVC
+                    self.navigationController?.pushViewController(startPageVC, animated: true)
+                }else {
+                    let homeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                }
+                
             }else if indexPath.row == 2 {
-                let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
-                self.navigationController?.pushViewController(myPointsVC, animated: true)
+                let email_point = (User.shared().email ?? "") + "point"
+                let found_points = UserDefaults.standard.integer(forKey: email_point)
+                if found_points == 0 {
+                    let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
+                    self.navigationController?.pushViewController(myTeamVC, animated: true)
+                }else {
+                    let myPointsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyPointsVC") as! MyPointsVC
+                    self.navigationController?.pushViewController(myPointsVC, animated: true)
+                }
             }else if indexPath.row == 3 {
                 let myTeamVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "MyTeamVC") as! MyTeamVC
                 self.navigationController?.pushViewController(myTeamVC, animated: true)
@@ -182,31 +213,33 @@ class HomeMenuTVC: UITableViewController {
             }else if indexPath.row == 7 {
                 let newsController = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
                 self.navigationController?.pushViewController(newsController, animated: true)
-            }else if indexPath.row == 8 {
-                let newsController = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
-                newsController.isNews = false
-                self.navigationController?.pushViewController(newsController, animated: true)
-            }else if indexPath.row == 9 {
+            }
+                //            else if indexPath.row == 8 {
+                //                let newsController = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "NewsController") as! NewsController
+                //                newsController.isNews = false
+                //                self.navigationController?.pushViewController(newsController, animated: true)
+                //            }
+            else if indexPath.row == 8 {
                 let statisticsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "StatisticsVC") as! StatisticsVC
                 self.navigationController?.pushViewController(statisticsVC, animated: true)
-            }else if indexPath.row == 10 {
+            }else if indexPath.row == 9 {
                 let fixturesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "FixturesVC") as! FixturesVC
                 self.navigationController?.pushViewController(fixturesVC, animated: true)
-            }else if indexPath.row == 11 {
+            }else if indexPath.row == 10 {
                 let prizesVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "PrizesVC") as! PrizesVC
                 self.navigationController?.pushViewController(prizesVC, animated: true)
             }
-            else if indexPath.row == 12 {
+            else if indexPath.row == 11 {
                 let instructionsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "InstructionsVC") as! InstructionsVC
                 instructionsVC.pageNum = 1
                 self.navigationController?.pushViewController(instructionsVC, animated: true)
-            }else if indexPath.row == 13 {
+            }else if indexPath.row == 12 {
                 let contactUsVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ContactUsVC") as! ContactUsVC
                 self.navigationController?.pushViewController(contactUsVC, animated: true)
-            }else if indexPath.row == 14 {
+            }else if indexPath.row == 13 {
                 MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
                 MOLH.reset()
-            }else if indexPath.row == 15 {
+            }else if indexPath.row == 14 {
                 User.shared().logoutUser()
                 let loginVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                 self.navigationController?.pushViewController(loginVC, animated: true)

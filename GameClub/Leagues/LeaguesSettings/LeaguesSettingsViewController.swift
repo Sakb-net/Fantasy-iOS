@@ -275,15 +275,19 @@ extension LeaguesSettingsViewController: UITableViewDelegate, UITableViewDataSou
             else if indexPath.section == 1 {
                 roundViewCornersNoShadow(view: cell3.saveBT)
                 cell3.delegate = self
+                cell3.leagueNameTF.delegate = self
+                cell3.leagueTF.delegate = self
                 return cell3
             }else if indexPath.section == 2 {
                 cell4.delegate = self
                 cell4.isAdmin = false
+                cell4.playerTF.delegate = self
                 roundViewCornersNoShadow(view: cell4.removeBT)
                 return cell4
             }else if indexPath.section == 3 {
                 cell4.delegate = self
                 cell4.isAdmin = true
+                cell4.playerTF.delegate = self
                 roundViewCornersNoShadow(view: cell4.removeBT)
                 cell4.contentLbl.text = "Choose player you want to be admin instead of you.".localized
                 cell4.removeBT.setTitle("Change Admin".localized, for: .normal)

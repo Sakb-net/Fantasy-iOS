@@ -6,16 +6,23 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-import GoogleSignIn
-import Google
+
+//GOOGLE
+
+//import GoogleSignIn
+//import Google
 import TwitterKit
 import SkyFloatingLabelTextField
 
-class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
+//GOOGLE
+// extend these if GOOGLE GIDSignInUIDelegate, GIDSignInDelegate
+
+class LoginVC: ParentViewController{
     
     var loginPresenter = LoginPresenter()
     var isRememberMe:Bool = true
-
+    
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var backBT: UIButton!
     @IBOutlet weak var emailTF: SkyFloatingLabelTextField!
     @IBOutlet weak var passTF: SkyFloatingLabelTextField!
@@ -44,19 +51,24 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
     @IBAction func FacebookLogin(_ sender: Any) {
         loginPresenter.facebookLogin(vc: self)
     }
-    @IBAction func GoogleSignIn(_ sender: Any) {
-         GIDSignIn.sharedInstance().signIn()
-
-    }
+    //GOOGLE
+    
+    //    @IBAction func GoogleSignIn(_ sender: Any) {
+    //         GIDSignIn.sharedInstance().signIn()
+    //
+    //    }
     @IBAction func TwitterLogin(_ sender: Any) {
-       loginPresenter.twitterLogin()
+        loginPresenter.twitterLogin()
     }
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if user != nil {
-        print(user.profile.email)
-        }
-//        GIDSignIn.sharedInstance().signOut()  //SignOut from GOOGLE
-    }
+    
+    //GOOGLE
+    
+    //    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    //        if user != nil {
+    //        print(user.profile.email)
+    //        }
+    ////        GIDSignIn.sharedInstance().signOut()  //SignOut from GOOGLE
+    //    }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("Did logout via LoginButton")
@@ -69,24 +81,26 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
         navigationController!.removeViewController(MyPointsVC.self)
         emailTF.delegate = self
         passTF.delegate = self
-
-
+        
+        
         self.navigationController?.navigationBar.isHidden = true
         loginBTCongig()
         addLeftViewToPassTF()
         if "lang".localized == "ar" {
+            self.titleLbl.textAlignment = .right
             self.passTF.textAlignment = .right
             self.emailTF.textAlignment = .right
             self.emailTF.titleLabel.textAlignment = .right
             self.passTF.titleLabel.textAlignment = .right
         }else {
+            self.titleLbl.textAlignment = .left
             self.passTF.textAlignment = .left
             self.emailTF.textAlignment = .left
             self.emailTF.titleLabel.textAlignment = .left
             self.passTF.titleLabel.textAlignment = .left
         }
         facebookButtonConfig()
-        googleButtonConfig()
+        //        googleButtonConfig()
         
         if let _ =  UserDefaults.standard.value(forKey: "isRememberMe") as? Bool {
             self.emailTF.text = UserDefaults.standard.value(forKey: "email") as? String
@@ -114,8 +128,13 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
                 UserDefaults.standard.set(emailAddress, forKey: "email")
                 UserDefaults.standard.set(pass, forKey: "password")
             }
-             let homeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-             self.navigationController?.pushViewController(homeVC, animated: true)
+            let email = User.shared().email
+            UserDefaults.standard.set(userInfo.choose_team, forKey: (email ?? ""))
+            let email_point = (User.shared().email ?? "") + "point"
+            UserDefaults.standard.set(userInfo.found_point , forKey: email_point)
+            self.navigationController!.removeViewController(StartPageVC.self)
+            let homeVC = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            self.navigationController?.pushViewController(homeVC, animated: true)
             
         }) { (errorMessage) in
             self.hideLoader()
@@ -130,17 +149,18 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
             self.passTF.isSecureTextEntry = true
         }
     }
-
+    
     func facebookButtonConfig(){
         if (AccessToken.current != nil) {
             // User is logged in, do work such as go to next view controller.
         }
     }
+    // GOOGLE
     
-    func googleButtonConfig(){
-        GIDSignIn.sharedInstance()?.uiDelegate = self
-        GIDSignIn.sharedInstance()?.delegate = self
-    }
+    //    func googleButtonConfig(){
+    //        GIDSignIn.sharedInstance()?.uiDelegate = self
+    //        GIDSignIn.sharedInstance()?.delegate = self
+    //    }
     
     func loginBTCongig(){
         self.loginBT.layer.cornerRadius = 5
@@ -159,8 +179,8 @@ class LoginVC: ParentViewController, GIDSignInUIDelegate, GIDSignInDelegate{
         button.frame = CGRect(x: CGFloat(passTF.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
         button.addTarget(self, action: #selector(self.showPass), for: .touchUpInside)
         if "lang".localized == "ar"{
-//            self.passTF.leftView = button
-//            self.passTF.leftViewMode = .always
+            //            self.passTF.leftView = button
+            //            self.passTF.leftViewMode = .always
         }else {
             self.passTF.rightView = button
             self.passTF.rightViewMode = .always

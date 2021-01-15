@@ -67,7 +67,7 @@ class InstructionsVC: ParentViewController , UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if pageNum == 1{self.titleLabel.text = "المساعدة"}
+        if pageNum == 1{self.titleLabel.text = "Help".localized}
         roundViewCorners(view: conainerV)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -99,8 +99,12 @@ class InstructionsVC: ParentViewController , UITableViewDelegate, UITableViewDat
                 let backgroundLayer = self.colors[n].gl!
                 self.bgLayers.append(backgroundLayer)
             }
-            
+            if self.instructions.count == 0 {
+                self.showAlert(title: "", message: "Going to be available soon!".localized, shouldpop: false)
+
+            }else{
                self.tableView.reloadData()
+            }
                self.hideLoader()
            }) { (errorMessage) in
                self.hideLoader()

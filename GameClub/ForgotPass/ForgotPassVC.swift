@@ -9,6 +9,8 @@ class ForgotPassVC: ParentViewController {
     var loginPresenter = LoginPresenter()
     @IBOutlet weak var emailTF: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmEmail: UIButton!
+    @IBOutlet weak var titleLbl: UILabel!
+
     @IBAction func confirmPassAction(_ sender: Any) {
     }
     @IBAction func backAction(_ sender: Any) {
@@ -19,9 +21,11 @@ class ForgotPassVC: ParentViewController {
         emailTF.delegate = self
         loginPresenter.loginBTCongig(loginBT: self.confirmEmail)
         if "lang".localized == "ar"{
+            self.titleLbl.textAlignment = .right
             self.emailTF.textAlignment = .right
             self.emailTF.titleLabel.textAlignment = .right
         }else {
+            self.titleLbl.textAlignment = .left
             self.emailTF.textAlignment = .left
             self.emailTF.titleLabel.textAlignment = .left
         }

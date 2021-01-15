@@ -225,12 +225,17 @@ class MyTeamPresenter {
             
             if response != nil
             {
-                //                    let statusCode = response!["StatusCode"].intValue
+                let statusCode = response!["StatusCode"].intValue
                 //                    let message = response!["Message"].stringValue
-                let data = response!["data"].dictionaryValue
-                let benchCard = data["bench_card"]!.intValue
-                let tripleCard = data["triple_card"]!.intValue
-                onSuccess(benchCard, tripleCard)
+                if statusCode == 0 {
+                    let data = response!["data"].dictionaryValue
+                    let benchCard = data["bench_card"]!.intValue
+                    let tripleCard = data["triple_card"]!.intValue
+                    onSuccess(benchCard, tripleCard)
+                }else {
+                    
+                }
+                
             }else{
                 onFailure("Something went wrong try again later!".localized)
             }

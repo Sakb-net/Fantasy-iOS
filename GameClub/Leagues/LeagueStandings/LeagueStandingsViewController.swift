@@ -39,7 +39,7 @@ class LeagueStandingsViewController: ParentViewController {
     @IBAction func standingsAction(_ sender: Any) {
         tapType = 0
         self.tableView.reloadData()
-
+        
     }
     @IBAction func matchesAction(_ sender: Any) {
         tapType = 1
@@ -143,7 +143,7 @@ extension LeagueStandingsViewController : UITableViewDelegate, UITableViewDataSo
         if tapType == 0 {
             return viewModel.numberOfCells + 1
         }else {
-            return viewModel.numberOfMatchCells + 1
+            return viewModel.numberOfMatchCells
         }
     }
     
@@ -152,25 +152,25 @@ extension LeagueStandingsViewController : UITableViewDelegate, UITableViewDataSo
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "LeagueStandingsHeaderCell") as! LeagueStandingsHeaderCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeagueStandingCell") as! LeagueStandingCell
         let matchCell = tableView.dequeueReusableCell(withIdentifier: "StandingMatchCell") as! StandingMatchCell
-
-        if indexPath.row == 0 {
-            return headerCell
-        }else {
-            if tapType == 0 {
+        if tapType == 0 {
+            if indexPath.row == 0 {
+                return headerCell
+            }else {
                 let cellViewModel = viewModel.getCellVM( indexPath: indexPath )
                 cell.leagueStandingsCellViewModel = cellViewModel
                 return cell
-            }else {
-                tableView.rowHeight = 100
-
-                let matchCellViewModel = viewModel.getMatchCellVM( indexPath: indexPath )
-                matchCell.matchStandingsCellViewModel = matchCellViewModel
-                return matchCell
             }
+            
+        }else {
+            tableView.rowHeight = 100
+            
+            let matchCellViewModel = viewModel.getMatchCellVM( indexPath: indexPath )
+            matchCell.matchStandingsCellViewModel = matchCellViewModel
+            return matchCell
         }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {}
-    }
+
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if indexPath.row == 0 {}
+}
 }

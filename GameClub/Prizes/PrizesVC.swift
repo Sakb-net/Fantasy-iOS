@@ -17,18 +17,18 @@ class PrizesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource
         return prizes.count
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return self.titles[section]
-//    }
+    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //        return self.titles[section]
+    //    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerText = UILabel()
         headerText.adjustsFontSizeToFitWidth = true
         headerText.textAlignment = .center
         headerText.font = UIFont(name:"HelveticaNeueW23forSKY-Reg",size:15)
-
+        
         headerText.text = self.prizes[section].title
-
+        
         return headerText
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +42,7 @@ class PrizesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func menuAction(_ sender: Any) {
@@ -57,9 +57,13 @@ class PrizesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource
         if isNetworkReachable {
             getPrizes(onSuccess: { (response) in
                 self.prizes = response
-                self.tableView.delegate = self
-                self.tableView.dataSource = self
-                self.tableView.reloadData()
+                if response.count == 0{
+                    self.showAlert(title: "", message: "Going to be available soon!".localized, shouldpop: false)
+                }else{
+                    self.tableView.delegate = self
+                    self.tableView.dataSource = self
+                    self.tableView.reloadData()
+                }
             }) { (errorMessage) in
                 self.showAlert(title: "", message: errorMessage ?? "", shouldpop: false)
             }
@@ -77,13 +81,13 @@ class PrizesVC: ParentViewController, UITableViewDelegate, UITableViewDataSource
             {
                 let statusCode = response!["StatusCode"].intValue
                 if statusCode == 0 {
-                if let data = response!["data"].dictionary {
-                    var prizes = [PrizeCatModel]()
-                    
-                    for item in data["content_items"]?.arrayValue ?? [] {
-                        prizes.append(PrizeCatModel(parametersJson: item.dictionaryValue))
-                    }
-                    onSuccess(prizes)
+                    if let data = response!["data"].dictionary {
+                        var prizes = [PrizeCatModel]()
+                        
+                        for item in data["content_items"]?.arrayValue ?? [] {
+                            prizes.append(PrizeCatModel(parametersJson: item.dictionaryValue))
+                        }
+                        onSuccess(prizes)
                     }
                     
                 }else{

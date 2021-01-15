@@ -13,6 +13,8 @@ class ResetPassVC: ParentViewController {
     @IBOutlet weak var passTF: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmPassTF: SkyFloatingLabelTextField!
     @IBOutlet weak var savePassBT: UIButton!
+    @IBOutlet weak var titleLbl: UILabel!
+
     @IBAction func savePassAction(_ sender: Any) {
         changePassword()
     }
@@ -25,12 +27,13 @@ class ResetPassVC: ParentViewController {
         confirmPassTF.delegate = self 
         loginPresenter.loginBTCongig(loginBT: self.savePassBT)
         if "lang".localized == "ar" {
-            
+            self.titleLbl.textAlignment = .right
             self.passTF.textAlignment = .right
             self.passTF.titleLabel.textAlignment = .right
             self.confirmPassTF.textAlignment = .right
             self.confirmPassTF.titleLabel.textAlignment = .right
         }else {
+            self.titleLbl.textAlignment = .left
             self.passTF.textAlignment = .left
             self.passTF.titleLabel.textAlignment = .left
             self.confirmPassTF.textAlignment = .left

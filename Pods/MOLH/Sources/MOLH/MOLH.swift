@@ -117,9 +117,9 @@ open class MOLH {
      **@note** swizzling extension could lead to issues if you are swizzling your UIViews **layoutSubviews** method from another place
      */
     open func activate(_ swizzleExtensions: Bool = false) {
-        //invitable swizzlings first for the localzation itself (bundle switch) and the other for the direction (not needed if you support ios 9 and up)
         swizzle(class: Bundle.self, sel: #selector(Bundle.localizedString(forKey:value:table:)), override: #selector(Bundle.specialLocalizedStringForKey(_:value:table:)))
-        
+        swizzle(class:UIApplication.self, sel: #selector(getter: UIApplication.userInterfaceLayoutDirection), override: #selector(getter: UIApplication.cstm_userInterfaceLayoutDirection))
+
         if swizzleExtensions {
             swizzle(class:UIViewController.self, sel: #selector(UIViewController.viewDidLayoutSubviews), override: #selector(UIViewController.mirroringviewDidLoad))
             swizzle(class:UIControl.self, sel: #selector(UIControl.awakeFromNib), override: #selector(UIControl.cstmlayoutSubviews))
@@ -165,12 +165,38 @@ open class MOLH {
     }
     
     open class func reset(transition: UIView.AnimationOptions, duration: Float = 0.5) {
-        if let delegate = UIApplication.shared.delegate {
-            if delegate is MOLHResetable {
-                (delegate as!MOLHResetable).reset()
+        
+        func resetWhenNoScenesAvailable() {
+            if let delegate = UIApplication.shared.delegate {
+                if delegate is MOLHResetable {
+                    (delegate as!MOLHResetable).reset()
+                }
+                UIView.transition(with: ((delegate.window)!)!, duration: TimeInterval(duration), options: transition, animations: {})
             }
-            UIView.transition(with: ((delegate.window)!)!, duration: TimeInterval(duration), options: transition, animations: {}) { (f) in
+        }
+        
+        if #available(iOS 13.0, *) {
+            if let window = UIApplication.shared.delegate?.window, window != nil {
+               resetWhenNoScenesAvailable()
+            } else {
+                for scene in UIApplication.shared.connectedScenes {
+                    (scene.delegate as? MOLHResetable)?.reset()
+                }
             }
+        } else {
+            resetWhenNoScenesAvailable()
+        }
+    }
+}
+
+extension UIApplication {
+    @objc var cstm_userInterfaceLayoutDirection : UIUserInterfaceLayoutDirection {
+        get {
+            var direction = UIUserInterfaceLayoutDirection.leftToRight
+            if MOLHLanguage.isRTLLanguage() {
+                direction = .rightToLeft
+            }
+            return direction
         }
     }
 }
@@ -397,7 +423,7 @@ open class MOLHTextField: UITextField {
         super.init(coder: aDecoder)
         setupForLocalization()
     }
-
+    
     func setupForLocalization() {
         handleControlSwitching(forceSwitchingRegardlessOfTag: forceSwitchingRegardlessOfTag)
         handleSwitching(forceSwitchingRegardlessOfTag: forceSwitchingRegardlessOfTag)

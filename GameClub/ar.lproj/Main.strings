@@ -111,7 +111,7 @@
 "2me-Dr-YPL.text" = "نقاط اللاعب";
 
 /* Class = "UIButton"; normalTitle = "إلغاء"; ObjectID = "2pn-mX-GP6"; */
-"2pn-mX-GP6.normalTitle" = "إلغاء";
+"2pn-mX-GP6.normalTitle" = "دورياتي";
 
 /* Class = "UILabel"; text = "اتصل بنا"; ObjectID = "2um-PF-VFt"; */
 "2um-PF-VFt.text" = "اتصل بنا";
@@ -249,7 +249,7 @@
 "88h-3N-BgZ.text" = "Test Name";
 
 /* Class = "UITextField"; placeholder = "ادخل كود الدوري هنا"; ObjectID = "89y-nD-0qF"; */
-"89y-nD-0qF.placeholder" = "ادخل كود الدوري هنا";
+"89y-nD-0qF.placeholder" = "ادخل إسم الدوري هنا";
 
 /* Class = "UILabel"; text = "دوري خاص"; ObjectID = "8Ei-7F-cEa"; */
 "8Ei-7F-cEa.text" = "دوري خاص";
@@ -531,7 +531,7 @@
 "MMS-sj-6Tc.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "MXG-u8-ZVe"; */
-"MXG-u8-ZVe.normalTitle" = "تأكيد";
+"MXG-u8-ZVe.normalTitle" = "الإعدادات";
 
 /* Class = "UILabel"; text = "5.7"; ObjectID = "MdA-75-H9w"; */
 "MdA-75-H9w.text" = "5.7";
@@ -624,7 +624,7 @@
 "RNl-Ty-285.normalTitle" = "دخول";
 
 /* Class = "UITextField"; placeholder = "ادخل كود الدوري هنا"; ObjectID = "Rdk-6n-98n"; */
-"Rdk-6n-98n.placeholder" = "ادخل كود الدوري هنا";
+"Rdk-6n-98n.placeholder" = "ادخل إسم الدوري هنا";
 
 /* Class = "UILabel"; text = "نقاط اللاعب"; ObjectID = "RyF-sB-grz"; */
 "RyF-sB-grz.text" = "نقاط اللاعب";
@@ -939,7 +939,7 @@
 "eB9-Rv-YBD.text" = "10.0";
 
 /* Class = "UILabel"; text = "المباراة القادمة"; ObjectID = "eFo-O5-YXv"; */
-"eFo-O5-YXv.text" = "المباراة القادمة";
+"eFo-O5-YXv.text" = "Fix";
 
 /* Class = "UILabel"; text = "اسم اللاعب"; ObjectID = "eM4-me-8p7"; */
 "eM4-me-8p7.text" = "اسم اللاعب";

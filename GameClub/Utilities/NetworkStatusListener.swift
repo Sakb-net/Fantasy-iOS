@@ -19,8 +19,8 @@ class InternetConnection: NSObject {
     }
     
     var reachabilityStatus: Reachability.Connection = .none
-    
-    let reachability = Reachability()!
+
+    let reachability = try? Reachability()
     
     var listeners = [NetworkStatusListener]()
     
@@ -36,6 +36,7 @@ class InternetConnection: NSObject {
             debugPrint("Network reachable through WiFi")
         case .cellular:
             debugPrint("Network reachable through Cellular Data")
+        default: break
         }
         
         // Sending message to each of the delegates
@@ -58,14 +59,14 @@ class InternetConnection: NSObject {
                                                name: Notification.Name.reachabilityChanged,
                                                object: reachability)
         do{
-            try reachability.startNotifier()
+            try reachability!.startNotifier()
         } catch {
             debugPrint("Could not start reachability notifier")
         }
     }
     
     func stopMonitoring(){
-        reachability.stopNotifier()
+        reachability!.stopNotifier()
         NotificationCenter.default.removeObserver(self,
                                                   name: Notification.Name.reachabilityChanged,
                                                   object: reachability)

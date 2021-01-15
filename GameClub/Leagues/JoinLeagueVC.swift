@@ -31,10 +31,12 @@ class JoinLeagueVC: ParentViewController {
     @IBAction func menuAction(_ sender: Any) {
         openMenu()
     }
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: false)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        roundViewCornersNoShadow(view: sendBT)
-        roundViewCornersNoShadow(view: codeViewContainer)
+        viewConfig()
         if typeLeague == "head" {
             titleLbl.text = "Head to head".localized
             leagueTypeLbl.text = "Join Head to head league".localized
@@ -43,6 +45,7 @@ class JoinLeagueVC: ParentViewController {
             leagueTypeLbl.text = "Join classic league".localized
         }
     }
+    
     func joinLeague (code : String){
         let parameters:[String:Any] = [
             "val_code": code
@@ -63,5 +66,11 @@ class JoinLeagueVC: ParentViewController {
                 //failure
             }
         }
+    }
+    
+    func viewConfig(){
+        roundViewCornersNoShadow(view: sendBT)
+        roundViewCornersNoShadow(view: codeViewContainer)
+        codeTF.delegate = self
     }
 }

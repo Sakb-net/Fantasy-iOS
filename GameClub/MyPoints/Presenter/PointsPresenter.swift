@@ -10,7 +10,7 @@ import Foundation
 
 class PointsPresenter {
     
-    func getHomePoints(onSuccess: @escaping (HomePointsModel, MainData) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
+    func getHomePoints(onSuccess: @escaping (HomePointsModel, MainData, Int) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
     {
         let url = Urls().getHomePoints()
        
@@ -27,19 +27,19 @@ class PointsPresenter {
                 var mainData = MainData()
                 homePointsModel = HomePointsModel(parametersJson: home_points)
                 mainData = MainData(parametersJson: data)
-                onSuccess(homePointsModel, mainData)
+                    onSuccess(homePointsModel, mainData, statusCode)
                 }else {
                     let message = response!["Message"].stringValue
                     onFailure(message, statusCode)
                 }
                 }else{
                     
-                onFailure("Try again Later!", 1000)
+//                onFailure("Try again Later!", 1000)
                 }
         }
     }
     
-    func getPublicPoints(onSuccess: @escaping (PublicPoints) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
+    func getPublicPoints(onSuccess: @escaping (PublicPoints, Int) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
     {
         
         let url = Urls().getPublicPoints()
@@ -53,7 +53,7 @@ class PointsPresenter {
                 let data = response!["data"].dictionaryValue
                     var publicPoints = PublicPoints()
                     publicPoints = PublicPoints(parametersJson: data)
-                    onSuccess(publicPoints)
+                    onSuccess(publicPoints, statusCode)
                 }else {
                     let message = response!["Message"].stringValue
                     onFailure(message, statusCode)
@@ -155,7 +155,7 @@ class PointsPresenter {
                                 }
                                 onSuccess(gwsPointsModels, goalKeepers, defenders, mids, attackers, subs, plan)
                                 }else {
-                                    onFailure("Oops, Error occured",statusCode)
+                                    onFailure("No Points Available".localized,statusCode)
                                 }
                             }else{
                                 onFailure("Oops, Error occured",statusCode)}

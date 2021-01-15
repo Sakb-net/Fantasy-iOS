@@ -7,10 +7,12 @@ import UIKit
 
 class HomePresenter: NSObject {
     
-    func getHomeDetails(onSuccess: @escaping ([Fixtures]) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
+    func getHomeDetails(team_link: String, onSuccess: @escaping ([Fixtures]) -> Void, onFailure: @escaping (String?, Int) -> Void ) -> Void
     {
-        let url = Urls().getFixtures()
-        
+        let url = Urls().getFixtures(link: team_link)
+//        let parameters = [
+//            "team_link" : team_link
+//        ]
         
         ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
             
@@ -22,7 +24,7 @@ class HomePresenter: NSObject {
 //                        var news = [News]() 
 //                        var videos = [Videos]()
                         var fixtures = [Fixtures]()
-                        
+                        if data.count > 0 {
                         for fixtureItem in data[0]["match_group"].arrayValue{
                             fixtures.append(Fixtures(parametersJson: fixtureItem.dictionaryValue))
                         }
@@ -36,6 +38,9 @@ class HomePresenter: NSObject {
 //                        }
                         
                         onSuccess(fixtures)
+                        }else{
+                            onFailure("No Matches Available", -2)
+                        }
                     }else{
                         onFailure("Oops, Error occured", statusCode)
                     }

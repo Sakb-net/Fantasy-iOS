@@ -21,12 +21,22 @@ class Fixtures: NSObject {
     var link_second:String?
     var image_second:String?
     var image_first:String?
+    var code_first:String?
+    var code_second:String?
     var details :DetailsModel?
     override init() {
     }
     
     init(parametersJson: [String: JSON])
     {
+        if let code_first = parametersJson["code_first"]?.stringValue
+        {
+            self.code_first = code_first
+        }
+        if let code_second = parametersJson["code_second"]?.stringValue
+        {
+            self.code_second = code_second
+        }
         if let end_date = parametersJson["end_date"]?.stringValue
         {
             self.end_date = end_date

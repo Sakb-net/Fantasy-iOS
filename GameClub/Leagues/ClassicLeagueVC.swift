@@ -47,6 +47,7 @@ class ClassicLeagueVC: ParentViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        leagueNameTF.delegate = self
         roundViewCornersNoShadow(view: createBT)
         roundViewCornersNoShadow(view: codeViewContainer)
         roundViewCornersNoShadow(view: mainContainer)
@@ -95,15 +96,16 @@ class ClassicLeagueVC: ParentViewController {
             }
         }
     }
-    
 }
 extension ClassicLeagueVC : SelectedDropDownType, navigationForClassicDelegate{
-    func openSettings() {
+    func openSettings(link: String, leagueType: String) {
         let leaguesSettingsViewController = LeaguesSettingsViewController(nibName: "LeaguesSettingsViewController", bundle: nil)
+        leaguesSettingsViewController.link = link
+        leaguesSettingsViewController.leagueType = leagueType
         self.navigationController?.pushViewController(leaguesSettingsViewController, animated: false)
     }
     
-    func openMyLeagues() {
+    func openMyLeagues(){
         let myLeaguesViewController = MyLeaguesViewController(nibName: "MyLeaguesViewController", bundle: nil)
         self.navigationController?.pushViewController(myLeaguesViewController, animated: false)
     }

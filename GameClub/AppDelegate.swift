@@ -5,8 +5,11 @@
 
 import UIKit
 import FBSDKCoreKit
-import Google
-import GoogleSignIn
+
+//GOOGLE
+
+//import Google
+//import GoogleSignIn
 import TwitterKit
 import CoreData
 import Alamofire
@@ -16,22 +19,22 @@ var isNetworkReachable = NetworkReachabilityManager()?.isReachable ?? false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
-    func reset() {
-        let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-                    let stry = UIStoryboard(name: "Main", bundle: nil)
-                    rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "rootnav")
-    }
     
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        GIDSignIn.sharedInstance().clientID = "737315402864-qrhjknekijc1rle19b97ji6erm1l5npk.apps.googleusercontent.com"
+        
+        //GOOGLE
+
+//        GIDSignIn.sharedInstance().clientID = "737315402864-qrhjknekijc1rle19b97ji6erm1l5npk.apps.googleusercontent.com"
         TWTRTwitter.sharedInstance().start(withConsumerKey:"sfGZpg4kz8eYuGhsIa043Vwe6", consumerSecret:"Ma7a81ichwAQfRoreeCliipOew56ky7J5GZJ9PQP3HPSYnTDhd")
         
         let net = NetworkReachabilityManager()
+        
         net?.listener = { status in
             if net?.isReachable ?? false
             {
@@ -73,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         net?.startListening()
         MOLHLanguage.setDefaultLanguage("ar")
         MOLH.shared.specialKeyWords = ["Cancel","Done"]
-        MOLH.shared.activate(true)
+        MOLH.shared.activate(false)
         return true
     }
 
@@ -101,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 
-        let appId: String = Settings.appID
+        let appId: String = Settings.appID!
         if url.scheme != nil && url.scheme!.hasPrefix("fb\(appId)") && url.host ==  "authorize" {
             return ApplicationDelegate.shared.application(app, open: url, options: options)
         }
@@ -126,6 +129,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         
         return handle
     }
+    
+    func reset() {
+        let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+                    let stry = UIStoryboard(name: "Main", bundle: nil)
+                    rootviewcontroller.rootViewController = stry.instantiateViewController(withIdentifier: "rootnav")
+    }
+    
    
 }
 
@@ -135,3 +145,47 @@ extension String {
     }
 }
 
+extension UILabel {
+  open override func awakeFromNib() {
+   super.awakeFromNib()
+    if "lang".localized == "ar" {
+       if textAlignment == .natural {
+           self.textAlignment = .right
+       }
+    }else {
+        if textAlignment == .natural {
+            self.textAlignment = .left
+        }
+    }
+  }
+}
+
+extension UITextField {
+  open override func awakeFromNib() {
+   super.awakeFromNib()
+    if "lang".localized == "ar" {
+       if textAlignment == .natural {
+           self.textAlignment = .right
+       }
+    }else {
+        if textAlignment == .natural {
+            self.textAlignment = .left
+        }
+    }
+  }
+}
+
+extension UITextView {
+  open override func awakeFromNib() {
+   super.awakeFromNib()
+    if "lang".localized == "ar" {
+       if textAlignment == .natural {
+           self.textAlignment = .right
+       }
+    }else {
+        if textAlignment == .natural {
+            self.textAlignment = .left
+        }
+    }
+  }
+}

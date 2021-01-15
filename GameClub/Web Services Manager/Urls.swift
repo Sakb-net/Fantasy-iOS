@@ -229,8 +229,8 @@ class Urls {
         return "\(getCurrentBaseUrl())players_by_type"
     }
     
-    func getFixtures() -> String {
-        return "\(getCurrentBaseUrl())fixtures"
+    func getFixtures(link : String) -> String {
+        return "\(getCurrentBaseUrl())fixtures?team_link=\(link)"
     }
     
     func getTerms() -> String {

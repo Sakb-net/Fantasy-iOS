@@ -7,7 +7,6 @@ import UIKit
 import Reachability
 import NVActivityIndicatorView
 import SDWebImage
-import SwiftSVG
 import SideMenu
 
 class ParentViewController: UIViewController
@@ -124,6 +123,7 @@ extension ParentViewController: NetworkStatusListener, UITextFieldDelegate
            NotificationCenter.default.post(name: Notification.Name("notifyIntetnetStatus"), object: false)
         case .wifi, .cellular:
             NotificationCenter.default.post(name: Notification.Name("notifyIntetnetStatus"), object: true)
+        default: break
         }
     }
     

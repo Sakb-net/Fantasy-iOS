@@ -67,9 +67,9 @@ class MatchDetailsVC: ParentViewController {
                 setImageToView(imageView: firstClubIV, name : fixture.image_first!)
                 setImageToView(imageView: secondClubIV, name : fixture.image_second!)
                 
-                firstClubName.text = fixture.name_first
-                secondClubName.text = fixture.name_second
-                let title = fixture.name_first! + " & " + fixture.name_second!
+                firstClubName.text = fixture.code_first
+                secondClubName.text = fixture.code_second
+                let title = fixture.code_first! + " & " + fixture.code_second!
                 pageTitleLbl.text = title
                 if "lang".localized == "en"{
                     scoreLabel.text = String(fixture.first_goon!) + " - " + String(fixture.second_goon!)
@@ -100,8 +100,8 @@ class MatchDetailsVC: ParentViewController {
         }else {
             let firstTeam = item.first_team
             let secondTeam = item.second_team
-            var firstValueString = ""
-            var secondValueString = ""
+            var firstValueString = " "
+            var secondValueString = " "
             var index = 0
             if !(item.first_team!.isEmpty) {
                 

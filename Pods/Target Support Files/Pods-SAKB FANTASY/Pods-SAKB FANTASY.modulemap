@@ -1,0 +1,6 @@
+framework module Pods_SAKB_FANTASY {
+  umbrella header "Pods-SAKB FANTASY-umbrella.h"
+
+  export *
+  module * { export * }
+}

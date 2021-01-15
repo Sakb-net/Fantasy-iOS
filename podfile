@@ -1,9 +1,8 @@
 use_frameworks!
-target 'GameClub' do
-    pod 'FBSDKLoginKit'
-    pod 'FBSDKCoreKit'
-    pod 'Google/SignIn'
-    pod 'TwitterKit'
+target 'SAKB FANTASY' do
+    pod 'FBSDKLoginKit', '~> 5.5'
+    pod 'FBSDKCoreKit', '~> 5.5'
+    pod 'TwitterKit5'
     pod 'SkyFloatingLabelTextField', '~> 3.0'
     pod 'SideMenu'
     pod 'Alamofire', '~> 4.7'
@@ -11,7 +10,5 @@ target 'GameClub' do
     pod 'ReachabilitySwift'
     pod 'NVActivityIndicatorView'
     pod 'SDWebImage/WebP'
-    pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
-    pod 'SwiftSVG', '~> 2.0'
     pod 'MOLH'
 end

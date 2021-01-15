@@ -53,7 +53,7 @@ class LeagueStandingsViewModel {
     }
     
     func getMatchCellVM(indexPath: IndexPath) -> MatchStandingsCellViewModel {
-        return matchCellsViewModels[indexPath.row - 1]
+        return matchCellsViewModels[indexPath.row]
     }
     
     private func createCellsVMs(players: [LeaguePlayer]) {

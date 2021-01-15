@@ -9,7 +9,7 @@
 import UIKit
 
 class NameTeamPopUp: ParentViewController {
-
+    var delegate : TeamSaved?
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var saveBT: UIButton!
@@ -29,6 +29,9 @@ class NameTeamPopUp: ParentViewController {
         self.showLoader()
         self.nameTeam(name: name, onSuccess: { (message) in
 //            self.showAlert(title: "", message: message, shouldpop: false)
+            DispatchQueue.main.async {
+                self.delegate?.TeamIsSaved()
+            }
             self.dismiss(animated: true, completion: nil)
             let email = User.shared().email
             UserDefaults.standard.set(1, forKey: (email ?? ""))
@@ -43,6 +46,7 @@ class NameTeamPopUp: ParentViewController {
     func viewConfig(){
         roundViewCorners(view: self.popUpView)
         roundViewCornersNoShadow(view: self.saveBT)
+        nameTF.delegate = self
     }
 
     func nameTeam(name:String, onSuccess: @escaping (String) -> Void, onFailure: @escaping (String?) -> Void ) -> Void
