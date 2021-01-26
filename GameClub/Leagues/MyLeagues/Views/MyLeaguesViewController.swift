@@ -131,9 +131,11 @@ extension MyLeaguesViewController : UITableViewDelegate, UITableViewDataSource, 
         myLeaguePopUp.leagueType = leagueType
         present(myLeaguePopUp, animated: true, completion: nil)
     }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return viewModel.numberOfClassicCells + 1

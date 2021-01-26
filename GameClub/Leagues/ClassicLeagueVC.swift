@@ -53,6 +53,9 @@ class ClassicLeagueVC: ParentViewController {
         roundViewCornersNoShadow(view: mainContainer)
         getGameWeeks ()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        leagueNameTF.text = ""
+    }
     
     func createLeague (name : String){
         let parameters:[String:Any] = [
@@ -68,8 +71,12 @@ class ClassicLeagueVC: ParentViewController {
                 let data = response!["data"]["status"].intValue
                 if data == 1 {
                     let code = response!["data"]["group_eldwry"]["code"].stringValue
+                    let link = response!["data"]["group_eldwry"]["link"].stringValue
+
                     let classicLeaguePopUp = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ClassicLeaguePopUp") as! ClassicLeaguePopUp
                     classicLeaguePopUp.code = code
+                    classicLeaguePopUp.link = link
+                    classicLeaguePopUp.leagueType = "classic"
                     classicLeaguePopUp.delegate = self
                     self.present(classicLeaguePopUp, animated: true
                         , completion: nil)

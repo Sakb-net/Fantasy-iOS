@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "W"; ObjectID = "FDX-bD-PoV"; */
+"FDX-bD-PoV.text" = "ف";
+
+/* Class = "UILabel"; text = "Teams"; ObjectID = "LCS-aO-PpI"; */
+"LCS-aO-PpI.text" = "فرق";
+
+/* Class = "UILabel"; text = "L"; ObjectID = "icQ-B5-svm"; */
+"icQ-B5-svm.text" = "خ";
+
+/* Class = "UILabel"; text = "D"; ObjectID = "sN6-mW-N7o"; */
+"sN6-mW-N7o.text" = "ت";
+
+/* Class = "UILabel"; text = "Plays"; ObjectID = "str-rp-hd3"; */
+"str-rp-hd3.text" = "لعب";
+
+/* Class = "UILabel"; text = "Pts"; ObjectID = "yG3-or-voN"; */
+"yG3-or-voN.text" = "نقاط";

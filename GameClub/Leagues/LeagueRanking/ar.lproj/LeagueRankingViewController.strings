@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "home - away"; ObjectID = "O0Y-aW-NBV"; */
+"O0Y-aW-NBV.placeholder" = "علي أرضه ام لا";
+
+/* Class = "UITextField"; placeholder = "win - lose"; ObjectID = "Xnd-pZ-5Wm"; */
+"Xnd-pZ-5Wm.placeholder" = "الفوز أو الخسارة";
+
+/* Class = "UILabel"; text = "League Ranking"; ObjectID = "Xx8-a9-DUK"; */
+"Xx8-a9-DUK.text" = "ترتيب الدوري";
+
+/* Class = "UITextField"; placeholder = "game week"; ObjectID = "eVK-eM-L4L"; */
+"eVK-eM-L4L.placeholder" = "عرض حسب الجولة";

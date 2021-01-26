@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90T-wb-Mee">
-                                <rect key="frame" x="10" y="88" width="61" height="62"/>
+                                <rect key="frame" x="10" y="88" width="61" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="61" id="Rdp-FD-1Ha"/>
                                 </constraints>
@@ -40,16 +40,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRJ-XC-1xk">
-                                <rect key="frame" x="46" y="140" width="322" height="33.5"/>
+                                <rect key="frame" x="46" y="140" width="322" height="35.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Pkv-mI-Au3">
-                                <rect key="frame" x="46" y="209.5" width="318" height="150"/>
+                                <rect key="frame" x="46" y="211.5" width="318" height="178"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwG-hx-5KR" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="39.5"/>
                                         <color key="tintColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -72,7 +72,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4N-ug-lhw" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="60" width="318" height="30"/>
+                                        <rect key="frame" x="0.0" y="69.5" width="318" height="39"/>
                                         <color key="tintColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -95,7 +95,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUX-Da-YdE">
-                                        <rect key="frame" x="0.0" y="120" width="318" height="30"/>
+                                        <rect key="frame" x="0.0" y="138.5" width="318" height="39.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="15"/>
                                         <state key="normal" title="Forget Password?">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,10 +107,10 @@
                                 </subviews>
                             </stackView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="BsF-XY-wGm">
-                                <rect key="frame" x="76" y="462" width="263.5" height="48"/>
+                                <rect key="frame" x="4.5" y="492" width="407" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heb-rB-MBZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="google">
@@ -121,7 +121,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fx5-fl-QWM">
-                                        <rect key="frame" x="107.5" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="155" y="0.0" width="96" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="twitter">
@@ -132,7 +132,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBW-gf-Fu8">
-                                        <rect key="frame" x="215.5" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="311" y="0.0" width="96" height="48"/>
                                         <state key="normal" image="facebook"/>
                                         <connections>
                                             <action selector="FacebookLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8xa-ll-zsh"/>
@@ -144,7 +144,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxW-Ts-Hba">
-                                <rect key="frame" x="70" y="429.5" width="275" height="35"/>
+                                <rect key="frame" x="70" y="459.5" width="275" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djn-6n-L6s">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="35"/>
@@ -162,7 +162,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNl-Ty-285">
-                                <rect key="frame" x="50" y="367" width="318" height="42.5"/>
+                                <rect key="frame" x="50" y="397" width="318" height="42.5"/>
                                 <color key="backgroundColor" red="0.92941176470588238" green="0.23137254901960785" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42.5" id="dic-el-nP7"/>
@@ -176,20 +176,20 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="او" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r0-SS-bHp">
-                                <rect key="frame" x="198.5" y="430" width="12.5" height="20.5"/>
+                                <rect key="frame" x="198.5" y="460" width="12.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2s-ev-EmM">
-                                <rect key="frame" x="225.5" y="439" width="120.5" height="1.5"/>
+                                <rect key="frame" x="225.5" y="469" width="120.5" height="1.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1.5" id="ILt-6r-FMA"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6a-oL-Zn3">
-                                <rect key="frame" x="65" y="439" width="120.5" height="1.5"/>
+                                <rect key="frame" x="65" y="469" width="120.5" height="1.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1.5" id="Vvt-Oe-Dyw"/>
@@ -314,7 +314,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHO-jP-GYn">
-                                        <rect key="frame" x="141" y="198" width="92.5" height="21"/>
+                                        <rect key="frame" x="135.5" y="198" width="103" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                         <state key="normal" title="Edit profile" image="edit">
                                             <color key="titleColor" red="0.0" green="0.72549019609999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -483,14 +483,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A60-Pr-InA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A60-Pr-InA">
                                             <rect key="frame" x="177" y="46" width="62" height="30"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBB-qN-ysV">
-                                            <rect key="frame" x="152" y="98" width="110.5" height="14"/>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBB-qN-ysV">
+                                            <rect key="frame" x="146.5" y="98" width="121" height="14"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="11"/>
                                             <state key="normal" title=" تعديل الملف الشخصي" image="edit">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1400,7 +1400,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="222"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xib-wj-Inc">
-                                                        <rect key="frame" x="361" y="44" width="24" height="40"/>
+                                                        <rect key="frame" x="337" y="44" width="48" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="XZS-7G-4ey"/>
                                                         </constraints>
@@ -1410,7 +1410,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygs-re-1fm">
-                                                        <rect key="frame" x="307" y="44" width="46" height="40"/>
+                                                        <rect key="frame" x="283" y="44" width="46" height="40"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2304,7 +2304,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-hh-jzw">
-                                <rect key="frame" x="370" y="67" width="24" height="24"/>
+                                <rect key="frame" x="346" y="67" width="48" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="AoD-GV-HyY"/>
                                 </constraints>
@@ -2314,7 +2314,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-ON-Yg5">
-                                <rect key="frame" x="196" y="69" width="166" height="21"/>
+                                <rect key="frame" x="172" y="69" width="166" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="C5I-zM-PlE"/>
                                     <constraint firstAttribute="width" constant="166" id="nQe-rP-uY3"/>
@@ -2446,7 +2446,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lc1-Dw-bp5">
-                                <rect key="frame" x="370" y="56" width="24" height="24"/>
+                                <rect key="frame" x="370" y="56" width="24" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="N38-cU-yq0"/>
                                 </constraints>
@@ -2456,7 +2456,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact US" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2um-PF-VFt">
-                                <rect key="frame" x="76" y="58" width="286" height="21"/>
+                                <rect key="frame" x="76" y="58" width="286" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="286" id="MSA-YI-q4X"/>
                                 </constraints>
@@ -2465,7 +2465,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eO2-QV-WQq">
-                                <rect key="frame" x="20" y="154" width="374" height="318"/>
+                                <rect key="frame" x="20" y="178" width="374" height="318"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="Xpx-rW-ZoP">
                                         <rect key="frame" x="336" y="29" width="28" height="30"/>
@@ -2614,19 +2614,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgeet Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-5b-qBu">
-                                <rect key="frame" x="39" y="140" width="336" height="33"/>
+                                <rect key="frame" x="39" y="172" width="336" height="33"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your E-mail" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHp-Z6-z0c">
-                                <rect key="frame" x="39" y="196" width="336" height="20.5"/>
+                                <rect key="frame" x="39" y="228" width="336" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4J4-pA-n0t" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="39" y="267" width="336" height="21"/>
+                                <rect key="frame" x="39" y="299" width="336" height="43"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
@@ -2648,7 +2648,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCx-XO-GmA">
-                                <rect key="frame" x="39" y="312.5" width="336" height="42"/>
+                                <rect key="frame" x="39" y="366.5" width="336" height="42"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.23137254900000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="VLj-4y-4Zh"/>
@@ -2662,7 +2662,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-6e-GOG">
-                                <rect key="frame" x="20" y="65" width="32" height="32"/>
+                                <rect key="frame" x="20" y="65" width="64" height="64"/>
                                 <state key="normal" image="back_bt"/>
                                 <connections>
                                     <action selector="backAction:" destination="dro-a8-urc" eventType="touchUpInside" id="2zF-H7-sZp"/>
@@ -2714,7 +2714,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjf-0T-Im8">
-                                <rect key="frame" x="45" y="278" width="325" height="42"/>
+                                <rect key="frame" x="45" y="353.5" width="325" height="42"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.23137254900000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="arK-ye-8Oi"/>
@@ -2728,13 +2728,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlr-YK-WCR">
-                                <rect key="frame" x="45" y="80" width="325" height="31.5"/>
+                                <rect key="frame" x="45" y="112" width="325" height="31.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RzJ-1g-2B7" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="45" y="161" width="325" height="21"/>
+                                <rect key="frame" x="45" y="193" width="325" height="43"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -2759,7 +2759,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0kE-6a-I4b" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="45" y="204" width="325" height="21"/>
+                                <rect key="frame" x="45" y="258" width="325" height="42.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -2784,7 +2784,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y1-eX-CbQ">
-                                <rect key="frame" x="20" y="26" width="32" height="32"/>
+                                <rect key="frame" x="20" y="26" width="64" height="64"/>
                                 <state key="normal" image="back_bt"/>
                                 <connections>
                                     <action selector="backAction:" destination="StD-dF-ifd" eventType="touchUpInside" id="BeJ-cT-Pxp"/>
@@ -2855,7 +2855,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ow5-EV-fdl">
-                                <rect key="frame" x="370" y="62" width="24" height="24"/>
+                                <rect key="frame" x="346" y="62" width="48" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="TOc-CG-Utr"/>
                                 </constraints>
@@ -2868,7 +2868,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Player" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EB-iM-ZNa">
-                                <rect key="frame" x="246" y="62" width="116" height="24"/>
+                                <rect key="frame" x="222" y="62" width="116" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="MUS-Q2-OSB"/>
                                     <constraint firstAttribute="width" constant="116" id="N2F-Xv-iwa"/>
@@ -3333,10 +3333,10 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lFa-x5-xDj">
-                                                <rect key="frame" x="40" y="204" width="334" height="299"/>
+                                                <rect key="frame" x="40" y="204" width="334" height="455"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Name" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ink-lc-k2D" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="39.5"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3359,7 +3359,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-ja-vfz" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="47" width="334" height="17"/>
+                                                        <rect key="frame" x="0.0" y="69.5" width="334" height="39"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -3382,7 +3382,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9h2-qU-GfB" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="94" width="334" height="17"/>
+                                                        <rect key="frame" x="0.0" y="138.5" width="334" height="39.5"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -3405,7 +3405,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWq-fP-ye2" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="141" width="334" height="17"/>
+                                                        <rect key="frame" x="0.0" y="208" width="334" height="39"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -3428,7 +3428,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3M-PJ-SG7" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="188" width="334" height="17"/>
+                                                        <rect key="frame" x="0.0" y="277" width="334" height="39.5"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3451,7 +3451,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="City" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJM-vj-Xxo" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="235" width="334" height="17"/>
+                                                        <rect key="frame" x="0.0" y="346.5" width="334" height="39"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3474,7 +3474,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="Region" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQE-NX-Ekt" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="0.0" y="282" width="334" height="17"/>
+                                                        <rect key="frame" x="0.0" y="415.5" width="334" height="39.5"/>
                                                         <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3505,7 +3505,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heS-Ey-deO">
-                                                <rect key="frame" x="48" y="526" width="318" height="49"/>
+                                                <rect key="frame" x="48" y="682" width="318" height="49"/>
                                                 <color key="backgroundColor" red="0.92941176469999998" green="0.23137254900000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="z8w-lo-9cz"/>
@@ -3530,10 +3530,10 @@
                                                 </connections>
                                             </button>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="sqd-0j-fAY">
-                                                <rect key="frame" x="77.5" y="642" width="259.5" height="48"/>
+                                                <rect key="frame" x="5.5" y="798" width="403" height="96"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efq-GJ-7hh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="95" height="96"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" image="google">
@@ -3544,7 +3544,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwh-eE-lzc">
-                                                        <rect key="frame" x="105.5" y="0.0" width="48" height="48"/>
+                                                        <rect key="frame" x="153" y="0.0" width="96" height="96"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" image="twitter">
@@ -3555,7 +3555,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5r-xg-maO">
-                                                        <rect key="frame" x="211.5" y="0.0" width="48" height="48"/>
+                                                        <rect key="frame" x="307" y="0.0" width="96" height="96"/>
                                                         <state key="normal" image="facebook"/>
                                                         <connections>
                                                             <action selector="facebookLoginAction:" destination="SM9-0U-FXQ" eventType="touchUpInside" id="eoh-1p-ajE"/>
@@ -3564,7 +3564,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or" translatesAutoresizingMaskIntoConstraints="NO" id="nAR-bj-AiF">
-                                                <rect key="frame" x="70" y="599" width="274" height="35"/>
+                                                <rect key="frame" x="70" y="755" width="274" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="V1e-EH-0jn"/>
                                                 </constraints>
@@ -7589,7 +7589,7 @@
                                                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 </view>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tm8-rh-bCb">
-                                                                                                    <rect key="frame" x="10" y="8" width="42.5" height="60"/>
+                                                                                                    <rect key="frame" x="-11.5" y="8" width="85.5" height="60"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="60" id="vg0-hW-wCW"/>
                                                                                                     </constraints>
@@ -7664,7 +7664,7 @@
                                                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 </view>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtH-AY-KeO">
-                                                                                                    <rect key="frame" x="10" y="8" width="42.5" height="60"/>
+                                                                                                    <rect key="frame" x="-11.5" y="8" width="85" height="60"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="60" id="Lbw-Bx-5Ol"/>
                                                                                                     </constraints>
@@ -7742,7 +7742,7 @@
                                                                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 </view>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0v-aP-R5X">
-                                                                                                    <rect key="frame" x="10" y="8" width="42.5" height="60"/>
+                                                                                                    <rect key="frame" x="-11.5" y="8" width="85" height="60"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="60" id="Gh6-fk-LMg"/>
                                                                                                     </constraints>
@@ -11179,7 +11179,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ung-C6-uV2">
-                                <rect key="frame" x="370" y="56" width="24" height="24"/>
+                                <rect key="frame" x="370" y="56" width="24" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="04t-DZ-YwN"/>
                                 </constraints>
@@ -11189,7 +11189,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انضم إلي الدوريات الأقوي" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhM-Bd-MfD">
-                                <rect key="frame" x="76" y="58" width="286" height="21"/>
+                                <rect key="frame" x="76" y="58" width="286" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="286" id="6Sa-gS-JEM"/>
                                 </constraints>
@@ -11198,7 +11198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDc-Af-G8Q">
-                                <rect key="frame" x="20" y="103" width="374" height="495"/>
+                                <rect key="frame" x="20" y="127" width="374" height="495"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدوريات الأقوي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eza-4i-eeD">
                                         <rect key="frame" x="40" y="21" width="293" height="31"/>
@@ -11527,7 +11527,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسم الدوري" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU7-fi-X01">
-                                        <rect key="frame" x="144.5" y="150" width="85.5" height="34"/>
+                                        <rect key="frame" x="148" y="150" width="78" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Zk6-mR-UGy"/>
@@ -12398,7 +12398,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJe-gD-KZJ">
-                                <rect key="frame" x="370" y="62" width="24" height="24"/>
+                                <rect key="frame" x="346" y="62" width="48" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="vcl-Ib-A21"/>
                                 </constraints>
@@ -12411,7 +12411,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TjW-us-SPe">
-                                <rect key="frame" x="279" y="62" width="83" height="24"/>
+                                <rect key="frame" x="255" y="62" width="83" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="adt-c7-l6c"/>
                                     <constraint firstAttribute="width" constant="83" id="tRC-A6-Y6m"/>
@@ -13157,32 +13157,32 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1o-3m-zZb">
-                                                                    <rect key="frame" x="9" y="14" width="60" height="21"/>
+                                                                    <rect key="frame" x="6" y="14" width="50" height="21"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="60" id="92W-Fi-j0P"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="92W-Fi-j0P"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45Q-cw-qMw">
-                                                                    <rect key="frame" x="329" y="0.0" width="2" height="49"/>
+                                                                    <rect key="frame" x="339" y="0.0" width="2" height="49"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="2" id="apc-me-zYm"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHe-qi-SA0">
-                                                                    <rect key="frame" x="77" y="0.0" width="2" height="49"/>
+                                                                    <rect key="frame" x="67" y="0.0" width="2" height="49"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="2" id="05I-Cz-EIC"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKr-6V-0VQ">
-                                                                    <rect key="frame" x="342" y="14" width="60" height="21"/>
+                                                                    <rect key="frame" x="352" y="14" width="50" height="21"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="60" id="va6-vN-uW7"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="va6-vN-uW7"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -13196,8 +13196,8 @@
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="C1o-3m-zZb" firstAttribute="leading" secondItem="Oh2-hM-bxt" secondAttribute="leading" constant="9" id="0J9-Fp-yR5"/>
-                                                                <constraint firstItem="iHe-qi-SA0" firstAttribute="leading" secondItem="C1o-3m-zZb" secondAttribute="trailing" constant="8" id="6P4-nw-hVU"/>
+                                                                <constraint firstItem="C1o-3m-zZb" firstAttribute="leading" secondItem="Oh2-hM-bxt" secondAttribute="leading" constant="6" id="0J9-Fp-yR5"/>
+                                                                <constraint firstItem="iHe-qi-SA0" firstAttribute="leading" secondItem="C1o-3m-zZb" secondAttribute="trailing" constant="11" id="6P4-nw-hVU"/>
                                                                 <constraint firstItem="m3S-ba-d9H" firstAttribute="centerX" secondItem="Oh2-hM-bxt" secondAttribute="centerX" id="Enx-eT-YZi"/>
                                                                 <constraint firstAttribute="bottom" secondItem="eKr-6V-0VQ" secondAttribute="bottom" constant="14" id="IKl-Zq-imz"/>
                                                                 <constraint firstItem="eKr-6V-0VQ" firstAttribute="leading" secondItem="45Q-cw-qMw" secondAttribute="trailing" constant="11" id="OEr-qR-4CR"/>
@@ -13223,39 +13223,30 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJc-fp-e7p">
-                                                                    <rect key="frame" x="355" y="14" width="39" height="21"/>
+                                                                    <rect key="frame" x="351" y="14" width="50" height="21"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="39" id="9Ch-GQ-TtU"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="9Ch-GQ-TtU"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaG-Qa-8bZ">
-                                                                    <rect key="frame" x="20" y="14" width="35" height="21"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="35" id="0Ys-f7-gkD"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vup-G5-QP7">
-                                                                    <rect key="frame" x="329" y="0.0" width="2" height="49"/>
+                                                                    <rect key="frame" x="339" y="0.0" width="2" height="49"/>
                                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="2" id="lAO-2e-CB9"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYe-v5-MST">
-                                                                    <rect key="frame" x="77" y="0.0" width="2" height="49"/>
+                                                                    <rect key="frame" x="67" y="0.0" width="2" height="49"/>
                                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="2" id="jja-Ts-lIP"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0-0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pks-7a-qDp">
-                                                                    <rect key="frame" x="179" y="11" width="51" height="27"/>
+                                                                    <rect key="frame" x="181.5" y="11" width="51" height="27"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="51" id="vOx-X3-Ygm"/>
@@ -13265,20 +13256,29 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التعاون" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk6-ek-aZV">
-                                                                    <rect key="frame" x="84" y="11" width="85" height="27"/>
+                                                                    <rect key="frame" x="74" y="11" width="85" height="27"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="85" id="Ty1-mp-B8L"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الأهلي" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj8-x2-mFl">
-                                                                    <rect key="frame" x="240" y="11" width="85" height="27"/>
+                                                                    <rect key="frame" x="254" y="11" width="80" height="27"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="85" id="yGd-s3-7Tp"/>
+                                                                        <constraint firstAttribute="width" constant="80" id="yGd-s3-7Tp"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="11"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaG-Qa-8bZ">
+                                                                    <rect key="frame" x="6" y="14" width="50" height="21"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="0Ys-f7-gkD"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -13286,21 +13286,20 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="eaG-Qa-8bZ" secondAttribute="bottom" constant="3" id="1oM-wF-cWQ"/>
                                                                 <constraint firstAttribute="bottom" secondItem="NYe-v5-MST" secondAttribute="bottom" id="299-z7-iko"/>
-                                                                <constraint firstItem="yJc-fp-e7p" firstAttribute="trailing" secondItem="MSZ-2d-z7Y" secondAttribute="trailingMargin" id="4yv-GJ-feT"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="rk6-ek-aZV" secondAttribute="bottom" id="6or-da-ahs"/>
                                                                 <constraint firstItem="Vup-G5-QP7" firstAttribute="top" secondItem="MSZ-2d-z7Y" secondAttribute="top" id="7UX-rQ-po5"/>
+                                                                <constraint firstItem="eaG-Qa-8bZ" firstAttribute="leading" secondItem="MSZ-2d-z7Y" secondAttribute="leading" constant="6" id="Bsn-Pz-nzS"/>
                                                                 <constraint firstItem="rk6-ek-aZV" firstAttribute="top" secondItem="MSZ-2d-z7Y" secondAttribute="topMargin" id="Crl-me-YT0"/>
+                                                                <constraint firstItem="pks-7a-qDp" firstAttribute="centerX" secondItem="MSZ-2d-z7Y" secondAttribute="centerX" id="GKW-oO-PxY"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="nj8-x2-mFl" secondAttribute="bottom" id="I56-OR-e1d"/>
-                                                                <constraint firstItem="Vup-G5-QP7" firstAttribute="leading" secondItem="nj8-x2-mFl" secondAttribute="trailing" constant="4" id="O4Q-rq-S1I"/>
-                                                                <constraint firstItem="pks-7a-qDp" firstAttribute="leading" secondItem="rk6-ek-aZV" secondAttribute="trailing" constant="10" id="P2c-8s-j1d"/>
+                                                                <constraint firstItem="Vup-G5-QP7" firstAttribute="leading" secondItem="nj8-x2-mFl" secondAttribute="trailing" constant="5" id="O4Q-rq-S1I"/>
                                                                 <constraint firstItem="nj8-x2-mFl" firstAttribute="top" secondItem="MSZ-2d-z7Y" secondAttribute="topMargin" id="Vv8-lP-khy"/>
-                                                                <constraint firstItem="nj8-x2-mFl" firstAttribute="leading" secondItem="pks-7a-qDp" secondAttribute="trailing" constant="10" id="XFr-Kn-Cbc"/>
-                                                                <constraint firstItem="yJc-fp-e7p" firstAttribute="leading" secondItem="Vup-G5-QP7" secondAttribute="trailing" constant="24" id="ZCv-0T-hJN"/>
+                                                                <constraint firstItem="yJc-fp-e7p" firstAttribute="leading" secondItem="Vup-G5-QP7" secondAttribute="trailing" constant="10" id="ZCv-0T-hJN"/>
                                                                 <constraint firstItem="pks-7a-qDp" firstAttribute="top" secondItem="MSZ-2d-z7Y" secondAttribute="topMargin" id="dkL-UB-F5v"/>
-                                                                <constraint firstItem="NYe-v5-MST" firstAttribute="leading" secondItem="eaG-Qa-8bZ" secondAttribute="trailing" constant="22" id="mRc-VM-Zho"/>
+                                                                <constraint firstAttribute="trailing" secondItem="yJc-fp-e7p" secondAttribute="trailing" constant="13" id="kqp-YU-xNB"/>
+                                                                <constraint firstItem="NYe-v5-MST" firstAttribute="leading" secondItem="eaG-Qa-8bZ" secondAttribute="trailing" constant="11" id="mRc-VM-Zho"/>
                                                                 <constraint firstItem="pks-7a-qDp" firstAttribute="bottom" secondItem="MSZ-2d-z7Y" secondAttribute="bottomMargin" id="n5K-eJ-8QV"/>
                                                                 <constraint firstItem="eaG-Qa-8bZ" firstAttribute="top" secondItem="MSZ-2d-z7Y" secondAttribute="topMargin" constant="3" id="ovq-6D-fOg"/>
-                                                                <constraint firstItem="eaG-Qa-8bZ" firstAttribute="leading" secondItem="MSZ-2d-z7Y" secondAttribute="leadingMargin" id="pgV-Dy-2BZ"/>
                                                                 <constraint firstItem="rk6-ek-aZV" firstAttribute="leading" secondItem="NYe-v5-MST" secondAttribute="trailing" constant="5" id="tRn-Md-q6o"/>
                                                                 <constraint firstItem="NYe-v5-MST" firstAttribute="top" secondItem="MSZ-2d-z7Y" secondAttribute="top" id="tvk-c0-1iy"/>
                                                                 <constraint firstItem="yJc-fp-e7p" firstAttribute="top" secondItem="MSZ-2d-z7Y" secondAttribute="topMargin" constant="3" id="wY0-pD-eEN"/>
@@ -14366,7 +14365,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="222"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKH-Sj-eBr">
-                                                <rect key="frame" x="361" y="44" width="24" height="40"/>
+                                                <rect key="frame" x="337" y="44" width="48" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="0ey-5m-lah"/>
                                                 </constraints>
@@ -14376,7 +14375,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSQ-wT-f0t">
-                                                <rect key="frame" x="307" y="44" width="46" height="40"/>
+                                                <rect key="frame" x="283" y="44" width="46" height="40"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>

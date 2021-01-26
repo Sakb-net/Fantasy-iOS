@@ -5,6 +5,9 @@
 import UIKit
 
 enum Color {
+    case winColor
+    case drawColor
+    case lossColor
     case notifyBTSelected
     case selectedCell
     case theme

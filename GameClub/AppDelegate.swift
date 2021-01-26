@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let leaguesSettingsViewController = LeagueRankingViewController(nibName: "LeagueRankingViewController", bundle: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = leaguesSettingsViewController
         
         // Override point for customization after application launch.
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)

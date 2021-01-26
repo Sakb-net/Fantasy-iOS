@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Reg.ttf">
+            <string>HelveticaNeueW23forSKY-Reg</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeagueRankingCell" rowHeight="58" id="KGk-i7-Jjw" customClass="LeagueRankingCell" customModule="SAKB_FANTASY" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="418" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="418" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1Mg-ib-5hv">
+                        <rect key="frame" x="122" y="0.0" width="252" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imD-ZM-TIR">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="utr-yX-kct"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-W2-DDw">
+                                <rect key="frame" x="42" y="0.0" width="42" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-pA-GWT">
+                                <rect key="frame" x="84" y="0.0" width="42" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbC-F8-YDo">
+                                <rect key="frame" x="126" y="0.0" width="42" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsX-Iz-RJn">
+                                <rect key="frame" x="168" y="0.0" width="42" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idC-Y8-unG">
+                                <rect key="frame" x="210" y="0.0" width="42" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQw-Qo-b8c">
+                        <rect key="frame" x="6" y="21" width="13" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="kLI-PC-ucX"/>
+                            <constraint firstAttribute="width" constant="13" id="owC-tJ-NnQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IxL-Ko-oDU">
+                        <rect key="frame" x="22" y="14" width="31" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="31" id="Riv-fK-LEW"/>
+                            <constraint firstAttribute="height" constant="31" id="p0k-uM-T3G"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd6-WO-2Vc">
+                        <rect key="frame" x="61" y="19" width="53" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="53" id="dgv-2n-2RR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUY-Ce-hW1">
+                        <rect key="frame" x="382" y="19" width="25" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="paN-co-chT"/>
+                            <constraint firstAttribute="width" constant="25" id="rtN-eA-XTv"/>
+                        </constraints>
+                        <state key="normal" image="down-arrow2"/>
+                        <connections>
+                            <action selector="dropDownAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dzC-Ec-3RQ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Zd6-WO-2Vc" secondAttribute="bottom" constant="20" id="1PM-YR-hud"/>
+                    <constraint firstAttribute="bottom" secondItem="AUY-Ce-hW1" secondAttribute="bottom" constant="19" id="AvJ-BR-diW"/>
+                    <constraint firstItem="sQw-Qo-b8c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="Cjb-dR-V2J"/>
+                    <constraint firstItem="IxL-Ko-oDU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="Fbd-W3-JcH"/>
+                    <constraint firstItem="AUY-Ce-hW1" firstAttribute="leading" secondItem="1Mg-ib-5hv" secondAttribute="trailing" constant="8" id="OQK-6A-S4E"/>
+                    <constraint firstItem="1Mg-ib-5hv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OxL-MM-BmE"/>
+                    <constraint firstItem="Zd6-WO-2Vc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="PlA-Ph-2W0"/>
+                    <constraint firstItem="IxL-Ko-oDU" firstAttribute="leading" secondItem="sQw-Qo-b8c" secondAttribute="trailing" constant="3" id="STe-N0-BaH"/>
+                    <constraint firstItem="sQw-Qo-b8c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="UhU-1l-q50"/>
+                    <constraint firstItem="1Mg-ib-5hv" firstAttribute="leading" secondItem="Zd6-WO-2Vc" secondAttribute="trailing" constant="8" id="Vjg-Fr-0m3"/>
+                    <constraint firstAttribute="bottom" secondItem="sQw-Qo-b8c" secondAttribute="bottom" constant="21" id="cvr-K0-anP"/>
+                    <constraint firstItem="AUY-Ce-hW1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="gjv-tq-yc7"/>
+                    <constraint firstAttribute="bottom" secondItem="1Mg-ib-5hv" secondAttribute="bottom" id="nRP-RH-vDc"/>
+                    <constraint firstItem="Zd6-WO-2Vc" firstAttribute="leading" secondItem="IxL-Ko-oDU" secondAttribute="trailing" constant="8" id="phK-q2-139"/>
+                    <constraint firstAttribute="trailing" secondItem="AUY-Ce-hW1" secondAttribute="trailing" constant="11" id="rQX-gV-RUL"/>
+                    <constraint firstAttribute="bottom" secondItem="IxL-Ko-oDU" secondAttribute="bottom" constant="15" id="vLq-08-Ox1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="drawLbl" destination="uy6-pA-GWT" id="Dj5-aX-PoU"/>
+                <outlet property="dropDownBT" destination="AUY-Ce-hW1" id="zdr-yc-cIu"/>
+                <outlet property="lossLbl" destination="wbC-F8-YDo" id="FXa-FW-VJm"/>
+                <outlet property="playsLbl" destination="imD-ZM-TIR" id="e2T-YE-afV"/>
+                <outlet property="pointsLbl" destination="idC-Y8-unG" id="Ay0-BA-xeW"/>
+                <outlet property="rankLbl" destination="sQw-Qo-b8c" id="EC2-DM-nVN"/>
+                <outlet property="teamLogoIV" destination="IxL-Ko-oDU" id="yjo-a6-OVd"/>
+                <outlet property="teamNameLbl" destination="Zd6-WO-2Vc" id="g9s-W6-Etg"/>
+                <outlet property="teamsLbl" destination="TsX-Iz-RJn" id="8fE-5d-gB2"/>
+                <outlet property="winLbl" destination="1fW-W2-DDw" id="rQr-By-XIn"/>
+            </connections>
+            <point key="canvasLocation" x="134.78260869565219" y="132.58928571428572"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="down-arrow2" width="10.5" height="10.5"/>
+    </resources>
+</document>

@@ -63,7 +63,14 @@ extension Color {
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))
         case .notifyBTSelected:
             instanceColor = UIColor(hexString: "#C2C2C2")
+        case .winColor:
+            instanceColor = UIColor(hexString: "#00B966")
+        case .drawColor:
+            instanceColor = UIColor(hexString: "#515151")
+        case .lossColor:
+            instanceColor = UIColor(hexString: "#ED3B39")
         }
         return instanceColor
     }
 }
+

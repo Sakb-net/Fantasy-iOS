@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueW23forSKY-Reg.ttf">
+            <string>HelveticaNeueW23forSKY-Reg</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueRankingViewController" customModule="SAKB_FANTASY" customModuleProvider="target">
+            <connections>
+                <outlet property="gameWeekDropDown" destination="5hz-2h-LSs" id="HH9-6x-XVY"/>
+                <outlet property="gameWeekTF" destination="eVK-eM-L4L" id="uNY-De-Uqs"/>
+                <outlet property="homeAwayDropDown" destination="oB5-i1-rhB" id="zyd-tH-qD8"/>
+                <outlet property="homeAwayTF" destination="O0Y-aW-NBV" id="hba-wn-6Yj"/>
+                <outlet property="indicator" destination="GSI-lL-uer" id="yRR-Zh-OZR"/>
+                <outlet property="noDataLbl" destination="cvZ-lF-UDB" id="fZ9-JF-PXz"/>
+                <outlet property="tableView" destination="d3z-Mn-fin" id="jnh-Mc-9ha"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="winLoseDropDown" destination="hM5-5Z-Jmw" id="9Bk-t2-MqT"/>
+                <outlet property="winLoseTF" destination="Xnd-pZ-5Wm" id="xpO-C8-SD0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="LeagueRankingViewController" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GSI-lL-uer">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvZ-lF-UDB">
+                    <rect key="frame" x="179.5" y="439" width="55.5" height="18"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTV-rD-ApF">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="6ED-lk-2us">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TP-sU-TzX">
+                            <rect key="frame" x="367" y="68" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="5me-33-0bs"/>
+                                <constraint firstAttribute="width" constant="24" id="7QX-7R-zO8"/>
+                            </constraints>
+                            <state key="normal" image="menu"/>
+                            <connections>
+                                <action selector="menuAction:" destination="-1" eventType="touchUpInside" id="6sR-3j-8a1"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Ranking" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xx8-a9-DUK">
+                            <rect key="frame" x="231" y="68" width="123" height="24"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="133" id="3y7-7U-q9G"/>
+                        <constraint firstAttribute="trailing" secondItem="6ED-lk-2us" secondAttribute="trailing" id="CkQ-JE-r1U"/>
+                        <constraint firstItem="7TP-sU-TzX" firstAttribute="top" secondItem="rTV-rD-ApF" secondAttribute="top" constant="68" id="Cki-ic-rsn"/>
+                        <constraint firstItem="6ED-lk-2us" firstAttribute="top" secondItem="rTV-rD-ApF" secondAttribute="top" id="E6y-Am-skN"/>
+                        <constraint firstItem="7TP-sU-TzX" firstAttribute="left" secondItem="Xx8-a9-DUK" secondAttribute="right" constant="13" id="Jcc-Kh-w1Q"/>
+                        <constraint firstAttribute="bottom" secondItem="Xx8-a9-DUK" secondAttribute="bottom" constant="41" id="KUg-nB-CdU"/>
+                        <constraint firstItem="Xx8-a9-DUK" firstAttribute="top" secondItem="rTV-rD-ApF" secondAttribute="top" constant="68" id="V7y-zF-qbt"/>
+                        <constraint firstAttribute="right" secondItem="7TP-sU-TzX" secondAttribute="right" constant="23" id="i8K-f4-weN"/>
+                        <constraint firstAttribute="bottom" secondItem="7TP-sU-TzX" secondAttribute="bottom" constant="41" id="o9d-AP-WO8"/>
+                        <constraint firstAttribute="bottom" secondItem="6ED-lk-2us" secondAttribute="bottom" id="q9H-Uz-S3I"/>
+                        <constraint firstItem="6ED-lk-2us" firstAttribute="leading" secondItem="rTV-rD-ApF" secondAttribute="leading" id="zrc-IN-VAv"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T6a-H3-Iqv">
+                    <rect key="frame" x="17.5" y="141" width="379" height="97"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-c7-EJ2">
+                            <rect key="frame" x="0.0" y="0.0" width="379" height="46"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xo9-TX-eqH">
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="46"/>
+                                    <subviews>
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="home - away" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0Y-aW-NBV">
+                                            <rect key="frame" x="8" y="6" width="146" height="34"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB5-i1-rhB">
+                                            <rect key="frame" x="162" y="12" width="17" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="k8N-yK-tOI"/>
+                                                <constraint firstAttribute="width" constant="17" id="w7Q-4o-hrA"/>
+                                            </constraints>
+                                            <state key="normal" image="down-arrow2"/>
+                                            <connections>
+                                                <action selector="homeAwayDropDownAction:" destination="-1" eventType="touchUpInside" id="8Gh-V3-wPz"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="oB5-i1-rhB" firstAttribute="leading" secondItem="O0Y-aW-NBV" secondAttribute="trailing" constant="8" id="1Fg-h5-Vjk"/>
+                                        <constraint firstAttribute="trailing" secondItem="oB5-i1-rhB" secondAttribute="trailing" constant="8" id="5J0-5n-IoF"/>
+                                        <constraint firstItem="O0Y-aW-NBV" firstAttribute="top" secondItem="xo9-TX-eqH" secondAttribute="top" constant="6" id="MfG-r5-CFa"/>
+                                        <constraint firstAttribute="bottom" secondItem="O0Y-aW-NBV" secondAttribute="bottom" constant="6" id="Orv-q6-TQE"/>
+                                        <constraint firstItem="O0Y-aW-NBV" firstAttribute="leading" secondItem="xo9-TX-eqH" secondAttribute="leading" constant="8" id="aAe-GR-sgb"/>
+                                        <constraint firstItem="oB5-i1-rhB" firstAttribute="top" secondItem="xo9-TX-eqH" secondAttribute="top" constant="12" id="h8k-eO-sJe"/>
+                                        <constraint firstAttribute="bottom" secondItem="oB5-i1-rhB" secondAttribute="bottom" constant="12" id="oEp-so-Thb"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svy-pS-Wit">
+                                    <rect key="frame" x="192" y="0.0" width="187" height="46"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hM5-5Z-Jmw">
+                                            <rect key="frame" x="162" y="12" width="17" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="CNq-oc-v5S"/>
+                                                <constraint firstAttribute="width" constant="17" id="Qhu-wq-QLy"/>
+                                            </constraints>
+                                            <state key="normal" image="down-arrow2"/>
+                                            <connections>
+                                                <action selector="winLoseDropDownAction:" destination="-1" eventType="touchUpInside" id="Bb0-Un-n8E"/>
+                                            </connections>
+                                        </button>
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="win - lose" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xnd-pZ-5Wm">
+                                            <rect key="frame" x="8" y="6" width="146" height="34"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hM5-5Z-Jmw" secondAttribute="bottom" constant="12" id="4ay-gF-qvP"/>
+                                        <constraint firstItem="Xnd-pZ-5Wm" firstAttribute="top" secondItem="Svy-pS-Wit" secondAttribute="top" constant="6" id="4rq-jY-Rag"/>
+                                        <constraint firstAttribute="trailing" secondItem="hM5-5Z-Jmw" secondAttribute="trailing" constant="8" id="Nl2-jE-6v4"/>
+                                        <constraint firstItem="hM5-5Z-Jmw" firstAttribute="top" secondItem="Svy-pS-Wit" secondAttribute="top" constant="12" id="T2P-b5-zfd"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xnd-pZ-5Wm" secondAttribute="bottom" constant="6" id="hM1-GP-ZCX"/>
+                                        <constraint firstItem="hM5-5Z-Jmw" firstAttribute="leading" secondItem="Xnd-pZ-5Wm" secondAttribute="trailing" constant="8" id="jGH-UE-k56"/>
+                                        <constraint firstItem="Xnd-pZ-5Wm" firstAttribute="leading" secondItem="Svy-pS-Wit" secondAttribute="leading" constant="8" id="mQc-TF-YQm"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6i-pG-cS7">
+                            <rect key="frame" x="0.0" y="51" width="379" height="46"/>
+                            <subviews>
+                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="game week" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVK-eM-L4L">
+                                    <rect key="frame" x="8" y="6" width="338" height="34"/>
+                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hz-2h-LSs">
+                                    <rect key="frame" x="354" y="12" width="17" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="17" id="fsq-nP-Gh6"/>
+                                        <constraint firstAttribute="height" constant="22" id="z3y-U5-l5B"/>
+                                    </constraints>
+                                    <state key="normal" image="down-arrow2"/>
+                                    <connections>
+                                        <action selector="gameWeekDropDownAction:" destination="-1" eventType="touchUpInside" id="ffu-Or-EfD"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="5hz-2h-LSs" firstAttribute="top" secondItem="q6i-pG-cS7" secondAttribute="top" constant="12" id="0te-f2-ssn"/>
+                                <constraint firstAttribute="bottom" secondItem="5hz-2h-LSs" secondAttribute="bottom" constant="12" id="2sf-08-p5M"/>
+                                <constraint firstAttribute="trailing" secondItem="5hz-2h-LSs" secondAttribute="trailing" constant="8" id="NOd-Aa-Fhh"/>
+                                <constraint firstItem="eVK-eM-L4L" firstAttribute="top" secondItem="q6i-pG-cS7" secondAttribute="top" constant="6" id="U9L-SU-0oa"/>
+                                <constraint firstItem="eVK-eM-L4L" firstAttribute="leading" secondItem="q6i-pG-cS7" secondAttribute="leading" constant="8" id="jrb-vS-j3c"/>
+                                <constraint firstItem="5hz-2h-LSs" firstAttribute="leading" secondItem="eVK-eM-L4L" secondAttribute="trailing" constant="8" id="uDG-m6-WZ1"/>
+                                <constraint firstAttribute="bottom" secondItem="eVK-eM-L4L" secondAttribute="bottom" constant="6" id="wz0-WM-OLq"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="97" id="NPN-pF-vIv"/>
+                    </constraints>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d3z-Mn-fin">
+                    <rect key="frame" x="0.0" y="246" width="414" height="640"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cvZ-lF-UDB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="0P8-5O-tnR"/>
+                <constraint firstItem="GSI-lL-uer" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3LZ-4f-el4"/>
+                <constraint firstItem="d3z-Mn-fin" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Afh-LV-zFb"/>
+                <constraint firstItem="T6a-H3-Iqv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17.5" id="FaJ-BD-81v"/>
+                <constraint firstAttribute="bottom" secondItem="d3z-Mn-fin" secondAttribute="bottom" constant="10" id="Nsk-8V-udo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="T6a-H3-Iqv" secondAttribute="trailing" constant="17.5" id="U3d-cZ-Mqa"/>
+                <constraint firstItem="d3z-Mn-fin" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WOn-np-sQh"/>
+                <constraint firstItem="cvZ-lF-UDB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cwE-dQ-rlk"/>
+                <constraint firstItem="GSI-lL-uer" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fbm-IO-i29"/>
+                <constraint firstItem="rTV-rD-ApF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hsA-SJ-QPn"/>
+                <constraint firstItem="T6a-H3-Iqv" firstAttribute="top" secondItem="rTV-rD-ApF" secondAttribute="bottom" constant="8" id="irm-V7-GwF"/>
+                <constraint firstItem="rTV-rD-ApF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lYd-EP-0dy"/>
+                <constraint firstItem="d3z-Mn-fin" firstAttribute="top" secondItem="T6a-H3-Iqv" secondAttribute="bottom" constant="8" id="ucX-VJ-ZDZ"/>
+                <constraint firstItem="rTV-rD-ApF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wlJ-yV-lQN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="135.9375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="down-arrow2" width="10.5" height="10.5"/>
+        <image name="header" width="360" height="221"/>
+        <image name="menu" width="24" height="24"/>
+    </resources>
+</document>

@@ -61,7 +61,9 @@ class HeadToHeadVC: ParentViewController {
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        leagueNameTF.text = ""
+    }
     
     func createLeague (name : String){
         let parameters:[String:Any] = [
@@ -77,9 +79,12 @@ class HeadToHeadVC: ParentViewController {
                 let data = response!["data"]["status"].intValue
                 if data == 1 {
                     let code = response!["data"]["group_eldwry"]["code"].stringValue
+                    let link = response!["data"]["group_eldwry"]["link"].stringValue
                     let classicLeaguePopUp = Storyboard().mainStoryboard.instantiateViewController(withIdentifier: "ClassicLeaguePopUp") as! ClassicLeaguePopUp
                     classicLeaguePopUp.code = code
                     classicLeaguePopUp.delegate = self
+                    classicLeaguePopUp.link = link
+                    classicLeaguePopUp.leagueType = "head"
                     self.present(classicLeaguePopUp, animated: true
                         , completion: nil)
                 }
