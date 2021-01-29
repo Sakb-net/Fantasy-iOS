@@ -10,7 +10,9 @@ import Foundation
 import SwiftyJSON
 
 class LeagueRankingModel : NSObject {
+    var filterType = "no"
     var isOpend = false
+    var index : String?
     var team_link : String?
     var team_name : String?
     var team_code : String?

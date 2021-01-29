@@ -30,12 +30,12 @@ class LeagueRankingViewModel {
     var numberOfCells : Int {
         return leagueRankingModelsCount
     }
-    
+    var filterType = "no"
     
     
     func createCellViewModel (leagueRankingModel : LeagueRankingModel) -> LeagueRankingCellViewModel {
         let expandedCellViewModel = ExpandedCellViewModel(form: leagueRankingModel.form ?? [FormModel()], lastResultDate: leagueRankingModel.current_match?.date_day ?? "", nextMatchDate: leagueRankingModel.next_match?.date_day ?? "", lastResultFirstName: leagueRankingModel.current_match?.first_team_name ?? "", lastResultSecondName: leagueRankingModel.current_match?.second_team_name ?? "", nextMatchFirstName: leagueRankingModel.team_code ?? "", nextMatchSecondName: leagueRankingModel.next_match?.second_team_name ?? "", lastResultFirstImage: leagueRankingModel.current_match?.first_team_image ?? "", lastResultSecondImage: leagueRankingModel.current_match?.second_team_image ?? "", nextMatchFirstImage: leagueRankingModel.team_image ?? "", nextMatchSecondImage: leagueRankingModel.next_match?.second_team_image ?? "", lastResultFirstScore: leagueRankingModel.current_match?.first_team_goon ?? "", lastResultSecondScore: leagueRankingModel.current_match?.second_team_goon ?? "", nextMatchTime: leagueRankingModel.next_match?.time ?? "")
-        return LeagueRankingCellViewModel(isOpened: leagueRankingModel.isOpend, rank: "", teamImageName: leagueRankingModel.team_image ?? "", teamName: leagueRankingModel.team_code ?? "", plays: leagueRankingModel.count_played ?? "", win: leagueRankingModel.won ?? "", draw: leagueRankingModel.draw ?? "", loss: leagueRankingModel.loss ?? "", teams: "2", points: leagueRankingModel.points ?? "", expandedCellViewModel: expandedCellViewModel)
+        return LeagueRankingCellViewModel(isOpened: leagueRankingModel.isOpend,filterType:filterType, rank: leagueRankingModel.index ?? "", teamImageName: leagueRankingModel.team_image ?? "", teamName: leagueRankingModel.team_code ?? "", plays: leagueRankingModel.count_played ?? "", win: leagueRankingModel.won ?? "", draw: leagueRankingModel.draw ?? "", loss: leagueRankingModel.loss ?? "", teams: "2", points: leagueRankingModel.points ?? "", expandedCellViewModel: expandedCellViewModel)
     }
     
     func getCellVM(index: Int) -> LeagueRankingCellViewModel {
@@ -54,7 +54,7 @@ class LeagueRankingViewModel {
     func getLeagueRankings(link: String)
     {
         state = .loading
-        let url = "https://devfantasy.sakb-co.com.sa/api/v1/ranking_eldwry?" + link
+        let url = "https://devfantasy.sakb-co.com.sa/api/v1/ranking_eldwry?subeldwry_link=" + link
         
         ServiceManager.callAPI(url: url, method: .get, parameters: nil, custumHeaders: nil) { (error, response) in
             
@@ -65,9 +65,10 @@ class LeagueRankingViewModel {
                 if let data = response!["data"]["ranking_eldwry"].array {
                     
                     var leagueRankingModels = [LeagueRankingModel]()
-                    for item in data {
-                        
-                        leagueRankingModels.append(LeagueRankingModel(parametersJson: item.dictionaryValue))
+                    for n in 0...data.count - 1 {
+                        var model = LeagueRankingModel(parametersJson: data[n].dictionaryValue)
+                        model.index = String(n+1)
+                        leagueRankingModels.append(model)
                     }
                     self.leagueRankingModels = leagueRankingModels
                     self.filterList = leagueRankingModels
@@ -101,6 +102,40 @@ class LeagueRankingViewModel {
             }
         }
         self.createCellsVMs(leagueRankingModels: awayList)
+    }
+    
+    func getWinList() {
+        var winModels = [LeagueRankingModel]()
+        for model in filterList {
+            if let forms = model.form {
+                for form in forms {
+                    if form.state == "w" {
+                        filterType = "w"
+                        model.filterType = "w"
+                        winModels.append(model)
+                        break
+                    }
+                }
+            }
+        }
+        self.createCellsVMs(leagueRankingModels: winModels)
+    }
+    
+    func getLossList() {
+        var lossModels = [LeagueRankingModel]()
+        for model in filterList {
+            if let forms = model.form {
+                for form in forms {
+                    if form.state == "l" {
+                        filterType = "l"
+                        model.filterType = "l"
+                        lossModels.append(model)
+                        break
+                    }
+                }
+            }
+        }
+        self.createCellsVMs(leagueRankingModels: lossModels)
     }
     
     func selectLeague(index : Int) -> LeagueRankingModel{

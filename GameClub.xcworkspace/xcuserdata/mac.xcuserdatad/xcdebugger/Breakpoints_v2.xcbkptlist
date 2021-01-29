@@ -9681,8 +9681,8 @@
             filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "getLeagueRankings(link:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -9809,8 +9809,8 @@
             filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "getHomeList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -9825,8 +9825,8 @@
             filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "getHomeList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -9841,8 +9841,8 @@
             filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "getHomeList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -9937,8 +9937,8 @@
             filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "getHomeList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -9947,22 +9947,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "843766BD-5ED8-4993-8F8F-86FC87FF4A7B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "getAwayList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A11533D6-0CEF-4F0D-907F-ECE801723931"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -9978,6 +9962,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "A11533D6-0CEF-4F0D-907F-ECE801723931"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "getAwayList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "35AB70FF-3591-430F-9A4B-CCF7D51F1977"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -9985,8 +9985,8 @@
             filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "getAwayList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -9995,22 +9995,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "41FB13CF-C6D8-4994-AA52-994902704EF5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "getAwayList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B2ADECBD-CCB3-49AA-B6B1-3473540979E5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -10026,7 +10010,39 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B2ADECBD-CCB3-49AA-B6B1-3473540979E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "getAwayList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "36B693FA-D1B5-41B7-8C10-895DED5B31CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "getHomeList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "607BF07E-4B2F-4414-BB51-D0DF6F691CE6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -10042,16 +10058,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "607BF07E-4B2F-4414-BB51-D0DF6F691CE6"
+            uuid = "85E3F678-3A0C-43F3-938B-1A9555716509"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GameClub/Leagues/LeagueRanking/ViewModels/LeagueRankingViewModel.swift"
+            filePath = "GameClub/Leagues/LeagueRanking/LeagueRankingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "getHomeList()"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "returnChoiceType(type:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,6 +9,7 @@
 import UIKit
 
 class LeagueRankingExtendedCell: UITableViewCell {
+    var filterType = "no"
     @IBOutlet weak var firstLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
     @IBOutlet weak var thirdLbl: UILabel!
@@ -37,17 +38,39 @@ class LeagueRankingExtendedCell: UITableViewCell {
         let labels = [firstLbl, secondLbl, thirdLbl, fourthLbl, fifthLbl]
         if let forms = expandedCellViewModel?.form {
             if forms.count > 0 && forms.count <= labels.count{
-                for n in 0...forms.count - 1{
-                    roundViewCorners(view: labels[n]!)
-                    labels[n]?.text = forms[n].state
-                    if forms[n].state == "w" {
-                        labels[n]?.backgroundColor = Color.winColor.value
-                    }else if forms[n].state == "l" {
-                        labels[n]?.backgroundColor = Color.lossColor.value
-                    }else{
-                        labels[n]?.backgroundColor = Color.drawColor.value
+                if filterType == "no"{
+                    for n in 0...forms.count - 1{
+                        roundViewCorners(view: labels[n]!)
+                        labels[n]?.text = forms[n].state
+                        if forms[n].state == "w" {
+                            labels[n]?.backgroundColor = Color.winColor.value
+                        }else if forms[n].state == "l" {
+                            labels[n]?.backgroundColor = Color.lossColor.value
+                        }else{
+                            labels[n]?.backgroundColor = Color.drawColor.value
+                        }
+                        
                     }
-                    
+                }else if filterType == "w" {
+                    var i = 0
+                    for n in 0...forms.count - 1{
+                        roundViewCorners(view: labels[i]!)
+                        labels[i]?.text = forms[n].state
+                        if forms[n].state == "w" {
+                            labels[i]?.backgroundColor = Color.winColor.value
+                            i += 1
+                        }
+                    }
+                }else if filterType == "l"{
+                    var i = 0
+                    for n in 0...forms.count - 1{
+                        roundViewCorners(view: labels[i]!)
+                        labels[i]?.text = forms[n].state
+                        if forms[n].state == "l" {
+                            labels[i]?.backgroundColor = Color.lossColor.value
+                            i += 1
+                        }
+                    }
                 }
             }
         }else{

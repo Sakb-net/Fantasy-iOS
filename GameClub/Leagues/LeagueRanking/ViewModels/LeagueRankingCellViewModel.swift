@@ -9,6 +9,7 @@
 import Foundation
 struct LeagueRankingCellViewModel {
     var isOpened : Bool
+    var filterType : String
     var rank : String
     var teamImageName : String
     var teamName : String

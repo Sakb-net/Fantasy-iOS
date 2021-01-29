@@ -23,10 +23,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1Mg-ib-5hv">
-                        <rect key="frame" x="122" y="0.0" width="252" height="60"/>
+                        <rect key="frame" x="125" y="0.0" width="192" height="60"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imD-ZM-TIR">
-                                <rect key="frame" x="0.0" y="0.0" width="42" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="utr-yX-kct"/>
                                 </constraints>
@@ -35,31 +35,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-W2-DDw">
-                                <rect key="frame" x="42" y="0.0" width="42" height="60"/>
+                                <rect key="frame" x="32" y="0.0" width="32" height="60"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-pA-GWT">
-                                <rect key="frame" x="84" y="0.0" width="42" height="60"/>
+                                <rect key="frame" x="64" y="0.0" width="32" height="60"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbC-F8-YDo">
-                                <rect key="frame" x="126" y="0.0" width="42" height="60"/>
+                                <rect key="frame" x="96" y="0.0" width="32" height="60"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsX-Iz-RJn">
-                                <rect key="frame" x="168" y="0.0" width="42" height="60"/>
+                                <rect key="frame" x="128" y="0.0" width="32" height="60"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idC-Y8-unG">
-                                <rect key="frame" x="210" y="0.0" width="42" height="60"/>
+                                <rect key="frame" x="160" y="0.0" width="32" height="60"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,24 +67,24 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQw-Qo-b8c">
-                        <rect key="frame" x="6" y="21" width="13" height="18"/>
+                        <rect key="frame" x="6" y="21" width="16" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="kLI-PC-ucX"/>
-                            <constraint firstAttribute="width" constant="13" id="owC-tJ-NnQ"/>
+                            <constraint firstAttribute="width" constant="16" id="owC-tJ-NnQ"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeueW23forSKY-Reg" family="Helvetica Neue W23 for SKY" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IxL-Ko-oDU">
-                        <rect key="frame" x="22" y="14" width="31" height="31"/>
+                        <rect key="frame" x="28" y="14" width="31" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="31" id="Riv-fK-LEW"/>
                             <constraint firstAttribute="height" constant="31" id="p0k-uM-T3G"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd6-WO-2Vc">
-                        <rect key="frame" x="61" y="19" width="53" height="21"/>
+                        <rect key="frame" x="67" y="19" width="53" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="53" id="dgv-2n-2RR"/>
                         </constraints>
@@ -93,7 +93,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUY-Ce-hW1">
-                        <rect key="frame" x="382" y="19" width="25" height="22"/>
+                        <rect key="frame" x="325" y="19" width="25" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="paN-co-chT"/>
                             <constraint firstAttribute="width" constant="25" id="rtN-eA-XTv"/>
@@ -112,9 +112,9 @@
                     <constraint firstItem="AUY-Ce-hW1" firstAttribute="leading" secondItem="1Mg-ib-5hv" secondAttribute="trailing" constant="8" id="OQK-6A-S4E"/>
                     <constraint firstItem="1Mg-ib-5hv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OxL-MM-BmE"/>
                     <constraint firstItem="Zd6-WO-2Vc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="PlA-Ph-2W0"/>
-                    <constraint firstItem="IxL-Ko-oDU" firstAttribute="leading" secondItem="sQw-Qo-b8c" secondAttribute="trailing" constant="3" id="STe-N0-BaH"/>
+                    <constraint firstItem="IxL-Ko-oDU" firstAttribute="leading" secondItem="sQw-Qo-b8c" secondAttribute="trailing" constant="6" id="STe-N0-BaH"/>
                     <constraint firstItem="sQw-Qo-b8c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="UhU-1l-q50"/>
-                    <constraint firstItem="1Mg-ib-5hv" firstAttribute="leading" secondItem="Zd6-WO-2Vc" secondAttribute="trailing" constant="8" id="Vjg-Fr-0m3"/>
+                    <constraint firstItem="1Mg-ib-5hv" firstAttribute="leading" secondItem="Zd6-WO-2Vc" secondAttribute="trailing" constant="5" id="Vjg-Fr-0m3"/>
                     <constraint firstAttribute="bottom" secondItem="sQw-Qo-b8c" secondAttribute="bottom" constant="21" id="cvr-K0-anP"/>
                     <constraint firstItem="AUY-Ce-hW1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="gjv-tq-yc7"/>
                     <constraint firstAttribute="bottom" secondItem="1Mg-ib-5hv" secondAttribute="bottom" id="nRP-RH-vDc"/>

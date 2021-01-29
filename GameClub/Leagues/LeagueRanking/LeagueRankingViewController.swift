@@ -58,26 +58,26 @@ class LeagueRankingViewController: ParentViewController {
             DispatchQueue.main.async {
                 switch self?.viewModel.state {
                 case .error:
-                                       self?.indicator.stopAnimating()
-                                       self?.indicator.alpha = 0.0
-                                       self?.tableView.alpha = 0.0
+                    self?.indicator.stopAnimating()
+                    self?.indicator.alpha = 0.0
+                    self?.tableView.alpha = 0.0
                     self?.showAlert(title: "", message: "No data are available right now, try again later.".localized, shouldpop: false)
                 case .loading:
-                                       self?.indicator.startAnimating()
-                                       self?.indicator.alpha = 1.0
-                                       self?.tableView.alpha = 0.0
-                                       self?.noDataLbl.alpha = 0.0
+                    self?.indicator.startAnimating()
+                    self?.indicator.alpha = 1.0
+                    self?.tableView.alpha = 0.0
+                    self?.noDataLbl.alpha = 0.0
                     break
                 case .loaded:
-                                       self?.indicator.stopAnimating()
-                                       self?.tableView.alpha = 1.0
-                                       self?.indicator.alpha = 0.0
+                    self?.indicator.stopAnimating()
+                    self?.tableView.alpha = 1.0
+                    self?.indicator.alpha = 0.0
                     break
                 case .empty:
-                                       self?.indicator.stopAnimating()
-                                       self?.tableView.alpha = 0.0
-                                       self?.indicator.alpha = 0.0
-                                       self?.noDataLbl.alpha = 1.0
+                    self?.indicator.stopAnimating()
+                    self?.tableView.alpha = 0.0
+                    self?.indicator.alpha = 0.0
+                    self?.noDataLbl.alpha = 1.0
                     break
                     
                 case .none: break
@@ -113,6 +113,10 @@ extension LeagueRankingViewController : UITableViewDelegate, UITableViewDataSour
             viewModel.getHomeList()
         }else if type == "away" {
             viewModel.getAwayList()
+        }else if type == "win"{
+            viewModel.getWinList()
+        }else if type == "loss"{
+            viewModel.getLossList()
         }
     }
     
@@ -124,14 +128,14 @@ extension LeagueRankingViewController : UITableViewDelegate, UITableViewDataSour
     func expandCell(section : Int) {
         if section != 0{
             if viewModel.cellsViewModels[section-1].isOpened{
-            viewModel.cellsViewModels[section-1].isOpened = false
-            let sections = IndexSet.init(integer: section)
-            tableView.reloadSections(sections, with: .none)
-        }else{
-            viewModel.cellsViewModels[section-1].isOpened = true
-            let sections = IndexSet.init(integer: section)
-            tableView.reloadSections(sections, with: .none)
-        }
+                viewModel.cellsViewModels[section-1].isOpened = false
+                let sections = IndexSet.init(integer: section)
+                tableView.reloadSections(sections, with: .none)
+            }else{
+                viewModel.cellsViewModels[section-1].isOpened = true
+                let sections = IndexSet.init(integer: section)
+                tableView.reloadSections(sections, with: .none)
+            }
         }
     }
     
@@ -140,13 +144,13 @@ extension LeagueRankingViewController : UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-             return 1
+            return 1
         }else{
             if self.viewModel.cellsViewModels[section-1].isOpened {
-            return 2
-        }else {
-            return 1
-        }
+                return 2
+            }else {
+                return 1
+            }
         }
     }
     
@@ -154,7 +158,7 @@ extension LeagueRankingViewController : UITableViewDelegate, UITableViewDataSour
         let cell1 = tableView.dequeueReusableCell(withIdentifier: "LeagueRankingHeaderCell", for: indexPath) as! LeagueRankingHeaderCell
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "LeagueRankingCell", for: indexPath) as! LeagueRankingCell
         let cell3 = tableView.dequeueReusableCell(withIdentifier: "LeagueRankingExtendedCell", for: indexPath) as! LeagueRankingExtendedCell
-
+        
         if indexPath.section == 0 {
             tableView.rowHeight = 70
             return cell1
@@ -168,6 +172,7 @@ extension LeagueRankingViewController : UITableViewDelegate, UITableViewDataSour
                 return cell2
             }else{
                 tableView.rowHeight = 320
+                cell3.filterType = cellViewModel.filterType
                 cell3.expandedCellViewModel = cellViewModel.expandedCellViewModel
                 return cell3
             }
